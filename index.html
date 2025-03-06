@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="nav.css">
   <title>Picoca Review</title>
 </head>
 <body>
@@ -45,45 +46,72 @@
   </nav>
 </header>
 
+<!-- Testar tirar a imagem - Deixar apenas <div> class='hero-background'</div>  --> 
   <main>
     <section class="hero">
-      <img class="hero-background" src="https://imgs.search.brave.com/uDsgF4j9t2AtsFKS6U1lhz_g6KIcR7E_UkuTZzL-nWM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2YxLzQx/Lzg0L2YxNDE4NDU1/NjZjNWY2ODYzMjg3/ZmUyN2FkMDM5ZjM3/LmpwZw" alt="Hero Image">
+      <div class="hero-background" alt="Hero Image"></div>
       <div class="hero-foreground"> <!--Texto que vai ficar por cima do vídeo-->
-          <h1 class="hero-title">Get Ready to Seal-abrate!</h1>
+          <h1 class="hero-title">Bem vindo ao NomeDoSite!</h1>
           <p class="hero-text">
-              Dive in and Discover the Charm of These Aquatic Wonders
+              Acompanhe os filmes que você já assistiu.
           </p>
+          <p class="hero-text">
+            Salve os que você quer ver.
+        </p>
       </div>
   </section>
 
-  <section class="section"> <!--Seção Lançamentos-->
-    <h2 class="section__title">Exploring the World of Seals</h2>
-    <img class="section__img" src="img/pexels-minsu-b-11932453.jpg" alt="" />
-    <p class="section__text">
-        Hold onto your flippers, because we're about to embark on a journey
-        into the lives of seals! These adorable aquatic mammals are real stars
-        of the ocean, and they've got some seal-iously cool tales to tell.
-        From Arctic cold to sunny shores, seals have mastered the art of
-        enjoying life both above and below the waves. Let's splash into the
-        deep waters of seal knowledge!
-    </p>
+<!-- Alterar os links -->
+  <section class="section-new">
+    <h2 class="section-new-title">Lançamentos</h2>
+    <div class="gallery">
+        <a href="detalhes.html?filme=1" class="poster">
+            <img src="/img/filme1.jpg" alt="Filme 1">
+        </a>
+        <a href="detalhes.html?filme=2" class="poster">
+            <img src="/img/filme2.jpg" alt="Filme 2">
+        </a>
+        <a href="detalhes.html?filme=3" class="poster">
+            <img src="/img/filme3.jpg" alt="Filme 3">
+        </a>
+        <a href="detalhes.html?filme=4" class="poster">
+            <img src="/img/filme4.jpg" alt="Filme 4">
+        </a>
+        <a href="detalhes.html?filme=5" class="poster">
+            <img src="/img/filme5.jpg" alt="Filme 5">
+        </a>
+        <a href="detalhes.html?filme=6" class="poster">
+            <img src="/img/filme6.jpg" alt="Filme 6">
+        </a>
+    </div>
 </section>
 
-<section class="section"> <!--Seção Oscar-->
-  <h2 class="section__title">Exploring the World of Seals</h2>
-  <img class="section__img" src="img/pexels-minsu-b-11932453.jpg" alt="" />
-  <p class="section__text">
-      Hold onto your flippers, because we're about to embark on a journey
-      into the lives of seals! These adorable aquatic mammals are real stars
-      of the ocean, and they've got some seal-iously cool tales to tell.
-      From Arctic cold to sunny shores, seals have mastered the art of
-      enjoying life both above and below the waves. Let's splash into the
-      deep waters of seal knowledge!
-  </p>
+<section class="section-oscar">
+  <h2 class="section-oscar-title">And the Oscar goes to:</h2>
+  <div class="gallery">
+      <a href="detalhes.html?filme=1" class="poster">
+          <img src="/img/filme1.jpg" alt="Oscar 1">
+      </a>
+      <a href="detalhes.html?filme=2" class="poster">
+          <img src="/img/filme2.jpg" alt="Oscar 2">
+      </a>
+      <a href="detalhes.html?filme=3" class="poster">
+          <img src="/img/filme3.jpg" alt="Oscar 3">
+      </a>
+      <a href="detalhes.html?filme=4" class="poster">
+          <img src="/img/filme4.jpg" alt="Oscar 4">
+      </a>
+      <a href="detalhes.html?filme=5" class="poster">
+          <img src="/img/filme5.jpg" alt="Oscar 5">
+      </a>
+      <a href="detalhes.html?filme=6" class="poster">
+          <img src="/img/filme6.jpg" alt="Oscar 6">
+      </a>
+  </div>
 </section>
 
-<section class="section"> <!--Seção Notícias-->
-  <h2 class="section__title">Exploring the World of Seals</h2>
+<section class="section-journal"> <!--Seção Notícias-->
+  <h2 class="section-journal-title">Journal</h2>
   <img class="section__img" src="img/pexels-minsu-b-11932453.jpg" alt="" />
   <p class="section__text">
       Hold onto your flippers, because we're about to embark on a journey

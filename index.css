@@ -1,41 +1,107 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 :root {
   --color-background: #030207;
   --color-white: #fff;
   --color-blue: #1474b4;
+  --color-light: #eaeaea;
 }
 
-    /* Nav*/
+body {
+background-color: var(--color-background);
+}
 
-    /*Search Button */
-.search-container {
+.section-new-title, .section-oscar-title, .section-journal-title{
+  text-align: center;
+  color: var(--color-white);
+}
+
+/* Posters */
+.gallery {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para novas linhas */
+  gap: 15px;
+  justify-content: center; /* Centraliza os pôsteres */
+  padding: 20px;
+}
+
+.poster {
+  width: 180px; /* Tamanho fixo */
+  height: 270px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.poster:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column; /* Empilha os pôsteres */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .poster {
+    width: 90%; /* Pega quase toda a largura da tela */
+    max-width: 250px; /* Limita o tamanho máximo */
+  }
+}
+
+/* Teste do hero */
+.hero-background {
   position: relative;
+  background: url("/img/flowhero.jpg") no-repeat center center/cover;
+  /* height: 100vh;
+  width: 100%; */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ajustar conforme necessário */
 }
 
-.form-control {
-  border-radius: 20px; /* Borda arredondada */
-  padding-right: 40px; /* Espaço para o ícone */
-}
-
-/* Ícone de lupa dentro do campo */
-.search-btn {
+/* Criando o efeito de transição na parte inferior */
+.hero-background::after {
+  content: "";
   position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #6c757d;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 35%),  /* Escurecimento superior */
+    linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 35%),  /* Escurecimento esquerdo */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 35%), /* Escurecimento inferior */
+    linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 35%);   /* Escurecimento direito */
+  pointer-events: none; /* Impede que o gradiente interfira nos elementos abaixo */
 }
 
-.search-btn:focus {
-  outline: none;
+/* Foreground para o conteúdo acima da imagem */
+.hero-foreground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-light);
+  z-index: 1; /* Garante que o texto fique sobre a imagem */
 }
-    /*Search Button */
-    
+
+
+.footer {
+  background-color: #232323;
+}

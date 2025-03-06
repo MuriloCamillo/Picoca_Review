@@ -1,0 +1,62 @@
+/*Search Button */
+.search-container {
+  position: relative;
+}
+
+.form-control {
+  border-radius: 20px; /* Borda arredondada */
+  padding-right: 40px; /* Espaço para o ícone */
+}
+
+/* Ícone de lupa dentro do campo */
+.search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+
+/* .search-btn:focus {
+  outline: none;
+} */
+
+
+/* NAVBAR CENTRALIZADA */
+.navbar {
+  padding: 15px 0;
+  background-color: #030207; /* Cor de fundo da navbar */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transição suave para sombra e efeito de transformação */
+}
+
+.navbar:hover {
+  box-shadow: 0 -4px 8px rgba(200, 200, 200, 0.3); /* Sombra cinza clara */
+}
+
+/* Centraliza os itens da navbar */
+.navbar-nav {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 10px;
+}
+
+/* Logo */
+.navbar-brand img {
+  max-height: 40px;
+}
+
+/* Links/textos */
+.navbar-nav .nav-link {
+  color: var(--color-light); /* Cor do texto mais clara */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff; /* Cor clara ao passar o mouse */
+}
