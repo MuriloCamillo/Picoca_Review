@@ -1,0 +1,57 @@
+/* Journal */
+
+.card {
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  max-width: 320px; /* Define um tamanho máximo para os cards */
+  margin: auto;     /* Centraliza os cards */
+}
+
+.card:hover {
+  transform: scale(1.03); /* Efeito de zoom ao passar o mouse */
+}
+
+.card-img-top {
+  width: 100%;       /* Mantém a largura total do card */
+  height: 180px;     /* Define uma altura fixa */
+  object-fit: cover; /* Confirmar se vai ser cover ou contain */
+  /* object-position: center; Ver depois como fica */
+}
+
+.btn-outline-light {
+  border-radius: 999px; 
+}
+
+/* Benefits */
+
+.benefits-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card-custom {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: #3b4a5a;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.card-custom .icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-custom:hover {
+  background-color: #4c6b89;
+  transform: translateY(-3px);
+}

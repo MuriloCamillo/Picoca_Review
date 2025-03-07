@@ -7,9 +7,8 @@
 }
 
 :root {
-  --color-background: #030207;
+  --color-background: #1A1A1A;
   --color-white: #fff;
-  --color-blue: #1474b4;
   --color-light: #eaeaea;
 }
 
@@ -17,9 +16,12 @@ body {
 background-color: var(--color-background);
 }
 
-.section-new-title, .section-oscar-title, .section-journal-title{
+.section-new-title, .section-oscar-title, .section-journal-title, .section-benefits-title{
   text-align: center;
   color: var(--color-white);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* padding-top: 50px; dependendo se for usar linha ajustar*/
 }
 
 /* Posters */
@@ -83,10 +85,10 @@ background-color: var(--color-background);
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 35%),  /* Escurecimento superior */
-    linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 35%),  /* Escurecimento esquerdo */
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 35%), /* Escurecimento inferior */
-    linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 35%);   /* Escurecimento direito */
+    linear-gradient(to top, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%),  /* Escurecimento superior */
+    linear-gradient(to right, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%),  /* Escurecimento esquerdo */
+    linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%), /* Escurecimento inferior */
+    linear-gradient(to left, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%);   /* Escurecimento direito */
   pointer-events: none; /* Impede que o gradiente interfira nos elementos abaixo */
 }
 
@@ -101,7 +103,26 @@ background-color: var(--color-background);
   z-index: 1; /* Garante que o texto fique sobre a imagem */
 }
 
+/* Quebra de Linha Personalizada */
 
-.footer {
-  background-color: #232323;
+.section-divider {
+  position: relative;
+  text-align: center;
+  margin: 10px;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: #666;
+  opacity: 0.7;
+}
+
+footer {
+  padding: 5rem 0;
+  color: #eaeaea;
 }

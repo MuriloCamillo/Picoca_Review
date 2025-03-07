@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="cards.css">
   <title>Picoca Review</title>
 </head>
 <body>
@@ -46,11 +47,10 @@
   </nav>
 </header>
 
-<!-- Testar tirar a imagem - Deixar apenas <div> class='hero-background'</div>  --> 
   <main>
     <section class="hero">
       <div class="hero-background" alt="Hero Image"></div>
-      <div class="hero-foreground"> <!--Texto que vai ficar por cima do vídeo-->
+      <div class="hero-foreground"> <!--Texto que vai ficar por cima da imagem-->
           <h1 class="hero-title">Bem vindo ao NomeDoSite!</h1>
           <p class="hero-text">
               Acompanhe os filmes que você já assistiu.
@@ -61,7 +61,7 @@
       </div>
   </section>
 
-<!-- Alterar os links -->
+<!-- Seção Lançamentos - Alterar os links -->
   <section class="section-new">
     <h2 class="section-new-title">Lançamentos</h2>
     <div class="gallery">
@@ -86,6 +86,26 @@
     </div>
 </section>
 
+<!-- Sesção Benefícios -->
+<section class="section-benefits">
+  <h2 class="section-benefits-title">Vantagens</h2>
+  <div class="benefits-container">
+      <a href="#" class="card-custom">
+          <div class="icon">👀</div>
+          <p>Acompanhe todos os filmes que você já assistiu</p>
+      </a>
+      <a href="#" class="card-custom">
+          <div class="icon">⭐</div>
+          <p>Avalie os filmes com um sistema de 5 estrelas</p>
+      </a>
+      <a href="#" class="card-custom">
+          <div class="icon">📝</div>
+          <p>Escreva e compartilhe suas críticas</p>
+      </a>
+  </div>
+</section>
+
+<!-- Seção Oscar -->
 <section class="section-oscar">
   <h2 class="section-oscar-title">And the Oscar goes to:</h2>
   <div class="gallery">
@@ -110,26 +130,71 @@
   </div>
 </section>
 
-<section class="section-journal"> <!--Seção Notícias-->
-  <h2 class="section-journal-title">Journal</h2>
-  <img class="section__img" src="img/pexels-minsu-b-11932453.jpg" alt="" />
-  <p class="section__text">
-      Hold onto your flippers, because we're about to embark on a journey
-      into the lives of seals! These adorable aquatic mammals are real stars
-      of the ocean, and they've got some seal-iously cool tales to tell.
-      From Arctic cold to sunny shores, seals have mastered the art of
-      enjoying life both above and below the waves. Let's splash into the
-      deep waters of seal knowledge!
-  </p>
+<section class="section-journal"> <!-- Seção de Notícias -->
+  <h2 class="section-journal-title">Notícias</h2>
+  <div class="container py-4">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light">
+                <a href="noticia1.html">
+                    <img src="img/imagecard.jpg" class="card-img-top" alt="Imagem Notícia 1">
+                </a>
+                <div class="card-body">
+                    <a href="noticia1.html" class="text-decoration-none text-light">
+                        <h5 class="card-title fw-bold">Rich Mix Film Fix: Sci-fi, Spies e Strangelove</h5>
+                    </a>
+                    <p class="card-text">Março traz a volta do visionário diretor Bong Joon-ho..Março traz a volta do visionário diretor Bong Joon-ho...Março traz a volta do visionário diretor Bong Joon-ho...Março traz a volta do visionário diretor Bong Joon-ho...Março traz a volta do visionário diretor Bong Joon-ho....</p>
+                    <a href="noticia1.html" class="btn btn-outline-light">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light">
+                <a href="noticia2.html">
+                    <img src="img/noticia2.jpg" class="card-img-top" alt="Imagem Notícia 2">
+                </a>
+                <div class="card-body">
+                    <a href="noticia2.html" class="text-decoration-none text-light">
+                        <h5 class="card-title fw-bold">Novos filmes no DCA Cinema a partir de 7 de março</h5>
+                    </a>
+                    <p class="card-text">Bong Joon-ho retorna às telonas com uma mistura...</p>
+                    <a href="noticia2.html" class="btn btn-outline-light">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light">
+                <a href="noticia3.html">
+                    <img src="img/noticia3.jpg" class="card-img-top" alt="Imagem Notícia 3">
+                </a>
+                <div class="card-body">
+                    <a href="noticia3.html" class="text-decoration-none text-light">
+                        <h5 class="card-title fw-bold">Ernest Cole: Lost and Found</h5>
+                    </a>
+                    <p class="card-text">Um documentário incrível sobre o lendário fotógrafo...</p>
+                    <a href="noticia3.html" class="btn btn-outline-light">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 </section>
   </main>
 
-  <footer class="footer">
+   <!-- arrumar o footer -->
+   <footer class="footer">
     Made with
     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
     </svg>
     by
+    <a href="https://github.com/leticiaaleme" target="_blank">@leticiaaleme</a>
+    and
     <a href="https://github.com/MuriloCamillo" target="_blank">@MuriloCamillo</a>
 </footer>
 
