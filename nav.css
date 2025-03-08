@@ -1,29 +1,12 @@
-/*Search Button */
-.search-container {
-  position: relative;
+/* Logo */
+.navbar-brand img {
+  height: auto; /* Mantém a proporção da imagem */
+  width: 3.125rem; /* Ajuste o tamanho conforme necessário */
 }
 
-.form-control {
-  border-radius: 20px; /* Borda arredondada */
-  padding-right: 40px; /* Espaço para o ícone */
-}
-
-/* Ícone de lupa dentro do campo */
-.search-btn {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #6c757d;
-}
-
-/* NAVBAR CENTRALIZADA */
 .navbar {
+  background-color: var(--color-background); /* Cor de fundo da navbar */
   padding: 15px 0;
-  background-color: #1A1A1A; /* Cor de fundo da navbar */
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transição suave para sombra e efeito de transformação */
 }
 
@@ -41,18 +24,36 @@
   margin: 0 10px;
 }
 
-/* Logo */
-.navbar-brand img {
-  max-height: 40px;
-}
-
 /* Links/textos */
 .navbar-nav .nav-link {
-  color: var(--color-light); /* Cor do texto mais clara */
+  color: var(--color-lightgrey); 
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
 }
 
 .navbar-nav .nav-link:hover {
   color: #ffffff; /* Cor clara ao passar o mouse */
+}
+
+/*Search Button */
+.search-container {
+  position: relative;
+}
+
+.form-control {
+  border-radius: 20px; /* Borda arredondada */
+  padding-right: 2.5rem; /* Espaço para o ícone */
+}
+
+.search-btn { /* Ícone de lupa dentro do campo */
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Botão Hamburguer */

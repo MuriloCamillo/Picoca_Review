@@ -6,78 +6,31 @@
     sans-serif;
 }
 
-:root {
+/* Lê, se for usar coloração tenta padronizar, deixar como variável e como hexadecimal */
+:root { 
   --color-background: #1A1A1A;
-  --color-white: #fff;
+  --color-lightgrey: #D3D3D3;
   --color-light: #eaeaea;
+  --color-white: #fff;
+  --color-divider: #666;
+  --color-darkgrey: #2b2b2b;
 }
 
 body {
 background-color: var(--color-background);
 }
 
-.section-new-title, .section-oscar-title, .section-journal-title, .section-benefits-title{
-  text-align: center;
-  color: var(--color-white);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  /* padding-top: 50px; dependendo se for usar linha ajustar*/
-}
+/* Hero Background e Foreground */
 
-/* Posters */
-.gallery {
-  display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem para novas linhas */
-  gap: 15px;
-  justify-content: center; /* Centraliza os pôsteres */
-  padding: 20px;
-}
-
-.poster {
-  width: 180px; /* Tamanho fixo */
-  height: 270px;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-}
-
-.poster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.poster:hover {
-  transform: scale(1.1);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .gallery {
-    flex-direction: column; /* Empilha os pôsteres */
-    align-items: center; /* Centraliza os itens */
-  }
-
-  .poster {
-    width: 90%; /* Pega quase toda a largura da tela */
-    max-width: 250px; /* Limita o tamanho máximo */
-  }
-}
-
-/* Teste do hero */
 .hero-background {
-  position: relative;
   background: url("/img/flowhero.jpg") no-repeat center center/cover;
-  /* height: 100vh;
-  width: 100%; */
   background-size: cover;
   background-position: center;
   height: 100vh; /* Ajustar conforme necessário */
+  position: relative;
 }
 
-/* Criando o efeito de transição na parte inferior */
-.hero-background::after {
+.hero-background::after { /* Efeito de gradiente no Hero */
   content: "";
   position: absolute;
   top: 0;
@@ -92,37 +45,112 @@ background-color: var(--color-background);
   pointer-events: none; /* Impede que o gradiente interfira nos elementos abaixo */
 }
 
-/* Foreground para o conteúdo acima da imagem */
-.hero-foreground {
-  position: absolute;
-  top: 50%;
+.hero-foreground { /* Foreground para o conteúdo acima da imagem (Hero-Background) */
+  color: var(--color-light);
   left: 50%;
+  top: 50%;
+  position: absolute;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: var(--color-light);
   z-index: 1; /* Garante que o texto fique sobre a imagem */
 }
 
-/* Quebra de Linha Personalizada */
+.hero-title{
+  color: var(--color-light);
+  font-size: 4rem;
+  margin-bottom: 6rem;
+}
 
-.section-divider {
+.hero-text{
+  color: var(--color-white);
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Títulos das seções */
+.section-trends-title, .section-ranked-title, .section-journal-title, .section-benefits-title{
+  color: var(--color-lightgrey);
+  letter-spacing: 0.5rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  font-size: 2.5rem;
+  /* Ver pra mexer na font-height */
+}
+
+
+/* Textos das seções */
+
+.section-trends-text, .section-ranked-text, .section-journal-text, .section-benefits-text{
+  color: var(--color-lightgrey);
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Posters - Tendências e Ranking */
+.gallery {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para novas linhas */
+  gap: 15px;
+  justify-content: center; /* Centraliza os pôsteres */
+  padding: 20px;
+}
+
+.poster {
+  border-radius: 10px;
+  height: 270px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  width: 180px; /* Tamanho fixo */
+}
+
+.poster img {
+  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.poster:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .gallery {
+    align-items: center; /* Centraliza os itens */
+    flex-direction: column; /* Empilha os pôsteres */
+  }
+
+  .poster {
+    max-width: 250px; /* Limita o tamanho máximo */
+    width: 90%; /* Pega quase toda a largura da tela */
+  }
+}
+
+/* Quebra de Linha Personalizada */
+.section-divider { /* <div class="section-divider"></div> */
+  margin: 10px;
   position: relative;
   text-align: center;
-  margin: 10px;
 }
 
 .section-divider::before {
+  background: var(--color-divider);
   content: "";
-  position: absolute;
+  height: 2px;
   top: 50%;
   left: 10%;
   width: 80%;
-  height: 2px;
-  background: #666;
   opacity: 0.7;
+  position: absolute;
 }
 
 footer {
+  background-color: var(--color-darkgrey);
+  color: var(--color-light);
   padding: 5rem 0;
-  color: #eaeaea;
 }
