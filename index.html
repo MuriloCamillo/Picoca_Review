@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <title>Picoca Review</title>
 </head>
 <body>
@@ -36,6 +37,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Notícias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Sobre</a>
           </li>
         </ul>
         <form class="d-flex search-container" role="search" id="formulario">
@@ -167,7 +171,7 @@
         <div class="col-md-4">
             <div class="card bg-dark text-light">
                 <a href="noticia2.html">
-                    <img src="img/noticia2.jpg" class="card-img-top" alt="Imagem Notícia 2">
+                    <img src="img/imagecard.jpg" class="card-img-top" alt="Imagem Notícia 2">
                 </a>
                 <div class="card-body">
                     <a href="noticia2.html" class="text-decoration-none text-light">
@@ -183,7 +187,7 @@
         <div class="col-md-4">
             <div class="card bg-dark text-light">
                 <a href="noticia3.html">
-                    <img src="img/noticia3.jpg" class="card-img-top" alt="Imagem Notícia 3">
+                    <img src="img/imagecard.jpg" class="card-img-top" alt="Imagem Notícia 3">
                 </a>
                 <div class="card-body">
                     <a href="noticia3.html" class="text-decoration-none text-light">
@@ -197,20 +201,47 @@
     </div>
   </div>
 </section>
-  </main>
+</main>
 
-   <!-- arrumar o footer -->
-   <footer class="footer">
-    Made with
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-    </svg>
-    by
-    <a href="https://github.com/leticiaaleme" target="_blank">@leticiaaleme</a>
-    and
-    <a href="https://github.com/MuriloCamillo" target="_blank">@MuriloCamillo</a>
+  <footer id="footer" class="footer py-4"> <!--Decidir a cor-->
+    <div class="container text-center">
+      <p class="footer-text">Made with
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      by</p>
+        <div class="row">
+            <!-- Coluna da Esquerda - Arrumar links linkedin -->
+            <div class="col-md-6 mb-3">
+                <h5 class="footer-title">Letícia Leme</h5>
+                <a href="https://github.com/leticiaaleme" target="_blank" class="footer-link me-3">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/leticiacristinaleme/" target="_blank" class="footer-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+
+            <!-- Coluna da Direita -->
+            <div class="col-md-6 mb-3">
+                <h5 class="footer-title">Murilo Camillo</h5>
+                <a href="https://github.com/MuriloCamillo" target="_blank" class="footer-link me-3">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/murilo-camillo-martins/" target="_blank" class="footer-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <!-- Linha de baixo com Copyright -->
+        <div class="footer-copy">
+            <div class="col text-center mt-3">
+                <p class="mb-0">© 2024 Seu Nome - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
 </footer>
-
-</body>
 <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

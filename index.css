@@ -16,6 +16,10 @@
   --color-darkgrey: #2b2b2b;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
 background-color: var(--color-background);
 }
@@ -149,8 +153,32 @@ background-color: var(--color-background);
   position: absolute;
 }
 
+/* Footer */
+
 footer {
-  background-color: var(--color-darkgrey);
+  background-color: var(--color-darkgrey); /* Decidir a cor de fundo, essa ou #212529 */
   color: var(--color-light);
   padding: 5rem 0;
+}
+
+.footer-text {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.footer-title {
+  color: var(--color-lightgrey);
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.fab {
+  font-size: 1.2rem;
+}
+
+.footer-link {
+  color: var(--color-light);
+  text-decoration: none;
+  font-size: 1.1rem;
 }
