@@ -27,7 +27,7 @@ background-color: var(--color-background);
 /* Hero Background e Foreground */
 
 .hero-background {
-  background: url("/img/flowhero.jpg") no-repeat center center/cover;
+  background: url("assets/img/herobg_flow.webp") no-repeat center center/cover;
   background-size: cover;
   background-position: center;
   height: 100vh; /* Ajustar conforme necessário */
