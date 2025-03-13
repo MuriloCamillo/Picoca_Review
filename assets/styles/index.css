@@ -26,51 +26,52 @@ background-color: var(--color-background);
 
 /* Hero Background e Foreground */
 
-.hero-background {
-  background: url("assets/img/herobg_flow.webp") no-repeat center center/cover;
-  background-size: cover;
-  background-position: center;
-  height: 100vh; /* Ajustar conforme necessário */
+.hero {
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero-background::after { /* Efeito de gradiente no Hero */
-  content: "";
+.hero-background {
+  background: 
+    linear-gradient(to top, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%), /* Escurecimento superior */
+    linear-gradient(to right, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%), /* Escurecimento esquerdo */
+    linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%), /* Escurecimento inferior */
+    linear-gradient(to left, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%),  /* Escurecimento direito */
+    url("../img/herobg_flow.webp") no-repeat center center/cover;
+  
+  background-size: cover;
+  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    linear-gradient(to top, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%),  /* Escurecimento superior */
-    linear-gradient(to right, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%),  /* Escurecimento esquerdo */
-    linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%), /* Escurecimento inferior */
-    linear-gradient(to left, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%);   /* Escurecimento direito */
-  pointer-events: none; /* Impede que o gradiente interfira nos elementos abaixo */
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Mantém a imagem no fundo */
 }
 
 .hero-foreground { /* Foreground para o conteúdo acima da imagem (Hero-Background) */
   color: var(--color-light);
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1; /* Garante que o texto fique sobre a imagem */
+  max-width: 90%;
+  position: relative;
+  padding: 2rem;
 }
 
-.hero-title{
-  color: var(--color-light);
+.hero-title {
   font-size: 4rem;
-  margin-bottom: 6rem;
-}
-
-.hero-text{
-  color: var(--color-white);
-  font-size: 1.8rem;
-  letter-spacing: 0.1rem;
   margin-bottom: 2rem;
 }
+
+.hero-text {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.5rem;
+}
+
 
 /* Títulos das seções */
 .section-trends-title, .section-ranked-title, .section-journal-title, .section-benefits-title{

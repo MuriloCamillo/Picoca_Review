@@ -1,9 +1,7 @@
-/* Journal.html */
-
 body {
   background-color: var(--color-divider); /* Trocar a cor? */
 }
 
 .row .col-md-4 {
-  margin-bottom: 40px; /* Ajuste o valor conforme necessário */
+  margin-bottom: 2.5rem; /* Ajustar o valor conforme necessário */
 }
