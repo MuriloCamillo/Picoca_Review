@@ -1,5 +1,5 @@
 body {
-  background-color: var(--color-divider); /* Trocar a cor? */
+  background-color: var(--color-grey); /* Trocar a cor? */
 }
 
 .row .col-md-4 {
