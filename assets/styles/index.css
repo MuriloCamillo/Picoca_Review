@@ -14,6 +14,7 @@
   --color-white: #fff;
   --color-divider: #666;
   --color-darkgrey: #2b2b2b;
+  --color-grey: #333333;
 }
 
 html{
@@ -75,7 +76,7 @@ background-color: var(--color-background);
 
 /* Títulos das seções */
 .section-trends-title, .section-ranked-title, .section-journal-title, .section-benefits-title{
-  color: var(--color-lightgrey);
+  color: var(--color-light);
   letter-spacing: 0.5rem;
   margin-top: 4rem;
   margin-bottom: 4rem;

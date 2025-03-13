@@ -1,4 +1,72 @@
 body {
-  background-color: var(--color-divider); /* Trocar a cor? */
+  background-color: var(--color-grey); /* Trocar a cor? */
 }
 
+.journal-link {
+color:var(--color-lightgrey); /*Trocar a cor*/
+font-size: 1.2rem;
+text-decoration: underline;
+}
+
+.news-title {
+color:var(--color-light);
+font-size: 3rem;
+font-weight: 600;
+}
+
+.news-autor {
+color:var(--color-light);
+font-size: 1.2rem;
+}
+
+.img-leg {
+  color:var(--color-lightgrey); /*Trocar a cor*/
+  font-size: 1rem;
+  text-align: center;
+}
+
+.news-article-body {
+  color: var(--color-light);
+  font-size: 1.1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Estilo para o vídeo com altura proporcional */
+.news-video {
+  position: relative;
+  width: 640px;  /* Defina a largura fixa para o vídeo */
+  height: 360px; /* Proporção de 16:9 (640px x 360px) */
+}
+
+.section-also-title{
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--color-light);
+}
+
+.news-section-divider{
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.news-section-divider::before {
+  background: var(--color-divider);
+  content: "";
+  height: 2px;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+}

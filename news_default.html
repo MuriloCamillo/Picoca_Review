@@ -60,15 +60,16 @@
 <body>
 
   <main>
+    <section class="news">
     <div class="container mt-4">
       <!-- Subtítulo -->
-      <p class="text-uppercase text-secondary">Notícias</p> <!--class="page-info"-->
+      <p><a class="journal-link" href ="journal.html">Notícias</a></p> 
       
       <!-- Título da notícia -->
-      <h1 class="fw-bold">Título Principal da Notícia</h1> <!--class="news-title"-->
+      <h1 class="news-title">Título Principal da Notícia</h1> 
       
       <!-- Informações do autor -->
-      <p class="text-muted">Por Nome do Autor - 12 de Março de 2025</p> <!--class="news-info"-->
+      <p class="news-autor">Por Nome do Autor - 12 de Março de 2025</p>
       
       <!-- Imagem da notícia -->
       <div class="text-center my-4">
@@ -76,13 +77,74 @@
       </div>
       
       <!-- Subtítulo abaixo da imagem -->
-      <p class="text-center text-muted">Legenda descritiva da imagem.</p> <!--class="img-leg"-->
+      <p class="img-leg">Legenda descritiva da imagem.</p> 
       
       <!-- Texto da notícia -->
-      <article class="mt-3"> <!--class="news-body"-->
+      <article class="news-article-body"> 
+          <h3>Uma chamada em negrito pra chamar a atenção, referente a imagem</h3>
           <p>Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce vehicula dignissim enim, sed fermentum arcu pharetra a.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis blanditiis asperiores et! Consequuntur similique, cum nesciunt, reiciendis est, dolor deserunt maiores aliquam ipsam vel natus autem tenetur omnis ducimus sunt.</p>
           <p>Aliquam erat volutpat. Donec at magna eget sem condimentum placerat. Mauris at arcu nec urna faucibus tincidunt.</p>
       </article>
+
+      <!-- Imagem da notícia -->
+      <div class="text-center my-4">
+        <img src="assets/img/journal_card_2.webp" alt="Imagem da Notícia" class="img-fluid rounded"> 
+    </div>
+
+    <p class="img-leg">Legenda descritiva da imagem.</p> 
+
+     <!-- Texto da notícia -->
+     <article class="news-article-body"> 
+      <h5>Uma frase de Efeito em um negrito, mas menor que o outro</h5>
+      <p>Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce vehicula dignissim enim, sed fermentum arcu pharetra a.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis blanditiis asperiores et! Consequuntur similique, cum nesciunt, reiciendis est, dolor deserunt maiores aliquam ipsam vel natus autem tenetur omnis ducimus sunt.</p>
+      <p>Aliquam erat volutpat. Donec at magna eget sem condimentum placerat. Mauris at arcu nec urna faucibus tincidunt.</p>
+  </article>
+</section>
+
+  <div class="news-section-divider"></div>
+
+  <!-- Veja também... -->
+  <section class="also">
+    <h2 class="section-also-title">Veja também...</h2>
+    <div class="container py-4">
+      <div class="row">
+          <!-- Card 1 -->
+          <div class="col-md-6">
+              <div class="card bg-dark text-light">
+                  <a href="noticia1.html">
+                      <img src="assets/img/journal_card_1.webp" class="card-img-top" alt="Imagem Notícia 1">
+                  </a>
+                  <div class="card-body">
+                      <a href="noticia1.html" class="text-decoration-none text-light">
+                          <h5 class="card-title fw-bold">Rich Mix Film Fix: Sci-fi, Spies e Strangelove</h5>
+                      </a>
+                      <p class="card-text">Março traz a volta do visionário diretor Bong Joon-ho...</p>
+                      <a href="noticia1.html" class="btn btn-outline-light">Ver Mais</a>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Card 2 -->
+          <div class="col-md-6">
+              <div class="card bg-dark text-light">
+                  <a href="noticia2.html">
+                      <img src="assets/img/journal_card_2.webp" class="card-img-top" alt="Imagem Notícia 2">
+                  </a>
+                  <div class="card-body">
+                      <a href="noticia2.html" class="text-decoration-none text-light">
+                          <h5 class="card-title fw-bold">Novos filmes no DCA Cinema a partir de 7 de março</h5>
+                      </a>
+                      <p class="card-text">Bong Joon-ho retorna às telonas com uma mistura...</p>
+                      <a href="noticia2.html" class="btn btn-outline-light">Ver Mais</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</section>
+
   </main>
 
   <footer id="footer" class="footer py-4"> <!--Decidir a cor-->
