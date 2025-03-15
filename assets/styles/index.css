@@ -15,15 +15,29 @@
   --color-divider: #666;
   --color-darkgrey: #2b2b2b;
   --color-grey: #333333;
+  --color-button: #84b0df;
 }
 
 html{
   scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
-background-color: var(--color-background);
+  background-color: var(--color-background);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
+
+main {
+  flex-grow: 1;
+}
+
 
 /* Hero Background e Foreground */
 
@@ -245,4 +259,8 @@ footer {
   color: var(--color-light);
   text-decoration: none;
   font-size: 1.1rem;
+}
+
+.footer {
+  margin-top: auto;
 }

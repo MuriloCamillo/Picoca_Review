@@ -1,0 +1,51 @@
+/* Estilo do formulário */
+.login-body {
+    background-color: var(--color-grey);
+}
+
+.formulario-login {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--color-lightgrey);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos campos do formulário */
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.formulario-login .form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-check-label {
+    font-size: 14px;
+}
+
+.form-button {
+    text-align: center;
+}
+
+/* Estilo do botão de submit */
+.btn-primary {
+    background-color: var(--color-button);
+    border-color: var(--color-button);
+    padding: 10px 40px;
+    margin-top: 1rem;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
