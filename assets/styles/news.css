@@ -1,7 +1,8 @@
-body {
+.news-body {
   background-color: var(--color-grey); /* Trocar a cor? */
 }
 
+/* Textos */
 .journal-link {
 color:var(--color-lightgrey); /*Trocar a cor*/
 font-size: 1.2rem;
@@ -47,10 +48,33 @@ h5 {
   height: 360px; /* Proporção de 16:9 (640px x 360px) */
 }
 
+/* Seção Veja Também */
 .section-also-title{
+  color: var(--color-light);
   margin-top: 1rem;
   text-align: center;
-  color: var(--color-light);
+}
+
+/* Cards do Veja Também */
+.card { /* Definir a cor de fundo, ou a var darkgrey ou #212529 */
+  border: none;
+  max-width: 320px; /* Define um tamanho máximo para os cards */
+  margin: auto;     /* Centraliza os cards */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03); /* Efeito de zoom ao passar o mouse */
+}
+
+.card-img-top {
+  object-fit: cover; 
+  height: 180px;     /* Define uma altura fixa */
+  width: 100%;       /* Mantém a largura total do card */
+}
+
+.btn-outline-light {
+  border-radius: 999px; 
 }
 
 .news-section-divider{

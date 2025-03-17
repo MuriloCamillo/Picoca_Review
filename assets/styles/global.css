@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+/* Lê, se for usar coloração tenta padronizar, deixar como variável e como hexadecimal */
+:root { 
+  --color-background: #1A1A1A;
+  --color-button: #84b0df;
+  --color-darkgrey: #2b2b2b;
+  --color-divider: #666;
+  --color-grey: #333333;
+  --color-lightgrey: #D3D3D3;
+  --color-light: #eaeaea;
+  --color-white: #fff;
+}
+
+html{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .gallery {
+    align-items: center; /* Centraliza os itens */
+    flex-direction: column; /* Empilha os pôsteres */
+  }
+
+  .poster {
+    max-width: 250px; /* Limita o tamanho máximo */
+    width: 90%; /* Pega quase toda a largura da tela */
+  }
+}
+
+/* Títulos das seções */
+.section-trends-title, .section-ranked-title, .section-journal-title, .section-benefits-title{
+  color: var(--color-light);
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  /* Ver pra mexer na font-height */
+}
+
+/* Textos das seções */
+.section-trends-text, .section-ranked-text, .section-journal-text, .section-benefits-text{
+  color: var(--color-lightgrey);
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Quebra de Linha Personalizada */
+.section-divider { /* <div class="section-divider"></div> */
+  margin: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.section-divider::before {
+  background: var(--color-divider);
+  content: "";
+  height: 2px;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-darkgrey); /* Decidir a cor de fundo, essa ou #212529 */
+  color: var(--color-light);
+  padding: 5rem 0;
+}
+
+.footer-text {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.footer-title {
+  color: var(--color-lightgrey);
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.fab {
+  font-size: 1.2rem;
+}
+
+.footer-link {
+  color: var(--color-light);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.footer {
+  margin-top: auto;
+}

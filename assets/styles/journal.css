@@ -1,7 +1,30 @@
-body {
+.journal-body {
   background-color: var(--color-grey); /* Trocar a cor? */
 }
 
+/* Cards das notícias */
+.card { /* Definir a cor de fundo, ou a var darkgrey ou #212529 */
+  border: none;
+  max-width: 320px; /* Define um tamanho máximo para os cards */
+  margin: auto;     /* Centraliza os cards */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03); /* Efeito de zoom ao passar o mouse */
+}
+
+.card-img-top {
+  height: 180px;     /* Define uma altura fixa */
+  object-fit: cover; 
+  width: 100%;       /* Mantém a largura total do card */
+}
+
+.btn-outline-light {
+  border-radius: 999px; 
+}
+
+/* Espaçamento dos cards das notícias */
 .row .col-md-4 {
   margin-bottom: 2.5rem; /* Ajustar o valor conforme necessário */
 }
