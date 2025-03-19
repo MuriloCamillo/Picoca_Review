@@ -1,5 +1,5 @@
 /* Layout de Base */
-.login-body {
+.signup-body {
     min-height: 80vh;
     display: flex;
     flex-direction: column;
@@ -7,76 +7,86 @@
     color: var(--color-white);
 }
 
-.login-title {
+.signup-title {
     text-align: center;
     margin-top: 3rem;
 }
 
-.formulario-login {
+.formulario-cadastro {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem;
+    padding: 3rem;
 }
 
 /* Layout do formulário */
-.formulario-login form {
+.formulario-cadastro form {
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
     width: 100%;
-    max-width: 400px;
+    max-width: 800px;
 }
 
 /* Elementos do formulário */
-.formulario-login .form-label {
+.formulario-cadastro .form-label {
     color: var(--color-white);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Campos de entrada */
-.formulario-login .form-control {
+.formulario-cadastro .form-control {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-white);
     transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
 }
 
-.formulario-login .form-control:focus {
+.formulario-cadastro .form-control:focus {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 0 0.25rem rgba(150, 152, 235, 0.25);
 }
 
-/* Checkbox */
-.formulario-login .form-check-label {
+.formulario-cadastro .input-group-text {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-white);
 }
 
-.formulario-login .form-check-input {
+/* Botão */
+.formulario-cadastro .btn-primary {
+    background-color: var(--color-blue);
+    border: none;
+    padding: 0.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.formulario-cadastro .btn-primary:hover {
+    background-color: var(--color-button);
+    transform: translateY(-2px);
+}
+
+/* Checkbox */
+.formulario-cadastro .form-check-label {
+    color: var(--color-white);
+}
+
+.formulario-cadastro .form-check-input {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-.formulario-login .form-check-input:checked {
+.formulario-cadastro .form-check-input:checked {
     background-color: var(--color-blue);
 }
 
-/* Botão */
-.formulario-login .btn-primary {
-    background-color: var(--color-blue);
-    border: none;
-    width: 100%;
-    padding: 0.5rem 2rem;
-    margin-top: 1.5rem;
-    transition: all 0.3s ease;
+.valid-feedback {
+    color: #198754;
 }
 
-.formulario-login .btn-primary:hover {
-    background-color: var(--color-button);
-    transform: translateY(-2px);
+.invalid-feedback {
+    color: #dc3545;
 }

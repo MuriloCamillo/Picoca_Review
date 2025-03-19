@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <!-- Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +21,11 @@
     <!-- Estilos Locais -->
     <link rel="stylesheet" href="assets/styles/global.css">
     <link rel="stylesheet" href="assets/styles/nav.css">
-    <link rel="stylesheet" href="assets/styles/login.css">
-    
+    <link rel="stylesheet" href="assets/styles/sign_up.css">
+
 </head>
 
-<body class="login-body">
+<body class="signup-body">
 
     <header>
         <nav class="navbar navbar-expand-lg">
@@ -62,28 +63,97 @@
       </header>
 
 <main>
-  <!-- Formulário de login -->
-    <h3 class="login-title">Entre com a sua conta:</h3>
+  <!-- Formulário de cadastro -->
+  <h3 class="signup-title">Faça o seu cadastro:</h3>
   
-  <section class="formulario-login">
-    <form>
-        <div class="form-group">
-          <label for="input-email">Email</label>
-          <input type="email" class="form-control" aria-label="Email">
+  <section class="formulario-cadastro">
+    <!-- Campo de Nome -->
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label for="first-name" class="form-label">Primeiro nome</label>
+          <input type="text" class="form-control" required>
+          <div class="valid-feedback">
+            Ok!
+          </div>
         </div>
-        <div class="form-group">
-          <label for="input-senha">Senha</label>
-          <input type="password" class="form-control">
+
+        <!-- Campo de Sobrenome -->
+        <div class="col-md-4">
+          <label for="last-name" class="form-label">Último nome</label>
+          <input type="text" class="form-control" required>
+          <div class="valid-feedback">
+            Ok!
+          </div>
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input">
-          <label class="form-check-label" for="check-me">Não sou um robô</label>
+
+        <!-- Campo de Username -->
+        <div class="col-md-4">
+          <label for="username" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Escolha um nome de usuário.
+            </div>
+          </div>
         </div>
-        <div class="form-button"> 
-            <button type="submit" class="btn btn-primary">Entrar</button>
+
+        <!-- Campo de email -->
+        <div class="col-md-6">
+            <label for="validationEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="validationEmail" required>
+            <div class="invalid-feedback">
+                Por favor, insira um email válido.
+            </div>
+        </div>
+
+        <!-- Confirmação de email -->
+        <div class="col-md-6">
+            <label for="validationEmailConfirm" class="form-label">Confirmar Email</label>
+            <input type="email" class="form-control" id="validationEmailConfirm" required>
+            <div class="invalid-feedback">
+                Os emails não correspondem.
+            </div>
+        </div>
+
+        <!-- Campo de senha -->
+        <div class="col-md-6">
+            <label for="validationPassword" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="validationPassword" required>
+            <div class="invalid-feedback">
+                A senha deve ter no mínimo 8 caracteres.
+            </div>
+        </div>
+
+        <!-- Confirmação de senha -->
+        <div class="col-md-6">
+            <label for="validationPasswordConfirm" class="form-label">Confirmar Senha</label>
+            <input type="password" class="form-control" id="validationPasswordConfirm" required>
+            <div class="invalid-feedback">
+                As senhas não correspondem.
+            </div>
+        </div>
+        
+        <!-- Termos e Condições -->
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Concordo com os Termos e Condições.
+            </label>
+            <div class="invalid-feedback">
+              Você deve concordar antes de enviar.
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão de cadastro -->
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Cadastrar</button>
         </div>
       </form>
-    </section>
+  </section>
+
 </main>
     
 <footer id="footer" class="footer py-4"> <!--Decidir a cor-->
