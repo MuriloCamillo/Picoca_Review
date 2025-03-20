@@ -136,3 +136,95 @@
 .section-journal-link {
   color: var(--color-lightgrey);
 }
+
+/* Estilos para o Accordion na seção benefits */
+.accordion-item.card-custom {
+  background-color: var(--color-darkgrey);
+  border: none;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.3s ease;
+}
+
+/* Estilo padrão para o botão do accordion (estado normal) */
+.accordion-button {
+  background-color: var(--color-darkgrey);
+  color: var(--color-white);
+  font-weight: 500;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Quando o botão está aberto (não colapsado) */
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-darkgrey);
+  color: var(--color-white);
+  box-shadow: none;
+}
+
+/* Quando o mouse está sobre o item do accordion */
+.accordion-item.card-custom:hover .accordion-button,
+.accordion-item.card-custom:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* Remover a borda de foco */
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Personalizar a seta do accordion para branco */
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transition: all 0.3s ease;
+}
+
+/* Estilo do corpo do accordion */
+.accordion-body {
+  background-color: var(--color-darkgrey);
+  color: var(--color-light);
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Quando o accordion está aberto e o mouse está em cima */
+.accordion-item.card-custom:hover .accordion-body {
+  background-color: var(--color-blue);
+}
+
+/* Configuração do container de benefícios */
+.benefits-container.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Efeito de elevação ao passar o mouse */
+.accordion-item.card-custom:hover {
+  transform: translateY(-3px);
+}
+
+/* Ajuste para telas maiores */
+@media (min-width: 768px) {
+  .benefits-container.accordion {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .accordion-item.card-custom {
+    flex: 0 0 30%;
+  }
+}

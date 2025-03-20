@@ -104,28 +104,62 @@
 <div class="section-divider"></div>
 
 <!-- Seção Benefícios --> <!-- Colocar os links quando pronto -->
+<!-- Seção Benefícios com Accordion -->
 <section class="section-benefits">
-  <h2 class="section-benefits-title">Aqui você pode...</h2>
-  <div class="benefits-container">
-      <a href="#" class="card-custom">
-          <div class="icon">👀</div>
-          <p>Controlar todos as séries que você já assistiu</p>
-          <p>Não se perca na suas séries!</p>
-      </a>
-      <a href="#" class="card-custom">
-          <div class="icon">⭐</div>
-          <p>Avaliar as séries com um sistema de 5 estrelas</p>
-          <p>Rever ou não rever a série? Eis a questão</p>
-      </a>
-      <a href="#" class="card-custom">
-          <div class="icon">📝</div>
-          <p>Acompanhar as notícias de suas séries favoritas</p>
-          <p>Saber quando vai sair a nova temporada!</p>
-      </a>
-  </div>
-  <p class="section-benefits-text">Não deixe de criar sua conta!</p> <!--Adcionar no Css-->
-</section>
-
+    <h2 class="section-benefits-title">Aqui você pode...</h2>
+    
+    <div class="accordion benefits-container" id="benefitsAccordion">
+      <!-- Card 1 -->
+      <div class="accordion-item card-custom">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <div class="icon">👀</div>
+            <span class="ms-2">Controlar todos as séries que você já assistiu</span>
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#benefitsAccordion">
+          <div class="accordion-body">
+            <p>Não se perca na suas séries!</p>
+            <p>Mantenha um registro organizado de todas as séries que você já assistiu, está assistindo ou planeja assistir. Você pode categorizar por gênero, plataforma e status.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="accordion-item card-custom">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <div class="icon">⭐</div>
+            <span class="ms-2">Avaliar as séries com um sistema de 5 estrelas</span>
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#benefitsAccordion">
+          <div class="accordion-body">
+            <p>Rever ou não rever a série? Eis a questão</p>
+            <p>Dê sua opinião e classifique suas séries favoritas. Compare suas avaliações com outros usuários e descubra novas recomendações baseadas em seus gostos.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="accordion-item card-custom">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <div class="icon">📝</div>
+            <span class="ms-2">Acompanhar as notícias de suas séries favoritas</span>
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#benefitsAccordion">
+          <div class="accordion-body">
+            <p>Saber quando vai sair a nova temporada!</p>
+            <p>Fique por dentro das últimas novidades, datas de estreia, trailers e bastidores das suas séries favoritas. Nunca mais perca o lançamento de uma nova temporada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <p class="section-benefits-text">Não deixe de criar sua conta!</p>
+  </section>
 <div class="section-divider"></div>
 
 <!-- Seção ranked --> <!-- Colocar os links quando pronto -->
