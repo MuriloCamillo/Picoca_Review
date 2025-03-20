@@ -53,9 +53,9 @@
 .gallery {
   display: flex;
   flex-wrap: wrap; /* Permite que os itens quebrem para novas linhas */
-  gap: 15px;
+  gap: 0.9375rem;
   justify-content: center; /* Centraliza os pôsteres */
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .poster {
@@ -81,9 +81,9 @@
 .benefits-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1.25rem;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .card-custom {
@@ -94,7 +94,7 @@
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 1rem;
-  padding: 20px;
+  padding: 1.25rem;
   text-decoration: none;
   text-align: center;
   transition: 0.3s;
@@ -103,7 +103,7 @@
 .card-custom .icon {
   display: block;
   font-size: 1.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .card-custom:hover {
@@ -154,7 +154,7 @@
   background-color: var(--color-darkgrey);
   color: var(--color-white);
   font-weight: 500;
-  padding: 15px 20px;
+  padding: 0.9375rem 1.25rem;
   display: flex;
   align-items: center;
   border: none;
@@ -181,7 +181,7 @@
   border-color: transparent;
 }
 
-/* Personalizar a seta do accordion para branco */
+/* Cor da seta do accordion */
 .accordion-button::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   transition: all 0.3s ease;
@@ -191,8 +191,8 @@
 .accordion-body {
   background-color: var(--color-darkgrey);
   color: var(--color-light);
-  padding: 15px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.9375rem 1.25rem;
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
 }
 
 /* Quando o accordion está aberto e o mouse está em cima */
@@ -206,7 +206,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
 }
 
@@ -221,7 +221,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
   }
   
   .accordion-item.card-custom {

@@ -6,7 +6,7 @@
 
 .navbar {
   background-color: var(--color-background); /* Cor de fundo da navbar */
-  padding: 15px 0;
+  padding: 0.9375rem 0;
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transição suave para sombra e efeito de transformação */
 }
 
@@ -21,7 +21,7 @@
 }
 
 .navbar-nav .nav-item {
-  margin: 0 10px;
+  margin: 0 0.625rem;
 }
 
 /* Links/textos */

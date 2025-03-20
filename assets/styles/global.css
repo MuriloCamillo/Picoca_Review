@@ -73,7 +73,7 @@ main {
 
 /* Quebra de Linha Personalizada */
 .section-divider { /* <div class="section-divider"></div> */
-  margin: 10px;
+  margin: 0.625rem;
   position: relative;
   text-align: center;
 }
