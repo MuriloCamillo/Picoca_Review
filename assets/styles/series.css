@@ -1,0 +1,373 @@
+.serie-body {
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Seção de Banner da Série */
+.serie-hero {
+  margin-bottom: 1.875rem;
+  padding-top: 3.125rem;
+  position: relative;
+}
+
+.backdrop-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.backdrop-image {
+  background-image: url('/assets/img/demolidor_serie.webp');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.backdrop-overlay {
+  background: linear-gradient(to bottom, rgba(20, 24, 28, 0.5) 0%, var(--color-background) 100%);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.content-container {
+  padding-top: 7.5rem;
+}
+
+/* Poster da Série */
+.poster-container {
+  margin-bottom: 1.25rem;
+}
+
+.serie-poster {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  max-width: 300px; /* Deixar para limitar o tamanho em telas menores  */
+  width: 100%;
+}
+
+.serie-stats {
+  color: var(--color-lightgrey);
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: space-between;
+  margin-top: 0.625rem;
+}
+
+/* Informações da Série */
+.serie-info {
+  padding: 0 1.25rem;
+}
+
+.serie-title {
+  color: var(--color-lightgrey);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3125rem;
+}
+
+.serie-year {
+  color: var(--color-lightgrey);
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.serie-director {
+  color: var(--color-lightgrey);
+  font-size: 1rem;
+  margin-bottom: 0.9375rem;
+}
+
+.serie-tagline {
+  color: var(--color-lightgrey);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.9375rem;
+}
+
+.serie-synopsis {
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5625rem;
+}
+
+.serie-status {
+  color: var(--color-inproduction);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Guias de Informação */
+.serie-tabs {
+  margin-bottom: 1.25rem;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.9375rem;
+}
+
+.nav-tabs .nav-link {
+  background: transparent;
+  border: none;
+  color: var(--color-lightgrey);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.625rem 0.9375rem;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--color-light);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--accent-color);
+  background: transparent;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Listas nas Abas */
+.cast-list, .genres-list, .seasons-list, .watch-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cast-item, .genre-item, .season-item, .watch-item {
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  color: var(--color-lightgrey);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
+  padding: 0.3125rem 0.625rem;
+}
+
+.cast-item:hover, .genre-item:hover, .season-item:hover, .watch-item:hover {
+  background-color: rgba(44, 52, 64, 0.8);
+}
+
+/* Área de Ações do Usuário (Like,Watchlist,Avaliar) */
+.user-actions {
+  background-color: rgba(44, 52, 64, 0.3);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.25rem;
+}
+
+.action-btn {
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  padding: 0.625rem;
+}
+
+.action-btn i {
+  font-size: 1.5rem;
+  margin-bottom: 0.3125rem;
+}
+
+.like-btn:hover {
+  color: var(--color-like);
+}
+
+.watchlist-btn:hover {
+  color: var(--color-watchlist);
+}
+
+/* .like-btn:hover i {
+  color: var(--color-like);
+}
+
+.watchlist-btn:hover i {
+  color: var(--color-watchlist);
+} */
+
+/* Área de Rating */
+.rating-container {
+  text-align: center;
+  margin-bottom: 1.875rem;
+}
+
+.rating-container h6 {
+  color: var(--color-lightgrey);
+  margin-bottom: 0.625rem;
+}
+
+.stars {
+  color: #555; /*Ver qual cor deixar - estrela quando vazia*/
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: space-between;
+}
+
+.stars i:hover {
+  color: var(--color-star);
+  cursor: pointer;
+}
+
+/* Rating da Comunidade */
+.community-rating {
+  text-align: center;
+}
+
+.community-rating h6 {
+  color: var(--color-lightgrey);
+  margin-bottom: 0.625rem;
+}
+
+.rating-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-text {
+  color: var(--color-light);
+  font-size: 1.5rem;
+}
+
+.average-rating {
+  color: var(--color-light);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+}
+
+.rating-bar {
+  margin-bottom: 0.625rem;
+  width: 100%;
+}
+
+.bar-container {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+}
+
+.bar {
+  align-self: flex-end;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  width: 8px;
+}
+
+.fans-count {
+  color: var(--color-lightgrey);
+  font-size: 0.8rem;
+}
+
+/* Seção de Trailer */
+.trailer-section {
+  background-color: var(--secondary-color);
+  padding: 1.875rem 0;
+}
+
+.section-title {
+  color: var(--color-lightgrey);
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* Responsividade */
+
+/* Para telas médias */
+@media (max-width: 991px) {
+  .poster-container {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .serie-poster {
+    max-width: 250px;
+  }
+}
+
+/* Para telas pequenas */
+@media (max-width: 767px) {
+  .serie-poster {
+    max-width: 200px;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 575px) {
+  .serie-poster {
+    max-width: 180px;
+  }
+}
+
+/* Responsividade do Rating */
+
+/* Ajustes para o rating em diferentes tamanhos de tela */
+@media (max-width: 991px) {
+  .average-rating {
+    font-size: 1.8rem;
+  }
+  
+  .bar-container {
+    height: 70px;
+  }
+  
+  .stars {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .user-actions {
+    padding: 15px;
+  }
+  
+  .average-rating {
+    font-size: 1.5rem;
+  }
+  
+  .bar-container {
+    height: 60px;
+  }
+  
+  .stars {
+    font-size: 1.3rem;
+  }
+  
+  .action-buttons {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .average-rating {
+    font-size: 1.3rem;
+  }
+  
+  .bar-container {
+    height: 50px;
+  }
+  
+  .bar {
+    width: 6px;
+  }
+  
+  .stars {
+    font-size: 1.1rem;
+  }
+}
