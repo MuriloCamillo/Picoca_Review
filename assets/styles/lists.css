@@ -1,0 +1,82 @@
+.listas-body {
+  background-color: var(--color-grey); /* Cor de fundo da página */
+}
+
+.section-listas {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.listas-title {
+  color: var(--color-light); /* Cor do título "Suas Listas!" */
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.watchlist-section {
+  margin-bottom: 2rem;
+}
+
+.watchlist-title {
+  color: var(--color-light); /* Cor do título "Quero Assistir" */
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos do Carrossel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px; /* Defina a largura máxima do carrossel */
+  margin: 0 auto; /* Centraliza o carrossel */
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 180px; /* Largura dos pôsteres */
+  margin-right: 1rem; /* Espaçamento entre os pôsteres */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-lightgrey);
+  cursor: pointer;
+}
+
+.carousel-control.prev {
+  left: 0;
+}
+
+.carousel-control.next {
+  right: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%; /* Ocupa a largura total em telas menores */
+  }
+
+  .carousel-item {
+    width: 120px; /* Reduz a largura dos pôsteres em telas menores */
+  }
+}

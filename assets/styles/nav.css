@@ -64,3 +64,34 @@
 .navbar-toggler {
   border-color: white; /* Torna a borda do botão branca */
 }
+
+/* Parte do DropDown Menu */
+
+#user-name{
+  color: var(--color-lightgrey);
+}
+
+#user-name:hover {
+  color: #ffffff; /* Cor clara ao passar o mouse */
+}
+
+.dropdown-menu {
+  background-color: var(--color-darkgrey); 
+  border: 1px solid var(--color-divider); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.dropdown-item {
+  color: var(--color-lightgrey); 
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-blue); /* Cor de fundo ao passar o mouse */
+  color: var(--color-white); /* Cor do texto ao passar o mouse */
+}
+
+.dropdown-toggle::after {
+  border-top-color: var(--color-lightgrey); /* Altera a cor da seta para a cor clara */
+}
+
