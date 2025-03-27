@@ -1,3 +1,6 @@
+/* === SEU CSS ORIGINAL DE series.css VEM AQUI === */
+/* Coloque todo o conteúdo do seu arquivo assets/styles/series.css aqui */
+
 .serie-body {
   background-color: var(--color-background);
   display: flex;
@@ -23,7 +26,7 @@
 }
 
 .backdrop-image {
-  background-image: url('/assets/img/demolidor_serie.webp');
+  /* background-image é definido via JS */
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -64,11 +67,12 @@
 
 /* Informações da Série */
 .serie-info {
+  color: var(--color-light); /* Cor padrão para textos dentro de .serie-info */
   padding: 0 1.25rem;
 }
 
 .serie-title {
-  color: var(--color-lightgrey);
+  color: var(--color-lightgrey); /* Sobrescreve se necessário */
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.3125rem;
@@ -81,28 +85,29 @@
 }
 
 .serie-director {
-  color: var(--color-lightgrey);
+  /* color: var(--color-lightgrey); */ /* Herda de .serie-info */
   font-size: 1rem;
   margin-bottom: 0.9375rem;
 }
 
 .serie-tagline {
-  color: var(--color-lightgrey);
+ /* color: var(--color-lightgrey); */ /* Herda de .serie-info */
   font-size: 1.1rem;
-  font-weight: 600;
+  font-style: italic; /* Adicionado para diferenciar */
   margin-bottom: 0.9375rem;
 }
 
-.serie-synopsis {
-  color: #ddd;
+.serie-synopsis p {
+  /* color: #ddd; */ /* Herda de .serie-info */
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1.5625rem;
 }
 
 .serie-status {
-  color: var(--color-inproduction);
+  /* A cor será definida pelas classes específicas abaixo */
   font-size: 1rem;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
@@ -142,17 +147,18 @@
   gap: 10px;
 }
 
-.cast-item, .genre-item, .season-item, .watch-item {
+.cast-item, .genres-item, .seasons-item, .watch-item {
   background-color: var(--secondary-color);
   border-radius: 4px;
   color: var(--color-lightgrey);
-  cursor: pointer;
-  font-size: 1rem;
+  cursor: default; /* Ou pointer se quiser que pareçam clicáveis */
+  font-size: 0.9rem; /* Ajustado para consistência */
   margin-bottom: 0.625rem;
   padding: 0.3125rem 0.625rem;
+  transition: background-color 0.2s ease;
 }
 
-.cast-item:hover, .genre-item:hover, .season-item:hover, .watch-item:hover {
+.cast-item:hover, .genres-item:hover, .seasons-item:hover, .watch-item:hover {
   background-color: rgba(44, 52, 64, 0.8);
 }
 
@@ -161,6 +167,7 @@
   background-color: rgba(44, 52, 64, 0.3);
   border-radius: 6px;
   padding: 1.25rem;
+  color: var(--color-light); /* Cor padrão para textos aqui */
 }
 
 .action-buttons {
@@ -177,6 +184,8 @@
   display: flex;
   flex-direction: column;
   padding: 0.625rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 .action-btn i {
@@ -184,21 +193,13 @@
   margin-bottom: 0.3125rem;
 }
 
-.like-btn:hover {
+.like-btn:hover, .like-btn.active { /* Adicionado .active para estado persistente */
   color: var(--color-like);
 }
 
-.watchlist-btn:hover {
+.watchlist-btn:hover, .watchlist-btn.active { /* Adicionado .active para estado persistente */
   color: var(--color-watchlist);
 }
-/* Teste */
-/* .like-btn:hover i {
-  color: var(--color-like);
-}
-
-.watchlist-btn:hover i {
-  color: var(--color-watchlist);
-} */
 
 /* Área de Rating */
 .rating-container {
@@ -212,16 +213,29 @@
 }
 
 .stars {
-  color: #555; /*Ver qual cor deixar - estrela quando vazia*/
+  color: #555; /* Cor da estrela vazia */
   display: flex;
   font-size: 1.8rem;
-  justify-content: space-between;
+  justify-content: space-around; /* Ou center/space-between */
 }
 
-.stars i:hover {
-  color: var(--color-star);
+.stars i {
   cursor: pointer;
+  transition: color 0.2s ease;
 }
+
+/* Estilo para estrela preenchida (adicionar/remover via JS) */
+.stars i.filled {
+    color: var(--color-star);
+}
+/* Efeito hover nas estrelas */
+.stars:hover i {
+    color: var(--color-star);
+}
+.stars i:hover ~ i { /* Estrelas após a que está com hover voltam ao normal */
+    color: #555;
+}
+
 
 /* Rating da Comunidade */
 .community-rating {
@@ -240,12 +254,13 @@
 }
 
 .rating-text {
-  color: var(--color-light);
-  font-size: 1.5rem;
+  /* color: var(--color-light); */ /* Herda de .user-actions */
+  font-size: 1rem; /* Ajustado */
+  text-transform: uppercase;
 }
 
 .average-rating {
-  color: var(--color-light);
+  /* color: var(--color-light); */ /* Herda de .user-actions */
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.625rem;
@@ -260,10 +275,10 @@
   display: flex;
   height: 80px;
   justify-content: space-between;
+  align-items: flex-end; /* Alinha barras na base */
 }
 
 .bar {
-  align-self: flex-end;
   background-color: var(--accent-color);
   border-radius: 2px;
   width: 8px;
@@ -272,102 +287,73 @@
 .fans-count {
   color: var(--color-lightgrey);
   font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
 /* Seção de Trailer */
 .trailer-section {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /* Usa a variável definida em global.css */
   padding: 1.875rem 0;
 }
 
 .section-title {
   color: var(--color-lightgrey);
-  font-size: 2.5rem;
+  font-size: 1.8rem; /* Ajustado */
   margin-bottom: 1.25rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
-/* Responsividade */
+/* Status das séries */
+.serie-status.status-inproduction {
+  color: var(--color-inproduction); /* Episódios semanais - Verde */
+}
 
-/* Para telas médias */
+.serie-status.status-renewed {
+  color: var(--color-renewed); /* Renovada - Azul */
+}
+
+.serie-status.status-canceled {
+  color: var(--color-canceled); /* Cancelada - Vermelha */
+}
+
+.serie-status.status-ended {
+  color: var(--color-ended); /* Finalizada - Cinza */
+}
+
+.serie-status.status-waiting {
+  color: var(--color-waiting); /* Aguardando - Amarela */
+}
+
+/* Responsividade (do seu CSS original) */
 @media (max-width: 991px) {
   .poster-container {
     text-align: center;
     margin-bottom: 30px;
   }
-  
-  .serie-poster {
-    max-width: 250px;
-  }
-}
-
-/* Para telas pequenas */
-@media (max-width: 767px) {
-  .serie-poster {
-    max-width: 200px;
-  }
-}
-
-/* Para telas muito pequenas */
-@media (max-width: 575px) {
-  .serie-poster {
-    max-width: 180px;
-  }
-}
-
-/* Responsividade do Rating */
-
-/* Ajustes para o rating em diferentes tamanhos de tela */
-@media (max-width: 991px) {
-  .average-rating {
-    font-size: 1.8rem;
-  }
-  
-  .bar-container {
-    height: 70px;
-  }
-  
-  .stars {
-    font-size: 1.5rem;
-  }
+  .serie-poster { max-width: 250px; }
+  .average-rating { font-size: 1.8rem; }
+  .bar-container { height: 70px; }
+  .stars { font-size: 1.5rem; }
 }
 
 @media (max-width: 767px) {
-  .user-actions {
-    padding: 15px;
-  }
-  
-  .average-rating {
-    font-size: 1.5rem;
-  }
-  
-  .bar-container {
-    height: 60px;
-  }
-  
-  .stars {
-    font-size: 1.3rem;
-  }
-  
-  .action-buttons {
-    margin-bottom: 15px;
-  }
+  .serie-poster { max-width: 200px; }
+  .user-actions { padding: 15px; }
+  .average-rating { font-size: 1.5rem; }
+  .bar-container { height: 60px; }
+  .stars { font-size: 1.3rem; }
+  .action-buttons { margin-bottom: 15px; }
 }
 
 @media (max-width: 575px) {
-  .average-rating {
-    font-size: 1.3rem;
-  }
-  
-  .bar-container {
-    height: 50px;
-  }
-  
-  .bar {
-    width: 6px;
-  }
-  
-  .stars {
-    font-size: 1.1rem;
-  }
+  .serie-poster { max-width: 180px; }
+  .average-rating { font-size: 1.3rem; }
+  .bar-container { height: 50px; }
+  .bar { width: 6px; }
+  .stars { font-size: 1.1rem; }
+  .backdrop-container { height: 350px; } /* Reduz altura do backdrop */
+  .content-container { padding-top: 4rem; }
+  .serie-title { font-size: 1.8rem; }
+  .serie-year { font-size: 1rem; }
 }

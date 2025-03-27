@@ -1,82 +1,97 @@
-.listas-body {
-  background-color: var(--color-grey); /* Cor de fundo da página */
+.lists-body {
+  background-color: var(--color-background);
+  color: var(--color-light);
 }
 
-.section-listas {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+.lists-section {
+  padding: 2rem;
 }
 
-.listas-title {
-  color: var(--color-light); /* Cor do título "Suas Listas!" */
-  font-size: 2.5rem;
+.lists-main-title {
   text-align: center;
+  font-size: 3rem;
   margin-bottom: 2rem;
+  color: var(--color-light);
 }
 
-.watchlist-section {
-  margin-bottom: 2rem;
-}
-
-.watchlist-title {
-  color: var(--color-light); /* Cor do título "Quero Assistir" */
-  font-size: 1.8rem;
+.lists-subtitle {
   text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* Estilos do Carrossel */
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 900px; /* Defina a largura máxima do carrossel */
-  margin: 0 auto; /* Centraliza o carrossel */
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-  flex: 0 0 auto;
-  width: 180px; /* Largura dos pôsteres */
-  margin-right: 1rem; /* Espaçamento entre os pôsteres */
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
   font-size: 2rem;
+  margin-bottom: 1.5rem;
   color: var(--color-lightgrey);
-  cursor: pointer;
 }
 
-.carousel-control.prev {
+.carousel-slide {
+  position: relative;
+}
+
+.poster-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.poster {
+  position: relative;
+  border-radius: 10px;
+  height: 270px;
+  width: 180px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.poster img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.poster:hover {
+  transform: scale(1.1);
+}
+
+.poster-overlay {
+  position: absolute;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.carousel-control.next {
-  right: 0;
+.poster:hover .poster-overlay {
+  opacity: 1;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .carousel-container {
-    max-width: 100%; /* Ocupa a largura total em telas menores */
-  }
+.btn-remove {
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .carousel-item {
-    width: 120px; /* Reduz a largura dos pôsteres em telas menores */
-  }
+.btn-remove:hover {
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.7;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
 }

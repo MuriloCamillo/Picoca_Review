@@ -22,7 +22,7 @@ function updateNavbar() {
 
   if (isUserLoggedIn()) {
       // Usuário logado
-      loginSignup.style.display = 'none';
+      loginSignup.style.display = 'none'; //Se tiver none = não aparece
       registerSignup.style.display = 'none';
       userDropdown.style.display = 'block';
       minhasListas.style.display = 'block';

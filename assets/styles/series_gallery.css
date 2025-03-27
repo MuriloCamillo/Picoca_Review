@@ -1,0 +1,109 @@
+/* Estilos para a página de galeria de séries */
+
+.series-body {
+  background-color: var(--color-grey); /* Reutiliza a cor de fundo global */
+  color: var(--color-light);
+}
+
+.main-title {
+  color: var(--color-light);
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.main-subtitle {
+  color: var(--color-lightgrey);
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.menu-filter {
+text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+/* Estilo dos Botões de Filtro (Inspirado em W3Schools e suas variáveis) */
+#myBtnContainer {
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-grey); /* Cor de fundo padrão */
+  color: var(--color-lightgrey);
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.3125rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Cor ao passar o mouse */
+.filter-btn:hover {
+  background-color: var(--color-blue); /* Cor ao passar o mouse */
+  color: var(--color-white);
+}
+
+/* Cor do botão ativo (selecionado) */
+.filter-btn.active {
+  background-color: var(--color-button); /* Cor do botão ativo */
+  color: var(--color-background);
+}
+
+/* Estilo dos Cards da Galeria (Reutilizando e adaptando .poster) */
+.poster-link {
+  text-decoration: none;
+  display: block; /* Garante que o link ocupe o espaço */
+}
+
+.poster {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: var(--color-darkgrey); /* Fundo enquanto a imagem carrega */
+  aspect-ratio: 2 / 3; /* Proporção comum de posters (ajuste se necessário) */
+  display: flex; /* Para centralizar a imagem caso ela seja menor */
+  align-items: center;
+  justify-content: center;
+}
+
+.poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.poster:hover {
+  transform: scale(1.05); /* Leve aumento no hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Classe para mostrar os elementos (do JS W3Schools) */
+/* Se estiver usando Bootstrap, a classe 'show' pode conflitar.
+   Vamos usar uma classe diferente no JS, como 'show-item' */
+.show-item {
+ /* display: block; */ /* O Bootstrap já cuida disso */
+ animation: fadeIn 0.5s; /* Efeito de fade opcional */
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Opcional: Título abaixo do poster */
+.poster-title {
+    color: var(--color-lightgrey);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
