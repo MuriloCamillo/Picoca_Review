@@ -27,39 +27,43 @@
 <body class="index-body">
 
   <header>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container justify-content-center">
-      <a class="navbar-brand" href="#"><img aria-current="page" src="assets/img/frog-popcorn.webp" alt="Logo" class="d-inline-block align-text-top"></a> <!--Logo/home link-->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>  
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav text-center">
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sign_up.html">Registrar-se</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="series_gallery.html">Séries</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="journal.html">Notícias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#footer">Sobre</a>
-          </li>
-        </ul>
-        <form class="d-flex search-container" role="search" id="formulario">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="search-btn" type="submit"><i class="bi bi-search"></i></button>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container justify-content-center">
+        <a class="navbar-brand" href="index.html"><img aria-current="page" src="assets/img/frog-popcorn.webp" alt="Logo" class="d-inline-block align-text-top"></a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+          <ul class="navbar-nav text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sign_up.html">Registrar-se</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="series_gallery.html">Séries</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="journal.html">Notícias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Sobre</a>
+            </li>
+             </ul>
+  
+          <form class="d-flex search-container position-relative" role="search" id="navbarSearchForm">
+            <input class="form-control me-2" id="navbarSearchInput" type="search" placeholder="Buscar séries..." aria-label="Search" autocomplete="off">
+            <button class="search-btn" type="submit"><i class="bi bi-search"></i></button>
+  
+            <div class="dropdown-menu" id="navbarSearchResults" aria-labelledby="navbarSearchInput" style="width: 100%; top: 100%; left: 0; display: none; max-height: 300px; overflow-y: auto;">
+                </div>
+          </form>
+          </div> </div> </nav>
+  </header>
 
   <main>
     <section class="hero">
@@ -103,8 +107,7 @@
 
 <div class="section-divider"></div>
 
-<!-- Seção Benefícios --> <!-- Colocar os links quando pronto -->
-<!-- Seção Benefícios com Accordion -->
+<!-- Seção Benefícios -->
 <section class="section-benefits">
     <h2 class="section-benefits-title">Aqui você pode...</h2>
     
@@ -185,66 +188,17 @@
           <img src="assets/img/index/ranked/theoffice_ranked.webp" alt="Serie 6">
       </a>
   </div>
-  <p class="section-ranked-text">As melhores séries pelo IMDB</p> <!--Adicionar no Css-->
-</section>
+  <p class="section-ranked-text">As melhores séries pelo IMDB</p> 
 
 <div class="section-divider"></div>
 
-<!-- Seção de Notícias --> <!-- Colocar os links quando pronto --> <!-- Verificar pra trocar a cor dos cards e das letras -->
-<section class="section-journal"> 
+<!-- Seção de Notícias --> 
+<section class="section-journal">
   <h2 class="section-journal-title">Notícias</h2>
   <div class="container py-4">
-    <div class="row">
-        <!-- Card 1 -->
-        <div class="col-md-4">
-            <div class="card bg-dark text-light">
-                <a href="noticia1.html">
-                    <img src="assets/img/index/journal/journal_card_saul.webp" class="card-img-top" alt="Imagem Notícia 1">
-                </a>
-                <div class="card-body">
-                    <a href="noticia1.html" class="text-decoration-none text-light">
-                        <h5 class="card-title fw-bold">"Better Watch Saul !"</h5>
-                    </a>
-                    <p class="card-text">A série do advogado favorito dos criminosos de Albuquerque que conseguiu nota 9+ em TODOS os episódios de sua última temporada. </p>
-                    <a href="noticia1.html" class="btn btn-outline-light">Ver Mais</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-4">
-            <div class="card bg-dark text-light">
-                <a href="noticia2.html">
-                    <img src="assets/img/index/journal/journal_card_overthegardenwall.webp" class="card-img-top" alt="Imagem Notícia 2">
-                </a>
-                <div class="card-body">
-                    <a href="noticia2.html" class="text-decoration-none text-light">
-                        <h5 class="card-title fw-bold">10 anos de jornada jelo desconhecido</h5>
-                    </a>
-                    <p class="card-text">Minissérie da Cartoon Network completa uma década e continua encantando novas gerações com sua atmosfera única.</p>
-                    <a href="noticia2.html" class="btn btn-outline-light">Ver Mais</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-4">
-            <div class="card bg-dark text-light">
-                <a href="noticia3.html">
-                    <img src="assets/img/index/journal/journal_card_flow.webp" class="card-img-top" alt="Imagem Notícia 3">
-                </a>
-                <div class="card-body">
-                    <a href="noticia3.html" class="text-decoration-none text-light">
-                        <h5 class="card-title fw-bold">Gato preto sinal de... Oscar!</h5>
-                    </a>
-                    <p class="card-text">Como o filme Letoniano vencedor do Oscar está ajudando a acabar com a visão negativa associada aos gatos pretos.</p>
-                    <a href="noticia3.html" class="btn btn-outline-light">Ver Mais</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="row" id="index-news-row">
+      </div>
   </div>
-  <!-- Adicionar o link para o journal -->
   <p class="section-journal-text">Para acompanhar mais notícias clique <a class="section-journal-link" href="journal.html">aqui</a></p>
 </section>
 </main>
@@ -289,5 +243,9 @@
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/news_data.js"></script>
+<script src="assets/js/index_loader.js"></script>
+<script src="assets/js/series_data.js"></script>
+<script src="assets/js/navbar_search.js"></script>
 </body>
 </html>

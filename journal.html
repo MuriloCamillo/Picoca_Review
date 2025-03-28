@@ -1,56 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Picoca Review</title>
+  <title>Notícias - Picoca Review</title>
   <link rel="icon" type="image/x-icon" href="assets/img/frog-popcorn.webp">
-
-  <!-- Fontes e CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Estilos Externos (CDNs) -->
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <!-- Estilos Locais -->
   <link rel="stylesheet" href="assets/styles/global.css">
   <link rel="stylesheet" href="assets/styles/nav.css">
-  <link rel="stylesheet" href="assets/styles/journal.css">
-
+  <link rel="stylesheet" href="assets/styles/journal.css"> 
 </head>
 
-<body class="journal-body">
-  
-  <header>
+<body class="journal-body"> <header>
     <nav class="navbar navbar-expand-lg">
       <div class="container justify-content-center">
-        <a class="navbar-brand" href="index.html"><img aria-current="page" src="assets/img/frog-popcorn.webp" alt="Logo" class="d-inline-block align-text-top"></a> <!--Logo/home link-->
+        <a class="navbar-brand" href="index.html"><img aria-current="page" src="assets/img/frog-popcorn.webp" alt="Logo" class="d-inline-block align-text-top"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>  
-  
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav text-center">
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sign_up.html">Registrar-se</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Séries</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Notícias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#footer">Sobre</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="sign_up.html">Registrar-se</a></li>
+            <li class="nav-item"><a class="nav-link" href="series_gallery.html">Séries</a></li>
+            <li class="nav-item"><a class="nav-link" href="journal.html">Notícias</a></li>
+            <li class="nav-item"><a class="nav-link" href="#footer">Sobre</a></li>
           </ul>
           <form class="d-flex search-container" role="search" id="formulario">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -60,153 +39,34 @@
       </div>
     </nav>
   </header>
-  
+
   <main>
-    <section class="section-journal">
-      <h2 class="section-journal-title">Notícias</h2>
-      <p class="section-journal-text">Últimas novidades do mundo cinematográfico.</p>
+    <h1 class="main-title">Notícias</h1>
+    <h2 class="main-subtitle">Últimas novidades do mundo cinematográfico.</h2>
+      <div class="section-divider"></div>
       <div class="container py-4">
-        <div class="row">
-          <!-- Card 1  --> <!--Arrumar os links-->
-          <div class="col-md-4">
-            <div class="card bg-dark text-light">
-              <a href="noticia1.html">
-                <img src="assets/img/index/journal/journal_card_saul.webp" class="card-img-top" alt="Imagem Notícia 1">
-              </a>
-              <div class="card-body">
-                <a href="noticia1.html" class="text-decoration-none text-light">
-                  <h5 class="card-title fw-bold">"Better Watch Saul !"</h5>
-                </a>
-                <p class="card-text">A série do advogado favorito dos criminosos de Albuquerque que conseguiu nota 9+ em TODOS os episódios de sua última temporada.</p>
-                <a href="noticia1.html" class="btn btn-outline-light">Ver Mais</a>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="col-md-4">
-            <div class="card bg-dark text-light">
-              <a href="noticia2.html">
-                <img src="assets/img/index/journal/journal_card_overthegardenwall.webp" class="card-img-top" alt="Imagem Notícia 2">
-              </a>
-              <div class="card-body">
-                <a href="noticia2.html" class="text-decoration-none text-light">
-                  <h5 class="card-title fw-bold">A jornada pelo desconhecido!</h5>
-                </a>
-                <p class="card-text">Minissérie da Cartoon Network completa uma década e continua encantando novas gerações com sua atmosfera única.</p>
-                <a href="noticia2.html" class="btn btn-outline-light">Ver Mais</a>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="col-md-4">
-            <div class="card bg-dark text-light">
-              <a href="noticia3.html">
-                <img src="assets/img/index/journal/journal_card_flow.webp" class="card-img-top" alt="Imagem Notícia 3">
-              </a>
-              <div class="card-body">
-                <a href="noticia3.html" class="text-decoration-none text-light">
-                  <h5 class="card-title fw-bold">Gato preto sinal de... Oscar!</h5>
-                </a>
-                <p class="card-text">Como o filme Letoniano vencedor do Oscar está ajudando a acabar com a visão negativa associada aos gatos pretos.</p>
-                <a href="noticia3.html" class="btn btn-outline-light">Ver Mais</a>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Card 4 -->
-          <div class="col-md-4">
-            <div class="card bg-dark text-light">
-              <a href="noticia4.html">
-                <img src="assets/img/journal_card_1.webp" class="card-img-top" alt="Imagem Notícia 4">
-              </a>
-              <div class="card-body">
-                <a href="noticia4.html" class="text-decoration-none text-light">
-                  <h5 class="card-title fw-bold">Título da Notícia 4</h5>
-                </a>
-                <p class="card-text">Resumo da notícia 4...</p>
-                <a href="noticia4.html" class="btn btn-outline-light">Ver Mais</a>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Card 5 -->
-          <div class="col-md-4">
-            <div class="card bg-dark text-light">
-              <a href="noticia5.html">
-                <img src="assets/img/journal_card_2.webp" class="card-img-top" alt="Imagem Notícia 5">
-              </a>
-              <div class="card-body">
-                <a href="noticia5.html" class="text-decoration-none text-light">
-                  <h5 class="card-title fw-bold">Título da Notícia 5</h5>
-                </a>
-                <p class="card-text">Resumo da notícia 5...</p>
-                <a href="noticia5.html" class="btn btn-outline-light">Ver Mais</a>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Card 6 -->
-          <div class="col-md-4">
-            <div class="card bg-dark text-light">
-              <a href="noticia6.html">
-                <img src="assets/img/journal_card_3.webp" class="card-img-top" alt="Imagem Notícia 6">
-              </a>
-              <div class="card-body">
-                <a href="noticia6.html" class="text-decoration-none text-light">
-                  <h5 class="card-title fw-bold">Título da Notícia 6</h5>
-                </a>
-                <p class="card-text">Resumo da notícia 6...</p>
-                <a href="noticia6.html" class="btn btn-outline-light">Ver Mais</a>
-              </div>
-            </div>
-          </div>
-    
-        </div> <!-- Fecha a row -->
-      </div> <!-- Fecha o container -->
-    </section>
-    
+        <div class="row" id="journal-cards-row">
+          </div> </div> </section>
   </main>
-  <footer id="footer" class="footer py-4"> <!--Decidir a cor-->
+
+  <footer id="footer" class="footer py-4">
     <div class="container text-center">
       <p class="footer-text">Made with
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
       </svg>
       by</p>
-        <div class="row">
-            <!-- Coluna da Esquerda -->
-            <div class="col-md-6 mb-3">
-                <h5 class="footer-title">Letícia Leme</h5>
-                <a href="https://github.com/leticiaaleme" target="_blank" class="footer-link me-3">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/leticiacristinaleme/" target="_blank" class="footer-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-
-            <!-- Coluna da Direita -->
-            <div class="col-md-6 mb-3">
-                <h5 class="footer-title">Murilo Camillo</h5>
-                <a href="https://github.com/MuriloCamillo" target="_blank" class="footer-link me-3">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/murilo-camillo-martins/" target="_blank" class="footer-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        </div>
-
-        <!-- Linha de baixo com Copyright -->
-        <div class="footer-copy">
-            <div class="col text-center mt-3">
-                <p class="mb-0">© 2024 Nome do site - Todos os direitos reservados.</p>
-            </div>
-        </div>
+      <div class="row">
+          <div class="col-md-6 mb-3"><h5 class="footer-title">Letícia Leme</h5><a href="https://github.com/leticiaaleme" target="_blank" class="footer-link me-3"><i class="fab fa-github"></i> GitHub</a><a href="https://www.linkedin.com/in/leticiacristinaleme/" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a></div>
+          <div class="col-md-6 mb-3"><h5 class="footer-title">Murilo Camillo</h5><a href="https://github.com/MuriloCamillo" target="_blank" class="footer-link me-3"><i class="fab fa-github"></i> GitHub</a><a href="https://www.linkedin.com/in/murilo-camillo-martins/" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a></div>
+      </div>
+      <div class="footer-copy"><div class="col text-center mt-3"><p class="mb-0">© 2025 Nome do site - Todos os direitos reservados.</p></div></div>
     </div>
-</footer>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/news_data.js"></script> 
+  <script src="assets/js/journal_loader.js"></script> 
+  <script src="assets/js/series_data.js"></script>
+  <script src="assets/js/navbar_search.js"></script>
 </body>
 </html>

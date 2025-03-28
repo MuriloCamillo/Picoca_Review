@@ -24,11 +24,33 @@ font-size: 1.2rem;
   color:var(--color-lightgrey); /*Trocar a cor*/
   font-size: 1rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .news-article-body {
   color: var(--color-light);
   font-size: 1.1rem;
+}
+
+/* Adicione esta nova regra para a imagem DENTRO do contêiner ratio */
+.news-image-in-ratio {
+  /* Estilos que já estavam sendo aplicados via .img-fluid ou necessários aqui */
+  display: block; /* Garante que a imagem seja um bloco */
+  max-width: 100%; /* Garante que não exceda o contêiner ratio */
+  height: auto;   /* Altura automática inicial */
+
+  /* Para funcionar corretamente DENTRO do .ratio do Bootstrap */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Garante que a imagem caiba inteira, sem cortar */
+  object-fit: contain;
+
+  /* Opcional: Cor de fundo para as barras que podem aparecer */
+  background-color: #111;
 }
 
 h3 {

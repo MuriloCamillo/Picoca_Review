@@ -95,3 +95,106 @@
   border-top-color: var(--color-lightgrey); /* Altera a cor da seta para a cor clara */
 }
 
+
+/* --- Estilos Customizados para Sugestões da Navbar --- */
+
+/* Estilo do Container Principal das Sugestões */
+#navbarSearchResults {
+  background-color: var(--color-darkgrey); /* Cor de fundo (pode ajustar) */
+  border: 1px solid var(--color-divider); /* Borda (pode ajustar ou remover) */
+  border-top: none; /* Remove a borda de cima para conectar melhor visualmente */
+  border-radius: 0 0 8px 8px; /* Cantos arredondados apenas embaixo */
+  margin-top: 0; /* Remove margem padrão do dropdown se houver */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  /* max-height e overflow-y já estão no style inline, mas podem ser movidos para cá */
+  /* max-height: 300px; */
+  /* overflow-y: auto; */
+  z-index: 1050; /* Garante que fique acima de outros elementos */
+}
+
+/* Estilo de Cada Item (Link) da Sugestão */
+#navbarSearchResults .dropdown-item {
+  color: var(--color-lightgrey); /* Cor do texto da sugestão */
+  padding: 0.6rem 1rem; /* Espaçamento interno (ajuste como preferir) */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  white-space: nowrap; /* Impede quebra de linha */
+  overflow: hidden; /* Esconde texto que transborda */
+  text-overflow: ellipsis; /* Mostra '...' para texto longo */
+  text-decoration: none; /* Remove sublinhado do link */
+  border-bottom: 1px solid var(--color-divider); /* Linha separadora sutil entre itens */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+}
+
+/* Remove a borda do último item */
+#navbarSearchResults .dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* Estilo do Item ao Passar o Mouse (Hover) ou Focar */
+#navbarSearchResults .dropdown-item:hover,
+#navbarSearchResults .dropdown-item:focus {
+  background-color: var(--color-blue); /* Cor de fundo no hover/focus */
+  color: var(--color-white); /* Cor do texto no hover/focus */
+  cursor: pointer;
+}
+
+/* Estilo específico para a mensagem "Nenhuma série encontrada" */
+#navbarSearchResults .dropdown-item.disabled {
+  color: var(--color-divider); /* Cor mais apagada */
+  font-style: italic;
+  background-color: transparent; /* Sem fundo no hover */
+  cursor: default; /* Cursor padrão */
+  border-bottom: none; /* Sem borda inferior */
+}
+#navbarSearchResults .dropdown-item.disabled:hover {
+    background-color: transparent; /* Garante que não haja fundo no hover */
+    color: var(--color-divider); /* Mantém a cor apagada */
+}
+
+
+/* --- (Opcional) Estilização da Barra de Rolagem (para Webkit - Chrome/Safari/Edge) --- */
+#navbarSearchResults::-webkit-scrollbar {
+  width: 8px; /* Largura da barra */
+}
+
+#navbarSearchResults::-webkit-scrollbar-track {
+  background: var(--color-darkgrey); /* Fundo da trilha (igual ao container) */
+  border-radius: 10px;
+}
+
+#navbarSearchResults::-webkit-scrollbar-thumb {
+  background-color: var(--color-divider); /* Cor da barra de rolagem */
+  border-radius: 10px;
+  border: 2px solid var(--color-darkgrey); /* Borda em volta da barra (igual ao fundo) */
+}
+
+#navbarSearchResults::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-lightgrey); /* Cor da barra ao passar o mouse */
+}
+
+/* --- (Opcional) Destacar o Termo Buscado (Requer JS + CSS) --- */
+
+/* Se você quiser destacar a parte do texto que corresponde à busca,
+   você precisará modificar o JavaScript para envolver o termo
+   encontrado em uma tag (ex: <strong>) e então adicionar este CSS. */
+
+/* Adicione esta regra CSS */
+#navbarSearchResults .dropdown-item strong {
+  color: var(--color-white); /* Cor do texto destacado */
+  font-weight: bold;
+  /* background-color: rgba(255, 255, 255, 0.1); */ /* Fundo sutil opcional */
+}
+
+/* Modifique esta parte no arquivo assets/js/navbar_search.js */
+/* Dentro do loop 'matches.forEach(([id, serie]) => { ... })',
+   substitua a linha 'link.textContent = serie.title;' por: */
+/*
+   const title = serie.title;
+   // Cria um regex case-insensitive para o termo de busca
+   // Escapa caracteres especiais do regex no termo de busca
+   const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+   const regex = new RegExp(`(${escapedSearchTerm})`, 'gi');
+   // Substitui o termo encontrado por ele mesmo envolto em <strong>
+   const highlightedTitle = title.replace(regex, '<strong>$1</strong>');
+   link.innerHTML = highlightedTitle; // Usa innerHTML para renderizar a tag <strong>
+*/

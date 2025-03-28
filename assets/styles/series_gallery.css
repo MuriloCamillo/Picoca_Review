@@ -1,7 +1,5 @@
-/* Estilos para a página de galeria de séries */
-
 .series-body {
-  background-color: var(--color-grey); /* Reutiliza a cor de fundo global */
+  background-color: var(--color-grey); 
   color: var(--color-light);
 }
 
@@ -28,7 +26,7 @@ text-align: center;
   margin-top: 3rem;
 }
 
-/* Estilo dos Botões de Filtro (Inspirado em W3Schools e suas variáveis) */
+/* Estilo dos Botões de Filtro */
 #myBtnContainer {
   margin-bottom: 2rem;
 }
@@ -57,17 +55,84 @@ text-align: center;
   color: var(--color-background);
 }
 
-/* Estilo dos Cards da Galeria (Reutilizando e adaptando .poster) */
+/* Container que agrupa filtros e busca */
+.filter-search-container {
+  gap: 1rem; /* Espaçamento entre o grupo de botões e a busca */
+}
+
+/* Container da barra de busca */
+.search-series-container {
+  min-width: 250px; /* Largura mínima para a barra de busca */
+}
+
+/* Estilo para o input de busca (opcional, pode usar só form-control) */
+#seriesSearchInput {
+  background-color: var(--color-darkgrey); /* Fundo escuro */
+  color: var(--color-light); /* Texto claro */
+  border: 1px solid var(--color-divider); /* Borda sutil */
+}
+
+#seriesSearchInput::placeholder {
+  color: var(--color-lightgrey); /* Cor do placeholder */
+  opacity: 0.7;
+}
+
+/* Remove o 'X' padrão do input tipo search em alguns navegadores */
+#seriesSearchInput::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Estilo dos Cards da Galeria (O mesmo do .poster do Index.html) */
 .poster-link {
   text-decoration: none;
   display: block; /* Garante que o link ocupe o espaço */
+}
+
+/* Container da busca local */
+.local-search-container {
+  position: relative; 
+  min-width: 250px; 
+}
+
+/* Input da busca local */
+#seriesSearchInput {
+  padding-right: 2.5rem; /* Ajustar o valor conforme o tamanho do ícone */
+  background-color: var(--color-darkgrey);
+  color: var(--color-light);
+  border: 1px solid var(--color-divider);
+}
+
+#seriesSearchInput::placeholder {
+  color: var(--color-lightgrey);
+  opacity: 0.7;
+}
+
+/* Estilo e posicionamento do ícone */
+.local-search-icon {
+  position: absolute; /* Posiciona o ícone sobre o input */
+  right: 10px;        /* Distância da direita */
+  top: 50%;           /* Alinha verticalmente ao centro */
+  transform: translateY(-50%); /* Ajuste fino para centralizar verticalmente */
+  color: var(--color-lightgrey); /* Cor do ícone - ajuste se necessário */
+  opacity: 0.7;       /* Opacidade - ajuste se necessário */
+  pointer-events: none; /* Impede que o ícone bloqueie cliques no input (se sobrepor) */
+}
+
+#seriesSearchInput:focus + .local-search-icon {
+    color: var(--color-white); /* Mudar a cor do ícone */
+    opacity: 1;
+}
+
+.filter-search-container {
+  gap: 1rem;
 }
 
 .poster {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  background-color: var(--color-darkgrey); /* Fundo enquanto a imagem carrega */
+  background-color: var(--color-darkgrey); 
   aspect-ratio: 2 / 3; /* Proporção comum de posters (ajuste se necessário) */
   display: flex; /* Para centralizar a imagem caso ela seja menor */
   align-items: center;
@@ -78,12 +143,21 @@ text-align: center;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  object-fit: cover; 
 }
 
 .poster:hover {
-  transform: scale(1.05); /* Leve aumento no hover */
+  transform: scale(1.05); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Opcional: Título abaixo do poster ?*/
+.poster-title {
+  color: var(--color-lightgrey);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Classe para mostrar os elementos (do JS W3Schools) */
@@ -98,12 +172,28 @@ text-align: center;
   from {opacity: 0;}
   to {opacity: 1;}
 }
+/* Adaptação do botão de filtro para mobile (opcional) */
+@media (max-width: 767px) {
+    .menu-filter {
+        /* Talvez ajustar margens ou display se necessário */
+        text-align: center;
+    }
+    .search-series-container {
+        width: 80%; /* Ocupa mais largura no mobile */
+        margin: 0 auto; /* Centraliza */
+    }
+}
 
-/* Opcional: Título abaixo do poster */
-.poster-title {
-    color: var(--color-lightgrey);
-    font-size: 0.9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* Classe para esconder itens (já existente no seu JS) */
+#seriesList .filterDiv.hide {
+  display: none;
+}
+.show-item {
+  /* display: block; */ /* Bootstrap já cuida disso nas colunas */
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

@@ -61,21 +61,26 @@
 
     <div class="section-divider"></div>
 
-    <div id="myBtnContainer" class="menu-filter">
-      <button class="btn filter-btn active" onclick="filterSelection('all')"> Mostrar Todas</button>
-      <button class="btn filter-btn" onclick="filterSelection('comedia')"> Comédia</button>
-      <button class="btn filter-btn" onclick="filterSelection('drama')"> Drama</button>
-      <button class="btn filter-btn" onclick="filterSelection('animacao')"> Animação</button>
-      <button class="btn filter-btn" onclick="filterSelection('acao')"> Ação</button>
-      <button class="btn filter-btn" onclick="filterSelection('ficcao')"> Ficção</button>
-      </div>
-      <!-- Adicionar mais filtros -->
-       
-    <div class="row gy-4 justify-content-center">
+    <div class="filter-search-container d-flex flex-wrap justify-content-center align-items-baseline mb-4">
+        <div id="myBtnContainer" class="menu-filter me-md-3 mb-3 mb-md-0">
+          <button class="btn filter-btn active" data-filter="all"> Mostrar Todas</button>
+          <button class="btn filter-btn" data-filter="comedia"> Comédia</button>
+          <button class="btn filter-btn" data-filter="drama"> Drama</button>
+          <button class="btn filter-btn" data-filter="animacao"> Animação</button>
+          <button class="btn filter-btn" data-filter="acao"> Ação</button>
+          <button class="btn filter-btn" data-filter="ficcao"> Ficção</button>
+          </div>
 
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv drama acao ficcao">
+          <div class="search-series-container local-search-container">
+            <input type="search" id="seriesSearchInput" class="form-control" placeholder="Buscar por título...">
+            <span class="local-search-icon">
+                <i class="bi bi-search"></i>
+            </span>
+        </div>
+    </div>
+    <div class="row gy-4 justify-content-center" id="seriesList"> <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv drama acao ficcao">
         <a href="series_info_default.html?id=demolidor-renascido" class="poster-link"> <div class="poster">
-            <img src="assets/img/index/trend/demolidor_trend.webp" alt="Demolidor">
+            <img src="assets/img/index/trend/demolidor_trend.webp" alt="Demolidor: Renascido">
           </div>
           </a>
       </div>
@@ -107,7 +112,7 @@
       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia drama">
          <a href="series_info_default.html?id=thewhitelotus" class="poster-link">
            <div class="poster">
-             <img src="assets/img/index/trend/whitelotus_trend.webp" alt="White Lotus">
+             <img src="assets/img/index/trend/whitelotus_trend.webp" alt="The White Lotus">
            </div>
          </a>
       </div>
@@ -127,7 +132,7 @@
           </div>
         </a>
       </div>
-        <!-- Arrumar href -->
+
       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv animacao acao aventura">
         <a href="series_info_default.html?id=fmab" class="poster-link">
           <div class="poster">
@@ -135,15 +140,15 @@
           </div>
         </a>
       </div>
-        <!-- Arrumar href -->
-       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia"> 
+
+       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia">
          <a href="series_info_default.html?id=jury_duty" class="poster-link">
            <div class="poster">
-             <img src="assets/img/index/ranked/juri_ranked.webp" alt="Jury Duty">
+             <img src="assets/img/index/ranked/juri_ranked.webp" alt="Juri Duty">
            </div>
          </a>
       </div>
-      <!-- Arrumar href -->
+
       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv drama crime">
         <a href="series_info_default.html?id=saul" class="poster-link">
           <div class="poster">
@@ -151,7 +156,7 @@
           </div>
         </a>
       </div>
-      <!-- Arrumar href -->
+
       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv animacao comedia acao">
         <a href="series_info_default.html?id=spyxfamily" class="poster-link">
           <div class="poster">
@@ -159,7 +164,7 @@
           </div>
         </a>
       </div>
-      <!-- Arrumar href -->
+
       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia">
         <a href="series_info_default.html?id=the_office" class="poster-link">
           <div class="poster">
@@ -168,10 +173,10 @@
         </a>
       </div>
 
-      </div> 
+      </div>
     </main>
 
-  <footer id="footer" class="footer py-4 mt-3"> <!--Nesse footer tive que deixar uma margem top pra nao colar-->
+  <footer id="footer" class="footer py-4 mt-3">
     <div class="container text-center">
       <p class="footer-text">Made with
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -208,6 +213,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/series_gallery_filter.js"></script>
-
+  <script src="assets/js/series_data.js"></script>
+  <script src="assets/js/navbar_search.js"></script>
   </body>
 </html>
