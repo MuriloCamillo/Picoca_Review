@@ -39,7 +39,7 @@ const seriesData = {
     seasons: ["1ª Temporada - 9 episódios"],
     watchPlatforms: ["Disney+"],
     posterImg: "assets/img/index/trend/demolidor_trend.webp",
-    backdropImg: "assets/img/series_info_bg/demolidorbg.webp", 
+    backdropImg: "assets/img/series_info_bg/demolidor_bg.webp", 
     trailerUrl: "https://www.youtube.com/embed/9KZyUQpihsE" 
   },
   'fallout': {
@@ -55,7 +55,7 @@ const seriesData = {
     seasons: ["1ª Temporada - 8 episódios"],
     watchPlatforms: ["Prime Video"],
     posterImg: "assets/img/index/trend/fallout_trend.webp",
-    backdropImg: "assets/img/series_info_bg/falloutbg.webp",
+    backdropImg: "assets/img/series_info_bg/fallout_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/0kQ8i2FpRDk" 
   },
   'invincible': {
@@ -71,8 +71,8 @@ const seriesData = {
     seasons: ["Temporada 1", "Temporada 2"],
     watchPlatforms: ["Prime Video"],
     posterImg: "assets/img/index/trend/invincible_trend.webp",
-    backdropImg: "assets/img/series_info_bg/invinciblebg.webp", 
-    trailerUrl: "https://www.youtube.com/embed/bfAVpuko5o" //trocar
+    backdropImg: "assets/img/series_info_bg/invincible_bg.webp", 
+    trailerUrl: "https://www.youtube.com/embed/-bfAVpuko5o" 
   },
   'reacher': {
     title: "Reacher",
@@ -87,8 +87,8 @@ const seriesData = {
     seasons: ["1ª Temporada - 8 episódios"],
     watchPlatforms: ["Prime Video"],
     posterImg: "assets/img/index/trend/reacher_trend.webp",
-    backdropImg: "assets/img/series_info_bg/reacherbg.webp",
-    trailerUrl: "https://www.youtube.com/embed/0kQ8i2FpRDk" //trocar
+    backdropImg: "assets/img/series_info_bg/reacher_bg.webp",
+    trailerUrl: "https://www.youtube.com/embed/BPeKW29kJT8" 
   },
   'thewhitelotus': {
     title: "The White Lotus",
@@ -103,8 +103,8 @@ const seriesData = {
     seasons: ["1ª Temporada - 6 episódios"],
     watchPlatforms: ["HBO Max"],
     posterImg: "assets/img/index/trend/whitelotus_trend.webp",
-    backdropImg: "assets/img/series_info_bg/thewhitelotusbg.webp",
-    trailerUrl: "https://www.youtube.com/embed/0kQ8i2FpRDk" //trocar
+    backdropImg: "assets/img/series_info_bg/thewhitelotus_bg.webp",
+    trailerUrl: "https://www.youtube.com/embed/TGLq7_MonZ4" 
   },
   'ruptura': {
     title: "Ruptura",
@@ -119,8 +119,8 @@ const seriesData = {
     seasons: ["1ª Temporada - 9 episódios", "2ª Temporada - 10 episódios"],
     watchPlatforms: ["Apple TV+"],
     posterImg: "assets/img/index/trend/ruptura_trend.webp",
-    backdropImg: "assets/img/series_info_bg/rupturabg.webp",
-    trailerUrl: "https://www.youtube.com/embed/0kQ8i2FpRDk" //trocar
+    backdropImg: "assets/img/series_info_bg/ruptura_bg.webp",
+    trailerUrl: "https://www.youtube.com/embed/EFjc_qHrnsQ"
   },
   // Ranked
   'brooklyn99': {
@@ -136,7 +136,7 @@ const seriesData = {
     seasons: ["1ª Temporada - 22 episódios", "2ª Temporada - 22 episódios"],
     watchPlatforms: ["Peacock"],
     posterImg: "assets/img/index/ranked/b99_ranked.webp",
-    backdropImg: "assets/img/series_info_bg/brooklyn99bg.webp",
-    trailerUrl: "https://www.youtube.com/embed/0kQ8i2FpRDk" //trocar
+    backdropImg: "assets/img/series_info_bg/brooklyn99_bg.webp",
+    trailerUrl: "https://www.youtube.com/embed/q6G_RMGk3vs" 
   }
 };

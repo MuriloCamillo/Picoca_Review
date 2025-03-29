@@ -19,7 +19,7 @@
     linear-gradient(to right, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%), /* Escurecimento esquerdo */
     linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%), /* Escurecimento inferior */
     linear-gradient(to left, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%),  /* Escurecimento direito */
-    url("../img/herobg_flow.webp") no-repeat center center/cover;
+    url("../img/index/herobg_flow.webp") no-repeat center center/cover;
   
   background-size: cover;
   background-position: center;

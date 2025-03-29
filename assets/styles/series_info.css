@@ -292,16 +292,16 @@
 
 /* Seção de Trailer */
 .trailer-section {
-  background-color: var(--secondary-color); /* Usa a variável definida em global.css */
+  background-color: var(--color-grey); /* Usa a variável definida em global.css */
   padding: 1.875rem 0;
 }
 
 .section-title {
   color: var(--color-lightgrey);
   font-size: 1.8rem; /* Ajustado */
+  letter-spacing: 0.3rem;
   margin-bottom: 1.25rem;
   text-align: center;
-  text-transform: uppercase;
 }
 
 /* Status das séries */

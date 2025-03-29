@@ -1,7 +1,7 @@
 /* Logo */
 .navbar-brand img {
   height: auto; /* Mantém a proporção da imagem */
-  width: 3.125rem; /* Ajuste o tamanho conforme necessário */
+  width: 3.5rem; /* Ajuste o tamanho conforme necessário */
 }
 
 .navbar {

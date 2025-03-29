@@ -5,7 +5,7 @@ const newsData = {
         title: "\"Over the Garden Wall\" celebra 10 anos de jornada pelo desconhecido.",
         author: "Maurício Leme",
         date: "12 de Março de 2025",
-        mainImageUrl: "assets/img/index/journal/journal_card_overthegardenwall.webp",
+        mainImageUrl: "assets/img/journal_news/overthegardenwall1.webp",
         mainImageCaption: "Há 10 anos os irmãos Writ e Greg se aventuravam pela primeira vez.",
         summary: "Minissérie da Cartoon Network completa uma década e continua encantando novas gerações com sua atmosfera única.", // <-- RESUMO ADICIONADO
         articleContent: `
@@ -28,7 +28,7 @@ const newsData = {
         title: "Better Watch Saul! - A temporada final impecável.",
         author: "Larissa Martins",
         date: "10 de Março de 2025",
-        mainImageUrl: "assets/img/journal_news/saul2.webp",
+        mainImageUrl: "assets/img/journal_news/saul1.webp",
         mainImageCaption: "A série nos mostra a trajetória de Jimmy McGill / Saul Goodman do início de sua carreira até sua jornada final.",
         summary: "A série do advogado favorito dos criminosos de Albuquerque que conseguiu nota 9+ em TODOS os episódios de sua última temporada.", // <-- RESUMO ADICIONADO
         articleContent: `
@@ -44,7 +44,7 @@ const newsData = {
         title: "Gato preto sinal de... Oscar! 'Flow' e a mudança de perspectiva.",
         author: "Letício Camilla",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/index/journal/journal_card_flow.webp",
+        mainImageUrl: "assets/img/journal_news/flow1.webp",
         mainImageCaption: "O fofo e perspicaz protagonista colaborou com a mudança de perspectiva sobre os gatos pretos.",
         summary: "Como o filme Letoniano vencedor do Oscar está ajudando a acabar com a visão negativa associada aos gatos pretos.", // <-- RESUMO ADICIONADO
         articleContent: `
@@ -59,7 +59,7 @@ const newsData = {
         title: "Uma crítica futurística atual - Filme estrelado por Robert Pattinson trata de assuntos sérios com sutileza e acidez.",
         author: "Cristina Martins",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/index/journal/journal_card_mickey17.webp",
+        mainImageUrl: "assets/img/journal_news/mickey171.webp",
         mainImageCaption: "Mickey em mais um de seus variados trabalhos durante o filme.",
         summary: "O filme do premiado diretor Bong Joon-ho traz de forma sutil, porém cirúrgicas, críticas sobre temas bem atuais.",
         articleContent: `
@@ -74,7 +74,7 @@ const newsData = {
         title: "And (finally) the Oscar goes to... Brasil-sil-sil!",
         author: "Camillo Leme",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/index/journal/journal_card_aindaestouaqui.webp",
+        mainImageUrl: "assets/img/journal_news/aindaestouaqui1.webp",
         mainImageCaption: "O filme foi sucesso de bilheteira e crítica, conquistando o coração do público.",
         summary: "Brasil fatura seu primeiro Oscar na categoria Melhor Filme Internacional, trazendo justiça a Central do Brasil.",
         articleContent: `
@@ -89,7 +89,7 @@ const newsData = {
         title: "O tempo está passando rápido demais...",
         author: "José Ferreira Neto",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/index/journal/journal_card_strangerthings.webp",
+        mainImageUrl: "assets/img/journal_news/strangerthings1.webp",
         mainImageCaption: "A série dos irmãos Duffer foi um grande sucesso, trazendo nostalgia ao público mais velho, e identificação dos mais novos.",
         summary: "Série que teve início em 2016 acompanhou o crescimento de praticamente todo seu elenco.",
         articleContent: `
