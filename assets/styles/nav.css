@@ -1,3 +1,10 @@
+/* Hidden */
+#nav-login-link.hidden,
+#nav-register-link.hidden,
+#nav-user-dropdown.hidden {
+    display: none;
+}
+
 /* Logo */
 .navbar-brand img {
   height: auto; /* Mantém a proporção da imagem */
