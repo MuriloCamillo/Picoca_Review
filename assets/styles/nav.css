@@ -1,8 +1,16 @@
-/* Hidden */
+/* Itens hidden da Navbar */
 #nav-login-link.hidden,
 #nav-register-link.hidden,
 #nav-user-dropdown.hidden {
     display: none;
+}
+
+#nav-username {
+  color: var(--color-lightgrey); 
+}
+
+.navbar-nav .nav-item.dropdown > a.nav-link:hover #nav-username {
+ color: var(--color-white);
 }
 
 /* Logo */
@@ -113,9 +121,6 @@
   border-radius: 0 0 8px 8px; /* Cantos arredondados apenas embaixo */
   margin-top: 0; /* Remove margem padrão do dropdown se houver */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  /* max-height e overflow-y já estão no style inline, mas podem ser movidos para cá */
-  /* max-height: 300px; */
-  /* overflow-y: auto; */
   z-index: 1050; /* Garante que fique acima de outros elementos */
 }
 
@@ -158,8 +163,6 @@
     color: var(--color-divider); /* Mantém a cor apagada */
 }
 
-
-/* --- (Opcional) Estilização da Barra de Rolagem (para Webkit - Chrome/Safari/Edge) --- */
 #navbarSearchResults::-webkit-scrollbar {
   width: 8px; /* Largura da barra */
 }
@@ -179,12 +182,6 @@
   background-color: var(--color-lightgrey); /* Cor da barra ao passar o mouse */
 }
 
-/* --- (Opcional) Destacar o Termo Buscado (Requer JS + CSS) --- */
-
-/* Se você quiser destacar a parte do texto que corresponde à busca,
-   você precisará modificar o JavaScript para envolver o termo
-   encontrado em uma tag (ex: <strong>) e então adicionar este CSS. */
-
 /* Adicione esta regra CSS */
 #navbarSearchResults .dropdown-item strong {
   color: var(--color-white); /* Cor do texto destacado */
@@ -192,16 +189,35 @@
   /* background-color: rgba(255, 255, 255, 0.1); */ /* Fundo sutil opcional */
 }
 
-/* Modifique esta parte no arquivo assets/js/navbar_search.js */
-/* Dentro do loop 'matches.forEach(([id, serie]) => { ... })',
-   substitua a linha 'link.textContent = serie.title;' por: */
-/*
-   const title = serie.title;
-   // Cria um regex case-insensitive para o termo de busca
-   // Escapa caracteres especiais do regex no termo de busca
-   const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-   const regex = new RegExp(`(${escapedSearchTerm})`, 'gi');
-   // Substitui o termo encontrado por ele mesmo envolto em <strong>
-   const highlightedTitle = title.replace(regex, '<strong>$1</strong>');
-   link.innerHTML = highlightedTitle; // Usa innerHTML para renderizar a tag <strong>
-*/
+/* Em assets/styles/global.css ou nav.css */
+
+.logout-toast {
+  position: fixed; /* Fica fixo na tela */
+  bottom: 2rem;     /* Posição: 2rem da parte inferior */
+  left: 50%;       /* Centralizado horizontalmente */
+  transform: translateX(-50%) translateY(150%); /* Começa escondido abaixo */
+  min-width: 250px; /* Largura mínima */
+  z-index: 1056;    /* Garante que fique sobre a maioria dos elementos */
+  background-color: #28a745; /* Cor de sucesso (verde Bootstrap) */
+  /* Ou use uma de suas variáveis: var(--accent-color); */
+  color: white;
+  padding: 0.8rem 1.25rem;
+  border-radius: 0.375rem; /* Bootstrap padrão para .rounded */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s;
+  text-align: center;
+}
+
+/* Classe adicionada via JS para mostrar o toast */
+.logout-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0); /* Desliza para a posição final */
+}
+
+/* Estilo simples para o corpo, pode não ser necessário */
+.logout-toast .toast-body {
+  font-weight: 500;
+}

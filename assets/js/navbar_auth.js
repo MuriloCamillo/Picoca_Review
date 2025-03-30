@@ -52,10 +52,24 @@ function updateNavbarBasedOnLogin() {
 * @param {Event} event - O objeto do evento de clique.
 */
 function handleLogout(event) {
-  event.preventDefault(); // Impede que o link '#' cause navegação
-  localStorage.removeItem('loggedInUser'); // Limpa o status de login
+  event.preventDefault();
+  localStorage.removeItem('loggedInUser');
   console.log("Usuário deslogado.");
-  updateNavbarBasedOnLogin(); // Chama a função para redesenhar a navbar imediatamente
+  updateNavbarBasedOnLogin(); // Atualiza a UI da navbar
+
+  // --- Mostrar Toast Customizado ---
+  const toastElement = document.getElementById('logout-toast');
+  if (toastElement) {
+      toastElement.classList.add('show'); // Adiciona classe para fazer aparecer
+
+      // Define um temporizador para remover a classe 'show' 
+      setTimeout(() => {
+          toastElement.classList.remove('show');
+      }, 2500); // 2500ms = 2.5 segundos
+  } else {
+       console.warn("Elemento #logout-toast não encontrado para feedback de logout.");
+       alert("Logout realizado com sucesso!"); // Fallback para alert
+  }
 }
 
 // --- INICIALIZAÇÃO ---

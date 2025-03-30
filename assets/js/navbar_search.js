@@ -39,7 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
               const link = document.createElement('a');
               link.classList.add('dropdown-item'); // Estilo Bootstrap
               link.href = `series_info_default.html?id=${id}`; // Link para a página da série
-              link.textContent = serie.title;
+              const title = serie.title;
+   // Cria um regex case-insensitive para o termo de busca
+   // Escapa caracteres especiais do regex no termo de busca
+   const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+   const regex = new RegExp(`(${escapedSearchTerm})`, 'gi');
+   // Substitui o termo encontrado por ele mesmo envolto em <strong>
+   const highlightedTitle = title.replace(regex, '<strong>$1</strong>');
+   link.innerHTML = highlightedTitle; // Usa innerHTML para renderizar a tag <strong>
 
               // Adiciona um listener para garantir a navegação antes que o menu se esconda
               link.addEventListener('mousedown', (e) => {
