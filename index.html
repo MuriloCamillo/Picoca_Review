@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Picoca Review</title>
   <link rel="icon" type="image/x-icon" href="assets/img/index/frog-popcorn.webp">
 
-  <!-- Fontes e CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Estilos Externos (CDNs) -->
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <!-- Estilos Locais -->
   <link rel="stylesheet" href="assets/styles/global.css">
   <link rel="stylesheet" href="assets/styles/nav.css">
   <link rel="stylesheet" href="assets/styles/index.css">
-    
+
 </head>
 
 <body class="index-body">
@@ -30,13 +26,13 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container justify-content-center">
         <a class="navbar-brand" href="index.html"><img aria-current="page" src="assets/img/index/frog-popcorn.webp" alt="Logo" class="d-inline-block align-text-top"></a>
-  
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  
+
           <ul class="navbar-nav text-center">
             <li class="nav-item">
               <a class="nav-link" href="login.html">Login</a>
@@ -54,11 +50,11 @@
               <a class="nav-link" href="#footer">Sobre</a>
             </li>
              </ul>
-  
+
           <form class="d-flex search-container position-relative" role="search" id="navbarSearchForm">
             <input class="form-control me-2" id="navbarSearchInput" type="search" placeholder="Buscar séries..." aria-label="Search" autocomplete="off">
             <button class="search-btn" type="submit"><i class="bi bi-search"></i></button>
-  
+
             <div class="dropdown-menu" id="navbarSearchResults" aria-labelledby="navbarSearchInput" style="width: 100%; top: 100%; left: 0; display: none; max-height: 300px; overflow-y: auto;">
                 </div>
           </form>
@@ -68,9 +64,7 @@
   <main>
     <section class="hero">
       <div class="hero-background" alt="Hero Image"></div>
-      <div class="hero-foreground"> <!--Texto que vai ficar por cima da imagem-->
-          <h1 class="hero-foreground-title">Bem vindo ao NomeDoSite!</h1>
-          <p class="hero-foreground-text">
+      <div class="hero-foreground"> <h1 class="hero-foreground-title">Bem vindo ao Picoca Review!</h1> <p class="hero-foreground-text">
               Não se perca nas séries que você já assistiu.
           </p>
           <p class="hero-foreground-text">
@@ -79,40 +73,19 @@
       </div>
   </section>
 
-<!-- Seção Tendências --> 
-  <section class="section-trends">
+<section class="section-trends">
     <h2 class="section-trends-title">Tendências</h2>
-    <div class="gallery">
-      <a href="series_info_default.html?id=demolidor-renascido" class="poster">
-        <img src="assets/img/index/trend/demolidor_trend.webp" alt="Demolidor: Renascido">
-    </a>
-    <a href="series_info_default.html?id=fallout" class="poster">
-        <img src="assets/img/index/trend/fallout_trend.webp" alt="Fallout">
-    </a>
-    <a href="series_info_default.html?id=invincible" class="poster">
-        <img src="assets/img/index/trend/invincible_trend.webp" alt="Invincible">
-    </a>
-        <a href="series_info_default.html?id=reacher" class="poster">
-            <img src="assets/img/index/trend/reacher_trend.webp" alt="Reacher">
-        </a>
-        <a href="series_info_default.html?id=thewhitelotus" class="poster">
-            <img src="assets/img/index/trend/whitelotus_trend.webp" alt="The White Lotus">
-        </a>
-        <a href="series_info_default.html?id=ruptura" class="poster">
-            <img src="assets/img/index/trend/ruptura_trend.webp" alt="Ruptura">
-        </a>
-    </div>
+    <div class="gallery" id="trends-gallery">
+        </div>
     <p class="section-trends-text">As mais comentadas ultimamente!</p>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- Seção Benefícios -->
 <section class="section-benefits">
     <h2 class="section-benefits-title">Aqui você pode...</h2>
-    
+
     <div class="accordion benefits-container" id="benefitsAccordion">
-      <!-- Card 1 -->
       <div class="accordion-item card-custom">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -127,8 +100,7 @@
           </div>
         </div>
       </div>
-      
-      <!-- Card 2 -->
+
       <div class="accordion-item card-custom">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -143,8 +115,7 @@
           </div>
         </div>
       </div>
-      
-      <!-- Card 3 -->
+
       <div class="accordion-item card-custom">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -160,50 +131,28 @@
         </div>
       </div>
     </div>
-    
+
     <p class="section-benefits-text">Não deixe de criar sua conta!</p>
   </section>
 <div class="section-divider"></div>
 
-<!-- Seção ranked --> <!-- Colocar os links quando pronto -->
 <section class="section-ranked">
   <h2 class="section-ranked-title">Mais bem avaliadas</h2>
-  <div class="gallery">
-      <a href="series_info_default.html?id=brooklyn99" class="poster">
-          <img src="assets/img/index/ranked/b99_ranked.webp" alt="Brooklyn 99">
-      </a>
-      <a href="series_info_default.html?id=fmab" class="poster">
-          <img src="assets/img/index/ranked/fmabh_ranked.webp" alt="Fullmetal Alchemist: Brotherhood">
-      </a>
-      <a href="series_info_default.html?id=juri" class="poster">
-          <img src="assets/img/index/ranked/juri_ranked.webp" alt="Jury Duty">
-      </a>
-      <a href="series_info_default.html?id=saul" class="poster">
-          <img src="assets/img/index/ranked/saul_ranked.webp" alt="Better Call Saul">
-      </a>
-      <a href="series_info_default.html?id=spyxfamily" class="poster">
-          <img src="assets/img/index/ranked/spyfamily_ranked.webp" alt="Spy x Family">
-      </a>
-      <a href="series_info_default.html?id=the_office" class="poster">
-          <img src="assets/img/index/ranked/theoffice_ranked.webp" alt="The Office">
-      </a>
-  </div>
-  <p class="section-ranked-text">As melhores séries pelo IMDB</p> 
+   <div class="gallery" id="ranked-gallery">
+      </div>
+  <p class="section-ranked-text">As melhores séries selecionadas para você.</p> </section> <div class="section-divider"></div>
 
-<div class="section-divider"></div>
-
-<!-- Seção de Notícias --> 
 <section class="section-journal">
   <h2 class="section-journal-title">Notícias</h2>
   <div class="container py-4">
     <div class="row" id="index-news-row">
-      </div>
+        </div>
   </div>
   <p class="section-journal-text">Para acompanhar mais notícias clique <a class="section-journal-link" href="journal.html">aqui</a></p>
 </section>
 </main>
 
-  <footer id="footer" class="footer py-4"> 
+  <footer id="footer" class="footer py-4">
     <div class="container text-center">
       <p class="footer-text">Made with
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -211,7 +160,6 @@
       </svg>
       by</p>
         <div class="row">
-            <!-- Coluna da Esquerda -->
             <div class="col-md-6 mb-3">
                 <h5 class="footer-title">Letícia Leme</h5>
                 <a href="https://github.com/leticiaaleme" target="_blank" class="footer-link me-3">
@@ -222,7 +170,6 @@
                 </a>
             </div>
 
-            <!-- Coluna da Direita -->
             <div class="col-md-6 mb-3">
                 <h5 class="footer-title">Murilo Camillo</h5>
                 <a href="https://github.com/MuriloCamillo" target="_blank" class="footer-link me-3">
@@ -234,18 +181,13 @@
             </div>
         </div>
 
-        <!-- Linha de baixo com Copyright -->
         <div class="footer-copy">
             <div class="col text-center mt-3">
-                <p class="mb-0">© 2024 Nome do site - Todos os direitos reservados.</p>
-            </div>
+                <p class="mb-0">© 2025 Picoca Review - Todos os direitos reservados.</p> </div>
         </div>
     </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/news_data.js"></script>
-<script src="assets/js/index_loader.js"></script>
-<script src="assets/js/series_data.js"></script>
-<script src="assets/js/navbar_search.js"></script>
-</body>
+<script src="assets/js/news_data.js"></script>   <script src="assets/js/series_data.js"></script> <script src="assets/js/index_loader.js"></script> <script src="assets/js/navbar_search.js"></script></body>
 </html>
