@@ -1,227 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <!-- Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Séries - Picoca Review</title> 
+  <title>Séries - Picoca Review</title>
   <link rel="icon" type="image/x-icon" href="assets/img/index/frog-popcorn.webp">
-  
-  <!-- Fontes e CDNs -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Estilos Externos (CDNs) -->
+
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Estilos Locais -->
+
   <link rel="stylesheet" href="assets/styles/global.css">
   <link rel="stylesheet" href="assets/styles/nav.css">
   <link rel="stylesheet" href="assets/styles/series_gallery.css">
 
 </head>
 
-<body class="series-body"> <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container justify-content-center">
-        <a class="navbar-brand" href="index.html"><img aria-current="page" src="assets/img/index/frog-popcorn.webp" alt="Logo" class="d-inline-block align-text-top"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body class="series-body">
+  <header>
+      <nav class="navbar navbar-expand-lg">
+          <div class="container justify-content-center">
+              <a class="navbar-brand" href="index.html"><img aria-current="page" src="assets/img/index/frog-popcorn.webp" alt="Logo" class="d-inline-block align-text-top"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav text-center">
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sign_up.html">Registrar-se</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="series_gallery.html">Séries</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="journal.html">Notícias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#footer">Sobre</a>
-            </li>
-          </ul>
-          <form class="d-flex search-container position-relative" role="search" id="navbarSearchForm">
-            <input class="form-control me-2" id="navbarSearchInput" type="search" placeholder="Buscar séries..." aria-label="Search" autocomplete="off">
-            <button class="search-btn" type="submit"><i class="bi bi-search"></i></button>
-  
-            <div class="dropdown-menu" id="navbarSearchResults" aria-labelledby="navbarSearchInput" style="width: 100%; top: 100%; left: 0; display: none; max-height: 300px; overflow-y: auto;">
-                </div>
-          </form>
-        </div>
-      </div>
-    </nav>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav text-center">
+                      <li class="nav-item">
+                          <a class="nav-link" href="login.html">Login</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="sign_up.html">Registrar-se</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="series_gallery.html">Séries</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="journal.html">Notícias</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#footer">Sobre</a>
+                      </li>
+                  </ul>
+                  <form class="d-flex search-container position-relative" role="search" id="navbarSearchForm">
+                      <input class="form-control me-2" id="navbarSearchInput" type="search" placeholder="Buscar séries..." aria-label="Search" autocomplete="off">
+                      <button class="search-btn" type="submit"><i class="bi bi-search"></i></button>
+                      <div class="dropdown-menu" id="navbarSearchResults" aria-labelledby="navbarSearchInput" style="width: 100%; top: 100%; left: 0; display: none; max-height: 300px; overflow-y: auto;">
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </nav>
   </header>
 
   <main class="container my-1">
 
-    <h1 class="main-title"> Séries</h1>
-    <h2 class="main-subtitle">Procure por suas séries e saiba mais clicando nelas.</h2>
+      <h1 class="main-title"> Séries</h1>
+      <h2 class="main-subtitle">Procure por suas séries e saiba mais clicando nelas.</h2>
 
-    <div class="section-divider"></div>
+      <div class="section-divider"></div>
 
-    <div class="filter-search-container d-flex flex-wrap justify-content-center align-items-baseline mb-4">
-        <div id="myBtnContainer" class="menu-filter me-md-3 mb-3 mb-md-0">
-          <button class="btn filter-btn active" data-filter="all"> Mostrar Todas</button>
-          <button class="btn filter-btn" data-filter="comedia"> Comédia</button>
-          <button class="btn filter-btn" data-filter="drama"> Drama</button>
-          <button class="btn filter-btn" data-filter="animacao"> Animação</button>
-          <button class="btn filter-btn" data-filter="acao"> Ação</button>
-          <button class="btn filter-btn" data-filter="ficcao"> Ficção</button>
-          </div>
+      <div class="filter-search-container d-flex flex-wrap justify-content-center align-items-baseline mb-4">
+          <div id="myBtnContainer" class="menu-filter me-md-3 mb-3 mb-md-0">
+              <button class="btn filter-btn active" data-filter="all"> Mostrar Todas</button>
+              <button class="btn filter-btn" data-filter="comedia"> Comédia</button>
+              <button class="btn filter-btn" data-filter="drama"> Drama</button>
+              <button class="btn filter-btn" data-filter="animacao"> Animação</button>
+              <button class="btn filter-btn" data-filter="acao"> Ação</button>
+              <button class="btn filter-btn" data-filter="ficcao"> Ficção</button>
+              <button class="btn filter-btn" data-filter="terror"> Terror</button>   <button class="btn filter-btn" data-filter="misterio"> Mistério</button> </div>
 
           <div class="search-series-container local-search-container">
-            <input type="search" id="seriesSearchInput" class="form-control" placeholder="Buscar por título...">
-            <span class="local-search-icon">
-                <i class="bi bi-search"></i>
-            </span>
-        </div>
-    </div>
-    <div class="row gy-4 justify-content-center" id="seriesList"> <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv drama acao ficcao">
-        <a href="series_info_default.html?id=demolidor-renascido" class="poster-link"> <div class="poster">
-            <img src="assets/img/index/trend/demolidor_trend.webp" alt="Demolidor: Renascido">
+              <input type="search" id="seriesSearchInput" class="form-control" placeholder="Buscar por título...">
+              <span class="local-search-icon">
+                  <i class="bi bi-search"></i>
+              </span>
           </div>
-          </a>
       </div>
 
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv drama ficcao">
-        <a href="series_info_default.html?id=fallout" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/trend/fallout_trend.webp" alt="Fallout">
+      <div class="row gy-4 justify-content-center" id="seriesList">
           </div>
-        </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv animacao acao drama">
-        <a href="series_info_default.html?id=invincible" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/trend/invincible_trend.webp" alt="Invincible">
-          </div>
-        </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv acao drama">
-        <a href="series_info_default.html?id=reacher" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/trend/reacher_trend.webp" alt="Reacher">
-          </div>
-        </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia drama">
-         <a href="series_info_default.html?id=thewhitelotus" class="poster-link">
-           <div class="poster">
-             <img src="assets/img/index/trend/whitelotus_trend.webp" alt="The White Lotus">
-           </div>
-         </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv drama ficcao misterio">
-         <a href="series_info_default.html?id=ruptura" class="poster-link">
-           <div class="poster">
-             <img src="assets/img/index/trend/ruptura_trend.webp" alt="Ruptura">
-           </div>
-         </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia policial">
-        <a href="series_info_default.html?id=brooklyn99" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/ranked/b99_ranked.webp" alt="Brooklyn Nine-Nine">
-          </div>
-        </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv animacao acao aventura">
-        <a href="series_info_default.html?id=fmab" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/ranked/fmabh_ranked.webp" alt="Fullmetal Alchemist: Brotherhood">
-          </div>
-        </a>
-      </div>
-
-       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia">
-         <a href="series_info_default.html?id=juri" class="poster-link">
-           <div class="poster">
-             <img src="assets/img/index/ranked/juri_ranked.webp" alt="Juri Duty">
-           </div>
-         </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv drama crime">
-        <a href="series_info_default.html?id=saul" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/ranked/saul_ranked.webp" alt="Better Call Saul">
-          </div>
-        </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv animacao comedia acao">
-        <a href="series_info_default.html?id=spyxfamily" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/ranked/spyfamily_ranked.webp" alt="Spy x Family">
-          </div>
-        </a>
-      </div>
-
-      <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv comedia">
-        <a href="series_info_default.html?id=the_office" class="poster-link">
-          <div class="poster">
-            <img src="assets/img/index/ranked/theoffice_ranked.webp" alt="The Office">
-          </div>
-        </a>
-      </div>
-
-      </div>
-    </main>
+  </main>
 
   <footer id="footer" class="footer py-4 mt-3">
-    <div class="container text-center">
-      <p class="footer-text">Made with
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-      </svg>
-      by</p>
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <h5 class="footer-title">Letícia Leme</h5>
-                <a href="https://github.com/leticiaaleme" target="_blank" class="footer-link me-3">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/leticiacristinaleme/" target="_blank" class="footer-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-            <div class="col-md-6 mb-3">
-                <h5 class="footer-title">Murilo Camillo</h5>
-                <a href="https://github.com/MuriloCamillo" target="_blank" class="footer-link me-3">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/murilo-camillo-martins/" target="_blank" class="footer-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        </div>
-        <div class="footer-copy">
-            <div class="col text-center mt-3">
-                <p class="mb-0">© 2024 Nome do site - Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </div>
+      <div class="container text-center">
+          <p class="footer-text">Made with
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f64348" stroke="#f64348" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          by</p>
+          <div class="row">
+              <div class="col-md-6 mb-3">
+                  <h5 class="footer-title">Letícia Leme</h5>
+                  <a href="https://github.com/leticiaaleme" target="_blank" class="footer-link me-3">
+                      <i class="fab fa-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/leticiacristinaleme/" target="_blank" class="footer-link">
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                  </a>
+              </div>
+              <div class="col-md-6 mb-3">
+                  <h5 class="footer-title">Murilo Camillo</h5>
+                  <a href="https://github.com/MuriloCamillo" target="_blank" class="footer-link me-3">
+                      <i class="fab fa-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/murilo-camillo-martins/" target="_blank" class="footer-link">
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                  </a>
+              </div>
+          </div>
+          <div class="footer-copy">
+              <div class="col text-center mt-3">
+                  <p class="mb-0">© 2025 Nome do site - Todos os direitos reservados.</p> </div>
+          </div>
+      </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/series_gallery_filter.js"></script>
-  <script src="assets/js/series_data.js"></script>
-  <script src="assets/js/navbar_search.js"></script>
-  </body>
+  <script src="assets/js/series_data.js"></script>           <script src="assets/js/series_gallery_loader.js"></script> <script src="assets/js/series_gallery_filter.js"></script> <script src="assets/js/navbar_search.js"></script>        </body>
 </html>
