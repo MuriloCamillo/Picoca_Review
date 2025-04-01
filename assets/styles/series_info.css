@@ -1,11 +1,30 @@
-/* === SEU CSS ORIGINAL DE series.css VEM AQUI === */
-/* Coloque todo o conteúdo do seu arquivo assets/styles/series.css aqui */
-
 .serie-body {
   background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+/* Estilo para o link de voltar */
+.back-link-container {
+  margin-bottom: 1.5rem; 
+}
+
+.series-gallery-link {
+color: var(--color-lightgrey); 
+font-size: 1.1rem;            
+text-decoration: none;        
+transition: color 0.2s ease;  
+}
+
+.series-gallery-link:hover {
+color: var(--color-white);        
+text-decoration: underline;     
+}
+
+/* Estilo para o ícone dentro do link */
+.series-gallery-link i {
+  margin-right: 0.4rem; 
 }
 
 /* Seção de Banner da Série */
@@ -67,12 +86,12 @@
 
 /* Informações da Série */
 .serie-info {
-  color: var(--color-light); /* Cor padrão para textos dentro de .serie-info */
+  color: var(--color-light); 
   padding: 0 1.25rem;
 }
 
 .serie-title {
-  color: var(--color-lightgrey); /* Sobrescreve se necessário */
+  color: var(--color-lightgrey); 
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 0.3125rem;
@@ -85,27 +104,23 @@
 }
 
 .serie-director {
-  /* color: var(--color-lightgrey); */ /* Herda de .serie-info */
   font-size: 1rem;
   margin-bottom: 0.9375rem;
 }
 
 .serie-tagline {
- /* color: var(--color-lightgrey); */ /* Herda de .serie-info */
   font-size: 1.1rem;
-  font-style: italic; /* Adicionado para diferenciar */
+  font-style: italic; 
   margin-bottom: 0.9375rem;
 }
 
 .serie-synopsis p {
-  /* color: #ddd; */ /* Herda de .serie-info */
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1.5625rem;
 }
 
 .serie-status {
-  /* A cor será definida pelas classes específicas abaixo */
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -151,8 +166,8 @@
   background-color: var(--secondary-color);
   border-radius: 4px;
   color: var(--color-lightgrey);
-  cursor: default; /* Ou pointer se quiser que pareçam clicáveis */
-  font-size: 0.9rem; /* Ajustado para consistência */
+  cursor: default; 
+  font-size: 0.9rem; 
   margin-bottom: 0.625rem;
   padding: 0.3125rem 0.625rem;
   transition: background-color 0.2s ease;
@@ -167,7 +182,7 @@
   background-color: rgba(44, 52, 64, 0.3);
   border-radius: 6px;
   padding: 1.25rem;
-  color: var(--color-light); /* Cor padrão para textos aqui */
+  color: var(--color-light); 
 }
 
 .action-buttons {
@@ -193,11 +208,11 @@
   margin-bottom: 0.3125rem;
 }
 
-.like-btn:hover, .like-btn.active { /* Adicionado .active para estado persistente */
+.like-btn:hover, .like-btn.active { 
   color: var(--color-like);
 }
 
-.watchlist-btn:hover, .watchlist-btn.active { /* Adicionado .active para estado persistente */
+.watchlist-btn:hover, .watchlist-btn.active { 
   color: var(--color-watchlist);
 }
 
@@ -216,7 +231,7 @@
   color: #555; /* Cor da estrela vazia */
   display: flex;
   font-size: 1.8rem;
-  justify-content: space-around; /* Ou center/space-between */
+  justify-content: space-around; 
 }
 
 .stars i {
@@ -236,7 +251,6 @@
     color: #555;
 }
 
-
 /* Rating da Comunidade */
 .community-rating {
   text-align: center;
@@ -254,13 +268,11 @@
 }
 
 .rating-text {
-  /* color: var(--color-light); */ /* Herda de .user-actions */
-  font-size: 1rem; /* Ajustado */
+  font-size: 1rem; 
   text-transform: uppercase;
 }
 
 .average-rating {
-  /* color: var(--color-light); */ /* Herda de .user-actions */
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.625rem;
@@ -275,7 +287,7 @@
   display: flex;
   height: 80px;
   justify-content: space-between;
-  align-items: flex-end; /* Alinha barras na base */
+  align-items: flex-end;
 }
 
 .bar {
@@ -292,13 +304,13 @@
 
 /* Seção de Trailer */
 .trailer-section {
-  background-color: var(--color-grey); /* Usa a variável definida em global.css */
+  background-color: var(--color-grey); 
   padding: 1.875rem 0;
 }
 
 .section-title {
   color: var(--color-lightgrey);
-  font-size: 1.8rem; /* Ajustado */
+  font-size: 1.8rem;
   letter-spacing: 0.3rem;
   margin-bottom: 1.25rem;
   text-align: center;
@@ -325,7 +337,7 @@
   color: var(--color-waiting); /* Aguardando - Amarela */
 }
 
-/* Responsividade (do seu CSS original) */
+/* Responsividade */
 @media (max-width: 991px) {
   .poster-container {
     text-align: center;
@@ -352,7 +364,7 @@
   .bar-container { height: 50px; }
   .bar { width: 6px; }
   .stars { font-size: 1.1rem; }
-  .backdrop-container { height: 350px; } /* Reduz altura do backdrop */
+  .backdrop-container { height: 350px; }
   .content-container { padding-top: 4rem; }
   .serie-title { font-size: 1.8rem; }
   .serie-year { font-size: 1rem; }

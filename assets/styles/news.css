@@ -1,12 +1,27 @@
 .news-body {
-  background-color: var(--color-grey); /* Trocar a cor? */
+  background-color: var(--color-grey); 
 }
 
 /* Textos */
+.back-link-container {
+  margin-bottom: 1.5rem; 
+}
+
+/* Estilo para o link de voltar */
 .journal-link {
-color:var(--color-lightgrey); /*Trocar a cor*/
-font-size: 1.2rem;
-text-decoration: underline;
+color: var(--color-lightgrey);
+font-size: 1.1rem; 
+text-decoration: none; 
+transition: color 0.2s ease;
+}
+
+.journal-link:hover {
+color: var(--color-white);
+text-decoration: underline; 
+}
+
+.journal-link i {
+  margin-right: 0.4rem; 
 }
 
 .news-title {
@@ -21,7 +36,7 @@ font-size: 1.2rem;
 }
 
 .img-leg {
-  color:var(--color-lightgrey); /*Trocar a cor*/
+  color:var(--color-lightgrey); 
   font-size: 1rem;
   text-align: center;
   margin-top: 1rem;
@@ -32,24 +47,17 @@ font-size: 1.2rem;
   font-size: 1.1rem;
 }
 
-/* Adicione esta nova regra para a imagem DENTRO do contêiner ratio */
+/* Imagem DENTRO do contêiner ratio */
 .news-image-in-ratio {
-  /* Estilos que já estavam sendo aplicados via .img-fluid ou necessários aqui */
-  display: block; /* Garante que a imagem seja um bloco */
-  max-width: 100%; /* Garante que não exceda o contêiner ratio */
-  height: auto;   /* Altura automática inicial */
-
-  /* Para funcionar corretamente DENTRO do .ratio do Bootstrap */
+  display: block; 
+  max-width: 100%; 
+  height: auto;   
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
-  /* Garante que a imagem caiba inteira, sem cortar */
   object-fit: contain;
-
-  /* Opcional: Cor de fundo para as barras que podem aparecer */
   background-color: #111;
 }
 
@@ -63,11 +71,11 @@ h5 {
   font-weight: 600;
 }
 
-/* Estilo para o vídeo com altura proporcional */
+/* Estilo para o vídeo (se for usar) */
 .news-video {
   position: relative;
-  width: 640px;  /* Defina a largura fixa para o vídeo */
-  height: 360px; /* Proporção de 16:9 (640px x 360px) */
+  width: 640px;  
+  height: 360px; 
 }
 
 /* Seção Veja Também */
@@ -78,21 +86,21 @@ h5 {
 }
 
 /* Cards do Veja Também */
-.card { /* Definir a cor de fundo, ou a var darkgrey ou #212529 */
+.card { 
   border: none;
-  max-width: 320px; /* Define um tamanho máximo para os cards */
-  margin: auto;     /* Centraliza os cards */
+  max-width: 320px; 
+  margin: auto;    
   transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-  transform: scale(1.03); /* Efeito de zoom ao passar o mouse */
+  transform: scale(1.03); 
 }
 
 .card-img-top {
   object-fit: cover; 
-  height: 180px;     /* Define uma altura fixa */
-  width: 100%;       /* Mantém a largura total do card */
+  height: 180px;     
+  width: 100%;      
 }
 
 .btn-outline-light {
