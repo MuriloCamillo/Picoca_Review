@@ -1,11 +1,10 @@
-
 function normalizeGenreForClass(genreName) {
   if (!genreName) return '';
   let normalized = genreName.toLowerCase();
   normalized = normalized.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove acentos
 
   // --- Mapeamento Explícito ---
-  // Adicione ou modifique mapeamentos aqui para garantir a correspondência exata
+  // Adicionar ou modificar os mapeamentos aqui
   const genreMap = {
       'comédia': 'comedia',
       'drama': 'drama',
@@ -22,23 +21,18 @@ function normalizeGenreForClass(genreName) {
       'aventura': 'aventura',
       'super heróis': 'acao', // Exemplo: Agrupar sob ação
       'pós-apocalíptico': 'ficcao', // Exemplo: Agrupar sob ficção
-      // Adicione mais mapeamentos conforme necessário
   };
 
   // Tenta encontrar no mapa primeiro
   for (const key in genreMap) {
-      if (normalized.includes(key)) { // Verifica se a string normalizada contém a chave do mapa
+      if (normalized.includes(key)) { 
           return genreMap[key];
       }
   }
 
-  // Se não encontrou no mapa, tenta uma simplificação (remove caracteres especiais, pega primeira palavra)
-  // Cuidado: isso pode gerar classes inesperadas se não houver mapa.
   normalized = normalized.replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').split('-')[0];
-  return normalized; // Retorna a versão simplificada como último recurso
+  return normalized; 
 }
-
-
 /**
 * Cria o HTML para um card de série na galeria.
 * @param {string} seriesId A chave/ID da série em seriesData.
@@ -46,11 +40,10 @@ function normalizeGenreForClass(genreName) {
 * @returns {string} A string HTML do card da série.
 */
 function createSeriesCardHTML(seriesId, series) {
-  // Normaliza os gêneros para usar como classes CSS
   const genreClasses = (series.genres || [])
       .map(normalizeGenreForClass)
-      .filter((cls, index, self) => cls && self.indexOf(cls) === index) // Remove vazios e duplicados
-      .join(' '); // Junta as classes com espaço
+      .filter((cls, index, self) => cls && self.indexOf(cls) === index) 
+      .join(' '); 
 
   const posterSrc = series.posterImg || 'assets/img/placeholder_poster.webp'; // Imagem padrão caso falhe
   const title = series.title || 'Título Indisponível';
@@ -89,7 +82,6 @@ function loadSeriesGallery() {
 
   container.innerHTML = allCardsHTML;
 
-  // Chama a inicialização do filtro DEPOIS que os cards foram adicionados ao DOM.
   if (typeof initializeFilters === 'function') {
       initializeFilters();
   } else {
@@ -97,5 +89,4 @@ function loadSeriesGallery() {
   }
 }
 
-// --- INICIALIZAÇÃO ---
 document.addEventListener('DOMContentLoaded', loadSeriesGallery);

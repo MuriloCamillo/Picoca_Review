@@ -1,18 +1,9 @@
-// assets/js/news_info.js
-
-// --- FUNÇÕES AUXILIARES ---
-
-/**
- * Embaralha um array no local usando o algoritmo Fisher-Yates.
- * @param {Array} array O array a ser embaralhado.
- */
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
 /**
  * Cria o HTML para um card de notícia relacionado.
  * @param {object} newsItem O objeto da notícia de newsData.
@@ -20,10 +11,7 @@ function shuffleArray(array) {
  * @returns {string} A string HTML do card.
  */
 function createNewsCardHTML(newsItem, newsId) {
-    // Garante que temos um resumo, mesmo que vazio
     const summary = newsItem.summary || 'Leia mais...';
-    // Linha que limitava os caracteres foi REMOVIDA
-
     return `
         <div class="col-md-6 mb-4">
             <div class="card bg-dark text-light h-100">
@@ -55,16 +43,15 @@ function displayRelatedNews(currentNewsId) {
   const allNewsIds = Object.keys(newsData);
   const otherNewsIds = allNewsIds.filter(id => id !== currentNewsId);
 
-  relatedNewsContainer.innerHTML = ''; // Limpa o container
+  relatedNewsContainer.innerHTML = ''; 
 
-  if (otherNewsIds.length < 1) { // Se não houver nenhuma outra notícia
+  if (otherNewsIds.length < 1) { 
       relatedNewsContainer.innerHTML = '<p class="text-light text-center col-12">Não há outras notícias disponíveis.</p>';
       return;
   }
 
   shuffleArray(otherNewsIds);
 
-  // Define quantos cards mostrar (máximo 2, ou menos se houver menos disponíveis)
   const countToShow = Math.min(otherNewsIds.length, 2);
   const selectedIds = otherNewsIds.slice(0, countToShow);
 
@@ -126,7 +113,7 @@ function displayNewsInfo() {
   // Preencher conteúdo secundário (vídeo ou imagem)
   const secondaryContentElement = document.getElementById('news-secondary-content');
   if (secondaryContentElement) {
-      secondaryContentElement.innerHTML = ''; // Limpa
+      secondaryContentElement.innerHTML = ''; 
       if (news.videoUrl) {
           secondaryContentElement.innerHTML = `
               <div class="text-center my-4">
@@ -145,10 +132,6 @@ function displayNewsInfo() {
            `;
       }
   }
-
-  // Chamar a função para exibir notícias relacionadas
   displayRelatedNews(newsId);
 }
-
-// --- INICIALIZAÇÃO ---
 document.addEventListener('DOMContentLoaded', displayNewsInfo);

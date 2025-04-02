@@ -26,7 +26,6 @@ function displaySeriesInfo() {
   const urlParams = new URLSearchParams(window.location.search);
   const seriesId = urlParams.get('id');
 
-  // Verifica se um ID foi passado
   if (!seriesId) {
       console.error("Nenhum ID de série encontrado na URL.");
       document.querySelector('main').innerHTML = '<h1 class="text-center text-danger mt-5">Erro: ID da série não especificado.</h1>';
@@ -96,5 +95,4 @@ function displaySeriesInfo() {
   // Lógica para botões Like, Watchlist e rating 
 }
 
-// Chamar a função principal quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', displaySeriesInfo);

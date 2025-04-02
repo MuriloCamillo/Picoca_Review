@@ -1,5 +1,3 @@
-// assets/js/navbar_auth.js (ou o nome que você deu)
-
 /**
  * Atualiza a APARÊNCIA DA NAVBAR baseada no status de login.
  */
@@ -33,15 +31,13 @@ function updateNavbarVisuals(isLoggedIn, username) {
 }
 
 /**
- * Atualiza o TEXTO DA SEÇÃO HERO baseada no status de login.
- * Só executa se os elementos do hero existirem na página atual (index.html).
+ * Atualiza o TEXTO DA SEÇÃO HERO baseada no status de login. 
  */
 function updateHeroText(isLoggedIn, username) {
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle1 = document.getElementById('hero-subtitle1');
     const heroSubtitle2 = document.getElementById('hero-subtitle2');
 
-    // Só tenta atualizar se os elementos existirem nesta página
     if (heroTitle && heroSubtitle1 && heroSubtitle2) {
         if (isLoggedIn) {
             // Textos para usuário logado
@@ -62,10 +58,10 @@ function updateHeroText(isLoggedIn, username) {
  */
 function checkLoginStatusAndUpdateUI() {
     const loggedInUser = localStorage.getItem('loggedInUser');
-    const isLoggedIn = !!loggedInUser; // Converte para boolean
+    const isLoggedIn = !!loggedInUser; 
 
     updateNavbarVisuals(isLoggedIn, loggedInUser);
-    updateHeroText(isLoggedIn, loggedInUser); // Atualiza o hero também
+    updateHeroText(isLoggedIn, loggedInUser); 
 }
 
 /**
@@ -88,7 +84,7 @@ function handleLogout(event) {
         }, 3000);
     } else {
          console.warn("Elemento #logout-toast não encontrado.");
-         alert("Logout realizado com sucesso!"); // Fallback
+         alert("Logout realizado com sucesso!"); 
     }
 }
 
@@ -102,7 +98,7 @@ function checkAndShowLoginToast() {
         const toastElement = document.getElementById('login-success-toast');
         if (toastElement) {
             toastElement.classList.add('show');
-            localStorage.removeItem('showLoginSuccessToast'); // Remove flag
+            localStorage.removeItem('showLoginSuccessToast'); 
             setTimeout(() => {
                 toastElement.classList.remove('show');
             }, 3000);
@@ -112,8 +108,6 @@ function checkAndShowLoginToast() {
     }
 }
 
-// --- INICIALIZAÇÃO ---
-// Quando o DOM carregar, atualiza a UI e verifica se mostra o toast de login.
 document.addEventListener('DOMContentLoaded', () => {
     checkLoginStatusAndUpdateUI();
     checkAndShowLoginToast();

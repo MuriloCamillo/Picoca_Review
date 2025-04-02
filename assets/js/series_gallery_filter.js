@@ -1,5 +1,3 @@
-// assets/js/series_gallery_filter.js
-
 /**
  * Aplica os filtros de gênero e busca aos cards da galeria.
  * Esta função é chamada quando um botão de filtro é clicado ou
@@ -90,25 +88,3 @@ function initializeFilters() {
     applyFilters();
      console.log("Filtros inicializados e aplicados."); // Log
 }
-
-// IMPORTANTE: Remova ou comente qualquer chamada 'DOMContentLoaded' que
-// você tinha neste arquivo anteriormente para inicializar os filtros.
-// A inicialização agora é feita pela chamada de 'initializeFilters()'
-// a partir do 'series_gallery_loader.js'.
-// Ex: // document.addEventListener('DOMContentLoaded', initializeFilters);
-// Ex: // document.addEventListener('DOMContentLoaded', function() { /* código antigo aqui */ });
-
-// Adicione esta classe ao seu CSS se ainda não tiver:
-/*
-.hide {
-  display: none !important;
-}
-.show-item {
- animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-*/

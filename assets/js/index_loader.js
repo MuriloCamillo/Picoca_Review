@@ -1,6 +1,3 @@
-// assets/js/index_loader.js
-
-// --- FUNÇÃO EXISTENTE PARA NOTÍCIAS (SEM ALTERAÇÕES) ---
 function createIndexNewsCardHTML(newsItem, newsId) {
     const summary = newsItem.summary || 'Leia mais...';
     const shortSummary = summary.length > 90 ? summary.substring(0, 87) + '...' : summary;
@@ -36,7 +33,7 @@ function loadIndexNews() {
         return;
     }
 
-    container.innerHTML = ''; // Limpa o container
+    container.innerHTML = ''; 
 
     const newsIds = Object.keys(newsData);
     const selectedIds = newsIds.slice(0, 3); // Pega as 3 primeiras notícias
@@ -58,7 +55,6 @@ function loadIndexNews() {
 
     container.innerHTML = cardsHTML;
 }
-
 
 // --- NOVAS FUNÇÕES PARA CARREGAR PÔSTERES DAS SÉRIES ---
 
@@ -126,23 +122,18 @@ function loadIndexSeriesGalleries() {
     }
     trendsContainer.innerHTML = trendsHTML;
 
-    // Gera HTML para Ranking
+    // Gera HTML para Ranked
     let rankedHTML = '';
     if (rankedSeries.length > 0) {
         rankedSeries.forEach(([id, series]) => {
             rankedHTML += createIndexSeriesPosterHTML(id, series);
         });
     } else {
-        // Não mostra mensagem se a trends já tiver séries, ou pode adicionar uma mensagem
-        // rankedHTML = '<p class="text-light">Nenhuma série ranqueada no momento.</p>';
     }
     rankedContainer.innerHTML = rankedHTML;
 }
 
-
-// --- INICIALIZAÇÃO ---
-// Chama as funções para carregar notícias E séries quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
-    loadIndexNews(); // Carrega as notícias como antes
-    loadIndexSeriesGalleries(); // Carrega as galerias de séries
+    loadIndexNews(); 
+    loadIndexSeriesGalleries(); 
 });

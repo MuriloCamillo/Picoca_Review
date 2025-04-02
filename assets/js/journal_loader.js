@@ -5,10 +5,7 @@
  * @returns {string} A string HTML do card.
  */
 function createJournalNewsCardHTML(newsItem, newsId) {
-  // Usa o resumo definido em news_data.js ou um fallback
   const summary = newsItem.summary || 'Leia mais...';
-  // Remove o limite de caracteres (ou ajuste se preferir manter um limite aqui)
-  // const shortSummary = summary.length > 100 ? summary.substring(0, 97) + '...' : summary;
   const shortSummary = summary; // Usando o resumo completo
 
   // Usa col-md-4 como no layout original de journal.html
@@ -47,20 +44,17 @@ function loadJournalCards() {
       return;
   }
 
-  container.innerHTML = ''; // Limpa o container caso haja algo
+  container.innerHTML = ''; 
   const newsIds = Object.keys(newsData);
 
   let cardsHTML = '';
   newsIds.forEach(id => {
       const newsItem = newsData[id];
       if (newsItem) {
-          cardsHTML += createJournalNewsCardHTML(newsItem, id); // Usa a função adaptada
+          cardsHTML += createJournalNewsCardHTML(newsItem, id); 
       }
   });
 
   container.innerHTML = cardsHTML; // Insere todos os cards gerados
 }
-
-// --- INICIALIZAÇÃO ---
-// Chama a função para carregar os cards quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', loadJournalCards);
