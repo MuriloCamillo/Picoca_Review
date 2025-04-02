@@ -1,13 +1,4 @@
-// assets/js/series_gallery_loader.js
 
-/**
- * Normaliza um nome de gênero para ser usado como classe CSS.
- * !!! AJUSTE ESTA FUNÇÃO CONFORME SUAS NECESSIDADES E NOMES DE GÊNEROS !!!
- * Mapeia os nomes de gêneros de 'series_data.js' para as classes CSS usadas
- * nos 'data-filter' dos botões em 'series_gallery.html'.
- * @param {string} genreName O nome original do gênero (ex: "Ficção Científica").
- * @returns {string} O nome do gênero normalizado para classe CSS (ex: "ficcao").
- */
 function normalizeGenreForClass(genreName) {
   if (!genreName) return '';
   let normalized = genreName.toLowerCase();
@@ -15,7 +6,6 @@ function normalizeGenreForClass(genreName) {
 
   // --- Mapeamento Explícito ---
   // Adicione ou modifique mapeamentos aqui para garantir a correspondência exata
-  // com os 'data-filter' dos seus botões.
   const genreMap = {
       'comédia': 'comedia',
       'drama': 'drama',
