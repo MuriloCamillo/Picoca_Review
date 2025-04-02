@@ -132,3 +132,13 @@ footer {
 .footer {
   margin-top: auto;
 }
+
+.footer-contact-suggestion{
+  font-size: 1.1rem;
+}
+
+.footer-link-contact {
+  color: var(--color-lightgrey);
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
