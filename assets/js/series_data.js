@@ -218,5 +218,38 @@ const seriesData = {
     posterImg: "assets/img/index/ranked/theoffice_ranked.webp",
     backdropImg: "assets/img/series_info_bg/theoffice_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/tNcDHWpselE"
-  }
+  },
+  //Mais séries
+  'star_wars_andor': {
+    title: "Star Wars: Andor",
+    year: 2022,
+    creator: "Tony Gilroy",
+    tagline: "A rebelião começa.",
+    synopsis: "Numa era repleta de perigos, enganos e intriga, Cassian Andor vai descobrir a diferença que pode fazer na luta contra o tirânico Império Galático.",
+    status: "Renovada para 2ª Temporada.",
+    statusClass: "status-renewed",
+    cast: ["Diego Luna", "Stellan Skarsgard", "Kyle Soller", "Genevieve O' Reilly", "Adria Arjona", "Faye Marsay"],
+    genres: ["Sci-Fi", "Ação", "Aventura"],
+    seasons: ["1ª Temporada - 12 episódios"],
+    watchPlatforms: ["Disney+"],
+    posterImg: "assets/img/series_info_poster/star_wars_andor_poster.webp",
+    backdropImg: "assets/img/series_info_bg/andor_bg.webp",
+    trailerUrl: "https://www.youtube.com/embed/cKOegEuCcfw"
+  },
+  'breaking_bad': {
+    title: "Breaking Bad",
+    year: 2008,
+    creator: "Vince Gilligan",
+    tagline: "Se Lembre do meu Nome.",
+    synopsis: "Ao saber que tem câncer, um professor passa a fabricar metanfetamina pelo futuro da família, mudando o destino de todos.",
+    status: "Finalizada.",
+    statusClass: "status-ended",
+    cast: ["Bryan Cranston", "Aaron Paul", "Dean Norris", "Anna Gunn", "Bob Odenkirk", "Jonathan Banks", "Giancarlo Esposito"],
+    genres: ["Drama", "Crime"],
+    seasons: ["1ª Temporada - 07 episódios", "2ª Temporada - 13 episódios", "3ª Temporada - 13 episódios", "4ª Temporada - 13 episódios", "5ª Temporada - 16 episódios"],
+    watchPlatforms: ["Netflix"],
+    posterImg: "assets/img/series_info_poster/breaking_bad_poster.webp",
+    backdropImg: "assets/img/series_info_bg/breakingbad_bg.webp",
+    trailerUrl: "https://www.youtube.com/embed/HhesaQXLuRY"
+  },
 };

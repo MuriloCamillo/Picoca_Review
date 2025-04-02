@@ -21,6 +21,8 @@ function normalizeGenreForClass(genreName) {
       'aventura': 'aventura',
       'super heróis': 'acao', // Exemplo: Agrupar sob ação
       'pós-apocalíptico': 'ficcao', // Exemplo: Agrupar sob ficção
+      'sci-fi': 'sci-fi',
+      'Sci-Fi': 'sci-fi',
   };
 
   // Tenta encontrar no mapa primeiro
