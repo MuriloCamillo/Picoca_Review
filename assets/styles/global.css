@@ -52,13 +52,13 @@ main {
 /* Responsividade */
 @media (max-width: 768px) {
   .gallery {
-    align-items: center; /* Centraliza os itens */
-    flex-direction: column; /* Empilha os pôsteres */
+    align-items: center; 
+    flex-direction: column; 
   }
 
   .poster {
-    max-width: 250px; /* Limita o tamanho máximo */
-    width: 90%; /* Pega quase toda a largura da tela */
+    max-width: 250px; 
+    width: 90%; 
   }
 }
 
@@ -102,7 +102,7 @@ main {
 
 /* Footer */
 footer {
-  background-color: var(--color-darkgrey); /* Decidir a cor de fundo, essa ou #212529 */
+  background-color: var(--color-darkgrey);
   color: var(--color-light);
   padding: 5rem 0;
 }

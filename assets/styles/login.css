@@ -81,12 +81,10 @@
     transform: translateY(-2px);
 }
 
-/* Adicionar em: assets/styles/login.css */
 #login-error-message.login-error-active {
-    color: #dc3545; /* Cor de erro do Bootstrap (vermelho), ou use sua variável */
+    color: #dc3545; 
     font-weight: bold;
-    margin-top: 1rem; /* Espaçamento */
-    /* Adicione outros estilos desejados */
+    margin-top: 1rem; 
   }
 
   

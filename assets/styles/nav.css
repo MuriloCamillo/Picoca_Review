@@ -15,18 +15,18 @@
 
 /* Logo */
 .navbar-brand img {
-  height: auto; /* Mantém a proporção da imagem */
-  width: 3.5rem; /* Ajuste o tamanho conforme necessário */
+  height: auto; 
+  width: 3.5rem; 
 }
 
 .navbar {
-  background-color: var(--color-background); /* Cor de fundo da navbar */
+  background-color: var(--color-background); 
   padding: 0.9375rem 0;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transição suave para sombra e efeito de transformação */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
 }
 
 .navbar:hover {
-  box-shadow: 0 -4px 8px rgba(200, 200, 200, 0.3); /* Sombra cinza clara */
+  box-shadow: 0 -4px 8px rgba(200, 200, 200, 0.3); 
 }
 
 /* Centraliza os itens da navbar */
@@ -47,7 +47,7 @@
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ffffff; /* Cor clara ao passar o mouse */
+  color: #ffffff; 
 }
 
 /*Search Button */
@@ -56,8 +56,8 @@
 }
 
 .form-control {
-  border-radius: 20px; /* Borda arredondada */
-  padding-right: 2.5rem; /* Espaço para o ícone */
+  border-radius: 20px; 
+  padding-right: 2.5rem; 
 }
 
 .search-btn { /* Ícone de lupa dentro do campo */
@@ -77,7 +77,7 @@
 }
 
 .navbar-toggler {
-  border-color: white; /* Torna a borda do botão branca */
+  border-color: white; 
 }
 
 /* Parte do DropDown Menu */
@@ -87,54 +87,53 @@
 }
 
 #user-name:hover {
-  color: #ffffff; /* Cor clara ao passar o mouse */
+  color: #ffffff; 
 }
 
 .dropdown-menu {
   background-color: var(--color-darkgrey); 
   border: 1px solid var(--color-divider); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-item {
   color: var(--color-lightgrey); 
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .dropdown-item:hover {
-  background-color: var(--color-blue); /* Cor de fundo ao passar o mouse */
-  color: var(--color-white); /* Cor do texto ao passar o mouse */
+  background-color: var(--color-blue); 
+  color: var(--color-white); 
 }
 
 .dropdown-toggle::after {
-  border-top-color: var(--color-lightgrey); /* Altera a cor da seta para a cor clara */
+  border-top-color: var(--color-lightgrey); 
 }
 
-
-/* --- Estilos Customizados para Sugestões da Navbar --- */
+/* --- Estilos Customizados para Sugestões de séries da Navbar --- */
 
 /* Estilo do Container Principal das Sugestões */
 #navbarSearchResults {
-  background-color: var(--color-darkgrey); /* Cor de fundo (pode ajustar) */
-  border: 1px solid var(--color-divider); /* Borda (pode ajustar ou remover) */
-  border-top: none; /* Remove a borda de cima para conectar melhor visualmente */
-  border-radius: 0 0 8px 8px; /* Cantos arredondados apenas embaixo */
-  margin-top: 0; /* Remove margem padrão do dropdown se houver */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  z-index: 1050; /* Garante que fique acima de outros elementos */
+  background-color: var(--color-darkgrey); 
+  border: 1px solid var(--color-divider); 
+  border-top: none; 
+  border-radius: 0 0 8px 8px; 
+  margin-top: 0; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  z-index: 1050; 
 }
 
 /* Estilo de Cada Item (Link) da Sugestão */
 #navbarSearchResults .dropdown-item {
-  color: var(--color-lightgrey); /* Cor do texto da sugestão */
-  padding: 0.6rem 1rem; /* Espaçamento interno (ajuste como preferir) */
-  font-size: 0.9rem; /* Tamanho da fonte */
-  white-space: nowrap; /* Impede quebra de linha */
-  overflow: hidden; /* Esconde texto que transborda */
-  text-overflow: ellipsis; /* Mostra '...' para texto longo */
-  text-decoration: none; /* Remove sublinhado do link */
-  border-bottom: 1px solid var(--color-divider); /* Linha separadora sutil entre itens */
-  transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+  color: var(--color-lightgrey); 
+  padding: 0.6rem 1rem; 
+  font-size: 0.9rem; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  text-decoration: none; 
+  border-bottom: 1px solid var(--color-divider); 
+  transition: background-color 0.2s ease, color 0.2s ease; 
 }
 
 /* Remove a borda do último item */
@@ -145,63 +144,60 @@
 /* Estilo do Item ao Passar o Mouse (Hover) ou Focar */
 #navbarSearchResults .dropdown-item:hover,
 #navbarSearchResults .dropdown-item:focus {
-  background-color: var(--color-blue); /* Cor de fundo no hover/focus */
-  color: var(--color-white); /* Cor do texto no hover/focus */
+  background-color: var(--color-blue); 
+  color: var(--color-white); 
   cursor: pointer;
 }
 
 /* Estilo específico para a mensagem "Nenhuma série encontrada" */
 #navbarSearchResults .dropdown-item.disabled {
-  color: var(--color-divider); /* Cor mais apagada */
+  color: var(--color-divider); 
   font-style: italic;
-  background-color: transparent; /* Sem fundo no hover */
-  cursor: default; /* Cursor padrão */
-  border-bottom: none; /* Sem borda inferior */
+  background-color: transparent; 
+  cursor: default; 
+  border-bottom: none;
 }
 #navbarSearchResults .dropdown-item.disabled:hover {
-    background-color: transparent; /* Garante que não haja fundo no hover */
-    color: var(--color-divider); /* Mantém a cor apagada */
+    background-color: transparent; 
+    color: var(--color-divider); 
 }
 
 #navbarSearchResults::-webkit-scrollbar {
-  width: 8px; /* Largura da barra */
+  width: 8px; 
 }
 
 #navbarSearchResults::-webkit-scrollbar-track {
-  background: var(--color-darkgrey); /* Fundo da trilha (igual ao container) */
+  background: var(--color-darkgrey); 
   border-radius: 10px;
 }
 
 #navbarSearchResults::-webkit-scrollbar-thumb {
-  background-color: var(--color-divider); /* Cor da barra de rolagem */
+  background-color: var(--color-divider); 
   border-radius: 10px;
-  border: 2px solid var(--color-darkgrey); /* Borda em volta da barra (igual ao fundo) */
+  border: 2px solid var(--color-darkgrey); 
 }
 
 #navbarSearchResults::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-lightgrey); /* Cor da barra ao passar o mouse */
+  background-color: var(--color-lightgrey); 
 }
 
-/* Adicione esta regra CSS */
 #navbarSearchResults .dropdown-item strong {
-  color: var(--color-white); /* Cor do texto destacado */
+  color: var(--color-white); 
   font-weight: bold;
-  /* background-color: rgba(255, 255, 255, 0.1); */ /* Fundo sutil opcional */
 }
 
 /* Toasts */
 .logout-toast {
-  position: fixed; /* Fica fixo na tela */
-  bottom: 2rem;     /* Posição: 2rem da parte inferior */
-  left: 50%;       /* Centralizado horizontalmente */
-  transform: translateX(-50%) translateY(150%); /* Começa escondido abaixo */
-  min-width: 250px; /* Largura mínima */
-  z-index: 1056;    /* Garante que fique sobre a maioria dos elementos */
-  background-color: #28a745; /* Cor de sucesso (verde Bootstrap) */
-  /* Ou use uma de suas variáveis: var(--accent-color); */
+  position: fixed; 
+  bottom: 2rem;     
+  left: 50%;       
+  transform: translateX(-50%) translateY(150%); 
+  min-width: 250px;
+  z-index: 1056;    
+  background-color: #28a745; 
   color: white;
   padding: 0.8rem 1.25rem;
-  border-radius: 0.375rem; /* Bootstrap padrão para .rounded */
+  border-radius: 0.375rem; 
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
@@ -213,8 +209,7 @@
   position: fixed; bottom: 2rem; left: 50%;
   transform: translateX(-50%) translateY(150%);
   min-width: 250px; z-index: 1056;
-  background-color: #28a745; /* Verde de sucesso do Bootstrap */
-  /* Ou use: var(--color-inproduction); se preferir */
+  background-color: #28a745; 
   color: white; padding: 0.8rem 1.25rem; border-radius: 0.375rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
   opacity: 0; visibility: hidden;
@@ -227,32 +222,26 @@
 }
 .login-success-toast .toast-body { font-weight: 500; }
 
-/* Classe adicionada via JS para mostrar o toast */
 .logout-toast.show {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0); /* Desliza para a posição final */
+  transform: translateX(-50%) translateY(0); 
 }
 
-/* Estilo simples para o corpo, pode não ser necessário */
 .logout-toast .toast-body {
   font-weight: 500;
 }
 
 /* Contact Toast */
 
-/* Estilos ESPECÍFICOS para o Toast de Sucesso do Contato */
-
 #contact-success-toast {
-  /* Copie EXATAMENTE os estilos de posicionamento, aparência inicial e transição
-     do seu .logout-toast ou .login-success-toast */
   position: fixed;
   bottom: 2rem;
   left: 50%;
-  transform: translateX(-50%) translateY(150%); /* Começa escondido */
+  transform: translateX(-50%) translateY(150%); 
   min-width: 250px;
   z-index: 1056;
-  color: white; /* Cor do texto */
+  color: white; 
   padding: 0.8rem 1.25rem;
   border-radius: 0.375rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
@@ -260,19 +249,15 @@
   visibility: hidden;
   transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s;
   text-align: center;
-
-  /* --- Cor de fundo específica para este toast --- */
-  background-color: #28a745; /* Azul padrão Bootstrap (ou outra cor que preferir, ex: #198754 para verde) */
+  background-color: #28a745; 
 }
 
-/* Regra para MOSTRAR o toast de contato quando a classe .show for adicionada */
 #contact-success-toast.show {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0); /* Desliza para a posição visível */
+  transform: translateX(-50%) translateY(0); 
 }
 
-/* Estilo opcional para o texto dentro do toast (se não for herdado) */
 #contact-success-toast .toast-body {
     font-weight: 500;
 }
