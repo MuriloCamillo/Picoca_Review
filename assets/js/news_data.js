@@ -1,5 +1,3 @@
-// assets/js/news_data.js
-
 const newsData = {
     'otgw-10-years': {
         title: "\"Over the Garden Wall\" celebra 10 anos de jornada pelo desconhecido.",
