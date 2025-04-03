@@ -16,7 +16,7 @@ function normalizeGenreForClass(genreName) {
       'terror': 'terror',
       'mistério': 'misterio',
       'misterio': 'misterio', // Sem acento
-      'crime': 'drama', // Exemplo: Agrupar crime sob drama, ou crie 'crime'/'policial'
+      'crime': 'crime', 
       'policial': 'policial', // Exemplo se tiver botão 'policial'
       'aventura': 'aventura',
       'super heróis': 'acao', // Exemplo: Agrupar sob ação
