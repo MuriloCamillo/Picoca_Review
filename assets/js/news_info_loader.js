@@ -69,69 +69,73 @@ function displayRelatedNews(currentNewsId) {
 // --- FUNÇÃO PRINCIPAL ---
 
 function displayNewsInfo() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const newsId = urlParams.get('id');
-
-  if (!newsId) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = urlParams.get('id');
+  
+    if (!newsId) {
       console.error("Nenhum ID de notícia encontrado na URL.");
       document.querySelector('main').innerHTML = '<h1 class="text-center text-danger mt-5">Erro: ID da notícia não especificado.</h1>';
       return;
-  }
-
-  const news = newsData[newsId];
-
-  if (!news) {
+    }
+  
+    const news = newsData[newsId];
+  
+    if (!news) {
       console.error("Notícia não encontrada com ID:", newsId);
       document.querySelector('main').innerHTML = `<h1 class="text-center text-danger mt-5">Notícia com ID "${newsId}" não encontrada!</h1>`;
       return;
-  }
-
-  // Preencher informações principais da notícia
-  document.title = `${news.title || 'Notícia'} - Picoca Review`;
-
-  const titleElement = document.getElementById('news-title');
-  if (titleElement) titleElement.textContent = news.title || 'Título Indisponível';
-
-  const authorDateElement = document.getElementById('news-author-date');
-  if (authorDateElement) authorDateElement.textContent = `Por ${news.author || 'Autor Desconhecido'} - ${news.date || 'Data Indisponível'}`;
-
-  const mainImageElement = document.getElementById('news-main-image');
-  const mainCaptionElement = document.getElementById('news-main-caption');
-  if (mainImageElement && news.mainImageUrl) {
+    }
+  
+    // Preencher meta description
+    const description = news.summary || (news.articleContent ? news.articleContent.substring(0, 160) + "..." : "");  // Adicionado verificação para news.articleContent
+    document.querySelector('meta[name="description"]').setAttribute('content', description);
+  
+    // Preencher informações principais da notícia
+    document.title = `${news.title || 'Notícia'} - Picoca Review`;
+  
+    const titleElement = document.getElementById('news-title');
+    if (titleElement) titleElement.textContent = news.title || 'Título Indisponível';
+  
+    const authorDateElement = document.getElementById('news-author-date');
+    if (authorDateElement) authorDateElement.textContent = `Por ${news.author || 'Autor Desconhecido'} - ${news.date || 'Data Indisponível'}`;
+  
+    const mainImageElement = document.getElementById('news-main-image');
+    const mainCaptionElement = document.getElementById('news-main-caption');
+    if (mainImageElement && news.mainImageUrl) {
       mainImageElement.src = news.mainImageUrl;
       mainImageElement.alt = news.title || 'Imagem da notícia';
-  } else if (mainImageElement) {
-       mainImageElement.style.display = 'none'; // Esconde se não houver imagem
-  }
-  if (mainCaptionElement) mainCaptionElement.textContent = news.mainImageCaption || '';
-
-  const articleContentElement = document.getElementById('news-article-content');
-  if (articleContentElement && news.articleContent) {
+    } else if (mainImageElement) {
+      mainImageElement.style.display = 'none'; // Esconde se não houver imagem
+    }
+    if (mainCaptionElement) mainCaptionElement.textContent = news.mainImageCaption || '';
+  
+    const articleContentElement = document.getElementById('news-article-content');
+    if (articleContentElement && news.articleContent) {
       articleContentElement.innerHTML = news.articleContent;
-  }
-
-  // Preencher conteúdo secundário (vídeo ou imagem)
-  const secondaryContentElement = document.getElementById('news-secondary-content');
-  if (secondaryContentElement) {
-      secondaryContentElement.innerHTML = ''; 
+    }
+  
+    // Preencher conteúdo secundário (vídeo ou imagem)
+    const secondaryContentElement = document.getElementById('news-secondary-content');
+    if (secondaryContentElement) {
+      secondaryContentElement.innerHTML = '';
       if (news.videoUrl) {
-          secondaryContentElement.innerHTML = `
-              <div class="text-center my-4">
-                  <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
-                      <iframe src="${news.videoUrl}" title="Vídeo da Notícia" allowfullscreen class="rounded"></iframe>
-                  </div>
-              </div>
-              ${news.videoCaption ? `<p class="img-leg">${news.videoCaption}</p>` : ''}
-          `;
+        secondaryContentElement.innerHTML = `
+            <div class="text-center my-4">
+                <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
+                    <iframe src="${news.videoUrl}" title="Vídeo da Notícia" allowfullscreen class="rounded"></iframe>
+                </div>
+            </div>
+            ${news.videoCaption ? `<p class="img-leg">${news.videoCaption}</p>` : ''}
+        `;
       } else if (news.secondaryImageUrl) {
-           secondaryContentElement.innerHTML = `
-               <div class="text-center my-4">
-                 <img src="${news.secondaryImageUrl}" alt="Imagem secundária da notícia" class="img-fluid rounded">
-               </div>
-               ${news.secondaryImageCaption ? `<p class="img-leg">${news.secondaryImageCaption}</p>` : ''}
-           `;
+        secondaryContentElement.innerHTML = `
+            <div class="text-center my-4">
+              <img src="${news.secondaryImageUrl}" alt="Imagem secundária da notícia" class="img-fluid rounded">
+            </div>
+            ${news.secondaryImageCaption ? `<p class="img-leg">${news.secondaryImageCaption}</p>` : ''}
+        `;
       }
+    }
+    displayRelatedNews(newsId);
   }
-  displayRelatedNews(newsId);
-}
 document.addEventListener('DOMContentLoaded', displayNewsInfo);
