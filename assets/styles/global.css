@@ -5,7 +5,6 @@
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
-
 /* Lê, se for usar coloração tenta padronizar, deixar como variável e como hexadecimal */
 :root { 
   --color-background: #1A1A1A;
@@ -141,4 +140,58 @@ footer {
   color: var(--color-lightgrey);
   font-size: 1.1rem;
   text-decoration: underline;
+}
+
+/* Acessibilidade, definir estilo do foco */
+
+/* :focus {
+  outline: 2px solid #007bff; 
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+} */
+
+/* :focus {
+  outline: 3px solid #ff9900;
+  outline-offset: 3px;
+  box-shadow: 0 0 8px #ff9900;
+}
+
+:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  transition: outline-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+} */
+
+:focus {
+  outline: none; /* Remove o outline padrão (para evitar duplicação) */
+}
+
+:focus-visible {
+  outline: 2px solid #007bff; /* Estilo para navegação por teclado */
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Para a Navbar */
+.navbar-nav .nav-link:focus-visible {
+  outline: 1px solid var(--color-white); 
+  outline-offset: 1px;
+  box-shadow: none;
+  color: var(--color-white);
+}
+
+.navbar-nav .nav-item button.nav-link:focus-visible {
+  outline: 1px solid var(--color-white);
+  outline-offset: 1px;
+  box-shadow: none;
+  color: var(--color-white);
+}
+
+.form-control:focus-visible { /* Estilo para inputs */
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }

@@ -179,6 +179,7 @@
 .accordion-button:focus {
   box-shadow: none;
   border-color: transparent;
+  outline: 3px solid #007bff;
 }
 
 /* Cor da seta do accordion */
