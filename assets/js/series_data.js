@@ -357,7 +357,7 @@ const seriesData = {
     status: "Aguardando renovação. ",
     statusClass: "status-waiting",
     cast: ["Pedro Pascal", "Katee Sackhoff", "Carl Weathers", "Emily Swallow", "Giancarlo Esposito"],
-    genres: ["Sci-Fi", "Aventura", "Ação"],
+    genres: ["Sci-Fi", "Aventura", "Ação", "Ficção"],
     seasons: ["1ª Temporada - 8 episódios", "2ª Temporada - 8 episódios", "3ª Temporada - 8 episódios"],
     watchPlatforms: ["Disney+"],
     posterImg: "assets/img/series_info_poster/the_mandalorian_poster.webp",
