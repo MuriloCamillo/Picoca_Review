@@ -1,0 +1,155 @@
+.profile-body {
+  background-color: var(--color-grey); 
+  color: var(--color-light);
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-body main {
+  flex-grow: 1; 
+}
+
+.profile-title {
+  color: var(--color-light);
+  text-align: center;
+  margin-bottom: 2rem; 
+}
+
+/* Estilo das Abas */
+.profile-tabs {
+  border-bottom: 1px solid var(--color-divider);
+  justify-content: center; /* Centraliza as abas */
+}
+
+.profile-tabs .nav-link {
+  color: var(--color-lightgrey);
+  border: none; 
+  border-bottom: 3px solid transparent; 
+  margin-bottom: -1px; 
+  padding: 0.8rem 1.5rem; 
+  font-weight: 500;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-tabs .nav-link:hover {
+  color: var(--color-white);
+  border-bottom-color: var(--color-divider); 
+}
+
+.profile-tabs .nav-link.active {
+  color: var(--accent-color); 
+  background-color: transparent;
+  border-bottom: 3px solid var(--accent-color); 
+}
+
+/* Estilo dos Formulários dentro das Abas */
+.profile-form {
+  background-color: var(--color-darkgrey); 
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-form .form-label {
+  color: var(--color-lightgrey);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.profile-form .form-control,
+.profile-form .form-select {
+  background-color: rgba(255, 255, 255, 0.05); 
+  border: 1px solid var(--color-divider); 
+  color: var(--color-white);
+  padding: 0.6rem 1rem; 
+}
+
+.profile-form .form-control::placeholder {
+  color: var(--color-lightgrey);
+  opacity: 0.6;
+}
+
+.profile-form .form-control:focus,
+.profile-form .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-blue); 
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25); 
+  color: var(--color-white);
+}
+
+/* Estilo específico para o select */
+.profile-form .form-select {
+   /* Adapta o ícone do select para temas escuros */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23cccccc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Estilo dos Botões */
+.profile-btn {
+  background-color: var(--color-blue); 
+  border: none;
+  color: var(--color-white);
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.profile-btn:hover {
+  background-color: var(--color-button); 
+  color: var(--color-white);
+  transform: translateY(-1px); 
+}
+
+/* Estilo da Aba Avatar */
+.avatar-section {
+   background-color: var(--color-darkgrey);
+   padding: 2.5rem;
+   border-radius: 8px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-drop-zone {
+  border: 2px dashed var(--color-divider);
+  border-radius: 8px;
+  padding: 2.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.avatar-drop-zone:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: var(--color-lightgrey);
+}
+
+.avatar-icon {
+  font-size: 3rem;
+  color: var(--color-lightgrey);
+  margin-bottom: 0.5rem;
+  display: block; 
+}
+
+.avatar-drop-zone p {
+  margin-bottom: 0.2rem;
+  color: var(--color-light);
+  font-weight: 500;
+}
+.avatar-drop-zone span {
+   color: var(--color-lightgrey);
+   font-size: 0.9rem;
+   margin-bottom: 1rem;
+   display: block;
+}
+
+.avatar-hint {
+  color: var(--color-lightgrey);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.profile-form #country option {
+  background-color: var(--color-darkgrey); 
+  color: var(--color-light);      
+  padding: 5px 10px;                  
+}
