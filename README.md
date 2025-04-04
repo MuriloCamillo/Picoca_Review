@@ -45,7 +45,21 @@ Recebemos feedbacks, sugestões ou um simples "Oi!" com muito carinho 💌
 
 ## 🧩 **Estrutura do Projeto**
 
-```text ├── assets/ │ ├── img/ │ ├── js/ │ └── styles/ ├── index.html ├── series_gallery.html ├── series_info_default.html ├── news_default.html ├── journal.html ├── profile.html ├── login.html ├── sign_up.html └── contact.html ```
+```text
+├── assets/
+│   ├── img/
+│   ├── js/
+│   └── styles/
+├── index.html
+├── series_gallery.html 
+├── series_info_default.html
+├── news_default.html
+├── journal.html
+├── profile.html
+├── login.html
+├── sign_up.html
+└── contact.html
+```
 
 ### 📁 Componentes Principais
 
