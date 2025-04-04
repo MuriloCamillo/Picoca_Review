@@ -88,4 +88,4 @@ Recebemos feedbacks, sugestões ou um simples "Oi!" com muito carinho 💌
 
 ## ⚖️ **Licença**
 
-© 2024 **Picoca Review** - Todos os direitos reservados.
+© 2025 **Picoca Review** - Todos os direitos reservados.
