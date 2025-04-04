@@ -65,12 +65,11 @@ main {
 /* Títulos das seções */
 .section-trends-title, .section-ranked-title, .section-journal-title, .section-benefits-title{
   color: var(--color-light);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem); /* Mínimo 1.8rem, Preferido 5% da largura, Máximo 2.5rem */
   letter-spacing: 0.5rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
   text-align: center;
-  /* Ver pra mexer na font-height */
 }
 
 /* Textos das seções */
