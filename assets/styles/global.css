@@ -19,14 +19,15 @@
   --accent-color: #00c030;
   --secondary-color: #2c3440;
   --border-color: #456;
+  --color-star: #f5c518;
+  --color-like: #E53935; 
+  --color-watchlist: #42A5F5;
+  /* Status séries */
   --color-inproduction: #4caf50;
   --color-renewed: #3498db;
   --color-canceled: #ff0000;
   --color-ended: #bdc3c7;
   --color-waiting:#FBC02D;
-  --color-star: #f5c518;
-  --color-like: #E53935; 
-  --color-watchlist: #42A5F5;
 }
 
 html{

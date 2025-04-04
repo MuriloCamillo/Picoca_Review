@@ -143,6 +143,7 @@ text-align: center;
   display: flex; 
   align-items: center;
   justify-content: center;
+  width: clamp(150px, 15vw, 180px);
 }
 
 .poster img {
