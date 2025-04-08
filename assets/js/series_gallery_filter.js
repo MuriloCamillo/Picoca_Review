@@ -1,7 +1,13 @@
 /**
- * Aplica os filtros de gênero e busca aos cards da galeria.
- * Esta função é chamada quando um botão de filtro é clicado ou
- * quando o texto na barra de busca muda.
+ * @fileoverview Lida com a filtragem dinâmica (por gênero e busca textual)
+ * dos cards de séries na página da galeria (series_gallery.html).
+ */
+
+/**
+ * Aplica os filtros de gênero e busca textual aos cards de séries visíveis na galeria.
+ * Mostra/esconde os cards com base nos filtros ativos e no termo de busca.
+ * Esta função é chamada quando um botão de filtro é clicado ou o texto de busca muda.
+ * @returns {void}
  */
 function applyFilters() {
     const searchInput = document.getElementById('seriesSearchInput');
@@ -45,9 +51,10 @@ function applyFilters() {
 }
 
 /**
- * Configura os event listeners para os botões de filtro e a barra de busca.
- * Esta função é chamada pelo 'series_gallery_loader.js' DEPOIS que os cards
- * foram carregados dinamicamente.
+ * Configura os listeners de evento para os botões de filtro de gênero
+ * e para a barra de busca textual.
+ * Esta função deve ser chamada DEPOIS que os cards da galeria forem carregados no DOM.
+ * @returns {void}
  */
 function initializeFilters() {
     console.log("Inicializando filtros..."); // Log para depuração

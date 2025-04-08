@@ -1,67 +1,75 @@
-/* Layout de Base */
+/* ================================== */
+/* == ESTILOS PÁGINA SIGN UP / CONTATO == */
+/* ================================== */
+/* Estilos são usados tanto por sign_up.html quanto por contact.html */
+
+/* --- Layout Base da Página --- */
 .signup-body {
-    min-height: 80vh;
+    background: var(--color-grey); 
+    color: var(--color-white); 
     display: flex;
     flex-direction: column;
-    background: var(--color-grey);
-    color: var(--color-white);
+    min-height: 80vh; 
 }
 
+/* --- Título da Página --- */
 .signup-title {
+    margin-top: 3rem; 
     text-align: center;
-    margin-top: 3rem;
 }
 
+/* --- Container Principal do Formulário --- */
 .formulario-cadastro {
-    flex: 1;
+    align-items: center; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
+    flex: 1; 
+    justify-content: center; 
+    padding: 3rem; 
 }
 
-/* Layout do formulário */
+/* --- Bloco do Formulário --- */
 .formulario-cadastro form {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
     border-radius: 10px;
-    backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
+    max-width: 800px; 
+    padding: 2rem;
     width: 100%;
-    max-width: 800px;
 }
 
-/* Elementos do formulário */
+/* --- Labels dos Campos --- */
 .formulario-cadastro .form-label {
     color: var(--color-white);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem; 
 }
 
-/* Campos de entrada */
+/* --- Inputs (text, email, password, etc.) --- */
 .formulario-cadastro .form-control {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-white);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; 
 }
 
 .formulario-cadastro .form-control:focus {
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 0 0.25rem rgba(150, 152, 235, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(150, 152, 235, 0.25); 
 }
 
+/* Estilo para texto dentro de .input-group (ex: '@' para username) */
 .formulario-cadastro .input-group-text {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-white);
 }
 
-/* Botão */
+/* --- Botão Principal do Formulário --- */
 .formulario-cadastro .btn-primary {
     background-color: var(--color-blue);
     border: none;
-    padding: 0.5rem 2rem;
-    transition: all 0.3s ease;
+    padding: 0.5rem 2rem; 
+    transition: all 0.3s ease; 
 }
 
 .formulario-cadastro .btn-primary:hover {
@@ -69,7 +77,7 @@
     transform: translateY(-2px);
 }
 
-/* Checkbox */
+/* --- Checkbox (Termos e Condições) --- */
 .formulario-cadastro .form-check-label {
     color: var(--color-white);
 }
@@ -83,10 +91,13 @@
     background-color: var(--color-blue);
 }
 
+/* --- Mensagens de Feedback de Validação Bootstrap --- */
+/* Cor padrão para feedback válido */
 .valid-feedback {
-    color: #198754;
+    color: #198754; 
 }
 
+/* Cor padrão para feedback inválido */
 .invalid-feedback {
-    color: #dc3545;
+    color: #dc3545; 
 }

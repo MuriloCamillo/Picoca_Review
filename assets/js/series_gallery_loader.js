@@ -1,3 +1,15 @@
+/**
+ * @fileoverview Carrega dinamicamente os cards das séries na página da galeria
+ * (series_gallery.html) e inicializa os filtros de gênero e busca.
+ */
+
+/**
+ * Normaliza um nome de gênero para ser usado como classe CSS para filtragem.
+ * Converte para minúsculas, remove acentos e mapeia termos específicos
+ * (ex: 'ficção científica' -> 'ficcao'). Usa a primeira palavra se não houver mapeamento.
+ * @param {string|undefined} genreName - O nome do gênero a ser normalizado.
+ * @returns {string} - O nome do gênero normalizado como classe CSS, ou string vazia.
+ */
 function normalizeGenreForClass(genreName) {
   if (!genreName) return '';
   let normalized = genreName.toLowerCase();
@@ -17,7 +29,7 @@ function normalizeGenreForClass(genreName) {
       'mistério': 'misterio',
       'misterio': 'misterio', // Sem acento
       'crime': 'crime', 
-      'policial': 'policial', // Exemplo se tiver botão 'policial'
+      'policial': 'policial', 
       'aventura': 'aventura',
       'super heróis': 'acao', // Exemplo: Agrupar sob ação
       'pós-apocalíptico': 'ficcao', // Exemplo: Agrupar sob ficção
@@ -36,10 +48,11 @@ function normalizeGenreForClass(genreName) {
   return normalized; 
 }
 /**
-* Cria o HTML para um card de série na galeria.
-* @param {string} seriesId A chave/ID da série em seriesData.
-* @param {object} series O objeto contendo os dados da série.
-* @returns {string} A string HTML do card da série.
+* Cria o HTML para um card de série individual a ser exibido na galeria.
+* Inclui classes de gênero normalizadas para permitir a filtragem.
+* @param {string} seriesId - A chave/ID única da série no objeto seriesData.
+* @param {object} series - O objeto contendo os dados da série (title, posterImg, genres, etc.).
+* @returns {string} Uma string HTML representando o card da série.
 */
 function createSeriesCardHTML(seriesId, series) {
   const genreClasses = (series.genres || [])
@@ -62,7 +75,9 @@ function createSeriesCardHTML(seriesId, series) {
 }
 
 /**
-* Carrega os cards das séries dinamicamente na galeria.
+* Carrega todos os cards de séries do objeto `seriesData` no container
+* da galeria e, em seguida, inicializa a funcionalidade de filtro.
+* @returns {void}
 */
 function loadSeriesGallery() {
   const container = document.getElementById('seriesList');

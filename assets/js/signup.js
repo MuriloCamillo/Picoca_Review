@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Adiciona máscara e validação de CPF ao campo correspondente
+ * no formulário da página de cadastro (sign_up.html).
+ * Integra-se com a validação do Bootstrap 5.
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
     const cpfInput = document.getElementById('cpf');
     
@@ -10,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    /**
+         * Valida um número de CPF brasileiro.
+         * Implementação baseada no algoritmo da Receita Federal.
+         * @param {string} cpf - O CPF a ser validado (pode conter máscara).
+         * @returns {boolean} True se o CPF for válido, False caso contrário.
+         */
     // Função de validação do CPF
     function validarCPF(cpf) {
         cpf = cpf.replace(/[^\d]/g, '');

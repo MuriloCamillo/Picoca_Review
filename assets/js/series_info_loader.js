@@ -1,4 +1,16 @@
-// Função auxiliar para preencher listas (cast, genres, etc.)
+/**
+ * @fileoverview Carrega e exibe as informações detalhadas de uma série específica
+ * na página de detalhes da série (series_info_default.html).
+ */
+
+/**
+ * Preenche um container HTML (geralmente um <div> ou <ul>) com uma lista de itens.
+ * Cada item é envolvido por um <span> com uma classe CSS baseada no ID do container.
+ * Ex: Se listId for 'cast-list', os spans terão a classe 'cast-item'.
+ * @param {string} listId - O ID do elemento HTML container da lista.
+ * @param {string[]} items - Um array de strings a serem exibidos como itens da lista.
+ * @returns {void}
+ */
 function populateList(listId, items) {
   const listContainer = document.getElementById(listId);
   if (!listContainer) {
@@ -20,7 +32,11 @@ function populateList(listId, items) {
   }
 }
 
-// Função principal para preencher os dados na página
+/**
+ * Função principal que lê o ID da série da URL, busca os dados
+ * correspondentes em `seriesData` e preenche a página com essas informações.
+ * @returns {void}
+ */
 function displaySeriesInfo() {
     //  Obtem o ID da série da URL
     const urlParams = new URLSearchParams(window.location.search);
