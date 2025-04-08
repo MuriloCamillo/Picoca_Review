@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Lida com a funcionalidade de busca na barra de navegação,
+ * mostrando sugestões de séries dinamicamente enquanto o usuário digita
+ * e redirecionando para a galeria ao pesquisar.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('navbarSearchInput');
   const searchResultsContainer = document.getElementById('navbarSearchResults');

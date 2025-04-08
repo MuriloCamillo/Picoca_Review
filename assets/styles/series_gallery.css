@@ -1,14 +1,20 @@
+/* ========================================== */
+/* == ESTILOS PÁGINA GALERIA DE SÉRIES == */
+/* ========================================== */
+
+/* --- Estilo Base da Página --- */
 .series-body {
-  background-color: var(--color-grey); 
-  color: var(--color-light);
+  background-color: var(--color-grey);
+  color: var(--color-light); 
 }
 
+/* --- Títulos da Página --- */
 .main-title {
   color: var(--color-light);
   font-size: 2.5rem;
   letter-spacing: 0.5rem;
-  margin-top: 4rem;
   margin-bottom: 2rem;
+  margin-top: 4rem;
   text-align: center;
 }
 
@@ -20,171 +26,172 @@
   text-align: center;
 }
 
-.menu-filter {
-text-align: center;
-  margin-bottom: 2rem;
-  margin-top: 3rem;
+/* --- Controles de Filtro e Busca --- */
+.menu-filter { 
+  margin-bottom: 2rem; 
+  margin-top: 3rem; 
+  text-align: center;
 }
 
-/* Estilo dos Botões de Filtro */
-#myBtnContainer {
-  margin-bottom: 2rem;
+#myBtnContainer { 
+  margin-bottom: 2rem; 
 }
 
-/* Acessibilidade */
+/* Estilo de foco (acessibilidade) para botões de filtro */
 .filter-btn:focus-visible {
-  outline: 2px solid var(--color-white); /* Borda branca */
-  outline-offset: 2px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
-  color: var(--color-white); 
   background-color: transparent; 
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+  color: var(--color-white);
+  outline: 2px solid var(--color-white); 
+  outline-offset: 2px;
 }
 
+/* Estilo base dos botões de filtro */
 .filter-btn {
-  border: none;
-  outline: none;
-  padding: 0.5rem 1rem;
   background-color: var(--color-grey); 
-  color: var(--color-lightgrey);
-  cursor: pointer;
+  border: none;
   border-radius: 5px;
-  margin: 0.3125rem;
+  color: var(--color-lightgrey); 
+  cursor: pointer;
+  margin: 0.3125rem; 
+  outline: none; 
+  padding: 0.5rem 1rem;
   transition: background-color 0.3s ease;
 }
 
-.filter-btn:hover {
-  background-color: var(--color-blue); 
+.filter-btn:hover { /* Efeito hover no botão */
+  background-color: var(--color-blue);
   color: var(--color-white);
 }
 
-/* Cor do botão ativo (selecionado) */
-.filter-btn.active {
+.filter-btn.active { /* Estilo do botão de filtro ativo */
   background-color: var(--color-button); 
-  color: var(--color-background);
+  color: var(--color-background); 
 }
 
+/* Container que agrupa filtros e busca */
 .filter-search-container {
+  align-items: baseline; 
+  display: flex;
+  flex-wrap: wrap; 
   gap: 1rem; 
+  justify-content: center;
+  margin-bottom: 4rem; 
 }
 
-/* Container da barra de busca */
+/* Container da barra de busca local */
 .search-series-container {
   min-width: 250px; 
 }
 
+/* Input de busca local */
 #seriesSearchInput {
-  background-color: var(--color-darkgrey); 
-  color: var(--color-light); 
-  border: 1px solid var(--color-divider); 
+  background-color: var(--color-darkgrey);
+  border: 1px solid var(--color-divider);
+  color: var(--color-light);
 }
 
 #seriesSearchInput::placeholder {
-  color: var(--color-lightgrey); 
+  color: var(--color-lightgrey);
   opacity: 0.7;
 }
 
-/* Remove o 'X' padrão do input tipo search em alguns navegadores */
+/* Remove o 'X' padrão do input search */
 #seriesSearchInput::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
 }
 
-/* Estilo dos Cards da Galeria (O mesmo do .poster do Index.html) */
-.poster-link {
-  text-decoration: none;
-  display: block; 
-}
 
-/* Container da busca local */
-.local-search-container {
+/* --- Busca Local (Com Ícone Dentro) --- */
+.local-search-container { 
+  min-width: 250px;
   position: relative; 
-  min-width: 250px; 
 }
 
-/* Input da busca local */
-#seriesSearchInput {
-  padding-right: 2.5rem; /* Ajustar o valor conforme o tamanho do ícone */
+.local-search-container #seriesSearchInput { /* Input dentro deste container */
   background-color: var(--color-darkgrey);
-  color: var(--color-light);
   border: 1px solid var(--color-divider);
+  color: var(--color-light);
+  padding-right: 2.5rem; 
 }
 
-#seriesSearchInput::placeholder {
+.local-search-container #seriesSearchInput::placeholder {
   color: var(--color-lightgrey);
   opacity: 0.7;
 }
 
-/* Estilo e posicionamento do ícone */
-.local-search-icon {
-  position: absolute; 
-  right: 10px;        
-  top: 50%;          
-  transform: translateY(-50%); 
-  color: var(--color-lightgrey); 
-  opacity: 0.7;      
+.local-search-icon { /* Ícone de lupa */
+  color: var(--color-lightgrey);
+  opacity: 0.7;
   pointer-events: none; 
+  position: absolute; 
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%); 
 }
 
-#seriesSearchInput:focus + .local-search-icon {
-    color: var(--color-white); 
+/* Melhora visibilidade do ícone quando o input está focado */
+.local-search-container #seriesSearchInput:focus + .local-search-icon {
+    color: var(--color-white);
     opacity: 1;
 }
 
-.filter-search-container {
-  gap: 1rem;
+
+/* --- Estilo dos Cards/Posters da Galeria --- */
+.poster-link { /* Link que envolve o poster */
+  display: block; 
+  text-decoration: none;
 }
 
-.poster {
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  background-color: var(--color-darkgrey); 
+.poster { 
+  align-items: center; 
   aspect-ratio: 2 / 3; 
+  background-color: var(--color-darkgrey);
+  border-radius: 10px;
   display: flex; 
-  align-items: center;
-  justify-content: center;
-  width: clamp(150px, 15vw, 180px);
+  justify-content: center; 
+  overflow: hidden; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: clamp(150px, 15vw, 180px); 
 }
 
-.poster img {
+.poster img { /* Imagem do poster */
   display: block;
-  width: 100%;
   height: 100%;
   object-fit: cover; 
+  width: 100%;
 }
 
-.poster:hover {
+.poster:hover { /* Efeito hover no poster */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
   transform: scale(1.05); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
+/* --- Animação e Visibilidade do Filtro --- */
+/* Classe para esconder itens filtrados */
+#seriesList .filterDiv.hide {
+  display: none;
+}
+
+/* Classe para animação de entrada (fade) */
 .show-item {
  animation: fadeIn 0.5s;
 }
 
+/* Animação de Fade In */
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-/* Adaptação do botão de filtro para mobile */
+
+/* --- Responsividade para Filtros/Busca --- */
 @media (max-width: 767px) {
     .menu-filter {
-        text-align: center;
+        text-align: center; 
     }
     .search-series-container {
-        width: 80%; 
         margin: 0 auto; 
+        width: 80%; 
     }
-}
-
-#seriesList .filterDiv.hide {
-  display: none;
-}
-.show-item {
-  animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
 }

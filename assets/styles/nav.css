@@ -1,4 +1,9 @@
-/* Itens hidden da Navbar */
+/* ===================================== */
+/* == ESTILOS DA BARRA DE NAVEGAÇÃO == */
+/* ===================================== */
+
+/* --- Controle de Visibilidade (Login/Registro/Dropdown Usuário) --- */
+/* Esconde elementos baseados na classe .hidden (controlada via JS) */
 #nav-login-link.hidden,
 #nav-register-link.hidden,
 #nav-user-dropdown.hidden {
@@ -6,21 +11,22 @@
 }
 
 #nav-username {
-  color: var(--color-lightgrey); 
+  color: var(--color-lightgrey);
 }
 
 .navbar-nav .nav-item.dropdown > a.nav-link:hover #nav-username {
  color: var(--color-white);
 }
 
-/* Logo */
+/* --- Logo na Navbar --- */
 .navbar-brand img {
   height: auto; 
   width: 3.5rem; 
 }
 
+/* --- Estilo Base da Navbar --- */
 .navbar {
-  background-color: var(--color-background); 
+  background-color: var(--color-background);
   padding: 0.9375rem 0;
   transition: box-shadow 0.3s ease, transform 0.3s ease; 
 }
@@ -29,33 +35,33 @@
   box-shadow: 0 -4px 8px rgba(200, 200, 200, 0.3); 
 }
 
-/* Centraliza os itens da navbar */
-.navbar-nav {
-  margin: 0 auto;
-  text-align: center;
+/* --- Alinhamento dos Itens da Navbar --- */
+.navbar-nav { 
+  margin: 0 auto; 
+  text-align: center; 
 }
 
-.navbar-nav .nav-item {
-  margin: 0 0.625rem;
+.navbar-nav .nav-item { /* Cada item da lista (li) */
+  margin: 0 0.625rem; /* Espaçamento horizontal entre itens */
 }
 
-/* Links/textos */
+/* --- Links de Navegação --- */
 .navbar-nav .nav-link {
-  color: var(--color-lightgrey); 
+  color: var(--color-lightgrey);
   font-size: 1.25rem;
   letter-spacing: 0.1rem;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ffffff; 
+  color: var(--color-white); 
 }
 
-/*Search Button */
-.search-container {
-  position: relative;
+/* --- Campo e Botão de Busca --- */
+.search-container { 
+  position: relative; 
 }
 
-.form-control {
+.form-control { /* Input de busca */
   border-radius: 20px; 
   padding-right: 2.5rem; 
 }
@@ -63,201 +69,163 @@
 .search-btn { /* Ícone de lupa dentro do campo */
   background: none;
   border: none;
-  color: #6c757d;
+  color: #6c757d; 
   cursor: pointer;
   position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%); 
 }
 
-/* Botão Hamburguer */
-.navbar-toggler-icon {
+/* --- Botão Hamburguer --- */
+.navbar-toggler-icon { 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.navbar-toggler {
-  border-color: white; 
+.navbar-toggler { 
+  border-color: var(--color-white); 
 }
 
-/* Parte do DropDown Menu */
-
+/* --- Dropdown do Usuário --- */
 #user-name{
   color: var(--color-lightgrey);
 }
 
 #user-name:hover {
-  color: #ffffff; 
+  color: var(--color-white);
 }
 
-.dropdown-menu {
-  background-color: var(--color-darkgrey); 
-  border: 1px solid var(--color-divider); 
+.dropdown-menu { 
+  background-color: var(--color-darkgrey);
+  border: 1px solid var(--color-divider);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown-item {
-  color: var(--color-lightgrey); 
-  transition: background-color 0.3s ease, color 0.3s ease; 
+.dropdown-item { /* Cada item dentro do dropdown */
+  color: var(--color-lightgrey);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dropdown-item:hover {
-  background-color: var(--color-blue); 
-  color: var(--color-white); 
+.dropdown-item:hover { 
+  background-color: var(--color-blue);
+  color: var(--color-white);
 }
 
-.dropdown-toggle::after {
-  border-top-color: var(--color-lightgrey); 
+.dropdown-toggle::after { /* Seta indicadora do dropdown */
+  border-top-color: var(--color-lightgrey);
 }
 
-/* --- Estilos Customizados para Sugestões de séries da Navbar --- */
+/* --- Estilos Customizados para Sugestões de Busca na Navbar --- */
 
-/* Estilo do Container Principal das Sugestões */
+/* Container dos resultados/sugestões */
 #navbarSearchResults {
-  background-color: var(--color-darkgrey); 
-  border: 1px solid var(--color-divider); 
+  background-color: var(--color-darkgrey);
+  border: 1px solid var(--color-divider);
+  border-radius: 0 0 8px 8px;
   border-top: none; 
-  border-radius: 0 0 8px 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 0; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   z-index: 1050; 
 }
 
-/* Estilo de Cada Item (Link) da Sugestão */
+/* Cada item/link na lista de sugestões */
 #navbarSearchResults .dropdown-item {
-  color: var(--color-lightgrey); 
-  padding: 0.6rem 1rem; 
-  font-size: 0.9rem; 
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  text-decoration: none; 
   border-bottom: 1px solid var(--color-divider); 
-  transition: background-color 0.2s ease, color 0.2s ease; 
+  color: var(--color-lightgrey);
+  font-size: 0.9rem;
+  overflow: hidden; 
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  text-overflow: ellipsis; /* Adiciona "..." se texto for muito longo */
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap; 
 }
 
-/* Remove a borda do último item */
+/* Remove a borda inferior do último item */
 #navbarSearchResults .dropdown-item:last-child {
   border-bottom: none;
 }
 
-/* Estilo do Item ao Passar o Mouse (Hover) ou Focar */
+/* Efeito hover/focus nos itens de sugestão */
 #navbarSearchResults .dropdown-item:hover,
 #navbarSearchResults .dropdown-item:focus {
-  background-color: var(--color-blue); 
-  color: var(--color-white); 
+  background-color: var(--color-blue);
+  color: var(--color-white);
   cursor: pointer;
 }
 
-/* Estilo específico para a mensagem "Nenhuma série encontrada" */
+/* Estilo para a mensagem "Nenhuma série encontrada" */
 #navbarSearchResults .dropdown-item.disabled {
-  color: var(--color-divider); 
-  font-style: italic;
-  background-color: transparent; 
-  cursor: default; 
+  background-color: transparent;
   border-bottom: none;
+  color: var(--color-divider);
+  cursor: default;
+  font-style: italic;
 }
 #navbarSearchResults .dropdown-item.disabled:hover {
     background-color: transparent; 
-    color: var(--color-divider); 
+    color: var(--color-divider);
 }
 
+/* Estilização da Barra de Rolagem */
 #navbarSearchResults::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
 }
 
 #navbarSearchResults::-webkit-scrollbar-track {
-  background: var(--color-darkgrey); 
+  background: var(--color-darkgrey);
   border-radius: 10px;
 }
 
 #navbarSearchResults::-webkit-scrollbar-thumb {
-  background-color: var(--color-divider); 
-  border-radius: 10px;
+  background-color: var(--color-divider);
   border: 2px solid var(--color-darkgrey); 
+  border-radius: 10px;
 }
 
 #navbarSearchResults::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-lightgrey); 
+  background-color: var(--color-lightgrey);
 }
 
+/* Estilo para destacar o termo buscado (tag <strong>) */
 #navbarSearchResults .dropdown-item strong {
-  color: var(--color-white); 
+  color: var(--color-white);
   font-weight: bold;
 }
 
-/* Toasts */
-.logout-toast {
-  position: fixed; 
-  bottom: 2rem;     
-  left: 50%;       
-  transform: translateX(-50%) translateY(150%); 
-  min-width: 250px;
-  z-index: 1056;    
+/* --- Estilos dos Toasts (Notificações) --- */
+/* Estilo base comum para todos os toasts */
+.logout-toast,
+.login-success-toast,
+#contact-success-toast { 
   background-color: #28a745; 
-  color: white;
-  padding: 0.8rem 1.25rem;
   border-radius: 0.375rem; 
+  bottom: 2rem; 
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s;
-  text-align: center;
-}
-
-.login-success-toast {
-  position: fixed; bottom: 2rem; left: 50%;
-  transform: translateX(-50%) translateY(150%);
-  min-width: 250px; z-index: 1056;
-  background-color: #28a745; 
-  color: white; padding: 0.8rem 1.25rem; border-radius: 0.375rem;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-  opacity: 0; visibility: hidden;
-  transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s;
-  text-align: center;
-}
-.login-success-toast.show {
-  opacity: 1; visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-.login-success-toast .toast-body { font-weight: 500; }
-
-.logout-toast.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0); 
-}
-
-.logout-toast .toast-body {
-  font-weight: 500;
-}
-
-/* Contact Toast */
-
-#contact-success-toast {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(150%); 
+  color: white;
+  left: 50%; 
   min-width: 250px;
-  z-index: 1056;
-  color: white; 
+  opacity: 0; 
   padding: 0.8rem 1.25rem;
-  border-radius: 0.375rem;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s;
+  position: fixed; 
   text-align: center;
-  background-color: #28a745; 
+  transform: translateX(-50%) translateY(150%); 
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out, visibility 0.4s;
+  visibility: hidden; 
+  z-index: 1056; 
 }
-
+/* Classe .show ativa a animação de entrada */
+.logout-toast.show,
+.login-success-toast.show,
 #contact-success-toast.show {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1; 
   transform: translateX(-50%) translateY(0); 
+  visibility: visible; 
 }
 
+/* Estilo do texto dentro dos toasts */
+.logout-toast .toast-body,
+.login-success-toast .toast-body,
 #contact-success-toast .toast-body {
-    font-weight: 500;
+  font-weight: 500; 
 }

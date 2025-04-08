@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Validação do formulário de contato, incluindo máscaras e validações
+ * específicas para CPF e Telefone, usando Bootstrap 5.
+ */
+
+
 document.addEventListener('DOMContentLoaded', function() {
   // --- Elementos do Formulário ---
   const form = document.querySelector('.needs-validation'); 
@@ -10,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const messageInput = document.getElementById('contactMessage');
   const successToastElement = document.getElementById('contact-success-toast'); // Elemento do Toast
 
+   /**
+   * Atualiza as classes de validação (.is-valid, .is-invalid) de um input
+   * com base na sua validade ou em um valor de validade fornecido.
+   * @param {HTMLInputElement|HTMLTextAreaElement|null} inputElement - O elemento de input a ser atualizado.
+   * @param {boolean|null} [isValidOverride=null] - Se fornecido, força o estado de validade (true=válido, false=inválido). Senão, usa inputElement.checkValidity().
+   */
   function updateValidationClass(inputElement, isValidOverride = null) {
       if (!inputElement) return;
       let isValid = (isValidOverride !== null) ? isValidOverride : inputElement.checkValidity();
@@ -52,6 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
        }
   }
 
+    /**
+   * Valida um número de CPF brasileiro.
+   * Algoritmo baseado na Receita Federal.
+   * @param {string} cpf - O CPF a ser validado (pode conter máscara).
+   * @returns {boolean} - True se o CPF for válido, False caso contrário.
+   */
   // Função de validação do CPF 
   function validarCPF(cpf) {
       if (!cpf) return false;
@@ -71,6 +89,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // --- Bloco Telefone ---
+   /**
+   * Formata um número de telefone para o padrão (XX) XXXXX-XXXX ou (XX) XXXX-XXXX.
+   * @param {string} value - O valor atual do input.
+   * @returns {string} - O valor formatado.
+   */
   function formatPhoneNumber(value) {
       if (!value) return '';
       value = value.replace(/\D/g, '');
@@ -83,6 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
       return '';
   }
 
+  /**
+   * Valida se o número de telefone tem 10 ou 11 dígitos.
+   * @param {HTMLInputElement|null} phoneInputElement - O input de telefone.
+   * @returns {boolean} - True se válido ou não obrigatório e vazio, False caso contrário.
+   */
   function validatePhoneNumber(phoneInput) {
       if (!phoneInput) return true;
       const phoneValue = phoneInput.value.replace(/\D/g, '');

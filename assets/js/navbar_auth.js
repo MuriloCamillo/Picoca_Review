@@ -1,5 +1,14 @@
 /**
- * Atualiza a APARÊNCIA DA NAVBAR baseada no status de login.
+ * @fileoverview Gerencia a exibição de elementos da navbar e toasts
+ * relacionados ao estado de autenticação do usuário (logado/deslogado)
+ * usando localStorage.
+ */
+
+/**
+ * Atualiza a visibilidade dos links 'Login', 'Registrar' e do dropdown do usuário
+ * na navbar, além de definir o nome de usuário exibido e configurar o botão de logout.
+ * @param {boolean} isLoggedIn - Indica se o usuário está logado (true) ou não (false).
+ * @param {string|null} username - O nome do usuário logado, ou null/undefined se deslogado.
  */
 function updateNavbarVisuals(isLoggedIn, username) {
     const loginLink = document.getElementById('nav-login-link');
@@ -31,7 +40,10 @@ function updateNavbarVisuals(isLoggedIn, username) {
 }
 
 /**
- * Atualiza o TEXTO DA SEÇÃO HERO baseada no status de login. 
+ * Atualiza o texto principal (título e subtítulos) na seção Hero da página inicial.
+ * Esta função só tem efeito se os elementos com os IDs correspondentes existirem na página.
+ * @param {boolean} isLoggedIn - Indica se o usuário está logado.
+ * @param {string|null} username - O nome do usuário logado.
  */
 function updateHeroText(isLoggedIn, username) {
     const heroTitle = document.getElementById('hero-title');
@@ -54,7 +66,8 @@ function updateHeroText(isLoggedIn, username) {
 }
 
 /**
- * Função principal que verifica o login e chama as atualizações de UI (Navbar e Hero).
+ * Função principal que verifica o status de login no localStorage
+ * e chama as funções de atualização da interface (Navbar e Hero).
  */
 function checkLoginStatusAndUpdateUI() {
     const loggedInUser = localStorage.getItem('loggedInUser');

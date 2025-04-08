@@ -1,3 +1,30 @@
+/**
+ * @fileoverview Armazena os dados das notícias do site.
+ * Cada chave do objeto representa um ID único para a notícia.
+ *
+ * Estrutura esperada para cada objeto de notícia:
+ * {
+ * title: "Título da Notícia", // Obrigatório
+ * author: "Nome do Autor",    // Obrigatório
+ * date: "DD de Mês de AAAA", // Obrigatório (formato textual)
+ * mainImageUrl: "caminho/para/imagem_principal.webp", // Obrigatório (imagem de capa)
+ * mainImageCaption: "Legenda para a imagem principal.", // Opcional
+ * summary: "Breve resumo/chamada para a notícia.", // Obrigatório (usado em prévias)
+ * articleContent: ` // Obrigatório (Conteúdo HTML da notícia)
+ * <h3>Subtítulo</h3>
+ * <p>Parágrafo de texto.</p>
+ * * <div class="text-center my-4">...</div>
+ * <h5>Outro Subtítulo</h5>
+ * <p>Mais texto.</p>
+ * `,
+ * // Campos Opcionais Adicionais (se necessários para layout específico da notícia):
+ * videoUrl: "https://url.do/video/embed", // Opcional (URL 'embed' do vídeo)
+ * videoCaption: "Legenda para o vídeo.", // Opcional
+ * secondaryImageUrl: "caminho/para/imagem_secundaria.webp", // Opcional
+ * secondaryImageCaption: "Legenda para imagem secundária." // Opcional
+ * }
+ */
+
 const newsData = {
     'otgw-10-years': {
         title: "\"Over the Garden Wall\" celebra 10 anos de jornada pelo desconhecido.",

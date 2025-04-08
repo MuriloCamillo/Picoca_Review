@@ -1,3 +1,8 @@
+/* ============================== */
+/* == ESTILOS GLOBAIS DO SITE == */
+/* ============================== */
+
+/* --- Reset Básico e Fonte Padrão --- */
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +10,9 @@
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
-/* Lê, se for usar coloração tenta padronizar, deixar como variável e como hexadecimal */
-:root { 
+
+/* --- Variáveis de Cores --- */
+:root {
   --color-background: #1A1A1A;
   --color-button: #84b0df;
   --color-blue: #4c6b89;
@@ -16,63 +22,53 @@
   --color-lightgrey: #D3D3D3;
   --color-light: #eaeaea;
   --color-white: #fff;
-  --accent-color: #00c030;
-  --secondary-color: #2c3440;
-  --border-color: #456;
-  --color-star: #f5c518;
-  --color-like: #E53935; 
-  --color-watchlist: #42A5F5;
-  /* Status séries */
-  --color-inproduction: #4caf50;
-  --color-renewed: #3498db;
-  --color-canceled: #ff0000;
-  --color-ended: #bdc3c7;
-  --color-waiting:#FBC02D;
+  --accent-color: #00c030; /* Cor de destaque (ex: validação, links ativos) */
+  --secondary-color: #2c3440; /* Cor secundária para elementos */
+  --border-color: #456; /* Cor padrão de bordas */
+  --color-star: #f5c518; /* Cor para estrelas de avaliação */
+  --color-like: #E53935; /* Cor para botão Like */
+  --color-watchlist: #42A5F5; /* Cor para botão Watchlist */
+  /* Cores para Status das séries */
+  --color-inproduction: #4caf50; /* Em produção - Verde */
+  --color-renewed: #3498db; /* Renovada - Azul */
+  --color-canceled: #ff0000; /* Cancelada - Vermelho */
+  --color-ended: #bdc3c7; /* Finalizada - Cinza */
+  --color-waiting:#FBC02D; /* Aguardando renovação - Amarelo */
 }
 
+/* --- Estrutura Básica da Página --- */
 html{
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%; 
   margin: 0;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
 }
 
 body {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh; 
   margin: 0;
 }
 
 main {
-  flex-grow: 1;
+  flex-grow: 1; 
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .gallery {
-    align-items: center; 
-    flex-direction: column; 
-  }
+/* --- Estilos Comuns para Seções --- */
 
-  .poster {
-    max-width: 250px; 
-    width: 90%; 
-  }
-}
-
-/* Títulos das seções */
+/* Títulos principais das seções (Tendências, Ranking, etc.) */
 .section-trends-title, .section-ranked-title, .section-journal-title, .section-benefits-title{
   color: var(--color-light);
-  font-size: clamp(1.8rem, 5vw, 2.5rem); /* Mínimo 1.8rem, Preferido 5% da largura, Máximo 2.5rem */
+  font-size: clamp(1.8rem, 5vw, 2.5rem); /* Tamanho de fonte responsivo */
   letter-spacing: 0.5rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
   text-align: center;
 }
 
-/* Textos das seções */
+/* Textos descritivos abaixo dos títulos das seções */
 .section-trends-text, .section-ranked-text, .section-journal-text, .section-benefits-text{
   color: var(--color-lightgrey);
   font-size: 1.2rem;
@@ -81,34 +77,37 @@ main {
   text-align: center;
 }
 
-/* Quebra de Linha Personalizada */
-.section-divider { /* <div class="section-divider"></div> */
-  margin: 0.625rem;
+/* --- Divisor Visual Entre Seções --- */
+.section-divider {
+  margin: 2rem 0; 
   position: relative;
   text-align: center;
+  height: 2px; 
 }
 
 .section-divider::before {
   background: var(--color-divider);
   content: "";
-  height: 2px;
-  top: 50%;
-  left: 10%;
-  width: 80%;
-  opacity: 0.7;
+  height: 100%; 
   position: absolute;
+  top: 0; 
+  left: 10%; 
+  width: 80%; 
+  opacity: 0.7;
 }
 
-/* Footer */
-footer {
+/* --- Estilos Padrão do Footer --- */
+footer.footer { 
   background-color: var(--color-darkgrey);
   color: var(--color-light);
-  padding: 5rem 0;
+  padding: 3rem 0;
+  margin-top: auto; 
 }
 
 .footer-text {
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
+  margin-bottom: 1rem; 
 }
 
 .footer-title {
@@ -118,80 +117,91 @@ footer {
   margin-bottom: 1rem;
 }
 
-.fab {
+.footer .fab { /* Ícones Font Awesome no footer */
   font-size: 1.2rem;
+  margin-right: 0.3rem; 
 }
 
 .footer-link {
   color: var(--color-light);
   font-size: 1.1rem;
   text-decoration: none;
+  transition: color 0.2s ease; 
 }
-
-.footer {
-  margin-top: auto;
+.footer-link:hover {
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 .footer-contact-suggestion{
   font-size: 1.1rem;
+  margin-top: 1.5rem;
 }
 
 .footer-link-contact {
   color: var(--color-lightgrey);
   font-size: 1.1rem;
   text-decoration: underline;
+  font-weight: bold; 
+  transition: color 0.2s ease;
+}
+.footer-link-contact:hover {
+    color: var(--color-white);
 }
 
-/* Acessibilidade, definir estilo do foco */
-
-/* :focus {
-  outline: 2px solid #007bff; 
-  outline-offset: 2px;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
-} */
-
-/* :focus {
-  outline: 3px solid #ff9900;
-  outline-offset: 3px;
-  box-shadow: 0 0 8px #ff9900;
+.footer-copy {
+  border-top: 1px solid var(--color-divider); /* Linha separadora */
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
+.footer-copy p {
+   margin-bottom: 0;
+   font-size: 0.9rem; 
+   color: var(--color-lightgrey);
+}
+
+/* --- Estilos de Acessibilidade (Focus Visible) --- */
 :focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  transition: outline-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-} */
-
-:focus {
-  outline: none; /* Remove o outline padrão (para evitar duplicação) */
+  outline: none;
 }
 
+/* Estilo aplicado APENAS quando o foco é acionado via teclado (Tab) */
 :focus-visible {
-  outline: 2px solid #007bff; /* Estilo para navegação por teclado */
-  outline-offset: 2px;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: 2px solid #007bff; 
+  outline-offset: 2px; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
   transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Para a Navbar */
-.navbar-nav .nav-link:focus-visible {
-  outline: 1px solid var(--color-white); 
-  outline-offset: 1px;
-  box-shadow: none;
-  color: var(--color-white);
-}
-
+/* Ajustes específicos de foco para a Navbar */
+.navbar-nav .nav-link:focus-visible,
 .navbar-nav .nav-item button.nav-link:focus-visible {
-  outline: 1px solid var(--color-white);
+  outline: 1px solid #007bff;
   outline-offset: 1px;
-  box-shadow: none;
-  color: var(--color-white);
+  box-shadow: none; 
+  color: var(--color-white); 
 }
 
-.form-control:focus-visible { /* Estilo para inputs */
+/* Ajuste específico para inputs de formulário */
+.form-control:focus-visible,
+.form-select:focus-visible { /* Incluído form-select */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: 2px solid #007bff;
   outline-offset: 2px;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* --- Responsividade --- */
+/* Ajuste para o Galleries em telas menores */
+@media (max-width: 768px) {
+  .gallery { 
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .poster { 
+    max-width: 250px;
+    width: 90%; 
+  }
 }

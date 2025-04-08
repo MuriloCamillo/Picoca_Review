@@ -1,3 +1,15 @@
+/**
+ * @fileoverview Carrega dinamicamente conteúdo na página inicial (index.html),
+ * incluindo uma prévia das notícias e galerias de séries (Tendências e Ranking).
+ */
+
+/**
+ * Cria o HTML para um card de notícia a ser exibido na página inicial.
+ * Limita o tamanho do resumo exibido.
+ * @param {object} newsItem - O objeto contendo os dados da notícia (título, resumo, imagem, etc.).
+ * @param {string} newsId - O ID único da notícia (usado para gerar o link).
+ * @returns {string} Uma string HTML representando o card da notícia para a index.
+ */
 function createIndexNewsCardHTML(newsItem, newsId) {
     const summary = newsItem.summary || 'Leia mais...';
     const shortSummary = summary.length > 90 ? summary.substring(0, 87) + '...' : summary;
@@ -20,6 +32,9 @@ function createIndexNewsCardHTML(newsItem, newsId) {
   `;
 }
 
+/**
+ * Carrega os cards das primeiras notícias (máximo 3) no container da página inicial.
+ */
 function loadIndexNews() {
     const container = document.getElementById('index-news-row');
     if (!container) {
@@ -76,7 +91,7 @@ function createIndexSeriesPosterHTML(seriesId, series) {
     `;
 }
 
-/**
+/*
  * Carrega os pôsteres das séries nas seções 'Trends' e 'Ranked' do index.html.
  * Pega as primeiras 12 séries de series_data.js (6 para cada seção).
  */

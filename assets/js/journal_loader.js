@@ -1,4 +1,9 @@
 /**
+ * @fileoverview Carrega dinamicamente todos os cards de notícias
+ * na página principal de notícias (journal.html).
+ */
+
+/**
  * Cria o HTML para um card de notícia (versão para journal.html com col-md-4).
  * @param {object} newsItem O objeto da notícia de newsData.
  * @param {string} newsId O ID da notícia.

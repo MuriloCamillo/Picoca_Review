@@ -1,28 +1,32 @@
-/* Borboletícia - Usar esse padrão pra inserir os dados das séries
-
-  'usar o identificador do html onde tem o id?=': {
-     title: "",
-     year: ,
-     creator: "",
-     tagline: "",
-     synopsis: "",
-     status: "Episódios semanais /  Renovada para x temporada / Aguardando renovação / Finalizada / Cancelada / ",
-     statusClass: "status-inproduction", 
-     cast: ["Fulano1", "Fulano2"],
-     genres: ["Drama", "Crime"],
-     seasons: ["1ª Temporada - 9 episódios", "2ª Temporada - 14 episódios"],
-     watchPlatforms: ["Disney+"],
-     posterImg: "assets/img/index/trend/demolidor_trend.webp",  //O poster da série
-     backdropImg: "assets/img/series_info/demolidorbg.webp",  //Background da série
-     trailerUrl: "https://www.youtube.com/embed/9KZyUQpihsE"  //Trailer da série
-   },
-
-Tipos de statusClass das séries:
- status-inproduction: Episodios semanais
- status-renewed: Renovada para x temporada
- status-waiting: Aguardando renovação
- status-ended: Finalizada
- status-canceled: Cancelada */
+/**
+ * @fileoverview Armazena os dados de todas as séries listadas no site.
+ * Cada chave do objeto `seriesData` é um ID único para a série (usado em URLs, etc.).
+ *
+ * Estrutura esperada para cada objeto de série:
+ * {
+ * title: "Título da Série",          // Obrigatório: Nome oficial.
+ * year: ANO_DE_INICIO,              // Obrigatório: Ano de lançamento (número).
+ * creator: "Nome(s) do(s) Criador(es)", // Obrigatório: Principal(is) criador(es).
+ * tagline: "Slogan ou frase curta.", // Opcional: Frase de efeito da série.
+ * synopsis: "Resumo da trama.",    // Obrigatório: Sinopse da série.
+ * status: "Status atual da série.", // Obrigatório: Texto descritivo (ex: "Finalizada", "Renovada para 2ª Temporada").
+ * statusClass: "classe-css-status", // Obrigatório: Classe CSS para estilizar o status (ver abaixo).
+ * cast: ["Ator/Atriz 1", "Ator/Atriz 2"], // Obrigatório: Lista dos principais membros do elenco.
+ * genres: ["Gênero 1", "Gênero 2"],  // Obrigatório: Lista de gêneros associados.
+ * seasons: ["Temporada 1 - X episódios", "Temporada 2 - Y episódios"], // Obrigatório: Lista de temporadas e nº de episódios.
+ * watchPlatforms: ["Plataforma 1", "Plataforma 2"], // Obrigatório: Onde assistir (ex: "Netflix", "Prime Video").
+ * posterImg: "caminho/para/poster.webp",    // Obrigatório: Caminho para a imagem do poster (formato vertical).
+ * backdropImg: "caminho/para/backdrop.webp", // Obrigatório: Caminho para a imagem de fundo (formato horizontal).
+ * trailerUrl: "URL_EMBED_DO_TRAILER" // Obrigatório: URL 'embed' do trailer (ex: do YouTube).
+ * }
+ *
+ * Opções para `statusClass`:
+ * - status-inproduction: Episódios atuais ou produção em andamento (Verde)
+ * - status-renewed: Renovada para próxima temporada (Azul)
+ * - status-waiting: Aguardando decisão de renovação/cancelamento (Amarelo)
+ * - status-ended: Série concluída (Cinza)
+ * - status-canceled: Série cancelada (Vermelho)
+ */
 
 const seriesData = {
   // Trends

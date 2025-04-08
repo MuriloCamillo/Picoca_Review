@@ -1,45 +1,49 @@
+/* ======================================== */
+/* == ESTILOS ESPECÍFICOS PÁGINA INDEX == */
+/* ======================================== */
+
 .index-body {
   background-color: var(--color-background);
 }
 
-/* Hero Background e Foreground */
+/* --- Seção Hero --- */
 .hero {
-  position: relative;
-  min-height: 100vh;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  position: relative;
   text-align: center;
 }
 
 .hero-background {
-  background: 
-    linear-gradient(to top, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%), /* Escurecimento superior */
-    linear-gradient(to right, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%), /* Escurecimento esquerdo */
-    linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%), /* Escurecimento inferior */
-    linear-gradient(to left, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%),  /* Escurecimento direito */
+  /* Combinação de gradientes e imagem de fundo */
+  background:
+    linear-gradient(to top, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%),
+    linear-gradient(to right, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%),
+    linear-gradient(to bottom, rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0) 35%),
+    linear-gradient(to left, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0) 35%),
     url("../img/index/herobg_flow.webp") no-repeat center center/cover;
-  
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1; /* Mantém a imagem no fundo */
+  z-index: -1; 
 }
 
-.hero-foreground { /* Foreground para o conteúdo acima da imagem (Hero-Background) */
+.hero-foreground {
   color: var(--color-light);
   max-width: 90%;
-  position: relative;
   padding: 2rem;
+  position: relative; 
 }
 
 .hero-foreground-title {
-  font-size: clamp(2.5rem, 6vw, 4rem); /* Mínimo 2.5rem, Preferido 6% da largura, Máximo 4rem */
+  font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 2rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -51,38 +55,38 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Posters - Tendências e Ranking */
+/* --- Galerias de Posters (Tendências e Ranking) --- */
 .gallery {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem para novas linhas */
+  flex-wrap: wrap;
   gap: 0.9375rem;
-  justify-content: center; 
+  justify-content: center;
   padding: 1.25rem;
 }
 
 .poster {
-  border-radius: 10px; 
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
-  background-color: var(--bg-component); 
-  aspect-ratio: 2 / 3; 
-  width: clamp(150px, 15vw, 180px); /* Largura fluida (15% da tela) entre 150px e 180px */
+  aspect-ratio: 2 / 3;
+  background-color: var(--color-background); 
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: clamp(150px, 15vw, 180px);
 }
 
 .poster img {
+  border-radius: inherit;
   display: block;
-  width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: inherit;
+  width: 100%;
 }
 
 .poster:hover {
   transform: scale(1.1);
 }
 
-/* Index.html - Benefits */
+/* --- Seção Benefícios  --- */
 .benefits-container {
   display: flex;
   flex-wrap: wrap;
@@ -91,8 +95,8 @@
   margin-top: 1.25rem;
 }
 
-.card-custom {
-  background-color: var(--color-darkgrey); /* Trocar a cor? ou a var darkgrey ou #212529*/
+.card-custom { /* Estilo do card */
+  background-color: var(--color-darkgrey);
   border-radius: 8px;
   color: var(--color-white);
   display: block;
@@ -100,8 +104,8 @@
   font-weight: 400;
   margin-bottom: 1rem;
   padding: 1.25rem;
-  text-decoration: none;
   text-align: center;
+  text-decoration: none;
   transition: 0.3s;
 }
 
@@ -112,125 +116,119 @@
 }
 
 .card-custom:hover {
-  background-color: #4c6b89;
-  transform: translateY(-3px); /* Efeito de "subir" ao passar o mouse */
+  background-color: #4c6b89; 
+  transform: translateY(-3px);
 }
 
-/* Index.html - Journal */
-.card { /* Definir a cor de fundo, ou a var darkgrey ou #212529 */
+/* --- Seção Notícias (Cards na Index) --- */
+.card { 
   border: none;
-  max-width: 320px; /* Define um tamanho máximo para os cards */
-  margin: auto;     /* Centraliza os cards */
+  margin: auto; 
+  max-width: 320px; 
   transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-  transform: scale(1.03); /* Efeito de zoom ao passar o mouse */
+  transform: scale(1.03);
 }
 
 .card-img-top {
-  height: 180px;     /* Define uma altura fixa */
-  object-fit: cover; 
-  width: 100%;       /* Mantém a largura total do card */
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
 }
 
-.btn-outline-light {
-  border-radius: 999px; 
+.btn-outline-light { 
+  border-radius: 999px;
 }
 
 .section-journal-link {
   color: var(--color-lightgrey);
 }
 
-/* Estilos para o Accordion na seção benefits */
+/* --- Estilos para o Accordion (Seção Benefícios) --- */
 .accordion-item.card-custom {
   background-color: var(--color-darkgrey);
   border: none;
-  margin-bottom: 1rem;
   border-radius: 8px;
+  margin-bottom: 1rem;
+  max-width: 350px; 
   overflow: hidden;
-  width: 100%;
-  max-width: 350px;
   transition: all 0.3s ease;
+  width: 100%; 
 }
 
-/* Estilo padrão para o botão do accordion (estado normal) */
 .accordion-button {
+  align-items: center;
   background-color: var(--color-darkgrey);
+  border: none;
   color: var(--color-white);
+  display: flex;
   font-weight: 500;
   padding: 0.9375rem 1.25rem;
-  display: flex;
-  align-items: center;
-  border: none;
+  text-align: left;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
-/* Quando o botão está aberto (não colapsado) */
 .accordion-button:not(.collapsed) {
   background-color: var(--color-darkgrey);
-  color: var(--color-white);
   box-shadow: none;
+  color: var(--color-white);
 }
 
-/* Quando o mouse está sobre o item do accordion */
 .accordion-item.card-custom:hover .accordion-button,
 .accordion-item.card-custom:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-blue); 
   color: var(--color-white);
 }
 
-/* Remover a borda de foco */
 .accordion-button:focus {
-  box-shadow: none;
   border-color: transparent;
+  box-shadow: none;
   outline: 3px solid #007bff;
 }
 
-/* Cor da seta do accordion */
 .accordion-button::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; 
 }
 
-/* Estilo do corpo do accordion */
 .accordion-body {
   background-color: var(--color-darkgrey);
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
   color: var(--color-light);
   padding: 0.9375rem 1.25rem;
-  border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
 }
 
-/* Quando o accordion está aberto e o mouse está em cima */
 .accordion-item.card-custom:hover .accordion-body {
-  background-color: var(--color-blue);
+  background-color: var(--color-blue); 
 }
 
-/* Configuração do container de benefícios */
+/* Configuração do container do accordion */
 .benefits-container.accordion {
+  align-items: center; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
+  margin: 0 auto; 
+  max-width: 75rem; 
   width: 100%;
-  max-width: 75rem;
-  margin: 0 auto;
 }
 
-/* Efeito de elevação ao passar o mouse */
 .accordion-item.card-custom:hover {
   transform: translateY(-3px);
 }
 
-/* Ajuste para telas maiores */
+/* Responsividade */
 @media (min-width: 768px) {
   .benefits-container.accordion {
-    flex-direction: row;
+    flex-direction: row; 
     flex-wrap: wrap;
-    justify-content: center;
     gap: 1.25rem;
+    justify-content: center;
   }
-  
+
   .accordion-item.card-custom {
-    flex: 0 0 30%;
+    flex: 0 0 30%; 
   }
 }

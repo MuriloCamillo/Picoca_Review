@@ -1,3 +1,13 @@
+/**
+ * @fileoverview Carrega e exibe as informações detalhadas de uma notícia específica,
+ * incluindo o artigo principal e uma seção de notícias relacionadas.
+ */
+
+/**
+ * Embaralha os elementos de um array no próprio array (in-place) usando o algoritmo Fisher-Yates.
+ * @param {Array} array - O array a ser embaralhado.
+ * @returns {void} - Modifica o array original.
+ */
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -30,8 +40,10 @@ function createNewsCardHTML(newsItem, newsId) {
     `;
 }
 /**
-* Exibe notícias relacionadas (aleatórias) na seção "Veja também".
-* @param {string} currentNewsId O ID da notícia atual que não deve ser exibida.
+* Exibe até 2 notícias relacionadas (aleatórias) na seção "Veja também",
+* excluindo a notícia que está sendo visualizada no momento.
+* @param {string} currentNewsId - O ID da notícia atual (para não ser incluída nas relacionadas).
+* @returns {void}
 */
 function displayRelatedNews(currentNewsId) {
   const relatedNewsContainer = document.getElementById('related-news-row');
@@ -66,8 +78,12 @@ function displayRelatedNews(currentNewsId) {
   relatedNewsContainer.innerHTML = relatedNewsHTML;
 }
 
-// --- FUNÇÃO PRINCIPAL ---
-
+/**
+ * Função principal que lê o ID da notícia da URL, busca os dados
+ * correspondentes em `newsData` e preenche a página com essas informações.
+ * Também chama a função para exibir notícias relacionadas.
+ * @returns {void}
+ */
 function displayNewsInfo() {
     const urlParams = new URLSearchParams(window.location.search);
     const newsId = urlParams.get('id');

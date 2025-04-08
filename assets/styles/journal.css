@@ -1,40 +1,45 @@
+/* ======================================= */
+/* == ESTILOS ESPECÍFICOS PÁGINA JOURNAL == */
+/* ======================================= */
+
 .journal-body {
   background-color: var(--color-grey); 
 }
 
-/* Cards das notícias */
-.card { 
-  border: none;
+/* --- Estilização dos Cards de Notícias --- */
+.card {
+  border: none; 
+  margin: auto; 
   max-width: 320px; 
-  margin: auto;    
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; 
 }
 
 .card:hover {
   transform: scale(1.03); 
 }
 
-.card-img-top {
-  height: 180px;     
+.card-img-top { /* Imagem no topo do card */
+  height: 180px; 
   object-fit: cover; 
-  width: 100%;       
+  width: 100%;
 }
 
-.btn-outline-light {
+.btn-outline-light { /* Botão "Ver Mais" */
   border-radius: 999px; 
 }
 
-/* Espaçamento dos cards das notícias */
+/* --- Espaçamento entre os Cards --- */
 .row .col-md-4 {
   margin-bottom: 2.5rem; 
 }
 
+/* --- Títulos da Página --- */
 .main-title {
   color: var(--color-light);
   font-size: 2.5rem;
   letter-spacing: 0.5rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; 
+  margin-top: 4rem; 
   text-align: center;
 }
 
@@ -42,6 +47,6 @@
   color: var(--color-lightgrey);
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; 
   text-align: center;
 }
