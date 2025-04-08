@@ -1,73 +1,134 @@
 /**
- * @fileoverview Adiciona máscara e validação de CPF ao campo correspondente
- * no formulário da página de cadastro (sign_up.html).
- * Integra-se com a validação do Bootstrap 5.
+ * @fileoverview Validação do formulário de cadastro de usuário, 
+ * incluindo nome, sobrenome, nome de usuário, email e senha. 
+ * Se o formulário for enviado com sucesso, uma mensagem de sucesso é exibida.
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    const cpfInput = document.getElementById('cpf');
-    
-    // Máscara para o formato do CPF
-    cpfInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length <= 11) {
-            value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-            e.target.value = value;
-        }
-    });
+    const form = document.querySelector('.formulario-cadastro form');
+    const firstNameInput = document.getElementById('first-name');
+    const lastNameInput = document.getElementById('last-name');
+    const usernameInput = document.getElementById('username');
+    const emailInput = document.getElementById('validationEmail');
+    const emailConfirmInput = document.getElementById('validationEmailConfirm');
+    const passwordInput = document.getElementById('validationPassword');
+    const passwordConfirmInput = document.getElementById('validationPasswordConfirm');
+    const termsCheckbox = document.getElementById('invalidCheck');
+    const successToastElement = document.getElementById('signup-success-toast');
 
     /**
-         * Valida um número de CPF brasileiro.
-         * Implementação baseada no algoritmo da Receita Federal.
-         * @param {string} cpf - O CPF a ser validado (pode conter máscara).
-         * @returns {boolean} True se o CPF for válido, False caso contrário.
-         */
-    // Função de validação do CPF
-    function validarCPF(cpf) {
-        cpf = cpf.replace(/[^\d]/g, '');
-
-        if (cpf.length !== 11) return false;
-
-        // Verifica se todos os dígitos são iguais
-        if (/^(\d)\1+$/.test(cpf)) return false;
-
-        let cpfDigitos = cpf.split('').map(Number);
-        const b1Original = cpfDigitos[9];
-        const b2Original = cpfDigitos[10];
-
-        // Calcula primeiro dígito
-        let soma1 = 0;
-        for (let i = 0; i < 9; i++) {
-            soma1 += cpfDigitos[i] * (i + 1);
+     * Atualiza as classes de validação de um elemento de entrada.
+     * @param {HTMLElement} inputElement - Elemento de entrada a ser validado.
+     * @param {boolean|null} customValidity - Validade personalizada (opcional).
+     */
+    function updateValidationClass(inputElement, customValidity = null) {
+        if (!inputElement) return;
+        const isValid = customValidity !== null ? customValidity : inputElement.checkValidity();
+        if (isValid) {
+            inputElement.classList.remove('is-invalid');
+            inputElement.classList.add('is-valid');
+        } else {
+            inputElement.classList.add('is-invalid');
+            inputElement.classList.remove('is-valid');
         }
-        let resto1 = soma1 % 11;
-        let b1Calculado = (resto1 === 10) ? 0 : resto1;
-
-        // Calcula segundo dígito
-        let soma2 = 0;
-        for (let i = 0; i < 9; i++) {
-            soma2 += cpfDigitos[i] * (9 - i);
-        }
-        let resto2 = soma2 % 11;
-        let b2Calculado = (resto2 === 10) ? 0 : resto2;
-
-        return (b1Calculado === b1Original && b2Calculado === b2Original);
     }
 
-    // Validação do formulário
-    const form = document.querySelector('.needs-validation');
-    form.addEventListener('submit', function(event) {
-        if (!form.checkValidity() || !validarCPF(cpfInput.value)) {
-            event.preventDefault();
-            event.stopPropagation();
-            
-            if (!validarCPF(cpfInput.value)) {
-                cpfInput.setCustomValidity('CPF inválido');
-            } else {
-                cpfInput.setCustomValidity('');
+    if (form) {
+        // Validação em tempo real
+        [firstNameInput, lastNameInput, usernameInput].forEach(input => {
+            if (input) {
+                input.addEventListener('input', () => {
+                    if (form.classList.contains('was-validated')) {
+                        updateValidationClass(input);
+                    }
+                });
             }
+        });
+
+        // Validação de email em tempo real
+        if (emailInput && emailConfirmInput) {
+            [emailInput, emailConfirmInput].forEach(input => {
+                input.addEventListener('input', () => {
+                    if (form.classList.contains('was-validated')) {
+                        const emailsMatch = emailInput.value === emailConfirmInput.value;
+                        emailConfirmInput.setCustomValidity(emailsMatch ? '' : 'Os emails não correspondem.');
+                        updateValidationClass(emailConfirmInput, emailsMatch);
+                    }
+                });
+            });
         }
-        
-        form.classList.add('was-validated');
-    });
+
+        // Validação de senha em tempo real
+        if (passwordInput && passwordConfirmInput) {
+            [passwordInput, passwordConfirmInput].forEach(input => {
+                input.addEventListener('input', () => {
+                    if (form.classList.contains('was-validated')) {
+                        if (passwordInput.value.length < 8) {
+                            passwordInput.setCustomValidity('A senha deve ter no mínimo 8 caracteres.');
+                        } else {
+                            passwordInput.setCustomValidity('');
+                        }
+
+                        const passwordsMatch = passwordInput.value === passwordConfirmInput.value;
+                        passwordConfirmInput.setCustomValidity(passwordsMatch ? '' : 'As senhas não correspondem.');
+                        
+                        updateValidationClass(passwordInput);
+                        updateValidationClass(passwordConfirmInput, passwordsMatch);
+                    }
+                });
+            });
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Validações específicas
+            const emailsMatch = emailInput.value === emailConfirmInput.value;
+            const passwordsMatch = passwordInput.value === passwordConfirmInput.value;
+            const passwordLength = passwordInput.value.length >= 8;
+
+            emailConfirmInput.setCustomValidity(emailsMatch ? '' : 'Os emails não correspondem.');
+            passwordInput.setCustomValidity(passwordLength ? '' : 'A senha deve ter no mínimo 8 caracteres.');
+            passwordConfirmInput.setCustomValidity(passwordsMatch ? '' : 'As senhas não correspondem.');
+
+            if (!form.checkValidity() || !emailsMatch || !passwordsMatch || !passwordLength) {
+                event.stopPropagation();
+                
+                updateValidationClass(firstNameInput);
+                updateValidationClass(lastNameInput);
+                updateValidationClass(usernameInput);
+                updateValidationClass(emailInput);
+                updateValidationClass(emailConfirmInput, emailsMatch);
+                updateValidationClass(passwordInput, passwordLength);
+                updateValidationClass(passwordConfirmInput, passwordsMatch);
+                updateValidationClass(termsCheckbox);
+            } else {
+                if (successToastElement) {
+                    successToastElement.classList.add('show');
+                    setTimeout(() => { 
+                        successToastElement.classList.remove('show');
+                        window.location.href = 'login.html';
+                    }, 3000);
+                } else {
+                    console.warn("Elemento #signup-success-toast não encontrado. Usando alert.");
+                    alert('Cadastro realizado com sucesso!');
+                    window.location.href = 'login.html';
+                }
+
+                form.reset();
+                form.classList.remove('was-validated');
+
+                // Limpa as classes de validação
+                [firstNameInput, lastNameInput, usernameInput, emailInput, 
+                 emailConfirmInput, passwordInput, passwordConfirmInput, termsCheckbox].forEach(el => {
+                    if(el) {
+                        el.classList.remove('is-valid', 'is-invalid');
+                        el.setCustomValidity('');
+                    }
+                });
+            }
+
+            form.classList.add('was-validated');
+        });
+    }
 });

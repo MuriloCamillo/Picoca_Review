@@ -197,6 +197,7 @@
 /* Estilo base comum para todos os toasts */
 .logout-toast,
 .login-success-toast,
+.signup-success-toast,
 #contact-success-toast { 
   background-color: #28a745; 
   border-radius: 0.375rem; 
@@ -217,6 +218,7 @@
 /* Classe .show ativa a animação de entrada */
 .logout-toast.show,
 .login-success-toast.show,
+.signup-success-toast.show,
 #contact-success-toast.show {
   opacity: 1; 
   transform: translateX(-50%) translateY(0); 
@@ -226,6 +228,7 @@
 /* Estilo do texto dentro dos toasts */
 .logout-toast .toast-body,
 .login-success-toast .toast-body,
+.signup-success-toast .toast-body,
 #contact-success-toast .toast-body {
   font-weight: 500; 
 }
