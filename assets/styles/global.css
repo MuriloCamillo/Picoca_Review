@@ -13,53 +13,56 @@
 
 /* --- Variáveis de Cores --- */
 :root {
-  --color-background: #1A1A1A;
+  --color-background: #1a1a1a;
   --color-button: #84b0df;
   --color-blue: #4c6b89;
   --color-darkgrey: #2b2b2b;
   --color-divider: #666;
   --color-grey: #333333;
-  --color-lightgrey: #D3D3D3;
+  --color-lightgrey: #d3d3d3;
   --color-light: #eaeaea;
   --color-white: #fff;
   --accent-color: #00c030; /* Cor de destaque (ex: validação, links ativos) */
   --secondary-color: #2c3440; /* Cor secundária para elementos */
   --border-color: #456; /* Cor padrão de bordas */
   --color-star: #f5c518; /* Cor para estrelas de avaliação */
-  --color-like: #E53935; /* Cor para botão Like */
-  --color-watchlist: #42A5F5; /* Cor para botão Watchlist */
+  --color-like: #e53935; /* Cor para botão Like */
+  --color-watchlist: #42a5f5; /* Cor para botão Watchlist */
   /* Cores para Status das séries */
   --color-inproduction: #4caf50; /* Em produção - Verde */
   --color-renewed: #3498db; /* Renovada - Azul */
   --color-canceled: #ff0000; /* Cancelada - Vermelho */
   --color-ended: #bdc3c7; /* Finalizada - Cinza */
-  --color-waiting:#FBC02D; /* Aguardando renovação - Amarelo */
+  --color-waiting: #fbc02d; /* Aguardando renovação - Amarelo */
 }
 
 /* --- Estrutura Básica da Página --- */
-html{
+html {
   display: flex;
   flex-direction: column;
-  min-height: 100%; 
+  min-height: 100%;
   margin: 0;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
   margin: 0;
 }
 
 main {
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 /* --- Estilos Comuns para Seções --- */
 
 /* Títulos principais das seções (Tendências, Ranking, etc.) */
-.section-trends-title, .section-ranked-title, .section-journal-title, .section-benefits-title{
+.section-trends-title,
+.section-ranked-title,
+.section-journal-title,
+.section-benefits-title {
   color: var(--color-light);
   font-size: clamp(1.8rem, 5vw, 2.5rem); /* Tamanho de fonte responsivo */
   letter-spacing: 0.5rem;
@@ -69,7 +72,10 @@ main {
 }
 
 /* Textos descritivos abaixo dos títulos das seções */
-.section-trends-text, .section-ranked-text, .section-journal-text, .section-benefits-text{
+.section-trends-text,
+.section-ranked-text,
+.section-journal-text,
+.section-benefits-text {
   color: var(--color-lightgrey);
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
@@ -79,35 +85,35 @@ main {
 
 /* --- Divisor Visual Entre Seções --- */
 .section-divider {
-  margin: 2rem 0; 
+  margin: 2rem 0;
   position: relative;
   text-align: center;
-  height: 2px; 
+  height: 2px;
 }
 
 .section-divider::before {
   background: var(--color-divider);
   content: "";
-  height: 100%; 
+  height: 100%;
   position: absolute;
-  top: 0; 
-  left: 10%; 
-  width: 80%; 
+  top: 0;
+  left: 10%;
+  width: 80%;
   opacity: 0.7;
 }
 
 /* --- Estilos Padrão do Footer --- */
-footer.footer { 
+footer.footer {
   background-color: var(--color-darkgrey);
   color: var(--color-light);
   padding: 3rem 0;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 .footer-text {
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
 }
 
 .footer-title {
@@ -117,23 +123,24 @@ footer.footer {
   margin-bottom: 1rem;
 }
 
-.footer .fab { /* Ícones Font Awesome no footer */
+.footer .fab {
+  /* Ícones Font Awesome no footer */
   font-size: 1.2rem;
-  margin-right: 0.3rem; 
+  margin-right: 0.3rem;
 }
 
 .footer-link {
   color: var(--color-light);
   font-size: 1.1rem;
   text-decoration: none;
-  transition: color 0.2s ease; 
+  transition: color 0.2s ease;
 }
 .footer-link:hover {
   color: var(--color-white);
   text-decoration: underline;
 }
 
-.footer-contact-suggestion{
+.footer-contact-suggestion {
   font-size: 1.1rem;
   margin-top: 1.5rem;
 }
@@ -142,11 +149,11 @@ footer.footer {
   color: var(--color-lightgrey);
   font-size: 1.1rem;
   text-decoration: underline;
-  font-weight: bold; 
+  font-weight: bold;
   transition: color 0.2s ease;
 }
 .footer-link-contact:hover {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .footer-copy {
@@ -156,9 +163,9 @@ footer.footer {
 }
 
 .footer-copy p {
-   margin-bottom: 0;
-   font-size: 0.9rem; 
-   color: var(--color-lightgrey);
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--color-lightgrey);
 }
 
 /* --- Estilos de Acessibilidade (Focus Visible) --- */
@@ -168,9 +175,9 @@ footer.footer {
 
 /* Estilo aplicado APENAS quando o foco é acionado via teclado (Tab) */
 :focus-visible {
-  outline: 2px solid #007bff; 
-  outline-offset: 2px; 
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -179,13 +186,14 @@ footer.footer {
 .navbar-nav .nav-item button.nav-link:focus-visible {
   outline: 1px solid #007bff;
   outline-offset: 1px;
-  box-shadow: none; 
-  color: var(--color-white); 
+  box-shadow: none;
+  color: var(--color-white);
 }
 
 /* Ajuste específico para inputs de formulário */
 .form-control:focus-visible,
-.form-select:focus-visible { /* Incluído form-select */
+.form-select:focus-visible {
+  /* Incluído form-select */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: 2px solid #007bff;
   outline-offset: 2px;
@@ -195,13 +203,13 @@ footer.footer {
 /* --- Responsividade --- */
 /* Ajuste para o Galleries em telas menores */
 @media (max-width: 768px) {
-  .gallery { 
+  .gallery {
     align-items: center;
     flex-direction: column;
   }
 
-  .poster { 
+  .poster {
     max-width: 250px;
-    width: 90%; 
+    width: 90%;
   }
 }

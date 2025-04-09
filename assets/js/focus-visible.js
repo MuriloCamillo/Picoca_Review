@@ -25,7 +25,7 @@ function applyFocusVisiblePolyfill(scope) {
     week: true,
     time: true,
     datetime: true,
-    'datetime-local': true
+    "datetime-local": true,
   };
 
   /**
@@ -37,10 +37,10 @@ function applyFocusVisiblePolyfill(scope) {
     if (
       el &&
       el !== document &&
-      el.nodeName !== 'HTML' &&
-      el.nodeName !== 'BODY' &&
-      'classList' in el &&
-      'contains' in el.classList
+      el.nodeName !== "HTML" &&
+      el.nodeName !== "BODY" &&
+      "classList" in el &&
+      "contains" in el.classList
     ) {
       return true;
     }
@@ -58,11 +58,11 @@ function applyFocusVisiblePolyfill(scope) {
     var type = el.type;
     var tagName = el.tagName;
 
-    if (tagName === 'INPUT' && inputTypesAllowlist[type] && !el.readOnly) {
+    if (tagName === "INPUT" && inputTypesAllowlist[type] && !el.readOnly) {
       return true;
     }
 
-    if (tagName === 'TEXTAREA' && !el.readOnly) {
+    if (tagName === "TEXTAREA" && !el.readOnly) {
       return true;
     }
 
@@ -79,11 +79,11 @@ function applyFocusVisiblePolyfill(scope) {
    * @param {Element} el
    */
   function addFocusVisibleClass(el) {
-    if (el.classList.contains('focus-visible')) {
+    if (el.classList.contains("focus-visible")) {
       return;
     }
-    el.classList.add('focus-visible');
-    el.setAttribute('data-focus-visible-added', '');
+    el.classList.add("focus-visible");
+    el.setAttribute("data-focus-visible-added", "");
   }
 
   /**
@@ -92,11 +92,11 @@ function applyFocusVisiblePolyfill(scope) {
    * @param {Element} el
    */
   function removeFocusVisibleClass(el) {
-    if (!el.hasAttribute('data-focus-visible-added')) {
+    if (!el.hasAttribute("data-focus-visible-added")) {
       return;
     }
-    el.classList.remove('focus-visible');
-    el.removeAttribute('data-focus-visible-added');
+    el.classList.remove("focus-visible");
+    el.removeAttribute("data-focus-visible-added");
   }
 
   /**
@@ -159,8 +159,8 @@ function applyFocusVisiblePolyfill(scope) {
     }
 
     if (
-      e.target.classList.contains('focus-visible') ||
-      e.target.hasAttribute('data-focus-visible-added')
+      e.target.classList.contains("focus-visible") ||
+      e.target.hasAttribute("data-focus-visible-added")
     ) {
       // To detect a tab/window switch, we look for a blur event followed
       // rapidly by a visibility change.
@@ -168,7 +168,7 @@ function applyFocusVisiblePolyfill(scope) {
       // regular focus change.
       hadFocusVisibleRecently = true;
       window.clearTimeout(hadFocusVisibleRecentlyTimeout);
-      hadFocusVisibleRecentlyTimeout = window.setTimeout(function() {
+      hadFocusVisibleRecentlyTimeout = window.setTimeout(function () {
         hadFocusVisibleRecently = false;
       }, 100);
       removeFocusVisibleClass(e.target);
@@ -181,7 +181,7 @@ function applyFocusVisiblePolyfill(scope) {
    * @param {Event} e
    */
   function onVisibilityChange(e) {
-    if (document.visibilityState === 'hidden') {
+    if (document.visibilityState === "hidden") {
       // If the tab becomes active again, the browser will handle calling focus
       // on the element (Safari actually calls it twice).
       // If this tab change caused a blur on an element with focus-visible,
@@ -200,27 +200,27 @@ function applyFocusVisiblePolyfill(scope) {
    * focus.
    */
   function addInitialPointerMoveListeners() {
-    document.addEventListener('mousemove', onInitialPointerMove);
-    document.addEventListener('mousedown', onInitialPointerMove);
-    document.addEventListener('mouseup', onInitialPointerMove);
-    document.addEventListener('pointermove', onInitialPointerMove);
-    document.addEventListener('pointerdown', onInitialPointerMove);
-    document.addEventListener('pointerup', onInitialPointerMove);
-    document.addEventListener('touchmove', onInitialPointerMove);
-    document.addEventListener('touchstart', onInitialPointerMove);
-    document.addEventListener('touchend', onInitialPointerMove);
+    document.addEventListener("mousemove", onInitialPointerMove);
+    document.addEventListener("mousedown", onInitialPointerMove);
+    document.addEventListener("mouseup", onInitialPointerMove);
+    document.addEventListener("pointermove", onInitialPointerMove);
+    document.addEventListener("pointerdown", onInitialPointerMove);
+    document.addEventListener("pointerup", onInitialPointerMove);
+    document.addEventListener("touchmove", onInitialPointerMove);
+    document.addEventListener("touchstart", onInitialPointerMove);
+    document.addEventListener("touchend", onInitialPointerMove);
   }
 
   function removeInitialPointerMoveListeners() {
-    document.removeEventListener('mousemove', onInitialPointerMove);
-    document.removeEventListener('mousedown', onInitialPointerMove);
-    document.removeEventListener('mouseup', onInitialPointerMove);
-    document.removeEventListener('pointermove', onInitialPointerMove);
-    document.removeEventListener('pointerdown', onInitialPointerMove);
-    document.removeEventListener('pointerup', onInitialPointerMove);
-    document.removeEventListener('touchmove', onInitialPointerMove);
-    document.removeEventListener('touchstart', onInitialPointerMove);
-    document.removeEventListener('touchend', onInitialPointerMove);
+    document.removeEventListener("mousemove", onInitialPointerMove);
+    document.removeEventListener("mousedown", onInitialPointerMove);
+    document.removeEventListener("mouseup", onInitialPointerMove);
+    document.removeEventListener("pointermove", onInitialPointerMove);
+    document.removeEventListener("pointerdown", onInitialPointerMove);
+    document.removeEventListener("pointerup", onInitialPointerMove);
+    document.removeEventListener("touchmove", onInitialPointerMove);
+    document.removeEventListener("touchstart", onInitialPointerMove);
+    document.removeEventListener("touchend", onInitialPointerMove);
   }
 
   /**
@@ -233,7 +233,7 @@ function applyFocusVisiblePolyfill(scope) {
   function onInitialPointerMove(e) {
     // Work around a Safari quirk that fires a mousemove on <html> whenever the
     // window blurs, even if you're tabbing out of the page. ¯\_(ツ)_/¯
-    if (e.target.nodeName && e.target.nodeName.toLowerCase() === 'html') {
+    if (e.target.nodeName && e.target.nodeName.toLowerCase() === "html") {
       return;
     }
 
@@ -244,11 +244,11 @@ function applyFocusVisiblePolyfill(scope) {
   // For some kinds of state, we are interested in changes at the global scope
   // only. For example, global pointer input, global key presses and global
   // visibility change should affect the state at every scope:
-  document.addEventListener('keydown', onKeyDown, true);
-  document.addEventListener('mousedown', onPointerDown, true);
-  document.addEventListener('pointerdown', onPointerDown, true);
-  document.addEventListener('touchstart', onPointerDown, true);
-  document.addEventListener('visibilitychange', onVisibilityChange, true);
+  document.addEventListener("keydown", onKeyDown, true);
+  document.addEventListener("mousedown", onPointerDown, true);
+  document.addEventListener("pointerdown", onPointerDown, true);
+  document.addEventListener("touchstart", onPointerDown, true);
+  document.addEventListener("visibilitychange", onVisibilityChange, true);
 
   addInitialPointerMoveListeners();
 
@@ -256,8 +256,8 @@ function applyFocusVisiblePolyfill(scope) {
   // scope. This is because focus / blur events that originate from within a
   // shadow root are not re-dispatched from the host element if it was already
   // the active element in its own scope:
-  scope.addEventListener('focus', onFocus, true);
-  scope.addEventListener('blur', onBlur, true);
+  scope.addEventListener("focus", onFocus, true);
+  scope.addEventListener("blur", onBlur, true);
 
   // We detect that a node is a ShadowRoot by ensuring that it is a
   // DocumentFragment and also has a host property. This check covers native
@@ -268,17 +268,17 @@ function applyFocusVisiblePolyfill(scope) {
     // Since a ShadowRoot is a special kind of DocumentFragment, it does not
     // have a root element to add a class to. So, we add this attribute to the
     // host element instead:
-    scope.host.setAttribute('data-js-focus-visible', '');
+    scope.host.setAttribute("data-js-focus-visible", "");
   } else if (scope.nodeType === Node.DOCUMENT_NODE) {
-    document.documentElement.classList.add('js-focus-visible');
-    document.documentElement.setAttribute('data-js-focus-visible', '');
+    document.documentElement.classList.add("js-focus-visible");
+    document.documentElement.setAttribute("data-js-focus-visible", "");
   }
 }
 
 // It is important to wrap all references to global window and document in
 // these checks to support server-side rendering use cases
 // @see https://github.com/WICG/focus-visible/issues/199
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+if (typeof window !== "undefined" && typeof document !== "undefined") {
   // Make the polyfill helper globally available. This can be used as a signal
   // to interested libraries that wish to coordinate with the polyfill for e.g.,
   // applying the polyfill to a shadow root:
@@ -289,17 +289,17 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   var event;
 
   try {
-    event = new CustomEvent('focus-visible-polyfill-ready');
+    event = new CustomEvent("focus-visible-polyfill-ready");
   } catch (error) {
     // IE11 does not support using CustomEvent as a constructor directly:
-    event = document.createEvent('CustomEvent');
-    event.initCustomEvent('focus-visible-polyfill-ready', false, false, {});
+    event = document.createEvent("CustomEvent");
+    event.initCustomEvent("focus-visible-polyfill-ready", false, false, {});
   }
 
   window.dispatchEvent(event);
 }
 
-if (typeof document !== 'undefined') {
+if (typeof document !== "undefined") {
   // Apply the polyfill to the global document, so that no JavaScript
   // coordination is required to use the polyfill in the top-level document:
   applyFocusVisiblePolyfill(document);

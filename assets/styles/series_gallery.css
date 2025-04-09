@@ -5,7 +5,7 @@
 /* --- Estilo Base da Página --- */
 .series-body {
   background-color: var(--color-grey);
-  color: var(--color-light); 
+  color: var(--color-light);
 }
 
 /* --- Títulos da Página --- */
@@ -27,61 +27,63 @@
 }
 
 /* --- Controles de Filtro e Busca --- */
-.menu-filter { 
-  margin-bottom: 2rem; 
-  margin-top: 3rem; 
+.menu-filter {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
   text-align: center;
 }
 
-#myBtnContainer { 
-  margin-bottom: 2rem; 
+#myBtnContainer {
+  margin-bottom: 2rem;
 }
 
 /* Estilo de foco (acessibilidade) para botões de filtro */
 .filter-btn:focus-visible {
-  background-color: transparent; 
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+  background-color: transparent;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   color: var(--color-white);
-  outline: 2px solid var(--color-white); 
+  outline: 2px solid var(--color-white);
   outline-offset: 2px;
 }
 
 /* Estilo base dos botões de filtro */
 .filter-btn {
-  background-color: var(--color-grey); 
+  background-color: var(--color-grey);
   border: none;
   border-radius: 5px;
-  color: var(--color-lightgrey); 
+  color: var(--color-lightgrey);
   cursor: pointer;
-  margin: 0.3125rem; 
-  outline: none; 
+  margin: 0.3125rem;
+  outline: none;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s ease;
 }
 
-.filter-btn:hover { /* Efeito hover no botão */
+.filter-btn:hover {
+  /* Efeito hover no botão */
   background-color: var(--color-blue);
   color: var(--color-white);
 }
 
-.filter-btn.active { /* Estilo do botão de filtro ativo */
-  background-color: var(--color-button); 
-  color: var(--color-background); 
+.filter-btn.active {
+  /* Estilo do botão de filtro ativo */
+  background-color: var(--color-button);
+  color: var(--color-background);
 }
 
 /* Container que agrupa filtros e busca */
 .filter-search-container {
-  align-items: baseline; 
+  align-items: baseline;
   display: flex;
-  flex-wrap: wrap; 
-  gap: 1rem; 
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
-  margin-bottom: 4rem; 
+  margin-bottom: 4rem;
 }
 
 /* Container da barra de busca local */
 .search-series-container {
-  min-width: 250px; 
+  min-width: 250px;
 }
 
 /* Input de busca local */
@@ -102,18 +104,18 @@
   appearance: none;
 }
 
-
 /* --- Busca Local (Com Ícone Dentro) --- */
-.local-search-container { 
+.local-search-container {
   min-width: 250px;
-  position: relative; 
+  position: relative;
 }
 
-.local-search-container #seriesSearchInput { /* Input dentro deste container */
+.local-search-container #seriesSearchInput {
+  /* Input dentro deste container */
   background-color: var(--color-darkgrey);
   border: 1px solid var(--color-divider);
   color: var(--color-light);
-  padding-right: 2.5rem; 
+  padding-right: 2.5rem;
 }
 
 .local-search-container #seriesSearchInput::placeholder {
@@ -121,51 +123,54 @@
   opacity: 0.7;
 }
 
-.local-search-icon { /* Ícone de lupa */
+.local-search-icon {
+  /* Ícone de lupa */
   color: var(--color-lightgrey);
   opacity: 0.7;
-  pointer-events: none; 
-  position: absolute; 
+  pointer-events: none;
+  position: absolute;
   right: 10px;
   top: 50%;
-  transform: translateY(-50%); 
+  transform: translateY(-50%);
 }
 
 /* Melhora visibilidade do ícone quando o input está focado */
 .local-search-container #seriesSearchInput:focus + .local-search-icon {
-    color: var(--color-white);
-    opacity: 1;
+  color: var(--color-white);
+  opacity: 1;
 }
 
-
 /* --- Estilo dos Cards/Posters da Galeria --- */
-.poster-link { /* Link que envolve o poster */
-  display: block; 
+.poster-link {
+  /* Link que envolve o poster */
+  display: block;
   text-decoration: none;
 }
 
-.poster { 
-  align-items: center; 
-  aspect-ratio: 2 / 3; 
+.poster {
+  align-items: center;
+  aspect-ratio: 2 / 3;
   background-color: var(--color-darkgrey);
   border-radius: 10px;
-  display: flex; 
-  justify-content: center; 
-  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  width: clamp(150px, 15vw, 180px); 
+  width: clamp(150px, 15vw, 180px);
 }
 
-.poster img { /* Imagem do poster */
+.poster img {
+  /* Imagem do poster */
   display: block;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   width: 100%;
 }
 
-.poster:hover { /* Efeito hover no poster */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
-  transform: scale(1.05); 
+.poster:hover {
+  /* Efeito hover no poster */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
 }
 
 /* --- Animação e Visibilidade do Filtro --- */
@@ -176,22 +181,26 @@
 
 /* Classe para animação de entrada (fade) */
 .show-item {
- animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
 }
 
 /* Animação de Fade In */
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* --- Responsividade para Filtros/Busca --- */
 @media (max-width: 767px) {
-    .menu-filter {
-        text-align: center; 
-    }
-    .search-series-container {
-        margin: 0 auto; 
-        width: 80%; 
-    }
+  .menu-filter {
+    text-align: center;
+  }
+  .search-series-container {
+    margin: 0 auto;
+    width: 80%;
+  }
 }

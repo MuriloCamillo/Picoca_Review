@@ -1,86 +1,86 @@
 /* Layout de Base */
 .login-body {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    background: var(--color-grey);
-    color: var(--color-white);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-grey);
+  color: var(--color-white);
 }
 
 .login-title {
-    text-align: center;
-    margin-top: 3rem;
+  text-align: center;
+  margin-top: 3rem;
 }
 
 .formulario-login {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
 }
 
 /* Layout do formulário */
 .formulario-login form {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
-    width: 100%;
-    max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 400px;
 }
 
 /* Elementos do formulário */
 .formulario-login .form-label {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 /* Campos de entrada */
 .formulario-login .form-control {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--color-white);
-    transition: all 0.3s ease;
-    margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
 }
 
 .formulario-login .form-control:focus {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 0 0.25rem rgba(150, 152, 235, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 0.25rem rgba(150, 152, 235, 0.25);
 }
 
 /* Checkbox */
 .formulario-login .form-check-label {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .formulario-login .form-check-input {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .formulario-login .form-check-input:checked {
-    background-color: var(--color-blue);
+  background-color: var(--color-blue);
 }
 
 /* Botão */
 .formulario-login .btn-primary {
-    background-color: var(--color-blue);
-    border: none;
-    width: 100%;
-    padding: 0.5rem 2rem;
-    margin-top: 1.5rem;
-    transition: all 0.3s ease;
+  background-color: var(--color-blue);
+  border: none;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .formulario-login .btn-primary:hover {
-    background-color: var(--color-button);
-    transform: translateY(-2px);
+  background-color: var(--color-button);
+  transform: translateY(-2px);
 }
 
 #login-error-message.login-error-active {
-    color: #dc3545; 
-    font-weight: bold;
-    margin-top: 1rem; 
-  }
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 1rem;
+}

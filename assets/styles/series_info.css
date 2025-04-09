@@ -3,15 +3,15 @@
 /* ============================================== */
 
 .serie-body {
-  background-color: var(--color-background); 
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 /* --- Link "Voltar para Séries" --- */
 .back-link-container {
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1.5rem;
 }
 
 .series-gallery-link {
@@ -26,61 +26,70 @@
   text-decoration: underline;
 }
 
-.series-gallery-link i { /* Ícone de seta */
+.series-gallery-link i {
+  /* Ícone de seta */
   margin-right: 0.4rem;
 }
 
 /* --- Seção Hero (Banner da Série) --- */
 .serie-hero {
-  margin-bottom: 1.875rem; 
-  padding-top: 3.125rem; 
-  position: relative; 
+  margin-bottom: 1.875rem;
+  padding-top: 3.125rem;
+  position: relative;
 }
 
-.backdrop-container { /* Container da imagem de fundo */
-  height: 500px; 
+.backdrop-container {
+  /* Container da imagem de fundo */
+  height: 500px;
   left: 0;
-  overflow: hidden; 
-  position: absolute; 
+  overflow: hidden;
+  position: absolute;
   top: 0;
   width: 100%;
-  z-index: -1; 
+  z-index: -1;
 }
 
-.backdrop-image { /* Elemento que recebe a imagem de fundo via JS */
+.backdrop-image {
+  /* Elemento que recebe a imagem de fundo via JS */
   background-position: center;
-  background-size: cover; 
+  background-size: cover;
   height: 100%;
-  position: absolute; 
+  position: absolute;
   width: 100%;
 }
 
-.backdrop-overlay { /* Gradiente sobre a imagem de fundo */
-  background: linear-gradient(to bottom, rgba(20, 24, 28, 0.5) 0%, var(--color-background) 100%);
+.backdrop-overlay {
+  /* Gradiente sobre a imagem de fundo */
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 24, 28, 0.5) 0%,
+    var(--color-background) 100%
+  );
   height: 100%;
-  position: absolute; 
+  position: absolute;
   width: 100%;
 }
 
-.content-container { /* Container principal do conteúdo da hero (dentro do .container Bootstrap) */
-  padding-top: 7.5rem; 
-  position: relative; 
-  z-index: 1; 
+.content-container {
+  /* Container principal do conteúdo da hero (dentro do .container Bootstrap) */
+  padding-top: 7.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* --- Poster da Série --- */
 .poster-container {
-  margin-bottom: 1.25rem; 
+  margin-bottom: 1.25rem;
 }
 
 .serie-poster {
   border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); 
-  max-width: 300px; 
-  width: 100%; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  max-width: 300px;
+  width: 100%;
 }
 
-.serie-stats { 
+.serie-stats {
   color: var(--color-lightgrey);
   display: flex;
   font-size: 0.9rem;
@@ -91,40 +100,45 @@
 /* --- Bloco de Informações da Série (Texto) --- */
 .serie-info {
   color: var(--color-light);
-  padding: 0 1.25rem; 
+  padding: 0 1.25rem;
 }
 
 .serie-title {
-  color: var(--color-lightgrey); 
+  color: var(--color-lightgrey);
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 0.3125rem; 
+  margin-bottom: 0.3125rem;
 }
 
-.serie-year { /* Ano ao lado do título */
+.serie-year {
+  /* Ano ao lado do título */
   color: var(--color-lightgrey);
-  font-size: 1.3rem; 
+  font-size: 1.3rem;
   font-weight: normal;
 }
 
-.serie-director { /* Nome do criador/diretor */
+.serie-director {
+  /* Nome do criador/diretor */
   font-size: 1rem;
   margin-bottom: 0.9375rem;
 }
 
-.serie-tagline { /* Slogan da série */
+.serie-tagline {
+  /* Slogan da série */
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 0.9375rem;
 }
 
-.serie-synopsis p { /* Parágrafo da sinopse */
+.serie-synopsis p {
+  /* Parágrafo da sinopse */
   font-size: 1rem;
-  line-height: 1.5; 
+  line-height: 1.5;
   margin-bottom: 1.5625rem;
 }
 
-.serie-status { /* Texto exibindo o status (Ex: Finalizada) */
+.serie-status {
+  /* Texto exibindo o status (Ex: Finalizada) */
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -132,15 +146,16 @@
 
 /* --- Abas de Informação (Elenco, Gênero, etc.) --- */
 .serie-tabs {
-  margin-bottom: 1.25rem; 
+  margin-bottom: 1.25rem;
 }
 
-.nav-tabs { 
+.nav-tabs {
   border-bottom: 1px solid var(--border-color);
-  margin-bottom: 0.9375rem; 
+  margin-bottom: 0.9375rem;
 }
 
-.nav-tabs .nav-link { /* Cada aba individual */
+.nav-tabs .nav-link {
+  /* Cada aba individual */
   background: transparent;
   border: none;
   color: var(--color-lightgrey);
@@ -149,115 +164,134 @@
   padding: 0.625rem 0.9375rem;
 }
 
-.nav-tabs .nav-link:hover { /* Aba no hover */
+.nav-tabs .nav-link:hover {
+  /* Aba no hover */
   color: var(--color-light);
 }
 
-.nav-tabs .nav-link.active { /* Aba ativa */
+.nav-tabs .nav-link.active {
+  /* Aba ativa */
   background: transparent;
   border-bottom: 2px solid var(--accent-color);
-  color: var(--accent-color); 
+  color: var(--accent-color);
 }
 
 /* --- Conteúdo Dentro das Abas --- */
 /* Container comum para as listas */
-.cast-list, .genres-list, .seasons-list, .watch-list {
+.cast-list,
+.genres-list,
+.seasons-list,
+.watch-list {
   display: flex;
-  flex-wrap: wrap; 
-  gap: 10px; 
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /* Item individual (ator, gênero, temporada, plataforma) */
-.cast-item, .genres-item, .seasons-item, .watch-item {
+.cast-item,
+.genres-item,
+.seasons-item,
+.watch-item {
   background-color: var(--secondary-color);
   border-radius: 4px;
   color: var(--color-lightgrey);
-  cursor: default; 
+  cursor: default;
   font-size: 0.9rem;
-  margin-bottom: 0.625rem; 
+  margin-bottom: 0.625rem;
   padding: 0.3125rem 0.625rem;
   transition: background-color 0.2s ease;
 }
 
-.cast-item:hover, .genres-item:hover, .seasons-item:hover, .watch-item:hover {
-  background-color: rgba(44, 52, 64, 0.8); 
+.cast-item:hover,
+.genres-item:hover,
+.seasons-item:hover,
+.watch-item:hover {
+  background-color: rgba(44, 52, 64, 0.8);
 }
 
 /* --- Área de Ações do Usuário (Like, Watchlist, Avaliação) --- */
 .user-actions {
-  background-color: rgba(44, 52, 64, 0.3); 
+  background-color: rgba(44, 52, 64, 0.3);
   border-radius: 6px;
   color: var(--color-light);
   padding: 1.25rem;
 }
 
-.action-buttons { /* Container dos botões Like/Watchlist */
+.action-buttons {
+  /* Container dos botões Like/Watchlist */
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
   margin-bottom: 1.25rem;
 }
 
-.action-btn { /* Estilo base para botões Like/Watchlist */
-  align-items: center; 
+.action-btn {
+  /* Estilo base para botões Like/Watchlist */
+  align-items: center;
   background: transparent;
   border: none;
   color: var(--color-light);
   cursor: pointer;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   padding: 0.625rem;
   transition: color 0.2s ease;
 }
 
-.action-btn i { /* Ícone dentro do botão */
+.action-btn i {
+  /* Ícone dentro do botão */
   font-size: 1.5rem;
-  margin-bottom: 0.3125rem; 
+  margin-bottom: 0.3125rem;
 }
 
 /* Cores específicas no hover/active */
-.like-btn:hover, .like-btn.active {
+.like-btn:hover,
+.like-btn.active {
   color: var(--color-like); /* Vermelho */
 }
 
-.watchlist-btn:hover, .watchlist-btn.active {
+.watchlist-btn:hover,
+.watchlist-btn.active {
   color: var(--color-watchlist); /* Azul */
 }
 
 /* --- Área de Avaliação (Estrelas) --- */
 .rating-container {
-  margin-bottom: 1.875rem; 
+  margin-bottom: 1.875rem;
   text-align: center;
 }
 
-.rating-container h6 { /* Título "Avaliar" */
+.rating-container h6 {
+  /* Título "Avaliar" */
   color: var(--color-lightgrey);
   margin-bottom: 0.625rem;
 }
 
-.stars { /* Container das estrelas */
-  color: #555; 
+.stars {
+  /* Container das estrelas */
+  color: #555;
   display: flex;
   font-size: 1.8rem;
   justify-content: space-around;
 }
 
-.stars i { /* Estrela individual */
+.stars i {
+  /* Estrela individual */
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 /* Classe JS para estrela preenchida */
 .stars i.filled {
-    color: var(--color-star); 
+  color: var(--color-star);
 }
 
 /* Efeito hover nas estrelas (acende todas até a que está com hover) */
 .stars:hover i {
-    color: var(--color-star); 
+  color: var(--color-star);
 }
 /* Apaga as estrelas à direita da que está com hover */
 .stars i:hover ~ i {
-    color: #555; 
+  color: #555;
 }
 
 /* --- Avaliação da Comunidade --- */
@@ -265,47 +299,55 @@
   text-align: center;
 }
 
-.community-rating h6 { /* Título "Avaliações" */
+.community-rating h6 {
+  /* Título "Avaliações" */
   color: var(--color-lightgrey);
   margin-bottom: 0.625rem;
 }
 
-.rating-info { /* Container da nota média, barras e fãs */
+.rating-info {
+  /* Container da nota média, barras e fãs */
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.rating-text { /* Texto genérico dentro da área de rating */
+.rating-text {
+  /* Texto genérico dentro da área de rating */
   font-size: 1rem;
   text-transform: uppercase;
 }
 
-.average-rating { /* Nota média numérica */
+.average-rating {
+  /* Nota média numérica */
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.625rem;
 }
 
-.rating-bar { /* Container das barras de distribuição */
+.rating-bar {
+  /* Container das barras de distribuição */
   margin-bottom: 0.625rem;
-  width: 100%; 
+  width: 100%;
 }
 
-.bar-container { /* Flex container para as barras */
-  align-items: flex-end; 
+.bar-container {
+  /* Flex container para as barras */
+  align-items: flex-end;
   display: flex;
-  height: 80px; 
-  justify-content: space-between; 
+  height: 80px;
+  justify-content: space-between;
 }
 
-.bar { /* Barra individual */
-  background-color: var(--accent-color); 
+.bar {
+  /* Barra individual */
+  background-color: var(--accent-color);
   border-radius: 2px;
-  width: 8px; 
+  width: 8px;
 }
 
-.fans-count { /* Contador de fãs */
+.fans-count {
+  /* Contador de fãs */
   color: var(--color-lightgrey);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -317,18 +359,20 @@
   padding: 1.875rem 0; /* Padding vertical */
 }
 
-.trailer-section .ratio { /* Container responsivo do vídeo */
-  border: 1px solid var(--border-color); 
+.trailer-section .ratio {
+  /* Container responsivo do vídeo */
+  border: 1px solid var(--border-color);
   border-radius: 6px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px; 
-  overflow: hidden; 
+  max-width: 800px;
+  overflow: hidden;
 }
 
 /* Título da Seção de Trailer (Ex: "Confira abaixo...") */
-.section-title { /* Seletor original mantido */
+.section-title {
+  /* Seletor original mantido */
   color: var(--color-lightgrey);
   font-size: 1.8rem;
   letter-spacing: 0.3rem;
@@ -359,34 +403,72 @@
 }
 
 /* --- Responsividade --- */
-@media (max-width: 991px) { 
+@media (max-width: 991px) {
   .poster-container {
     margin-bottom: 30px;
-    text-align: center; 
+    text-align: center;
   }
-  .serie-poster { max-width: 250px; }
-  .average-rating { font-size: 1.8rem; }
-  .bar-container { height: 70px; }
-  .stars { font-size: 1.5rem; }
+  .serie-poster {
+    max-width: 250px;
+  }
+  .average-rating {
+    font-size: 1.8rem;
+  }
+  .bar-container {
+    height: 70px;
+  }
+  .stars {
+    font-size: 1.5rem;
+  }
 }
 
-@media (max-width: 767px) { 
-  .serie-poster { max-width: 200px; }
-  .user-actions { padding: 15px; } 
-  .average-rating { font-size: 1.5rem; }
-  .bar-container { height: 60px; }
-  .stars { font-size: 1.3rem; }
-  .action-buttons { margin-bottom: 15px; }
+@media (max-width: 767px) {
+  .serie-poster {
+    max-width: 200px;
+  }
+  .user-actions {
+    padding: 15px;
+  }
+  .average-rating {
+    font-size: 1.5rem;
+  }
+  .bar-container {
+    height: 60px;
+  }
+  .stars {
+    font-size: 1.3rem;
+  }
+  .action-buttons {
+    margin-bottom: 15px;
+  }
 }
 
-@media (max-width: 575px) { 
-  .backdrop-container { height: 350px; } 
-  .bar { width: 6px; } 
-  .bar-container { height: 50px; }
-  .average-rating { font-size: 1.3rem; }
-  .content-container { padding-top: 4rem; } 
-  .serie-poster { max-width: 180px; }
-  .serie-title { font-size: 1.8rem; }
-  .serie-year { font-size: 1rem; }
-  .stars { font-size: 1.1rem; }
+@media (max-width: 575px) {
+  .backdrop-container {
+    height: 350px;
+  }
+  .bar {
+    width: 6px;
+  }
+  .bar-container {
+    height: 50px;
+  }
+  .average-rating {
+    font-size: 1.3rem;
+  }
+  .content-container {
+    padding-top: 4rem;
+  }
+  .serie-poster {
+    max-width: 180px;
+  }
+  .serie-title {
+    font-size: 1.8rem;
+  }
+  .serie-year {
+    font-size: 1rem;
+  }
+  .stars {
+    font-size: 1.1rem;
+  }
 }

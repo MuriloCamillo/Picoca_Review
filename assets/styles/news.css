@@ -3,30 +3,30 @@
 /* ========================================= */
 
 .news-body {
-  background-color: var(--color-grey); 
+  background-color: var(--color-grey);
 }
 
 /* --- Seção Principal da Notícia --- */
 
 /* Link "Voltar para Notícias" */
 .back-link-container {
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1.5rem;
 }
 
-.journal-link { 
+.journal-link {
   color: var(--color-lightgrey);
   font-size: 1.1rem;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.journal-link:hover { 
+.journal-link:hover {
   color: var(--color-white);
   text-decoration: underline;
 }
 
-.journal-link i { 
-  margin-right: 0.4rem; 
+.journal-link i {
+  margin-right: 0.4rem;
 }
 
 /* Título Principal da Notícia */
@@ -46,7 +46,7 @@
 .img-leg {
   color: var(--color-lightgrey);
   font-size: 1rem;
-  margin-top: 1rem; 
+  margin-top: 1rem;
   text-align: center;
 }
 
@@ -58,44 +58,44 @@
 
 /* Imagem Principal */
 .news-image-in-ratio {
-  background-color: #111; 
+  background-color: #111;
   display: block;
-  height: 100%; 
+  height: 100%;
   left: 0;
   max-width: 100%;
-  object-fit: contain; 
+  object-fit: contain;
   position: absolute;
   top: 0;
   width: 100%;
 }
 
 /* Estilos para subtítulos dentro do artigo */
-h3 { 
+h3 {
   font-size: 1.8rem;
   font-weight: 600;
 }
 
-h5 { 
+h5 {
   font-size: 1.4rem;
   font-weight: 600;
 }
 
 /* Estilo para Vídeo */
 .news-video {
-  height: 360px; 
-  position: relative; 
-  width: 640px; 
+  height: 360px;
+  position: relative;
+  width: 640px;
 }
 
 /* --- Seção "Veja Também" (Notícias Relacionadas) --- */
-.section-also-title{
+.section-also-title {
   color: var(--color-light);
-  margin-top: 1rem; 
+  margin-top: 1rem;
   text-align: center;
 }
 
 /* Cards de Notícias Relacionadas */
-.also .card { 
+.also .card {
   border: none;
   margin: auto;
   max-width: 320px;
@@ -117,9 +117,9 @@ h5 {
 }
 
 /* --- Divisor Visual no Final da Notícia --- */
-.news-section-divider{
-  margin-top: 2rem; 
-  padding-bottom: 1rem; 
+.news-section-divider {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
   position: relative;
   text-align: center;
 }

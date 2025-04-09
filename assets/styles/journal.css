@@ -3,34 +3,36 @@
 /* ======================================= */
 
 .journal-body {
-  background-color: var(--color-grey); 
+  background-color: var(--color-grey);
 }
 
 /* --- Estilização dos Cards de Notícias --- */
 .card {
-  border: none; 
-  margin: auto; 
-  max-width: 320px; 
-  transition: transform 0.3s ease-in-out; 
+  border: none;
+  margin: auto;
+  max-width: 320px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-  transform: scale(1.03); 
+  transform: scale(1.03);
 }
 
-.card-img-top { /* Imagem no topo do card */
-  height: 180px; 
-  object-fit: cover; 
+.card-img-top {
+  /* Imagem no topo do card */
+  height: 180px;
+  object-fit: cover;
   width: 100%;
 }
 
-.btn-outline-light { /* Botão "Ver Mais" */
-  border-radius: 999px; 
+.btn-outline-light {
+  /* Botão "Ver Mais" */
+  border-radius: 999px;
 }
 
 /* --- Espaçamento entre os Cards --- */
 .row .col-md-4 {
-  margin-bottom: 2.5rem; 
+  margin-bottom: 2.5rem;
 }
 
 /* --- Títulos da Página --- */
@@ -38,8 +40,8 @@
   color: var(--color-light);
   font-size: 2.5rem;
   letter-spacing: 0.5rem;
-  margin-bottom: 2rem; 
-  margin-top: 4rem; 
+  margin-bottom: 2rem;
+  margin-top: 4rem;
   text-align: center;
 }
 
@@ -47,6 +49,6 @@
   color: var(--color-lightgrey);
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
   text-align: center;
 }

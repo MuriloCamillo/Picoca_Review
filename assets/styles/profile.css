@@ -4,88 +4,98 @@
 
 /* --- Estilo Base da Página --- */
 .profile-body {
-  background-color: var(--color-grey); 
-  color: var(--color-light); 
-  display: flex; 
+  background-color: var(--color-grey);
+  color: var(--color-light);
+  display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 .profile-body main {
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
-.profile-title { /* Título "Configurações da conta" */
+.profile-title {
+  /* Título "Configurações da conta" */
   color: var(--color-light);
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 /* --- Abas de Navegação (Perfil, Senha, Avatar) --- */
-.profile-tabs { /* Container das abas */
-  border-bottom: 1px solid var(--color-divider); 
-  justify-content: center; 
+.profile-tabs {
+  /* Container das abas */
+  border-bottom: 1px solid var(--color-divider);
+  justify-content: center;
 }
 
-.profile-tabs .nav-link { /* Estilo de cada link/aba */
+.profile-tabs .nav-link {
+  /* Estilo de cada link/aba */
   border: none;
   border-bottom: 3px solid transparent;
   color: var(--color-lightgrey);
   font-weight: 500;
-  margin-bottom: -1px; 
+  margin-bottom: -1px;
   padding: 0.8rem 1.5rem;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.profile-tabs .nav-link:hover { /* Efeito hover na aba */
-  border-bottom-color: var(--color-divider); 
+.profile-tabs .nav-link:hover {
+  /* Efeito hover na aba */
+  border-bottom-color: var(--color-divider);
   color: var(--color-white);
 }
 
-.profile-tabs .nav-link.active { /* Estilo da aba ativa */
-  background-color: transparent; 
-  border-bottom: 3px solid var(--accent-color); 
-  color: var(--accent-color); 
+.profile-tabs .nav-link.active {
+  /* Estilo da aba ativa */
+  background-color: transparent;
+  border-bottom: 3px solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* --- Formulários Dentro das Abas --- */
-.profile-form { /* Container dos formulários */
+.profile-form {
+  /* Container dos formulários */
   background-color: var(--color-darkgrey);
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   padding: 2rem;
 }
 
-.profile-form .form-label { /* Labels (ex: "Username", "E-mail") */
+.profile-form .form-label {
+  /* Labels (ex: "Username", "E-mail") */
   color: var(--color-lightgrey);
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
 .profile-form .form-control,
-.profile-form .form-select { /* Inputs e Selects */
-  background-color: rgba(255, 255, 255, 0.05); 
+.profile-form .form-select {
+  /* Inputs e Selects */
+  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--color-divider);
   color: var(--color-white);
   padding: 0.6rem 1rem;
 }
 
-.profile-form .form-control::placeholder { /* Texto de placeholder */
+.profile-form .form-control::placeholder {
+  /* Texto de placeholder */
   color: var(--color-lightgrey);
   opacity: 0.6;
 }
 
 .profile-form .form-control:focus,
-.profile-form .form-select:focus { /* Estilo de foco para inputs/selects */
-  background-color: rgba(255, 255, 255, 0.1); 
-  border-color: var(--color-blue); 
-  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25); 
+.profile-form .form-select:focus {
+  /* Estilo de foco para inputs/selects */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
   color: var(--color-white);
 }
 
 /* Ajuste para a seta do select */
 .profile-form .form-select {
-   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23cccccc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23cccccc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
 
 /* Estilo das opções dentro do Select */
@@ -95,9 +105,9 @@
   padding: 0.3125rem 0.625rem;
 }
 
-
 /* --- Botões Dentro dos Formulários --- */
-.profile-btn { /* Botão padrão da página (Salvar, Alterar Senha, Selecionar Arquivo) */
+.profile-btn {
+  /* Botão padrão da página (Salvar, Alterar Senha, Selecionar Arquivo) */
   background-color: var(--color-blue);
   border: none;
   border-radius: 5px;
@@ -107,22 +117,25 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.profile-btn:hover { /* Efeito hover no botão */
-  background-color: var(--color-button); 
+.profile-btn:hover {
+  /* Efeito hover no botão */
+  background-color: var(--color-button);
   color: var(--color-white);
-  transform: translateY(-1px); 
+  transform: translateY(-1px);
 }
 
 /* --- Estilos Específicos da Aba Avatar --- */
-.avatar-section { /* Container da área de upload */
-   background-color: var(--color-darkgrey);
-   border-radius: 8px;
-   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-   padding: 2.5rem;
-   text-align: center; 
+.avatar-section {
+  /* Container da área de upload */
+  background-color: var(--color-darkgrey);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem;
+  text-align: center;
 }
 
-.avatar-drop-zone { /* Área pontilhada para arrastar e soltar */
+.avatar-drop-zone {
+  /* Área pontilhada para arrastar e soltar */
   background-color: rgba(255, 255, 255, 0.03);
   border: 2px dashed var(--color-divider);
   border-radius: 8px;
@@ -131,31 +144,36 @@
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.avatar-drop-zone:hover { /* Efeito hover na área de drop */
+.avatar-drop-zone:hover {
+  /* Efeito hover na área de drop */
   background-color: rgba(255, 255, 255, 0.07);
   border-color: var(--color-lightgrey);
 }
 
-.avatar-icon { /* Ícone de nuvem */
+.avatar-icon {
+  /* Ícone de nuvem */
   color: var(--color-lightgrey);
-  display: block; 
+  display: block;
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
-.avatar-drop-zone p { /* Texto "Arraste e solte..." */
+.avatar-drop-zone p {
+  /* Texto "Arraste e solte..." */
   color: var(--color-light);
   font-weight: 500;
   margin-bottom: 0.2rem;
 }
-.avatar-drop-zone span { /* Texto "ou" */
-   color: var(--color-lightgrey);
-   display: block; 
-   font-size: 0.9rem;
-   margin-bottom: 1rem;
+.avatar-drop-zone span {
+  /* Texto "ou" */
+  color: var(--color-lightgrey);
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
-.avatar-hint { /* Texto "Tamanho máximo..." */
+.avatar-hint {
+  /* Texto "Tamanho máximo..." */
   color: var(--color-lightgrey);
   font-size: 0.85rem;
   opacity: 0.8;

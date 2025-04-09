@@ -10,7 +10,7 @@
  * @returns {string} A string HTML do card.
  */
 function createJournalNewsCardHTML(newsItem, newsId) {
-  const summary = newsItem.summary || 'Leia mais...';
+  const summary = newsItem.summary || "Leia mais...";
   const shortSummary = summary; // Usando o resumo completo
 
   // Usa col-md-4 como no layout original de journal.html
@@ -18,11 +18,15 @@ function createJournalNewsCardHTML(newsItem, newsId) {
       <div class="col-md-4 mb-4">
           <div class="card bg-dark text-light h-100">
               <a href="news_default.html?id=${newsId}">
-                  <img src="${newsItem.mainImageUrl || 'assets/img/placeholder_news.webp'}" class="card-img-top" alt="${newsItem.title || 'Notícia'}">
+                  <img src="${
+                    newsItem.mainImageUrl || "assets/img/placeholder_news.webp"
+                  }" class="card-img-top" alt="${newsItem.title || "Notícia"}">
               </a>
               <div class="card-body d-flex flex-column">
                   <a href="news_default.html?id=${newsId}" class="text-decoration-none text-light">
-                      <h5 class="card-title fw-bold">${newsItem.title || 'Título Indisponível'}</h5>
+                      <h5 class="card-title fw-bold">${
+                        newsItem.title || "Título Indisponível"
+                      }</h5>
                   </a>
                   <p class="card-text">${shortSummary}</p>
                   <a href="news_default.html?id=${newsId}" class="btn btn-outline-light mt-auto">Ver Mais</a>
@@ -33,33 +37,34 @@ function createJournalNewsCardHTML(newsItem, newsId) {
 }
 
 /**
-* Carrega todos os cards de notícia no container especificado.
-*/
+ * Carrega todos os cards de notícia no container especificado.
+ */
 function loadJournalCards() {
-  const container = document.getElementById('journal-cards-row');
+  const container = document.getElementById("journal-cards-row");
   if (!container) {
-      console.error("Container 'journal-cards-row' não encontrado!");
-      return;
+    console.error("Container 'journal-cards-row' não encontrado!");
+    return;
   }
 
   // Verifica se newsData foi carregado
-  if (typeof newsData === 'undefined' || Object.keys(newsData).length === 0) {
-      console.warn("Dados de notícias (newsData) não encontrados ou vazios.");
-      container.innerHTML = '<p class="text-light text-center col-12">Nenhuma notícia cadastrada.</p>';
-      return;
+  if (typeof newsData === "undefined" || Object.keys(newsData).length === 0) {
+    console.warn("Dados de notícias (newsData) não encontrados ou vazios.");
+    container.innerHTML =
+      '<p class="text-light text-center col-12">Nenhuma notícia cadastrada.</p>';
+    return;
   }
 
-  container.innerHTML = ''; 
+  container.innerHTML = "";
   const newsIds = Object.keys(newsData);
 
-  let cardsHTML = '';
-  newsIds.forEach(id => {
-      const newsItem = newsData[id];
-      if (newsItem) {
-          cardsHTML += createJournalNewsCardHTML(newsItem, id); 
-      }
+  let cardsHTML = "";
+  newsIds.forEach((id) => {
+    const newsItem = newsData[id];
+    if (newsItem) {
+      cardsHTML += createJournalNewsCardHTML(newsItem, id);
+    }
   });
 
   container.innerHTML = cardsHTML; // Insere todos os cards gerados
 }
-document.addEventListener('DOMContentLoaded', loadJournalCards);
+document.addEventListener("DOMContentLoaded", loadJournalCards);
