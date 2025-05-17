@@ -1,0 +1,11 @@
+# Ignora node_modules
+node_modules/
+
+# Ignora logs do npm
+npm-debug.log*
+
+# Ignora arquivos de ambiente
+.env
+
+# Ignora arquivos do VSCode
+.vscode/
