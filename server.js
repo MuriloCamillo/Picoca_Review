@@ -8,22 +8,27 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Configurar EJS como view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 // Arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Página inicial
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.render('index');
 });
 
-// Outras páginas
-app.get('/:page', (req, res) => {
+// Outras páginas dinâmicas (ex: /login, /sign_up, etc)
+app.get('/:page', (req, res, next) => {
   const page = req.params.page;
-  const filePath = path.join(__dirname, 'views', `${page}`);
-  res.sendFile(filePath, (err) => {
+  res.render(page, {}, (err, html) => {
     if (err) {
-      res.status(404).send('Página não encontrada');
+      // Se não encontrar a view, retorna 404
+      return res.status(404).send('Página não encontrada');
     }
+    res.send(html);
   });
 });
 

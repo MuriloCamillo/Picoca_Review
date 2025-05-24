@@ -128,14 +128,14 @@ document.addEventListener("DOMContentLoaded", function () {
           successToastElement.classList.add("show");
           setTimeout(() => {
             successToastElement.classList.remove("show");
-            window.location.href = "login.html";
+            window.location.href = "/login";
           }, 3000);
         } else {
           console.warn(
             "Elemento #signup-success-toast não encontrado. Usando alert."
           );
           alert("Cadastro realizado com sucesso!");
-          window.location.href = "login.html";
+          window.location.href = "/login";
         }
 
         form.reset();

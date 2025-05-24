@@ -68,7 +68,7 @@ function createSeriesCardHTML(seriesId, series) {
 
   return `
       <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv ${genreClasses}">
-          <a href="series_info_default.html?id=${seriesId}" class="poster-link">
+          <a href="/series_info_default?id=${seriesId}" class="poster-link">
               <div class="poster">
                   <img src="${posterSrc}" alt="${title}">
               </div>

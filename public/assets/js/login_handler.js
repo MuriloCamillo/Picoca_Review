@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Define um sinalizador para mostrar o toast de sucesso na próxima página
         localStorage.setItem("showLoginSuccessToast", "true");
         // Redireciona para a página principal
-        window.location.href = "index.html";
+        window.location.href = "/";
       } else {
         // --- Login FALHOU (Credenciais Incorretas) ---
         console.log(

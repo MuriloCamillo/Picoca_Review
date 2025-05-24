@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       matches.forEach(([id, serie]) => {
         const link = document.createElement("a");
         link.classList.add("dropdown-item");
-        link.href = `series_info_default.html?id=${id}`;
+        link.href = `/series_info_default?id=${id}`;
         const title = serie.title;
         const escapedSearchTerm = searchTerm.replace(
           /[.*+?^${}()|[\]\\]/g,
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     const searchTerm = searchInput.value.trim();
     if (searchTerm) {
-      window.location.href = `series_gallery.html?search=${encodeURIComponent(
+      window.location.href = `/series_gallery?search=${encodeURIComponent(
         searchTerm
       )}`;
     }

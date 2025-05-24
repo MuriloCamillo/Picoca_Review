@@ -25,7 +25,7 @@ function createNewsCardHTML(newsItem, newsId) {
   return `
         <div class="col-md-6 mb-4">
             <div class="card bg-dark text-light h-100">
-                <a href="news_default.html?id=${newsId}">
+                <a href="/news_default?id=${newsId}">
                     <img src="${
                       newsItem.mainImageUrl ||
                       "assets/img/placeholder_news.webp"
@@ -34,13 +34,13 @@ function createNewsCardHTML(newsItem, newsId) {
   }">
                 </a>
                 <div class="card-body d-flex flex-column">
-                    <a href="news_default.html?id=${newsId}" class="text-decoration-none text-light">
+                    <a href="/news_default?id=${newsId}" class="text-decoration-none text-light">
                         <h5 class="card-title fw-bold">${
                           newsItem.title || "Título Indisponível"
                         }</h5>
                     </a>
                     <p class="card-text">${summary}</p> 
-                    <a href="news_default.html?id=${newsId}" class="btn btn-outline-light mt-auto">Ver Mais</a>
+                    <a href="/news_default?id=${newsId}" class="btn btn-outline-light mt-auto">Ver Mais</a>
                 </div>
             </div>
         </div>
