@@ -12,17 +12,15 @@
 function applyFilters() {
   const searchInput = document.getElementById("seriesSearchInput");
   const filterButtonsContainer = document.getElementById("myBtnContainer");
-  // Seleciona os itens da galeria *aqui*, para pegar os adicionados dinamicamente
+  // Seleciona os itens da galeria *aqui*, para pegar os adicionados dinamicamente pelo EJS
   const seriesItems = document.querySelectorAll("#seriesList .filterDiv");
 
-  // Verifica se os elementos necessários existem
   if (
     !searchInput ||
     !filterButtonsContainer ||
     !seriesItems ||
     seriesItems.length === 0
   ) {
-    // Pode acontecer brevemente durante o carregamento ou se não houver séries
     // console.warn("Elementos de filtro ou itens da galeria não prontos para applyFilters.");
     return;
   }
@@ -30,28 +28,21 @@ function applyFilters() {
   const searchTerm = searchInput.value.toLowerCase().trim();
   const activeFilterButton =
     filterButtonsContainer.querySelector(".filter-btn.active");
-  // Se nenhum botão estiver ativo (improvável, mas seguro), considera 'all'
   const selectedGenre = activeFilterButton
     ? activeFilterButton.dataset.filter
     : "all";
 
-  // Itera sobre cada card de série
   seriesItems.forEach((item) => {
-    // Verifica se o gênero do card corresponde ao filtro selecionado
-    // A classe 'all' corresponde a todos os itens
     const genreMatch =
       selectedGenre === "all" || item.classList.contains(selectedGenre);
 
-    // Verifica se o título do card (do atributo 'alt' da imagem) contém o termo de busca
     const img = item.querySelector("img");
     const title = img ? img.getAttribute("alt").toLowerCase() : "";
-    // O item corresponde se a busca estiver vazia OU se o título incluir o termo
     const titleMatch = !searchTerm || title.includes(searchTerm);
 
-    // Mostra ou esconde o item com base nas correspondências
     if (genreMatch && titleMatch) {
-      item.classList.remove("hide"); // Certifique-se que 'hide' está definido no CSS
-      item.classList.add("show-item"); // Opcional para animação
+      item.classList.remove("hide"); 
+      item.classList.add("show-item"); 
     } else {
       item.classList.add("hide");
       item.classList.remove("show-item");
@@ -66,45 +57,57 @@ function applyFilters() {
  * @returns {void}
  */
 function initializeFilters() {
-  console.log("Inicializando filtros..."); // Log para depuração
+  // console.log("Inicializando filtros..."); 
   const searchInput = document.getElementById("seriesSearchInput");
   const filterButtonsContainer = document.getElementById("myBtnContainer");
 
-  // Adiciona listener ao container dos botões (delegação de eventos)
   if (filterButtonsContainer) {
     filterButtonsContainer.addEventListener("click", function (event) {
-      // Verifica se o elemento clicado é um botão de filtro
       const targetButton = event.target.closest(".filter-btn");
       if (targetButton) {
-        console.log("Botão de filtro clicado:", targetButton.dataset.filter); // Log
-        // Remove a classe 'active' de todos os botões
+        // console.log("Botão de filtro clicado:", targetButton.dataset.filter);
         filterButtonsContainer
           .querySelectorAll(".filter-btn")
           .forEach((btn) => btn.classList.remove("active"));
-        // Adiciona a classe 'active' ao botão clicado
         targetButton.classList.add("active");
-        // Aplica os filtros com base no botão clicado
         applyFilters();
       }
     });
   } else {
     console.warn(
-      "Container de botões de filtro (myBtnContainer) não encontrado."
+      "Container de botões de filtro (myBtnContainer) não encontrado para series_gallery_filter.js."
     );
   }
 
-  // Adiciona listener 'input' à barra de busca (dispara a cada caractere)
   if (searchInput) {
     searchInput.addEventListener("input", () => {
-      // console.log("Busca alterada:", searchInput.value); // Log opcional
-      applyFilters(); // Aplica filtros a cada mudança na busca
+      applyFilters();
     });
+
+    // Verifica se há um termo de busca na URL (vindo da navbar, por exemplo) e aplica
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlSearchTerm = urlParams.get('search');
+    if (urlSearchTerm) {
+        searchInput.value = urlSearchTerm; // Preenche o input com o termo da URL
+    }
+    // Não é necessário chamar applyFilters() aqui por causa do preenchimento do input,
+    // mas se for necessário por outras razões, descomente.
+    // A chamada final de applyFilters() após o DOMContentLoaded cuidará disso.
+
   } else {
-    console.warn("Input de busca (seriesSearchInput) não encontrado.");
+    console.warn("Input de busca (seriesSearchInput) não encontrado para series_gallery_filter.js.");
   }
 
-  // Aplica os filtros uma vez na inicialização para garantir o estado correto
-  // (considera o botão 'all' ativo e a busca vazia).
-  applyFilters();
-  console.log("Filtros inicializados e aplicados."); // Log
+  // Aplica os filtros uma vez na inicialização para garantir o estado correto.
+  // Isso também aplicará qualquer filtro vindo da URL através do preenchimento do searchInput.
+  applyFilters(); 
+  // console.log("Filtros inicializados e aplicados.");
+}
+
+// Auto-inicialização do script
+// Isso garante que initializeFilters() seja chamado assim que o DOM estiver pronto.
+if (document.readyState === 'loading') { // Documento ainda carregando
+    document.addEventListener('DOMContentLoaded', initializeFilters);
+} else { // DOMContentLoaded já foi disparado
+    initializeFilters();
 }

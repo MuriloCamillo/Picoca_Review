@@ -9,3 +9,19 @@ npm-debug.log*
 
 # Ignora arquivos do VSCode
 .vscode/
+
+#Ignora a build do TypeScript
+dist/
+
+# Arquivos de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Arquivos de banco de dados SQLite (se você não quiser versionar o arquivo do banco em si)
+# Isso é opcional. Se quiser manter um estado inicial do banco no Git, não adicione esta linha.
+# Mas para o arquivo de dados em si, que muda constantemente, geralmente não se versiona.
+data/*.sqlite
+data/*.sqlite-journal
+data/*.sqlite-wal

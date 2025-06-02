@@ -1,75 +1,102 @@
 <footer id="footer" class="footer py-4">
-      <div class="container text-center">
-        <p class="footer-text">
-          Made with
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="#f64348"
-            stroke="#f64348"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+    <div class="container text-center">
+      <p class="footer-text">
+        Made with
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="#f64348"
+          stroke="#f64348"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+          ></path>
+        </svg>
+        by
+      </p>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <h5 class="footer-title">Letícia Leme</h5>
+          <a
+            href="https://github.com/leticiaaleme"
+            target="_blank"
+            class="footer-link me-3"
+            ><i class="fab fa-github"></i> GitHub</a
           >
-            <path
-              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-            ></path>
-          </svg>
-          by
-        </p>
-        <div class="row">
-          <!-- Coluna da Esquerda -->
-          <div class="col-md-6 mb-3">
-            <h5 class="footer-title">Letícia Leme</h5>
-            <a
-              href="https://github.com/leticiaaleme"
-              target="_blank"
-              class="footer-link me-3"
-              ><i class="fab fa-github"></i> GitHub</a
-            >
-            <a
-              href="https://www.linkedin.com/in/leticiacristinaleme/"
-              target="_blank"
-              class="footer-link"
-              ><i class="fab fa-linkedin"></i> LinkedIn</a
-            >
-          </div>
-          <!-- Coluna da Direita -->
-          <div class="col-md-6 mb-3">
-            <h5 class="footer-title">Murilo Camillo</h5>
-            <a
-              href="https://github.com/MuriloCamillo"
-              target="_blank"
-              class="footer-link me-3"
-              ><i class="fab fa-github"></i> GitHub</a
-            >
-            <a
-              href="https://www.linkedin.com/in/murilo-camillo-martins/"
-              target="_blank"
-              class="footer-link"
-              ><i class="fab fa-linkedin"></i> LinkedIn</a
-            >
-          </div>
+          <a
+            href="https://www.linkedin.com/in/leticiacristinaleme/"
+            target="_blank"
+            class="footer-link"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
         </div>
-
-        <div class="footer-contact-suggestion mt-4 mb-3">
-          <p class="mb-0">
-            Tem alguma sugestão de melhoria ou gostaria de nos contatar?
-            <a href="/contact" class="footer-link-contact"
-              >Envie sua mensagem aqui!</a
-            >
-          </p>
-        </div>
-
-        <!-- Linha de baixo com Copyright -->
-        <div class="footer-copy">
-          <div class="col text-center mt-3">
-            <p class="mb-0">
-              © 2025 Picoca Review - Todos os direitos reservados.
-            </p>
-          </div>
+        <div class="col-md-6 mb-3">
+          <h5 class="footer-title">Murilo Camillo</h5>
+          <a
+            href="https://github.com/MuriloCamillo"
+            target="_blank"
+            class="footer-link me-3"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/murilo-camillo-martins/"
+            target="_blank"
+            class="footer-link"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
         </div>
       </div>
-    </footer>
+
+      <div class="footer-contact-suggestion mt-4 mb-3">
+        <p class="mb-0">
+          Tem alguma sugestão de melhoria ou gostaria de nos contatar?
+          <a href="/contact" class="footer-link-contact" >Envie sua mensagem aqui!</a
+          >
+        </p>
+      </div>
+
+      <div class="footer-copy">
+        <div class="col text-center mt-3">
+          <p class="mb-0">
+            © 2025 Picoca Review - Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/focus-visible.js"></script>
+<script src="/assets/js/navbar_search.js"></script>
+<% if (typeof title === 'string' && (title.toLowerCase().includes('picoca review') || title.toLowerCase().includes('séries'))) { %>
+    <script src="/assets/js/series_data.js"></script> 
+<% } %>
+
+
+<% if (typeof pageScript === 'string' && pageScript && pageScript.length > 0) { %>
+    <script src="/assets/js/<%= pageScript %>"></script>
+<% } %>
+
+<script>
+    // Script para inicializar toasts do Bootstrap 5 que podem ser mostrados condicionalmente
+    document.addEventListener('DOMContentLoaded', function () {
+        var toastElList = [].slice.call(document.querySelectorAll('.toast.show[data-bs-delay]'));
+        toastElList.forEach(function (toastEl) {
+            // O Bootstrap inicializa e mostra automaticamente toasts com .show e data-bs-delay.
+            // Esta linha garante que o objeto Toast exista caso você queira manipulá-lo via JS depois.
+            var toast = new bootstrap.Toast(toastEl); 
+            // Se o toast foi adicionado dinamicamente e precisa ser mostrado explicitamente:
+            // if (!toastEl.classList.contains('showing') && !toastEl.classList.contains('show')) {
+            //    toast.show();
+            // }
+        });
+    });
+</script>
+
+</body>
+</html>

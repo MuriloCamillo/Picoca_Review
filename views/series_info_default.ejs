@@ -1,266 +1,137 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <title>Picoca Review</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/img/index/frog-popcorn.webp"
-    />
-
-    <!-- Fontes e CDNs -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Estilos Externos (CDNs) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-
-    <!-- Estilos Locais -->
-    <link rel="stylesheet" href="assets/styles/global.css" />
-    <link rel="stylesheet" href="assets/styles/nav.css" />
-    <link rel="stylesheet" href="assets/styles/series_info.css" />
-  </head>
-
-  <body class="serie-body">
-    <header>
-      <%- include('./partials/header') %>
-    </header>
-
-    <main>
-      <section class="serie-hero">
-        <div class="backdrop-container">
-          <div class="backdrop-image" id="backdrop-image"></div>
-          <div class="backdrop-overlay"></div>
-        </div>
-
-        <div class="container content-container">
-          <p class="back-link-container">
-            <a class="series-gallery-link" href="/series_gallery">
-              <i class="bi bi-arrow-left"></i> Voltar para Séries
-            </a>
-          </p>
-          <div class="row">
-            <div class="col-md-3 poster-container">
-              <img
-                src=""
-                alt="Poster da Série"
-                class="img-fluid serie-poster"
-                id="serie-poster"
-              />
+<%- include('partials/header', { 
+    title: title, 
+    pageStyle: 'series_info.css', 
+    bodyClass: 'serie-body',
+    metaDescription: (serie && serie.synopsis) ? serie.synopsis.substring(0, 160) + '...' : (serie ? serie.title : 'Detalhes da Série')
+}) %>
+    <main class="container mt-5 pt-4"> <% if (serie) { %>
+        <section class="serie-hero">
+            <div class="backdrop-container">
+              <div class="backdrop-image" id="backdrop-image" style="background-image: url('<%= serie.backdropImg %>');"></div>
+              <div class="backdrop-overlay"></div>
             </div>
 
-            <div class="col-md-6 serie-info">
-              <h1 class="serie-title" id="serie-title">
-                <span class="serie-year" id="serie-year"></span>
-              </h1>
-              <div class="serie-director" id="serie-creator"></div>
-              <div class="serie-tagline" id="serie-tagline"></div>
-              <div class="serie-synopsis" id="serie-synopsis">
-                <p></p>
-              </div>
-              <div class="serie-status" id="serie-status"></div>
-
-              <div class="serie-tabs">
-                <ul class="nav nav-tabs" id="serieInfoTabs" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link active"
-                      id="cast-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#cast"
-                      type="button"
-                      role="tab"
-                      aria-controls="cast"
-                      aria-selected="true"
-                    >
-                      ELENCO
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="genres-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#genres"
-                      type="button"
-                      role="tab"
-                      aria-controls="genres"
-                      aria-selected="false"
-                    >
-                      GÊNERO
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="seasons-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#seasons"
-                      type="button"
-                      role="tab"
-                      aria-controls="seasons"
-                      aria-selected="false"
-                    >
-                      TEMPORADAS
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="watch-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#watch"
-                      type="button"
-                      role="tab"
-                      aria-controls="watch"
-                      aria-selected="false"
-                    >
-                      ONDE ASSISTIR
-                    </button>
-                  </li>
-                </ul>
-                <div class="tab-content" id="serieInfoTabsContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="cast"
-                    role="tabpanel"
-                    aria-labelledby="cast-tab"
-                  >
-                    <div class="cast-list" id="cast-list"></div>
-                  </div>
-
-                  <div
-                    class="tab-pane fade"
-                    id="genres"
-                    role="tabpanel"
-                    aria-labelledby="genres-tab"
-                  >
-                    <div class="genres-list" id="genres-list"></div>
-                  </div>
-
-                  <div
-                    class="tab-pane fade"
-                    id="seasons"
-                    role="tabpanel"
-                    aria-labelledby="seasons-tab"
-                  >
-                    <div class="seasons-list" id="seasons-list"></div>
-                  </div>
-
-                  <div
-                    class="tab-pane fade"
-                    id="watch"
-                    role="tabpanel"
-                    aria-labelledby="watch-tab"
-                  >
-                    <div class="watch-list" id="watch-list"></div>
-                  </div>
+            <div class="container content-container"> <p class="back-link-container">
+                <a class="series-gallery-link" href="/series_gallery">
+                  <i class="bi bi-arrow-left"></i> Voltar para Séries
+                </a>
+              </p>
+              <div class="row">
+                <div class="col-md-3 poster-container">
+                  <img
+                    src="<%= serie.posterImg %>"
+                    alt="Poster de <%= serie.title %>"
+                    class="img-fluid serie-poster"
+                    id="serie-poster" />
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-3 user-actions">
-              <div class="action-buttons">
-                <button class="btn action-btn like-btn">
-                  <i class="bi bi-heart"></i>
-                  <span>Like</span>
-                </button>
-                <button class="btn action-btn watchlist-btn">
-                  <i class="bi bi-bookmark-plus"></i>
-                  <span>Watchlist</span>
-                </button>
-              </div>
+                <div class="col-md-6 serie-info">
+                  <h1 class="serie-title" id="serie-title">
+                    <%= serie.title %> <span class="serie-year" id="serie-year">(<%= serie.year %>)</span>
+                  </h1>
+                  <div class="serie-director" id="serie-creator">Criado por <%= serie.creator %></div>
+                  <% if(serie.tagline) { %><div class="serie-tagline fst-italic" id="serie-tagline">"<%= serie.tagline %>"</div><% } %>
+                  <div class="serie-synopsis" id="serie-synopsis">
+                    <p><%= serie.synopsis %></p>
+                  </div>
+                  <div class="serie-status <%= serie.statusClass %>" id="serie-status"><%= serie.status %></div>
+                  
+                  <% if (user) { %>
+                    <div class="user-actions-series mb-3"> <button class="btn btn-sm me-2 action-btn-dynamic <%= userSeriesStatus && userSeriesStatus.onWatchlist ? 'btn-info text-white active' : 'btn-outline-info' %>"
+                                data-series-id="<%= seriesId %>" data-list-type="watchlist">
+                            <i class="fas fa-bookmark"></i> 
+                            <span class="button-text"><%= userSeriesStatus && userSeriesStatus.onWatchlist ? 'Na Watchlist' : 'Watchlist' %></span>
+                        </button>
+                        <button class="btn btn-sm me-2 action-btn-dynamic <%= userSeriesStatus && userSeriesStatus.onLikelist ? 'btn-danger text-white active' : 'btn-outline-danger' %>"
+                                data-series-id="<%= seriesId %>" data-list-type="likelist">
+                            <i class="fas fa-heart"></i> 
+                             <span class="button-text"><%= userSeriesStatus && userSeriesStatus.onLikelist ? 'Gostei!' : 'Gostei' %></span>
+                        </button>
+                        <span id="series-action-feedback" class="ms-2" style="display: none; font-size: 0.9em;"></span>
+                    </div>
+                  <% } else { %>
+                      <p><a href="/login?redirect=<%= encodeURIComponent(originalUrl || ('/series/' + seriesId)) %>">Faça login</a> para adicionar às suas listas.</p>
+                  <% } %>
 
-              <div class="rating-container">
-                <h6 class="rating-text">Avaliar</h6>
-                <div class="stars">
-                  <i class="bi bi-star"></i>
-                  <i class="bi bi-star"></i>
-                  <i class="bi bi-star"></i>
-                  <i class="bi bi-star"></i>
-                  <i class="bi bi-star"></i>
-                </div>
-              </div>
-
-              <div class="community-rating">
-                <h6 class="rating-text">Avaliações</h6>
-                <div class="rating-info">
-                  <div class="average-rating">3.5</div>
-                  <div class="rating-bar">
-                    <div class="bar-container">
-                      <div class="bar" style="height: 20%"></div>
-                      <div class="bar" style="height: 30%"></div>
-                      <div class="bar" style="height: 40%"></div>
-                      <div class="bar" style="height: 60%"></div>
-                      <div class="bar" style="height: 80%"></div>
-                      <div class="bar" style="height: 70%"></div>
-                      <div class="bar" style="height: 60%"></div>
-                      <div class="bar" style="height: 50%"></div>
-                      <div class="bar" style="height: 30%"></div>
-                      <div class="bar" style="height: 20%"></div>
+                  <div class="serie-tabs">
+                    <ul class="nav nav-tabs" id="serieInfoTabs" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="cast-tab" data-bs-toggle="tab" data-bs-target="#cast" type="button" role="tab" aria-controls="cast" aria-selected="true">ELENCO</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="genres-tab" data-bs-toggle="tab" data-bs-target="#genres" type="button" role="tab" aria-controls="genres" aria-selected="false">GÊNERO</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="seasons-tab" data-bs-toggle="tab" data-bs-target="#seasons" type="button" role="tab" aria-controls="seasons" aria-selected="false">TEMPORADAS</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="watch-tab" data-bs-toggle="tab" data-bs-target="#watch" type="button" role="tab" aria-controls="watch" aria-selected="false">ONDE ASSISTIR</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content py-3" id="serieInfoTabsContent">
+                      <div class="tab-pane fade show active" id="cast" role="tabpanel" aria-labelledby="cast-tab">
+                        <div class="cast-list" id="cast-list"> <% if (serie.cast && serie.cast.length > 0) { %>
+                                <% serie.cast.forEach(member => { %><span class="cast-item"><%= member %></span><% }); %>
+                            <% } else { %><p>Nenhuma informação de elenco disponível.</p><% } %>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="genres" role="tabpanel" aria-labelledby="genres-tab">
+                        <div class="genres-list" id="genres-list">
+                            <% if (serie.genres && serie.genres.length > 0) { %>
+                                <% serie.genres.forEach(genre => { %><span class="genres-item"><%= genre %></span><% }); %>
+                            <% } else { %><p>Nenhuma informação de gênero disponível.</p><% } %>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="seasons" role="tabpanel" aria-labelledby="seasons-tab">
+                        <div class="seasons-list" id="seasons-list">
+                            <% if (serie.seasons && serie.seasons.length > 0) { %>
+                                <% serie.seasons.forEach(season => { %><span class="seasons-item"><%= season %></span><% }); %>
+                            <% } else { %><p>Nenhuma informação de temporadas disponível.</p><% } %>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="watch" role="tabpanel" aria-labelledby="watch-tab">
+                        <div class="watch-list" id="watch-list">
+                            <% if (serie.watchPlatforms && serie.watchPlatforms.length > 0) { %>
+                                <% serie.watchPlatforms.forEach(platform => { %><span class="watch-item"><%= platform %></span><% }); %>
+                            <% } else { %><p>Nenhuma informação de onde assistir disponível.</p><% } %>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="fans-count">368 FANS</div>
+                </div>
+
+                <div class="col-md-3 user-actions"> <div class="action-buttons">
+                    <button class="btn action-btn like-btn disabled-mock"><i class="bi bi-heart"></i><span>Like</span></button>
+                    <button class="btn action-btn watchlist-btn disabled-mock"><i class="bi bi-bookmark-plus"></i><span>Watchlist</span></button>
+                  </div>
+                  <div class="rating-container">
+                    <h6 class="rating-text">Avaliar</h6>
+                    <div class="stars"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></div>
+                  </div>
+                  <div class="community-rating">
+                    <h6 class="rating-text">Avaliações</h6>
+                    <div class="rating-info">
+                      <div class="average-rating">N/A</div>
+                      <div class="rating-bar"><div class="bar-container"> </div></div>
+                      <div class="fans-count">-- FANS</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="trailer-section py-4">
-        <div class="container">
-          <h2 class="section-title">Confira abaixo o trailer da série:</h2>
-          <div class="ratio ratio-16x9">
-            <iframe
-              src=""
-              title="Trailer"
-              allowfullscreen
-              id="serie-trailer"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+        <% if (serie.trailerUrl && serie.trailerUrl.toLowerCase() !== "https://www.youtube.com/embed/Ades3pQbeh8" && !serie.trailerUrl.toLowerCase().includes('googleusercontent')) { %>
+        <section class="trailer-section py-4"> <div class="container">
+              <h2 class="section-title">Confira abaixo o trailer da série:</h2>
+              <div class="ratio ratio-16x9">
+                <iframe src="<%= serie.trailerUrl.replace('watch?v=', 'embed/') %>" title="Trailer de <%= serie.title %>" allowfullscreen id="serie-trailer"></iframe>
+              </div>
+            </div>
+        </section>
+        <% } %>
+      <% } else { %>
+        <p class="text-center text-light display-6 mt-5 pt-5">Série não encontrada.</p>
+      <% } %>
     </main>
-
-    <footer id="footer" class="footer py-4">
-      <%- include('./partials/footer') %>
-    </footer>
-
-    <div
-      id="logout-toast"
-      class="logout-toast"
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
-      <div class="toast-body">Logout realizado com sucesso!</div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/focus-visible.js"></script>
-    <script src="assets/js/series_data.js"></script>
-    <script src="assets/js/series_info_loader.js"></script>
-    <script src="assets/js/navbar_search.js"></script>
-    <script src="assets/js/navbar_auth.js"></script>
-  </body>
-</html>
+<%- include('partials/footer', { pageScript: 'series_info_interaction.js' }) %>

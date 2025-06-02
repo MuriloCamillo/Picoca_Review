@@ -1,266 +1,105 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Configurações da Conta - Picoca Review</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/img/index/frog-popcorn.webp"
-    />
+<%- include('partials/header', { 
+    title: title, 
+    pageStyle: 'profile.css', 
+    bodyClass: 'profile-body',
+    metaDescription: user ? `Perfil de ${user.username} no Picoca Review. Gerencie suas informações e listas.` : 'Configurações da Conta - Picoca Review'
+}) %>
+    <main class="container mt-4 mb-5"> <h1 class="profile-title mb-4 mt-5 pt-4">Configurações da conta</h1>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-
-    <link rel="stylesheet" href="assets/styles/global.css" />
-    <link rel="stylesheet" href="assets/styles/nav.css" />
-    <link rel="stylesheet" href="assets/styles/profile.css" />
-  </head>
-
-  <body class="profile-body">
-    <header>
-      <%- include('./partials/header') %>
-    </header>
-
-    <main class="container mt-4 mb-5">
-      <h1 class="profile-title mb-4">Configurações da conta</h1>
-
+    <% if (user) { %>
       <ul class="nav nav-tabs profile-tabs mb-4" id="profileTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button
-            class="nav-link active"
-            id="profile-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#profile-content"
-            type="button"
-            role="tab"
-            aria-controls="profile-content"
-            aria-selected="true"
-          >
-            Perfil
-          </button>
+          <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-content-pane" type="button" role="tab" aria-controls="profile-content-pane" aria-selected="true">Perfil</button> </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="minhas-listas-tab" data-bs-toggle="tab" data-bs-target="#minhas-listas-pane" type="button" role="tab" aria-controls="minhas-listas-pane" aria-selected="false">Minhas Listas</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="password-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#password-content"
-            type="button"
-            role="tab"
-            aria-controls="password-content"
-            aria-selected="false"
-          >
-            Senha
-          </button>
-        </li>
+          <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password-content-pane" type="button" role="tab" aria-controls="password-content-pane" aria-selected="false">Senha</button> </li>
         <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="avatar-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#avatar-content"
-            type="button"
-            role="tab"
-            aria-controls="avatar-content"
-            aria-selected="false"
-          >
-            Avatar
-          </button>
-        </li>
+          <button class="nav-link" id="avatar-tab" data-bs-toggle="tab" data-bs-target="#avatar-content-pane" type="button" role="tab" aria-controls="avatar-content-pane" aria-selected="false">Avatar</button> </li>
       </ul>
 
       <div class="tab-content" id="profileTabContent">
-        <div
-          class="tab-pane fade show active"
-          id="profile-content"
-          role="tabpanel"
-          aria-labelledby="profile-tab"
-        >
+        <div class="tab-pane fade show active" id="profile-content-pane" role="tabpanel" aria-labelledby="profile-tab">
           <form class="profile-form">
             <div class="row g-3">
               <div class="col-md-6">
-                <label for="username" class="form-label">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  placeholder="Seu nome de usuário"
-                />
+                <label for="profileUsername" class="form-label">Username</label> <input type="text" class="form-control" id="profileUsername" value="@<%= user.username %>" readonly />
               </div>
               <div class="col-md-6">
-                <label for="email" class="form-label">E-mail</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="seu@email.com"
-                />
+                <label for="profileEmail" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="profileEmail" value="<%= user.email %>" readonly />
               </div>
               <div class="col-md-6">
-                <label for="firstName" class="form-label">Primeiro Nome</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="firstName"
-                  placeholder="Seu primeiro nome"
-                />
+                <label for="profileFirstName" class="form-label">Primeiro Nome</label>
+                <input type="text" class="form-control" id="profileFirstName" value="<%= user.firstName || '' %>" readonly />
               </div>
               <div class="col-md-6">
-                <label for="lastName" class="form-label">Sobrenome</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="lastName"
-                  placeholder="Seu sobrenome"
-                />
+                <label for="profileLastName" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" id="profileLastName" value="<%= user.lastName || '' %>" readonly />
               </div>
               <div class="col-md-6">
-                <label for="country" class="form-label">País</label>
-                <select id="country" class="form-select">
-                  <option selected disabled value="">Escolha...</option>
-                  <option value="BR">Brasil</option>
-                  <option value="PT">Portugal</option>
-                  <option value="US">Estados Unidos</option>
-                  <option value="Outro">Outro</option>
-                </select>
+                <label for="profileCountry" class="form-label">País</label> <select id="profileCountry" class="form-select" disabled><option selected>Não especificado</option></select>
               </div>
               <div class="col-12">
-                <label for="bio" class="form-label">Bio</label>
-                <textarea
-                  class="form-control"
-                  id="bio"
-                  rows="4"
-                  placeholder="Fale um pouco sobre você..."
-                ></textarea>
+                <label for="profileBio" class="form-label">Bio</label> <textarea class="form-control" id="profileBio" rows="4" placeholder="Fale um pouco sobre você..." readonly></textarea>
               </div>
             </div>
             <div class="mt-4 text-end">
-              <button type="submit" class="btn profile-btn">
-                Salvar Alterações
-              </button>
+              <button type="button" class="btn profile-btn" disabled>Salvar Alterações (Indisponível)</button>
             </div>
           </form>
         </div>
+        
+        <div class="tab-pane fade" id="minhas-listas-pane" role="tabpanel" aria-labelledby="minhas-listas-tab">
+            <div class="profile-form">
+                <h4>Suas Listas de Séries</h4>
+                <p class="text-muted"><small>Funcionalidade para exibir suas séries da Watchlist e Likelist aqui.</small></p>
+                <p><small>Você pode adicionar séries às suas listas visitando a página de detalhes de cada série na <a href="/series_gallery">galeria</a>.</small></p>
+                </div>
+        </div>
 
-        <div
-          class="tab-pane fade"
-          id="password-content"
-          role="tabpanel"
-          aria-labelledby="password-tab"
-        >
+        <div class="tab-pane fade" id="password-content-pane" role="tabpanel" aria-labelledby="password-tab">
           <form class="profile-form">
+             <p class="text-muted text-center"><small>Funcionalidade de alteração de senha indisponível no momento.</small></p>
             <div class="row g-3 justify-content-center">
               <div class="col-md-8 col-lg-6">
-                <label for="currentPassword" class="form-label"
-                  >Senha Atual</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="currentPassword"
-                  placeholder="Sua senha atual"
-                />
+                <label for="currentPassword" class="form-label">Senha Atual</label>
+                <input type="password" class="form-control" id="currentPassword" placeholder="Sua senha atual" disabled />
               </div>
               <div class="w-100"></div>
               <div class="col-md-8 col-lg-6">
                 <label for="newPassword" class="form-label">Nova Senha</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="newPassword"
-                  placeholder="Mínimo 8 caracteres"
-                />
+                <input type="password" class="form-control" id="newPassword" placeholder="Mínimo 8 caracteres" disabled />
               </div>
               <div class="w-100"></div>
               <div class="col-md-8 col-lg-6">
-                <label for="confirmNewPassword" class="form-label"
-                  >Confirmar Nova Senha</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="confirmNewPassword"
-                  placeholder="Repita a nova senha"
-                />
+                <label for="confirmNewPassword" class="form-label">Confirmar Nova Senha</label>
+                <input type="password" class="form-control" id="confirmNewPassword" placeholder="Repita a nova senha" disabled />
               </div>
             </div>
             <div class="mt-4 text-center">
-              <button type="submit" class="btn profile-btn">
-                Alterar Senha
-              </button>
+              <button type="button" class="btn profile-btn" disabled>Alterar Senha</button>
             </div>
           </form>
         </div>
 
-        <div
-          class="tab-pane fade"
-          id="avatar-content"
-          role="tabpanel"
-          aria-labelledby="avatar-tab"
-        >
+        <div class="tab-pane fade" id="avatar-content-pane" role="tabpanel" aria-labelledby="avatar-tab">
           <div class="avatar-section text-center">
-            <p class="mb-3">Envie uma nova imagem de perfil.</p>
-
+            <p class="mb-3">Envie uma nova imagem de perfil. (Funcionalidade indisponível no momento)</p>
             <div class="avatar-drop-zone mb-3">
               <i class="bi bi-cloud-arrow-up-fill avatar-icon"></i>
               <p>Arraste e solte seu arquivo aqui</p>
               <span>ou</span>
             </div>
-
-            <input
-              type="file"
-              id="avatarFile"
-              class="d-none"
-              accept="image/*"
-            />
-
-            <label for="avatarFile" class="btn profile-btn">
-              <i class="bi bi-upload me-2"></i>Selecionar Arquivo
-            </label>
-
+            <input type="file" id="avatarFile" class="d-none" accept="image/*" disabled />
+            <label for="avatarFile" class="btn profile-btn disabled"><i class="bi bi-upload me-2"></i>Selecionar Arquivo</label>
             <p class="avatar-hint mt-3">Tamanho máximo: 2MB.</p>
           </div>
         </div>
       </div>
+    <% } else { %>
+        <p class="text-center display-6 mt-5 pt-5">Por favor, <a href="/login">faça login</a> para acessar seu perfil.</p>
+    <% } %>
     </main>
-
-    <footer id="footer" class="footer py-4">
-      <%- include('./partials/footer') %>
-    </footer>
-
-    <div
-      id="logout-toast"
-      class="logout-toast"
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
-      <div class="toast-body">Logout realizado com sucesso!</div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/focus-visible.js"></script>
-    <script src="assets/js/series_data.js"></script>
-    <script src="assets/js/navbar_search.js"></script>
-    <script src="assets/js/navbar_auth.js"></script>
-  </body>
-</html>
+<%- include('partials/footer') %>

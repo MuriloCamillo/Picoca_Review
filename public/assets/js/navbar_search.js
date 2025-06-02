@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       matches.forEach(([id, serie]) => {
         const link = document.createElement("a");
         link.classList.add("dropdown-item");
-        link.href = `/series_info_default?id=${id}`;
+        link.href = `/series/${id}`; // Onde 'id' é o seriesId (ex: 'invincible')
         const title = serie.title;
         const escapedSearchTerm = searchTerm.replace(
           /[.*+?^${}()|[\]\\]/g,
