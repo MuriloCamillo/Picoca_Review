@@ -14,8 +14,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Crime", "Ficção", "Super Heróis"],
     seasons: ["1ª Temporada - 9 episódios"],
     watchPlatforms: ["Disney+"],
-    posterImg: "assets/img/index/trend/demolidor_trend.webp",
-    backdropImg: "assets/img/series_info_bg/demolidor_bg.webp", 
+    posterImg: "/assets/img/index/trend/demolidor_trend.webp",
+    backdropImg: "/assets/img/series_info_bg/demolidor_bg.webp", 
     trailerUrl: "https://www.youtube.com/embed/9KZyUQpihsE" 
   },
   'fallout': {
@@ -30,8 +30,8 @@ const seriesData: SeriesData = {
     genres: ["Ficção Científica", "Ação", "Aventura", "Pós-apocalíptico"],
     seasons: ["1ª Temporada - 8 episódios"],
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/index/trend/fallout_trend.webp",
-    backdropImg: "assets/img/series_info_bg/fallout_bg.webp",
+    posterImg: "/assets/img/index/trend/fallout_trend.webp",
+    backdropImg: "/assets/img/series_info_bg/fallout_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/0kQ8i2FpRDk" 
   },
   'invincible': {
@@ -46,8 +46,8 @@ const seriesData: SeriesData = {
     genres: ["Animação", "Ação", "Aventura", "Super Heróis"],
     seasons: ["1ª Temporada - 8 episódios", "2ª Temporada - 8 episódios", "3ª Temporada - 8 episódios"],
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/index/trend/invincible_trend.webp",
-    backdropImg: "assets/img/series_info_bg/invincible_bg.webp", 
+    posterImg: "/assets/img/index/trend/invincible_trend.webp",
+    backdropImg: "/assets/img/series_info_bg/invincible_bg.webp", 
     trailerUrl: "https://www.youtube.com/embed/-bfAVpuko5o" 
   },
   'reacher': {
@@ -62,8 +62,8 @@ const seriesData: SeriesData = {
     genres: ["Ação", "Crime", "Drama", "Aventura"],
     seasons: ["1ª Temporada - 8 episódios", "2ª Temporada - 8 episódios", "3ª Temporada - 8 episódios"],
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/index/trend/reacher_trend.webp",
-    backdropImg: "assets/img/series_info_bg/reacher_bg.webp",
+    posterImg: "/assets/img/index/trend/reacher_trend.webp",
+    backdropImg: "/assets/img/series_info_bg/reacher_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/BPeKW29kJT8" 
   },
   'thewhitelotus': {
@@ -78,8 +78,8 @@ const seriesData: SeriesData = {
     genres: ["Comédia", "Drama", "Mistério"],
     seasons: ["1ª Temporada - 6 episódios", "2ª Temporada - 7 episódios", "3ª Temporada - 8 episódios"],
     watchPlatforms: ["Max"],
-    posterImg: "assets/img/index/trend/whitelotus_trend.webp",
-    backdropImg: "assets/img/series_info_bg/thewhitelotus_bg.webp",
+    posterImg: "/assets/img/index/trend/whitelotus_trend.webp",
+    backdropImg: "/assets/img/series_info_bg/thewhitelotus_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/TGLq7_MonZ4" 
   },
   'ruptura': {
@@ -94,8 +94,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Mistério", "Sci-Fi"],
     seasons: ["1ª Temporada - 9 episódios", "2ª Temporada - 10 episódios"],
     watchPlatforms: ["Apple TV+"],
-    posterImg: "assets/img/index/trend/ruptura_trend.webp",
-    backdropImg: "assets/img/series_info_bg/ruptura_bg.webp",
+    posterImg: "/assets/img/index/trend/ruptura_trend.webp",
+    backdropImg: "/assets/img/series_info_bg/ruptura_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/EFjc_qHrnsQ"
   },
   // Ranked
@@ -111,8 +111,8 @@ const seriesData: SeriesData = {
     genres: ["Comédia", "Policial", "Crime"],
     seasons: ["1ª Temporada - 22 episódios", "2ª Temporada - 23 episódios", "3ª Temporada - 23 episódios", "4ª Temporada - 22 episódios", "5ª Temporada - 22 episódios", "6ª Temporada - 18 episódios", "7ª Temporada - 13 episódios", "8ª Temporada - 9 episódios"],
     watchPlatforms: ["Peacock", "Netflix"],
-    posterImg: "assets/img/index/ranked/b99_ranked.webp",
-    backdropImg: "assets/img/series_info_bg/brooklyn99_bg.webp",
+    posterImg: "/assets/img/index/ranked/b99_ranked.webp",
+    backdropImg: "/assets/img/series_info_bg/brooklyn99_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/q6G_RMGk3vs" 
   },
   'fmab': {
@@ -127,8 +127,8 @@ const seriesData: SeriesData = {
     genres: ["Animação", "Aventura", "Fantasia", "Comédia", "Ação", "Mistério", "Bom demais pode assistir sem medo"],
     seasons: ["1ª Temporada - 64 episódios"],
     watchPlatforms: ["Crunchyroll", "Netflix"],
-    posterImg: "assets/img/index/ranked/fmabh_ranked.webp",
-    backdropImg: "assets/img/series_info_bg/fullmetal_bg.webp",
+    posterImg: "/assets/img/index/ranked/fmabh_ranked.webp",
+    backdropImg: "/assets/img/series_info_bg/fullmetal_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/AYlksPeSXrs"
   },
   'juri': {
@@ -143,8 +143,8 @@ const seriesData: SeriesData = {
     genres: ["Comédia"],
     seasons: ["1ª Temporada - 8 episódios"],
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/index/ranked/juri_ranked.webp",
-    backdropImg: "assets/img/series_info_bg/juri_bg.webp",
+    posterImg: "/assets/img/index/ranked/juri_ranked.webp",
+    backdropImg: "/assets/img/series_info_bg/juri_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/Ei6YoSid5fo"
   },
   'saul': {
@@ -159,8 +159,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Crime"],
     seasons: ["1ª Temporada - 10 episódios", "2ª Temporada - 10 episódios", "3ª Temporada - 10 episódios", "4ª Temporada - 10 episódios", "5ª Temporada - 10 episódios", "6ª Temporada - 13 episódios"],
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/index/ranked/saul_ranked.webp",
-    backdropImg: "assets/img/series_info_bg/saul_bg.webp",
+    posterImg: "/assets/img/index/ranked/saul_ranked.webp",
+    backdropImg: "/assets/img/series_info_bg/saul_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/FAdiEjeNRi0"
   },
   'spyxfamily': {
@@ -175,8 +175,8 @@ const seriesData: SeriesData = {
     genres: ["Animação", "Ação", "Comédia"],
     seasons: ["1ª Temporada - 25 episódios", "2ª Temporada - 12 episódios"],
     watchPlatforms: ["Crunchyroll", "Netflix"],
-    posterImg: "assets/img/index/ranked/spyfamily_ranked.webp",
-    backdropImg: "assets/img/series_info_bg/spyfamily_bg.webp",
+    posterImg: "/assets/img/index/ranked/spyfamily_ranked.webp",
+    backdropImg: "/assets/img/series_info_bg/spyfamily_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/0CJr6AfE2rY"
   },
   'the_office': {
@@ -191,8 +191,8 @@ const seriesData: SeriesData = {
     genres: ["Comédia"],
     seasons: ["1ª Temporada - 6 episódios", "2ª Temporada - 22 episódios", "3ª Temporada - 23 episódios", "4ª Temporada - 14 episódios", "5ª Temporada - 26 episódios", "6ª Temporada - 24 episódios", "7ª Temporada - 24 episódios", "8ª Temporada - 24 episódios", "9ª Temporada - 27 episódios"],
     watchPlatforms: ["Peacock", "Netflix", "Prime Video", "Max"],
-    posterImg: "assets/img/index/ranked/theoffice_ranked.webp",
-    backdropImg: "assets/img/series_info_bg/theoffice_bg.webp",
+    posterImg: "/assets/img/index/ranked/theoffice_ranked.webp",
+    backdropImg: "/assets/img/series_info_bg/theoffice_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/tNcDHWpselE"
   },
   //Mais séries
@@ -208,8 +208,8 @@ const seriesData: SeriesData = {
     genres: ["Sci-Fi", "Ação", "Aventura"],
     seasons: ["1ª Temporada - 12 episódios"],
     watchPlatforms: ["Disney+"],
-    posterImg: "assets/img/series_info_poster/star_wars_andor_poster.webp",
-    backdropImg: "assets/img/series_info_bg/andor_bg.webp",
+    posterImg: "/assets/img/series_info_poster/star_wars_andor_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/andor_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/cKOegEuCcfw"
   },
   'breaking_bad': {
@@ -224,8 +224,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Crime"],
     seasons: ["1ª Temporada - 07 episódios", "2ª Temporada - 13 episódios", "3ª Temporada - 13 episódios", "4ª Temporada - 13 episódios", "5ª Temporada - 16 episódios"],
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/series_info_poster/breaking_bad_poster.webp",
-    backdropImg: "assets/img/series_info_bg/breakingbad_bg.webp",
+    posterImg: "/assets/img/series_info_poster/breaking_bad_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/breakingbad_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/HhesaQXLuRY"
   },
   'game_of_thrones': {
@@ -240,8 +240,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Ação", "Fantasia", "Sci-Fi"],
     seasons: ["1ª Temporada - 10 episódios", "2ª Temporada - 10 episódios", "3ª Temporada - 10 episódios", "4ª Temporada - 10 episódios", "5ª Temporada - 10 episódios", "6ª Temporada - 10 episódios", "7ª Temporada - 7 episódios", "8ª Temporada - 6 episódios"],
     watchPlatforms: ["Max"],
-    posterImg: "assets/img/series_info_poster/game_of_thrones_poster.webp",
-    backdropImg: "assets/img/series_info_bg/gameofthrones_bg.webp",
+    posterImg: "/assets/img/series_info_poster/game_of_thrones_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/gameofthrones_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/KPLWWIOCOOQ"
   },
   'hannibal': {
@@ -256,8 +256,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Crime", "Terror"],
     seasons: ["1ª Temporada - 13 episódios", "2ª Temporada - 13 episódios", "3ª Temporada - 13 episódios"],
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/series_info_poster/hannibal_poster.webp",
-    backdropImg: "assets/img/series_info_bg/hannibal_bg.webp",
+    posterImg: "/assets/img/series_info_poster/hannibal_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/hannibal_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/RuiklpUQ-p4"
   },
   'mindhunter': {
@@ -272,8 +272,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Crime", "Terror", "Policial"],
     seasons: ["1ª Temporada - 10 episódios", "2ª Temporada - 9 episódios"],
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/series_info_poster/mindhunter_poster.webp",
-    backdropImg: "assets/img/series_info_bg/mindhunter_bg.webp",
+    posterImg: "/assets/img/series_info_poster/mindhunter_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/mindhunter_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/J4LWdJHJxbs"
   },
   'mr_robot': {
@@ -288,8 +288,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Crime"],
     seasons: ["season_1.0 - 10 episódios", "season_2.0 - 12 episódios", "season_3.0 - 10 episódios", "season_4.0 - 13 episódios"],
     watchPlatforms: ["Apple Tv+"],
-    posterImg: "assets/img/series_info_poster/mr_robot_poster.webp",
-    backdropImg: "assets/img/series_info_bg/mrrobot_bg.webp",
+    posterImg: "/assets/img/series_info_poster/mr_robot_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/mrrobot_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/N6HGuJC--rk"
   },
   'the_bear': {
@@ -304,8 +304,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Comédia"],
     seasons: ["1ª Temporada - 8 episódios", "2ª Temporada - 10 episódios", "3ª Temporada - 10 episódios"],
     watchPlatforms: ["Disney+"],
-    posterImg: "assets/img/series_info_poster/the_bear_poster.webp",
-    backdropImg: "assets/img/series_info_bg/thebear_bg.webp",
+    posterImg: "/assets/img/series_info_poster/the_bear_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/thebear_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/FGZPp6jsWEg"
   },
   'the_boys': {
@@ -320,8 +320,8 @@ const seriesData: SeriesData = {
     genres: ["Sci-Fi", "Comédia", "Ação", "Super Heróis"],
     seasons: ["1ª Temporada - 8 episódios", "2ª Temporada - 8 episódios", "3ª Temporada - 8 episódios", "4ª Temporada - 8 episódios"],
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/series_info_poster/the_boys_poster.webp",
-    backdropImg: "assets/img/series_info_bg/theboys_bg.webp",
+    posterImg: "/assets/img/series_info_poster/the_boys_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/theboys_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/FGZPp6jsWEg"
   },
   'the_mandalorian': {
@@ -336,8 +336,8 @@ const seriesData: SeriesData = {
     genres: ["Sci-Fi", "Aventura", "Ação", "Ficção"],
     seasons: ["1ª Temporada - 8 episódios", "2ª Temporada - 8 episódios", "3ª Temporada - 8 episódios"],
     watchPlatforms: ["Disney+"],
-    posterImg: "assets/img/series_info_poster/the_mandalorian_poster.webp",
-    backdropImg: "assets/img/series_info_bg/themandalorian_bg.webp",
+    posterImg: "/assets/img/series_info_poster/the_mandalorian_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/themandalorian_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/aOC8E8z_ifw"
   },
   'tlou': {
@@ -352,8 +352,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Ação", "Aventura", "Terror", "Pós-apocalíptico"],	
     seasons: ["1ª Temporada - 9 episódios"],
     watchPlatforms: ["HBO Max"],
-    posterImg: "assets/img/series_info_poster/tlou_poster.webp",
-    backdropImg: "assets/img/series_info_bg/tlou_bg.webp",
+    posterImg: "/assets/img/series_info_poster/tlou_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/tlou_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/IpjRuuFEPMk"
   },
   'stranger_things': {
@@ -368,8 +368,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Ficção Científica", "Terror"],
     seasons: ["1ª Temporada - 8 episódios", "2ª Temporada - 9 episódios", "3ª Temporada - 8 episódios", "4ª Temporada - 9 episódios"],
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/series_info_poster/strangerthings_poster.webp",
-    backdropImg: "assets/img/series_info_bg/strangerthings_bg.webp",
+    posterImg: "/assets/img/series_info_poster/strangerthings_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/strangerthings_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/b9EkMc79ZSU"
   },
   'round6': {
@@ -384,8 +384,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Terror", "Mistério"],
     seasons: ["1ª Temporada - 9 episódios", "2ª Temporada - 6 episódios"],
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/series_info_poster/round6_poster.webp",
-    backdropImg: "assets/img/series_info_bg/round6_bg.webp",
+    posterImg: "/assets/img/series_info_poster/round6_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/round6_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/GDRyigWvUFg"
   },
   'dark': {
@@ -400,8 +400,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Terror", "Mistério", "Crime", "Ficção Científica"],
     seasons: ["1ª Temporada - 10 episódios", "2ª Temporada - 8 episódios", "3ª Temporada - 8 episódios"],
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/series_info_poster/dark_poster.webp",
-    backdropImg: "assets/img/series_info_bg/dark_bg.webp",
+    posterImg: "/assets/img/series_info_poster/dark_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/dark_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/ESEUoa-mz2c"
   },
   'sheldon': {
@@ -416,8 +416,8 @@ const seriesData: SeriesData = {
     genres: ["Drama", "Comédia", "Família"],
     seasons: ["1ª Temporada - 22 episódios", "2ª Temporada - 22 episódios", "3ª Temporada - 21 episódios", "4ª Temporada - 18 episódios", "5ª Temporada - 22 episódios", "6ª Temporada - 22 episódios", "7ª Temporada - 14 episódios"],
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/series_info_poster/sheldon_poster.webp",
-    backdropImg: "assets/img/series_info_bg/sheldon_bg.webp",
+    posterImg: "/assets/img/series_info_poster/sheldon_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/sheldon_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/jffVm6tNBDg"
   },
   'avatar': {
@@ -432,8 +432,8 @@ const seriesData: SeriesData = {
     genres: ["Ação", "Aventura", "Fantasia"],
     seasons: ["1ª Temporada - 8 episódios"], 
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/series_info_poster/avatar_poster.webp",
-    backdropImg: "assets/img/series_info_bg/avatar_bg.webp",
+    posterImg: "/assets/img/series_info_poster/avatar_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/avatar_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/ByAn8DF8Ykk"
   },
   "hora_aventura": {
@@ -448,8 +448,8 @@ const seriesData: SeriesData = {
     genres: ["Animação", "Comédia", "Família"],
     seasons: ["1ª Temporada - 26 episódios", "2ª Temporada - 26 episódios", "3ª Temporada - 26 episódios", "4ª Temporada - 26 episódios", "5ª Temporada - 52 episódios", "6ª Temporada - 43 episódios", "7ª Temporada - 26 episódios", "8ª Temporada - 27 episódios", "9ª Temporada - 14 episódios", "10ª Temporada - 13 episódios"],
     watchPlatforms: ["Netflix", "Max", "Prime Video"],
-    posterImg: "assets/img/series_info_poster/hora_aventura_poster.webp",
-    backdropImg: "assets/img/series_info_bg/hora_aventura_bg.webp",
+    posterImg: "/assets/img/series_info_poster/hora_aventura_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/hora_aventura_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/2E46-7TrEc8"
   },
   'onepiece': {
@@ -464,8 +464,8 @@ const seriesData: SeriesData = {
     genres: ["Ação", "Aventura"],
     seasons: ["1ª Temporada - 8 episódios"], 
     watchPlatforms: ["Netflix"],
-    posterImg: "assets/img/series_info_poster/onepiece_poster.webp",
-    backdropImg: "assets/img/series_info_bg/onepiece_bg.webp",
+    posterImg: "/assets/img/series_info_poster/onepiece_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/onepiece_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/Ades3pQbeh8"
   },
   'sherlock': {
@@ -480,8 +480,8 @@ const seriesData: SeriesData = {
     genres: ["Crime", "Mistério"],
     seasons: ["1ª Temporada - 3 episódios", "2ª Temporada - 3 episódios", "3ª Temporada - 3 episódios", "4ª Temporada - 3 episódios"], 
     watchPlatforms: ["Prime Video"],
-    posterImg: "assets/img/series_info_poster/sherlock_poster.webp",
-    backdropImg: "assets/img/series_info_bg/sherlock_bg.webp",
+    posterImg: "/assets/img/series_info_poster/sherlock_poster.webp",
+    backdropImg: "/assets/img/series_info_bg/sherlock_bg.webp",
     trailerUrl: "https://www.youtube.com/embed/gGqWqGOSTGQ"
   }
 };

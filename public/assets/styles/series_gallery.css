@@ -173,6 +173,10 @@
   transform: scale(1.05);
 }
 
+#seriesList {
+  padding-bottom: 4rem;
+}
+
 /* --- Animação e Visibilidade do Filtro --- */
 /* Classe para esconder itens filtrados */
 #seriesList .filterDiv.hide {

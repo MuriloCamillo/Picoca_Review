@@ -4,7 +4,7 @@
     bodyClass: 'serie-body',
     metaDescription: (serie && serie.synopsis) ? serie.synopsis.substring(0, 160) + '...' : (serie ? serie.title : 'Detalhes da Série')
 }) %>
-    <main class="container mt-5 pt-4"> <% if (serie) { %>
+    <main class="serie-main"> <% if (serie) { %>
         <section class="serie-hero">
             <div class="backdrop-container">
               <div class="backdrop-image" id="backdrop-image" style="background-image: url('<%= serie.backdropImg %>');"></div>

@@ -8,7 +8,7 @@ const newsData: NewsData = {
         title: "\"Over the Garden Wall\" celebra 10 anos de jornada pelo desconhecido.",
         author: "Maurício Leme",
         date: "12 de Março de 2025",
-        mainImageUrl: "assets/img/journal_news/overthegardenwall1.webp",
+        mainImageUrl: "/assets/img/journal_news/overthegardenwall1.webp",
         mainImageCaption: "Há 10 anos os irmãos Wirt e Greg se aventuravam pela primeira vez.",
         summary: "Minissérie da Cartoon Network completa uma década e continua encantando novas gerações com sua atmosfera única.",
         articleContent: `
@@ -17,7 +17,7 @@ const newsData: NewsData = {
             <p>A jornada dos irmãos Wirt e Greg por uma floresta enigmática, conhecida apenas como "O Desconhecido", continua a fascinar espectadores de todas idades. A mistura única de conto de fadas sombrio, humor peculiar e personagens memoráveis garante seu lugar especial no coração dos fãs de animação.</p>
             <div class="text-center my-4">
                 <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
-                    <img src="assets/img/journal_news/overthegardenwall2.webp"
+                    <img src="/assets/img/journal_news/overthegardenwall2.webp"
                          alt="Wirt, Greg e Beatrice na floresta do Desconhecido"
                          class="rounded news-image-in-ratio">
                 </div>
@@ -31,7 +31,7 @@ const newsData: NewsData = {
         title: "Better Watch Saul! - A temporada final impecável.",
         author: "Larissa Martins",
         date: "10 de Março de 2025",
-        mainImageUrl: "assets/img/journal_news/saul1.webp",
+        mainImageUrl: "/assets/img/journal_news/saul1.webp",
         mainImageCaption: "A série nos mostra a trajetória de Jimmy McGill / Saul Goodman do início de sua carreira até sua jornada final.",
         summary: "A série do advogado favorito dos criminosos de Albuquerque que conseguiu nota 9+ em TODOS os episódios de sua última temporada.",
         articleContent: `
@@ -40,7 +40,7 @@ const newsData: NewsData = {
             <p>Acompanhamos a meticulosa e, por vezes, dolorosa metamorfose de Jimmy, um advogado esforçado, porém moralmente flexível, no infame Saul Goodman. A série explorou com profundidade as nuances de suas escolhas, as consequências de seus atos e a linha tênue entre o certo e o errado no mundo jurídico e criminal de Albuquerque.</p>
             <div class="text-center my-4">
                 <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
-                    <img src="assets/img/journal_news/saul2.webp"
+                    <img src="/assets/img/journal_news/saul2.webp"
                          alt="Cena marcante da última temporada de Better Call Saul"
                          class="rounded news-image-in-ratio">
                 </div>
@@ -55,7 +55,7 @@ const newsData: NewsData = {
         title: "Gato preto sinal de... Oscar! 'Flow' e a mudança de perspectiva.",
         author: "Letício Camilla",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/journal_news/flow1.webp",
+        mainImageUrl: "/assets/img/journal_news/flow1.webp",
         mainImageCaption: "O fofo e perspicaz protagonista colaborou com a mudança de perspectiva sobre os gatos pretos.",
         summary: "Como o filme Letoniano vencedor do Oscar está ajudando a acabar com a visão negativa associada aos gatos pretos.",
         articleContent: `
@@ -64,7 +64,7 @@ const newsData: NewsData = {
             <p>A narrativa acompanha a jornada de um gato preto independente e observador através de paisagens urbanas e naturais, explorando temas como solidão, conexão e a busca por um lugar no mundo. A ausência de diálogos humanos permite que a expressividade da animação e a trilha sonora conduzam a emoção do espectador.</p>
             <div class="text-center my-4">
                 <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
-                    <img src="assets/img/journal_news/flow2.webp"
+                    <img src="/assets/img/journal_news/flow2.webp"
                          alt="Cena da animação Flow mostrando a técnica visual"
                          class="rounded news-image-in-ratio">
                 </div>
@@ -79,7 +79,7 @@ const newsData: NewsData = {
         title: "Uma crítica futurística atual - Filme estrelado por Robert Pattinson trata de assuntos sérios com sutileza e acidez.",
         author: "Cristina Martins",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/journal_news/mickey171.webp",
+        mainImageUrl: "/assets/img/journal_news/mickey171.webp",
         mainImageCaption: "Mickey em mais um de seus variados trabalhos durante o filme.",
         summary: "O filme do premiado diretor Bong Joon-ho traz de forma sutil, porém cirúrgicas, críticas sobre temas bem atuais.",
         articleContent: `
@@ -88,7 +88,7 @@ const newsData: NewsData = {
             <p>Pattinson interpreta Mickey, um desses descartáveis que, após uma missão dar errado, se recusa a deixar seu clone substituto tomar seu lugar. A premissa serve como pano de fundo para Bong Joon-ho tecer críticas sociais afiadas, abordando temas como identidade, exploração, ética e o valor da vida humana, tudo com a sutileza e o humor ácido característicos do diretor.</p>
             <div class="text-center my-4">
                 <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
-                    <img src="assets/img/journal_news/mickey172.webp"
+                    <img src="/assets/img/journal_news/mickey172.webp"
                          alt="Robert Pattinson em cena de Mickey 17"
                          class="rounded news-image-in-ratio">
                 </div>
@@ -103,7 +103,7 @@ const newsData: NewsData = {
         title: "And (finally) the Oscar goes to... Brasil-sil-sil!",
         author: "Camillo Leme",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/journal_news/aindaestouaqui1.webp",
+        mainImageUrl: "/assets/img/journal_news/aindaestouaqui1.webp",
         mainImageCaption: "O filme foi sucesso de bilheteira e crítica, conquistando o coração do público.",
         summary: "Brasil fatura seu primeiro Oscar na categoria Melhor Filme Internacional, trazendo justiça a Central do Brasil.", // Mantido o resumo original, mesmo que mencione Central do Brasil
         articleContent: `
@@ -112,7 +112,7 @@ const newsData: NewsData = {
             <p>A vitória representa um marco, coroando décadas de produções brasileiras de alta qualidade que frequentemente chegaram perto da estatueta, como o inesquecível "Central do Brasil". "Ainda Estou Aqui" aborda temas universais como memória, perda e resiliência, com atuações impecáveis e uma direção sensível que capturou a essência da história.</p>
             <div class="text-center my-4">
                 <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
-                    <img src="assets/img/journal_news/aindaestouaqui2.webp"
+                    <img src="/assets/img/journal_news/aindaestouaqui2.webp"
                          alt="Celebração da equipe do filme no Oscar"
                          class="rounded news-image-in-ratio">
                 </div>
@@ -127,7 +127,7 @@ const newsData: NewsData = {
         title: "O tempo está passando rápido demais...",
         author: "José Ferreira Neto",
         date: "11 de Março de 2025",
-        mainImageUrl: "assets/img/journal_news/strangerthings1.webp",
+        mainImageUrl: "/assets/img/journal_news/strangerthings1.webp",
         mainImageCaption: "A série dos irmãos Duffer foi um grande sucesso, trazendo nostalgia ao público mais velho, e identificação dos mais novos.",
         summary: "Série que teve início em 2016 acompanhou o crescimento de praticamente todo seu elenco.",
         articleContent: `
@@ -136,7 +136,7 @@ const newsData: NewsData = {
             <p>Essa passagem de tempo real se reflete na narrativa, acompanhando o amadurecimento dos personagens, seus dilemas adolescentes, primeiros amores e os desafios cada vez maiores impostos pelo Mundo Invertido. Essa evolução criou uma conexão ainda mais forte com o público, que viu os atores e seus personagens florescerem juntos.</p>
             <div class="text-center my-4">
                 <div class="ratio ratio-16x9 mx-auto" style="max-width: 640px;">
-                    <img src="assets/img/journal_news/strangerthings2.webp"
+                    <img src="/assets/img/journal_news/strangerthings2.webp"
                          alt="Elenco de Stranger Things em temporada recente"
                          class="rounded news-image-in-ratio">
                 </div>
