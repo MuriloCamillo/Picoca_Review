@@ -6,7 +6,10 @@ export interface UserSessionData {
     username: string;
     email: string;
     firstName?: string;
-    lastName?: string; // Adicionado para consistência
+    lastName?: string;
+    avatarUrl?: string;
+    country?: string; // Adicionado
+    bio?: string;     // Adicionado
 }
 
 declare module 'express-session' {
@@ -19,7 +22,8 @@ declare global {
     namespace Express {
         interface Request {
             session: session.Session & Partial<session.SessionData> & { user?: UserSessionData };
-            originalUrl?: string; // Adicionar se não estiver presente por padrão no @types/express
+            originalUrl?: string;
+            fileValidationError?: string;
         }
     }
 }

@@ -1,13 +1,14 @@
 <nav class="navbar navbar-expand-lg" aria-label="Navegação Principal">
     <div class="container justify-content-center">
-        <a class="navbar-brand" href="/"
-            ><img
-              aria-current="page"
-              src="/assets/img/index/frog-popcorn.webp"
-              alt="Logo Picoca Review"
-              class="d-inline-block align-text-top"
-          /></a>
-          <button
+        <a class="navbar-brand" href="/">
+            <img
+                aria-current="page"
+                src="/assets/img/index/frog-popcorn.webp" 
+                alt="Logo Picoca Review"
+                class="d-inline-block align-text-top"
+            />
+        </a>
+        <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -15,130 +16,155 @@
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-          >
+        >
             <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-center mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().startsWith('picoca review')) ? 'active' : '' %>" href="/">Início</a>
+                    <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().startsWith('picoca review')) || currentPath === '/' ? 'active' : '' %>" href="/">Início</a>
                 </li>
                 <% if (!user) { %>
-                  <li class="nav-item">
-                    <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('login')) ? 'active' : '' %>" href="/login">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('registrar-se')) ? 'active' : '' %>" href="/signup">Registrar-se</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('login')) || currentPath === '/login' ? 'active' : '' %>" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('registrar-se')) || currentPath === '/signup' ? 'active' : '' %>" href="/signup">Registrar-se</a>
+                    </li>
                 <% } %>
-              <li class="nav-item">
-                <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('séries')) ? 'active' : '' %>" href="/series_gallery">Séries</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('notícias')) ? 'active' : '' %>" href="/journal">Notícias</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#footer">Sobre</a>
-              </li>
-               <% if (user) { %>
-                <li class="nav-item dropdown">
-                    <a
-                      class="nav-link dropdown-toggle <%= (typeof title === 'string' && title.toLowerCase().includes('perfil')) ? 'active' : '' %>"
-                      href="#"
-                      id="nav-user-dropdown" role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <span id="nav-username"><%= user.firstName || user.username %></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li>
-                        <a class="dropdown-item" href="/profile">
-                          <i class="bi bi-gear-fill me-2"></i> Configurações
-                        </a>
-                      </li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li>
-                        <form action="/logout" method="POST" style="display: contents;">
-                            <button type="submit" class="dropdown-item" id="nav-logout-btn">
-                                <i class="bi bi-box-arrow-left me-2"></i> Logout
-                            </button>
-                        </form>
-                      </li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('séries')) || currentPath === '/series_gallery' || (typeof seriesId !== 'undefined' && seriesId) ? 'active' : '' %>" href="/series_gallery">Séries</a>
                 </li>
-              <% } %>
+                <li class="nav-item">
+                    <a class="nav-link <%= (typeof title === 'string' && title.toLowerCase().includes('notícias')) || currentPath === '/journal' || (typeof newsId !== 'undefined' && newsId) ? 'active' : '' %>" href="/journal">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#footer">Sobre</a>
+                </li>
+                <% if (user) { %>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle d-flex align-items-center <%= (typeof title === 'string' && title.toLowerCase().includes('perfil')) || currentPath === '/profile' ? 'active' : '' %>"
+                            href="#"
+                            id="nav-user-dropdown" role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <% if (user.avatarUrl) { %>
+                                <img src="<%= user.avatarUrl %>" alt="Avatar de <%= user.username %>" class="rounded-circle me-2 nav-avatar-img" style="width: 24px; height: 24px; object-fit: cover;">
+                            <% } else { %>
+                                <i class="bi bi-person-circle me-2" style="font-size: 1.2rem;"></i>
+                            <% } %>
+                            <span id="nav-username"><%= user.firstName || user.username %></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-user-dropdown">
+                            <li>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="bi bi-gear-fill me-2"></i> Configurações
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="/logout" method="POST" style="display: contents;">
+                                    <button type="submit" class="dropdown-item" id="nav-logout-btn">
+                                        <i class="bi bi-box-arrow-left me-2"></i> Logout
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                <% } %>
             </ul>
-
+    
             <form
-              class="d-flex search-container position-relative ms-lg-auto"
-              role="search"
-              id="navbarSearchForm"
-              action="/series_gallery" 
-              method="GET"
+                class="d-flex search-container position-relative ms-lg-auto"
+                role="search"
+                id="navbarSearchForm"
+                action="/series_gallery" 
+                method="GET"
             >
-              <input
-                class="form-control me-2"
-                id="navbarSearchInput"
-                name="search" type="search"
-                placeholder="Buscar séries..."
-                aria-label="Buscar séries"
-                autocomplete="off"
-                value="<%= typeof searchQuery === 'string' ? searchQuery : '' %>"
-              />
-              <button class="search-btn" type="submit">
-                <i class="bi bi-search"></i>
-              </button>
-              <div
-                class="dropdown-menu"
-                id="navbarSearchResults"
-                aria-labelledby="navbarSearchInput"
-                style="
-                  width: 100%;
-                  top: 100%;
-                  left: 0;
-                  display: none;
-                  max-height: 300px;
-                  overflow-y: auto;
-                "
-              >
-              </div>
+                <input
+                    class="form-control me-2"
+                    id="navbarSearchInput"
+                    name="search" type="search"
+                    placeholder="Buscar séries..."
+                    aria-label="Buscar séries"
+                    autocomplete="off"
+                    value="<%= typeof searchQuery === 'string' ? searchQuery : '' %>"
+                />
+                <button class="search-btn" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+                <div
+                    class="dropdown-menu"
+                    id="navbarSearchResults"
+                    aria-labelledby="navbarSearchInput"
+                    style="
+                        width: 100%;
+                        top: 100%;
+                        left: 0;
+                        display: none;
+                        max-height: 300px;
+                        overflow-y: auto;
+                    "
+                >
+                </div>
             </form>
-          </div>
+        </div>
     </div>
 </nav>
-
+    
 <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
     <% if (typeof login_success === 'string' && login_success === 'true') { %>
-    <div id="login-success-toast" class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    <div id="login-success-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500" data-bs-autohide="true"> 
         <div class="d-flex"><div class="toast-body">Login realizado com sucesso! Bem-vindo(a)!</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>
     </div>
     <% } %>
     <% if (typeof signup_success === 'string' && signup_success === 'true') { %>
-    <div id="signup-success-toast" class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    <div id="signup-success-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500" data-bs-autohide="true"> 
         <div class="d-flex"><div class="toast-body">Cadastro realizado! Você já está logado.</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>
     </div>
     <% } %>
     <% if (typeof logout_success === 'string' && logout_success === 'true') { %>
-    <div id="logout-toast" class="toast align-items-center text-bg-primary border-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    <div id="logout-toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500" data-bs-autohide="true"> 
         <div class="d-flex"><div class="toast-body">Logout realizado com sucesso!</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>
     </div>
     <% } %>
     <% if (typeof logout_error === 'string' && logout_error === 'true') { %>
-    <div id="logout-error-toast" class="toast align-items-center text-bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    <div id="logout-error-toast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500" data-bs-autohide="true"> 
         <div class="d-flex"><div class="toast-body">Erro ao tentar fazer logout.</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>
     </div>
     <% } %>
-    <div id="contact-success-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+    
+    <div id="contact-success-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500" data-bs-autohide="true"> {/* .show será adicionado por contact_validation.js */}
         <div class="d-flex">
             <div class="toast-body">Mensagem enviada com sucesso! Obrigado.</div>
             <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
     </div>
-     <% if (typeof error === 'string' && error && (title.toLowerCase().includes('login') || title.toLowerCase().includes('registrar-se'))) { %>
-    <div class="toast align-items-center text-bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
-        <div class="d-flex"><div class="toast-body"><%= error %></div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>
+     <% 
+        let generalFeedbackMessage = '';
+        let generalFeedbackClass = '';
+        if (typeof error === 'string' && error && (currentPath === '/login' || currentPath === '/signup')) { 
+            generalFeedbackMessage = error; generalFeedbackClass = 'text-bg-danger'; 
+        } else if (typeof error_profile === 'string' && error_profile) {
+            generalFeedbackMessage = error_profile; generalFeedbackClass = 'text-bg-danger';
+        } else if (typeof success_profile === 'string' && success_profile) {
+            generalFeedbackMessage = success_profile; generalFeedbackClass = 'text-bg-success';
+        } else if (typeof error_password === 'string' && error_password) {
+            generalFeedbackMessage = error_password; generalFeedbackClass = 'text-bg-danger';
+        } else if (typeof success_password === 'string' && success_password) {
+            generalFeedbackMessage = success_password; generalFeedbackClass = 'text-bg-success';
+        } else if (typeof error_avatar === 'string' && error_avatar) {
+            generalFeedbackMessage = error_avatar; generalFeedbackClass = 'text-bg-danger';
+        } else if (typeof success_avatar === 'string' && success_avatar) {
+            generalFeedbackMessage = success_avatar; generalFeedbackClass = 'text-bg-success';
+        }
+     %>
+    <% if (generalFeedbackMessage) { %>
+    <div class="toast align-items-center <%= generalFeedbackClass %> border-0 general-feedback-trigger" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500" data-bs-autohide="true"> 
+        <div class="d-flex"><div class="toast-body"><%= generalFeedbackMessage %></div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>
     </div>
     <% } %>
 </div>
