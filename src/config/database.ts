@@ -64,5 +64,18 @@ function initializeUserTables() {
             if (err) console.error("Erro ao criar tabela 'user_series_lists':", err.message);
         });
     });
+           db.run(`
+            CREATE TABLE IF NOT EXISTS user_series_ratings (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL,
+                series_id TEXT NOT NULL,
+                rating INTEGER NOT NULL CHECK(rating >= 1 AND rating <= 5),
+                rated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+                UNIQUE(user_id, series_id)
+            )
+        `, (err: Error | null) => {
+            if (err) console.error("Erro ao criar tabela 'user_series_ratings':", err.message);
+        });
 }
 export default db;

@@ -1,8 +1,8 @@
-// src/controllers/pageController.ts
 import { Request, Response } from 'express';
 import seriesData from '../data/seriesData.js';
 import newsData from '../data/newsData.js';
 import * as SeriesListModel from '../models/seriesListModel.js';
+import * as SeriesRatingModel from '../models/seriesRatingModel.js';
 
 // Defina sua lista de países aqui ou importe de outro lugar
 const countriesList = [
@@ -123,24 +123,38 @@ export const getSeriesInfoPage = async (req: Request, res: Response) => {
         return res.status(404).render('error', { title: 'Erro 404', message: 'Série não encontrada.', user, status: 404 });
     }
 
-    let userSeriesStatus = { onWatchlist: false, onLikelist: false };
-    if (user && user.id) {
-        try {
+    try {
+        let userSeriesStatus = { onWatchlist: false, onLikelist: false };
+        let userRating: number | null = null;
+
+        if (user && user.id) {
             userSeriesStatus.onWatchlist = await SeriesListModel.isSeriesInUserList(user.id, seriesId, 'watchlist');
             userSeriesStatus.onLikelist = await SeriesListModel.isSeriesInUserList(user.id, seriesId, 'likelist');
-        } catch (error) {
-            console.error("Erro ao buscar status da série para o usuário:", error);
+            userRating = await SeriesRatingModel.getUserRatingForSeries(user.id, seriesId);
         }
-    }
 
-    res.render('series_info_default', {
-        title: `${seriesItem.title} - Picoca Review`,
-        user,
-        serie: seriesItem,
-        seriesId: seriesId,
-        userSeriesStatus,
-        metaDescription: seriesItem.synopsis ? seriesItem.synopsis.substring(0, 160) + '...' : seriesItem.title
-    });
+        const allRatings = await SeriesRatingModel.getRatingsForSeries(seriesId);
+        const voteCount = allRatings.length;
+        const averageRating = voteCount > 0
+            ? allRatings.reduce((sum, r) => sum + r.rating, 0) / voteCount
+            : 0;
+
+        res.render('series_info_default', {
+            title: `${seriesItem.title} - Picoca Review`,
+            user,
+            serie: seriesItem,
+            seriesId: seriesId,
+            userSeriesStatus,
+            originalUrl: req.originalUrl,
+            userRating,
+            averageRating,
+            voteCount,
+            metaDescription: seriesItem.synopsis ? seriesItem.synopsis.substring(0, 160) + '...' : seriesItem.title
+        });
+    } catch (error) {
+        console.error("Erro ao buscar dados da página da série:", error);
+        res.status(500).render('error', { title: 'Erro 500', message: 'Não foi possível carregar os detalhes da série.', user, status: 500 });
+    }
 };
 
 export const getProfilePage = (req: Request, res: Response) => {
@@ -156,16 +170,9 @@ export const getProfilePage = (req: Request, res: Response) => {
     });
 };
 
-// =======================================================================
-// ADICIONE AS FUNÇÕES ABAIXO E DELETE A ANTIGA FUNÇÃO "getMyListsPage"
-// =======================================================================
-
-/**
- * Renderiza a página da Watchlist do usuário.
- */
 export const getWatchlistPage = async (req: Request, res: Response) => {
     const user = req.session.user;
-    if (!user) { // Redundância de segurança, já que 'isAuthenticated' está na rota
+    if (!user) {
         return res.redirect('/login');
     }
 
@@ -175,9 +182,8 @@ export const getWatchlistPage = async (req: Request, res: Response) => {
         const watchlistSeries = userListItems
             .filter(item => item.list_type === 'watchlist')
             .map(item => seriesData[item.series_id] ? { id: item.series_id, ...seriesData[item.series_id] } : null)
-            .filter(item => item !== null); // Remove qualquer item nulo se a série não for encontrada no seriesData
+            .filter(item => item !== null);
 
-        // A variável é nomeada 'seriesItems' para que o template 'watchlist.ejs' possa reutilizar a mesma lógica de loop da galeria
         res.render('watchlist', {
             title: 'Minha Watchlist',
             user,
@@ -190,12 +196,9 @@ export const getWatchlistPage = async (req: Request, res: Response) => {
     }
 };
 
-/**
- * Renderiza a página de séries curtidas (Likelist) do usuário.
- */
 export const getLikelistPage = async (req: Request, res: Response) => {
     const user = req.session.user;
-    if (!user) { // Redundância de segurança
+    if (!user) {
         return res.redirect('/login');
     }
 
@@ -207,7 +210,6 @@ export const getLikelistPage = async (req: Request, res: Response) => {
             .map(item => seriesData[item.series_id] ? { id: item.series_id, ...seriesData[item.series_id] } : null)
             .filter(item => item !== null);
 
-        // A variável é nomeada 'seriesItems' para que o template 'likelist.ejs' possa reutilizar a mesma lógica de loop
         res.render('likelist', {
             title: 'Séries Curtidas',
             user,

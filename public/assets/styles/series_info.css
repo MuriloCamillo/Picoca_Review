@@ -287,6 +287,10 @@
   transition: color 0.2s ease;
 }
 
+.stars .bi-star-fill {
+  color: var(--color-star);
+}
+
 /* Classe JS para estrela preenchida */
 .stars i.filled {
   color: var(--color-star);

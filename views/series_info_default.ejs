@@ -4,134 +4,105 @@
     bodyClass: 'serie-body',
     metaDescription: (serie && serie.synopsis) ? serie.synopsis.substring(0, 160) + '...' : (serie ? serie.title : 'Detalhes da Série')
 }) %>
-    <main class="serie-main"> <% if (serie) { %>
+
+<main class="serie-main">
+    <% if (serie) { %>
         <section class="serie-hero">
             <div class="backdrop-container">
-              <div class="backdrop-image" id="backdrop-image" style="background-image: url('<%= serie.backdropImg %>');"></div>
-              <div class="backdrop-overlay"></div>
+                <div class="backdrop-image" style="background-image: url('<%= serie.backdropImg %>');"></div>
+                <div class="backdrop-overlay"></div>
             </div>
 
-            <div class="container content-container"> <p class="back-link-container">
-                <a class="series-gallery-link" href="/series_gallery">
-                  <i class="bi bi-arrow-left"></i> Voltar para Séries
-                </a>
-              </p>
-              <div class="row">
-                <div class="col-md-3 poster-container">
-                  <img
-                    src="<%= serie.posterImg %>"
-                    alt="Poster de <%= serie.title %>"
-                    class="img-fluid serie-poster"
-                    id="serie-poster" />
-                </div>
-
-                <div class="col-md-6 serie-info">
-                  <h1 class="serie-title" id="serie-title">
-                    <%= serie.title %> <span class="serie-year" id="serie-year">(<%= serie.year %>)</span>
-                  </h1>
-                  <div class="serie-director" id="serie-creator">Criado por <%= serie.creator %></div>
-                  <% if(serie.tagline) { %><div class="serie-tagline fst-italic" id="serie-tagline">"<%= serie.tagline %>"</div><% } %>
-                  <div class="serie-synopsis" id="serie-synopsis">
-                    <p><%= serie.synopsis %></p>
-                  </div>
-                  <div class="serie-status <%= serie.statusClass %>" id="serie-status"><%= serie.status %></div>
-                  
-                  <% if (user) { %>
-                    <div class="user-actions-series mb-3"> <button class="btn btn-sm me-2 action-btn-dynamic <%= userSeriesStatus && userSeriesStatus.onWatchlist ? 'btn-info text-white active' : 'btn-outline-info' %>"
-                                data-series-id="<%= seriesId %>" data-list-type="watchlist">
-                            <i class="fas fa-bookmark"></i> 
-                            <span class="button-text"><%= userSeriesStatus && userSeriesStatus.onWatchlist ? 'Na Watchlist' : 'Watchlist' %></span>
-                        </button>
-                        <button class="btn btn-sm me-2 action-btn-dynamic <%= userSeriesStatus && userSeriesStatus.onLikelist ? 'btn-danger text-white active' : 'btn-outline-danger' %>"
-                                data-series-id="<%= seriesId %>" data-list-type="likelist">
-                            <i class="fas fa-heart"></i> 
-                             <span class="button-text"><%= userSeriesStatus && userSeriesStatus.onLikelist ? 'Gostei!' : 'Gostei' %></span>
-                        </button>
-                        <span id="series-action-feedback" class="ms-2" style="display: none; font-size: 0.9em;"></span>
+            <div class="container content-container">
+                <p class="back-link-container">
+                    <a class="series-gallery-link" href="/series_gallery"><i class="bi bi-arrow-left"></i> Voltar para Séries</a>
+                </p>
+                <div class="row">
+                    <div class="col-md-3 poster-container">
+                        <img src="<%= serie.posterImg %>" alt="Poster de <%= serie.title %>" class="img-fluid serie-poster" id="serie-poster" />
                     </div>
-                  <% } else { %>
-                      <p><a href="/login?redirect=<%= encodeURIComponent(originalUrl || ('/series/' + seriesId)) %>">Faça login</a> para adicionar às suas listas.</p>
-                  <% } %>
 
-                  <div class="serie-tabs">
-                    <ul class="nav nav-tabs" id="serieInfoTabs" role="tablist">
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="cast-tab" data-bs-toggle="tab" data-bs-target="#cast" type="button" role="tab" aria-controls="cast" aria-selected="true">ELENCO</button>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="genres-tab" data-bs-toggle="tab" data-bs-target="#genres" type="button" role="tab" aria-controls="genres" aria-selected="false">GÊNERO</button>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="seasons-tab" data-bs-toggle="tab" data-bs-target="#seasons" type="button" role="tab" aria-controls="seasons" aria-selected="false">TEMPORADAS</button>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="watch-tab" data-bs-toggle="tab" data-bs-target="#watch" type="button" role="tab" aria-controls="watch" aria-selected="false">ONDE ASSISTIR</button>
-                      </li>
-                    </ul>
-                    <div class="tab-content py-3" id="serieInfoTabsContent">
-                      <div class="tab-pane fade show active" id="cast" role="tabpanel" aria-labelledby="cast-tab">
-                        <div class="cast-list" id="cast-list"> <% if (serie.cast && serie.cast.length > 0) { %>
-                                <% serie.cast.forEach(member => { %><span class="cast-item"><%= member %></span><% }); %>
-                            <% } else { %><p>Nenhuma informação de elenco disponível.</p><% } %>
+                    <div class="col-md-6 serie-info">
+                        <h1 class="serie-title" id="serie-title">
+                            <%= serie.title %> <span class="serie-year" id="serie-year">(<%= serie.year %>)</span>
+                        </h1>
+                        <div class="serie-director" id="serie-creator">Criado por <%= serie.creator %></div>
+                        <% if(serie.tagline) { %><div class="serie-tagline fst-italic" id="serie-tagline">"<%= serie.tagline %>"</div><% } %>
+                        <div class="serie-synopsis" id="serie-synopsis">
+                            <p><%= serie.synopsis %></p>
                         </div>
-                      </div>
-                      <div class="tab-pane fade" id="genres" role="tabpanel" aria-labelledby="genres-tab">
-                        <div class="genres-list" id="genres-list">
-                            <% if (serie.genres && serie.genres.length > 0) { %>
-                                <% serie.genres.forEach(genre => { %><span class="genres-item"><%= genre %></span><% }); %>
-                            <% } else { %><p>Nenhuma informação de gênero disponível.</p><% } %>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="seasons" role="tabpanel" aria-labelledby="seasons-tab">
-                        <div class="seasons-list" id="seasons-list">
-                            <% if (serie.seasons && serie.seasons.length > 0) { %>
-                                <% serie.seasons.forEach(season => { %><span class="seasons-item"><%= season %></span><% }); %>
-                            <% } else { %><p>Nenhuma informação de temporadas disponível.</p><% } %>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="watch" role="tabpanel" aria-labelledby="watch-tab">
-                        <div class="watch-list" id="watch-list">
-                            <% if (serie.watchPlatforms && serie.watchPlatforms.length > 0) { %>
-                                <% serie.watchPlatforms.forEach(platform => { %><span class="watch-item"><%= platform %></span><% }); %>
-                            <% } else { %><p>Nenhuma informação de onde assistir disponível.</p><% } %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                        <div class="serie-status <%= serie.statusClass %>" id="serie-status"><%= serie.status %></div>
+                        
+                        <% if (user) { %>
+                            <div class="user-actions-series mb-3">
+                                <button class="btn btn-sm me-2 action-btn-dynamic <%= userSeriesStatus && userSeriesStatus.onWatchlist ? 'btn-info text-white active' : 'btn-outline-info' %>"
+                                        data-series-id="<%= seriesId %>" data-list-type="watchlist">
+                                    <i class="fas fa-bookmark"></i> 
+                                    <span class="button-text"><%= userSeriesStatus && userSeriesStatus.onWatchlist ? 'Na Watchlist' : 'Watchlist' %></span>
+                                </button>
+                                <button class="btn btn-sm me-2 action-btn-dynamic <%= userSeriesStatus && userSeriesStatus.onLikelist ? 'btn-danger text-white active' : 'btn-outline-danger' %>"
+                                        data-series-id="<%= seriesId %>" data-list-type="likelist">
+                                    <i class="fas fa-heart"></i> 
+                                    <span class="button-text"><%= userSeriesStatus && userSeriesStatus.onLikelist ? 'Gostei!' : 'Gostei' %></span>
+                                </button>
+                                <span id="series-action-feedback" class="ms-2" style="display: none; font-size: 0.9em;"></span>
+                            </div>
+                        <% } else { %>
+                            <p class="mt-3"><a href="/login?redirect=<%= encodeURIComponent(originalUrl || ('/series/' + seriesId)) %>">Faça login</a> para adicionar às suas listas e avaliar.</p>
+                        <% } %>
 
-                <div class="col-md-3 user-actions"> <div class="action-buttons">
-                    <button class="btn action-btn like-btn disabled-mock"><i class="bi bi-heart"></i><span>Like</span></button>
-                    <button class="btn action-btn watchlist-btn disabled-mock"><i class="bi bi-bookmark-plus"></i><span>Watchlist</span></button>
-                  </div>
-                  <div class="rating-container">
-                    <h6 class="rating-text">Avaliar</h6>
-                    <div class="stars"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></div>
-                  </div>
-                  <div class="community-rating">
-                    <h6 class="rating-text">Avaliações</h6>
-                    <div class="rating-info">
-                      <div class="average-rating">N/A</div>
-                      <div class="rating-bar"><div class="bar-container"> </div></div>
-                      <div class="fans-count">-- FANS</div>
+                        <div class="serie-tabs">
+                            <ul class="nav nav-tabs" id="serieInfoTabs" role="tablist">
+                                <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cast">ELENCO</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#genres">GÊNERO</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#seasons">TEMPORADAS</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#watch">ONDE ASSISTIR</button></li>
+                            </ul>
+                            <div class="tab-content py-3" id="serieInfoTabsContent">
+                                <div class="tab-pane fade show active" id="cast"><div class="cast-list"><% serie.cast.forEach(member => { %><span class="cast-item"><%= member %></span><% }); %></div></div>
+                                <div class="tab-pane fade" id="genres"><div class="genres-list"><% serie.genres.forEach(genre => { %><span class="genres-item"><%= genre %></span><% }); %></div></div>
+                                <div class="tab-pane fade" id="seasons"><div class="seasons-list"><% serie.seasons.forEach(season => { %><span class="seasons-item"><%= season %></span><% }); %></div></div>
+                                <div class="tab-pane fade" id="watch"><div class="watch-list"><% serie.watchPlatforms.forEach(platform => { %><span class="watch-item"><%= platform %></span><% }); %></div></div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+
+                    <div class="col-md-3 user-actions">
+                        <div class="rating-container mt-3" data-series-id="<%= seriesId %>">
+                            <h6 class="rating-text">SUA AVALIAÇÃO</h6>
+                            <div class="stars user-rating" data-user-rating="<%= userRating || 0 %>">
+                                <% for(let i = 1; i <= 5; i++) { %>
+                                    <i class="bi <%= i <= userRating ? 'bi-star-fill' : 'bi-star' %>" data-value="<%= i %>" title="Avaliar com <%= i %> estrela<%= i > 1 ? 's' : '' %>"></i>
+                                <% } %>
+                            </div>
+                            <span id="rating-feedback" class="d-block text-center small mt-2" style="display: none; font-size: 0.9em;"></span>
+                        </div>
+                        
+                        <div class="community-rating mt-4">
+                            <h6 class="rating-text">AVALIAÇÃO DA COMUNIDADE</h6>
+                            <div class="rating-info">
+                                <div class="average-rating" id="average-rating-display"><%= averageRating ? averageRating.toFixed(1) : 'N/A' %></div>
+                                <div class="fans-count" id="vote-count-display"><%= voteCount %> <%= voteCount === 1 ? 'voto' : 'votos' %></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
         </section>
 
-        <% if (serie.trailerUrl && serie.trailerUrl.toLowerCase() !== "https://www.youtube.com/embed/Ades3pQbeh8" && !serie.trailerUrl.toLowerCase().includes('googleusercontent')) { %>
-        <section class="trailer-section py-4"> <div class="container">
-              <h2 class="section-title">Confira abaixo o trailer da série:</h2>
-              <div class="ratio ratio-16x9">
-                <iframe src="<%= serie.trailerUrl.replace('watch?v=', 'embed/') %>" title="Trailer de <%= serie.title %>" allowfullscreen id="serie-trailer"></iframe>
-              </div>
-            </div>
-        </section>
+        <% if (serie.trailerUrl && !serie.trailerUrl.toLowerCase().includes('googleusercontent')) { %>
+            <section class="trailer-section py-4">
+                <div class="container">
+                    <h2 class="section-title">Confira abaixo o trailer da série:</h2>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="<%= serie.trailerUrl.replace('watch?v=', 'embed/') %>" title="Trailer de <%= serie.title %>" allowfullscreen id="serie-trailer"></iframe>
+                    </div>
+                </div>
+            </section>
         <% } %>
-      <% } else { %>
+
+    <% } else { %>
         <p class="text-center text-light display-6 mt-5 pt-5">Série não encontrada.</p>
-      <% } %>
-    </main>
-<%- include('partials/footer', { pageScript: 'series_info_interaction.js' }) %>
+    <% } %>
+</main>
+<%- include('partials/footer', { pageScript: 'series_info_interaction.js,series_rating.js' }) %>

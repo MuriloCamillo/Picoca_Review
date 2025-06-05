@@ -75,12 +75,12 @@
 <script src="/assets/js/navbar_search.js" defer></script>
 <script src="/assets/js/nav_ui_handler.js"></script>
 
-<% if (typeof title === 'string' && (title.toLowerCase().includes('picoca review') || title.toLowerCase().includes('séries') || currentPath === '/series_gallery' || currentPath.startsWith('/series/'))) { %>
-    <script src="/assets/js/series_data.js" defer></script> 
-<% } %>
-
+<%# ======= LÓGICA ATUALIZADA AQUI ======= %>
 <% if (typeof pageScript === 'string' && pageScript && pageScript.length > 0) { %>
-    <script src="/assets/js/<%= pageScript %>" defer></script>
+    <%# Divide a string por vírgula e cria uma tag de script para cada arquivo %>
+    <% pageScript.split(',').forEach(script => { %>
+        <script src="/assets/js/<%= script.trim() %>" defer></script>
+    <% }); %>
 <% } %>
 
 <script src="/assets/js/bootstrap_toast_initializer.js" defer></script>

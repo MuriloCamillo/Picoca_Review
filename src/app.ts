@@ -14,6 +14,7 @@ import pageRoutes from './routes/pageRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import userSeriesRoutes from './routes/userSeriesRoutes.js';
 import { UserSessionData } from './types/express.js';
+import seriesRatingRoutes from './routes/seriesRatingRoutes.js';
 
 const app = express();
 const SQLiteStoreFactory = connectSqlite3(session);
@@ -87,6 +88,7 @@ app.use((req, res, next) => {
 app.use('/', pageRoutes);
 app.use('/', authRoutes);
 app.use('/user', userSeriesRoutes);
+app.use('/user', seriesRatingRoutes);
 
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
     if (err instanceof multer.MulterError) {
