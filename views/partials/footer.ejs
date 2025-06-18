@@ -71,20 +71,22 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/focus-visible.js" defer></script>
-<script src="/assets/js/navbar_search.js" defer></script>
-<script src="/assets/js/nav_ui_handler.js"></script>
 
-<%# ======= LÓGICA ATUALIZADA AQUI ======= %>
-<% if (typeof pageScript === 'string' && pageScript && pageScript.length > 0) { %>
-    <%# Divide a string por vírgula e cria uma tag de script para cada arquivo %>
-    <% pageScript.split(',').forEach(script => { %>
-        <script src="/assets/js/<%= script.trim() %>" defer></script>
+<script>
+  const seriesData = <%- JSON.stringify(locals.seriesData || {}) %>;
+</script>
+
+<script src="/assets/js/focus-visible.js"></script>
+<script src="/assets/js/nav_ui_handler.js"></script>
+<script src="/assets/js/navbar_search.js"></script>
+<script src="/assets/js/bootstrap_toast_initializer.js"></script>
+<script src="/assets/js/toast_url_cleaner.js"></script>
+
+<% if (locals.pageScript && locals.pageScript.length > 0) { %>
+    <% locals.pageScript.split(',').forEach(function(script) { %>
+        <script src="/assets/js/<%= script.trim() %>"></script>
     <% }); %>
 <% } %>
-
-<script src="/assets/js/bootstrap_toast_initializer.js" defer></script>
-<script src="/assets/js/toast_url_cleaner.js" defer></script> 
 
 </body>
 </html>

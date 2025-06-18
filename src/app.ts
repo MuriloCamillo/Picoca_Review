@@ -7,6 +7,12 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import multer from 'multer';
 
+// +++ INÍCIO DA MODIFICAÇÃO +++
+// Importe os dados das séries e notícias no início do arquivo.
+import seriesData from './data/seriesData.js';
+import newsData from './data/newsData.js';
+// +++ FIM DA MODIFICAÇÃO +++
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -31,7 +37,7 @@ const cookieOptions: CookieOptions = {
     maxAge: 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax' // Adicionado para segurança
+    sameSite: 'lax'
 };
 if (process.env.NODE_ENV !== 'production') {
     cookieOptions.secure = false;
@@ -46,8 +52,7 @@ app.use(session({
     }) as Store,
     secret: process.env.SESSION_SECRET || 'um_segredo_bem_longo_e_aleatorio_para_proteger_as_sessoes_do_picoca_review_123!@#_MUDE_ISSO_AGORA_EM_PRODUCAO',
     resave: false,
-    saveUninitialized: false, // Alterado para false para melhor prática, salva apenas se modificada.
-                             // Pode ser true se houver problemas com sessões não persistindo imediatamente.
+    saveUninitialized: false,
     cookie: cookieOptions
 }));
 
@@ -67,6 +72,12 @@ app.use((req, res, next) => {
     res.locals.error_avatar = req.query.error_avatar;
     res.locals.success_avatar = req.query.success_avatar;
 
+    // +++ INÍCIO DA MODIFICAÇÃO +++
+    // Disponibilize os dados para todos os templates EJS.
+    res.locals.seriesData = seriesData;
+    res.locals.newsData = newsData;
+    // +++ FIM DA MODIFICAÇÃO +++
+
     if (req.path === '/signup' && req.method === 'GET') {
         res.locals.input = {
             firstName: req.query.firstName || '',
@@ -80,8 +91,8 @@ app.use((req, res, next) => {
     }
     res.locals.currentPath = req.path;
     res.locals.originalUrl = req.originalUrl;
-    res.locals.seriesId = req.params.seriesId; // Para navbar active class em series_info
-    res.locals.newsId = req.params.newsId;     // Para navbar active class em news_default
+    res.locals.seriesId = req.params.seriesId;
+    res.locals.newsId = req.params.newsId;
     next();
 });
 
@@ -96,10 +107,9 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
         if (err.code === 'LIMIT_FILE_SIZE') message = 'Arquivo muito grande. O tamanho máximo é 2MB.';
         else if (err.code === 'LIMIT_UNEXPECTED_FILE') message = 'Tipo de arquivo não esperado ou campo inválido.';
         return res.redirect(`/profile?error_avatar=${encodeURIComponent(message)}#avatar`);
-    } else if (err && err.message && err.message.includes('Apenas imagens')) { // Erro do fileFilter
+    } else if (err && err.message && err.message.includes('Apenas imagens')) {
          return res.redirect(`/profile?error_avatar=${encodeURIComponent(err.message)}#avatar`);
     }
-    // Outros erros passam para o próximo tratador
     next(err);
 });
 
@@ -119,7 +129,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
     if (!res.headersSent) {
         res.status(status).render('error', {
             title: `Erro ${status}`,
-            message: err.expose ? err.message : 'Ocorreu um erro inesperado.', // Expor apenas se seguro
+            message: err.expose ? err.message : 'Ocorreu um erro inesperado.',
             user, status,
             stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
         });
