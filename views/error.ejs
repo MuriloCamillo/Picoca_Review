@@ -1,0 +1,17 @@
+<%- include('partials/header', { 
+    title: title || 'Erro Inesperado', 
+    bodyClass: 'bg-dark text-light d-flex flex-column min-vh-100',
+    metaDescription: 'Ocorreu um erro no Picoca Review.'
+}) %>
+    <main class="container flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="text-center py-5">
+            <h1 class="display-1 text-danger"><%= typeof status === 'number' ? status : '' %></h1>
+            <h2 class="mb-4"><%= title || "Oops! Algo deu errado." %></h2>
+            <p class="lead mb-4"><%= message || "Ocorreu um erro inesperado. Tente novamente mais tarde ou contate o suporte." %></p>
+            <a href="/" class="btn btn-primary btn-lg">Voltar para a Página Inicial</a>
+            <% if ( (typeof process !== 'undefined' && process.env.NODE_ENV === 'development') && typeof stack !== 'undefined' && stack ) { %>
+                <pre class="mt-4 text-start bg-secondary p-3 rounded" style="max-height: 300px; overflow-y: auto; font-size: 0.8rem; white-space: pre-wrap;"><%= stack %></pre>
+            <% } %>
+        </div>
+    </main>
+<%- include('partials/footer') %>

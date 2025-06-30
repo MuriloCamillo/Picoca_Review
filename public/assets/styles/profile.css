@@ -105,6 +105,30 @@
   padding: 0.3125rem 0.625rem;
 }
 
+/* Estilo específico para a caixa do select de País */
+.profile-form #profileCountry {
+  background-color: var(--color-grey); 
+  color: var(--color-light);           
+  border-color: var(--color-divider);
+}
+
+/* Estilo para as OPÇÕES DENTRO do dropdown de País */
+.profile-form #profileCountry option {
+  background-color: var(--color-darkgrey);
+  color: var(--color-light);              
+  padding: 5px 10px; 
+}
+
+.profile-form #profileCountry option:hover {
+  background-color: var(--color-blue); 
+  color: var(--color-white);
+}
+
+.profile-form #profileCountry option:checked { 
+  background-color: var(--color-blue); 
+  color: var(--color-white);
+}
+
 /* --- Botões Dentro dos Formulários --- */
 .profile-btn {
   /* Botão padrão da página (Salvar, Alterar Senha, Selecionar Arquivo) */

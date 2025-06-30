@@ -14,7 +14,9 @@
   color: var(--color-lightgrey);
 }
 
-.navbar-nav .nav-item.dropdown > a.nav-link:hover #nav-username {
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+.navbar-nav .nav-item.active > .nav-link {
   color: var(--color-white);
 }
 

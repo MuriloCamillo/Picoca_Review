@@ -1,0 +1,46 @@
+<%# views/likelist.ejs %>
+<%- include('partials/header', { 
+    title: title, 
+    pageStyle: 'series_gallery.css', /* Reutiliza o CSS da galeria */
+    bodyClass: 'series-body',
+    metaDescription: metaDescription
+}) %>
+
+<main class="container my-1">
+    <h1 class="main-title mt-5 pt-4">Séries Curtidas</h1>
+    <h2 class="main-subtitle">Séries que você marcou como "gostei".</h2>
+    <div class="section-divider"></div>
+
+    <% if (seriesItems && seriesItems.length > 0) { %>
+        <div class="filter-search-container d-flex flex-wrap justify-content-center align-items-baseline my-4">
+            <div id="myBtnContainer" class="menu-filter me-md-3 mb-3 mb-md-0">
+                <button class="btn filter-btn active" data-filter="all" role="button">Mostrar Todas</button>
+                <button class="btn filter-btn" data-filter="comedia" role="button">Comédia</button>
+                <button class="btn filter-btn" data-filter="drama" role="button">Drama</button>
+                <button class="btn filter-btn" data-filter="animacao" role="button">Animação</button>
+                <button class="btn filter-btn" data-filter="acao" role="button">Ação</button>
+                <button class="btn filter-btn" data-filter="ficcao" role="button">Ficção</button>
+                <button class="btn filter-btn" data-filter="terror" role="button">Terror</button>
+                <button class="btn filter-btn" data-filter="misterio" role="button">Mistério</button>
+                <button class="btn filter-btn" data-filter="sci-fi" role="button">Sci-Fi</button>
+            </div>
+            <div class="search-series-container local-search-container">
+                <input type="search" id="seriesSearchInput" class="form-control" placeholder="Buscar nas séries curtidas..."/>
+                <span class="local-search-icon"><i class="bi bi-search"></i></span>
+            </div>
+        </div>
+        <div class="row gy-4 justify-content-center" id="seriesList">
+            <% const normalizeGenreForClass = (genreName) => { if (!genreName) return ""; let n = genreName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); const m = { comédia: "comedia", drama: "drama", animação: "animacao", ação: "acao", "ficção científica": "ficcao", "ficcao cientifica": "ficcao", ficção: "ficcao", terror: "terror", mistério: "misterio", misterio: "misterio", crime: "crime", policial: "policial", aventura: "aventura", "super heróis": "acao", "pós-apocalíptico": "ficcao", "sci-fi": "sci-fi", "Sci-Fi": "sci-fi" }; for (const k in m) { if (n.includes(k)) return m[k]; } return n.replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").split("-")[0]; }; %>
+            <% seriesItems.forEach(serie => { %>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 filterDiv <%= (serie.genres || []).map(normalizeGenreForClass).join(' ') %>">
+                    <a href="/series/<%= serie.id %>" class="poster-link">
+                        <div class="poster"><img src="<%= serie.posterImg %>" alt="<%= serie.title %>"></div>
+                    </a>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p class="text-light col-12 text-center display-6 mt-5">Você ainda não curtiu nenhuma série.</p>
+    <% } %>
+</main>
+<%- include('partials/footer', { pageScript: 'series_gallery_filter.js' }) %>

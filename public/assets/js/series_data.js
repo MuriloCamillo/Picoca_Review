@@ -2,7 +2,7 @@
  * @fileoverview Armazena os dados de todas as séries listadas no site.
  * Cada chave do objeto `seriesData` é um ID único para a série (usado em URLs, etc.).
  *
- * Estrutura esperada para cada objeto de série:
+ * Estrutura para cada objeto de série:
  * {
  * title: "Título da Série",          // Obrigatório: Nome oficial.
  * year: ANO_DE_INICIO,              // Obrigatório: Ano de lançamento (número).

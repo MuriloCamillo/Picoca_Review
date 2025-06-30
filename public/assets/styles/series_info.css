@@ -2,6 +2,13 @@
 /* == ESTILOS PÁGINA DE INFORMAÇÕES DA SÉRIE == */
 /* ============================================== */
 
+.serie-main {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
 .serie-body {
   background-color: var(--color-background);
   display: flex;
@@ -62,7 +69,7 @@
   /* Gradiente sobre a imagem de fundo */
   background: linear-gradient(
     to bottom,
-    rgba(20, 24, 28, 0.5) 0%,
+    rgba(20, 24, 28, 0.6) 0%,
     var(--color-background) 100%
   );
   height: 100%;
@@ -278,6 +285,10 @@
   /* Estrela individual */
   cursor: pointer;
   transition: color 0.2s ease;
+}
+
+.stars .bi-star-fill {
+  color: var(--color-star);
 }
 
 /* Classe JS para estrela preenchida */

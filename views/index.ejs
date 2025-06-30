@@ -1,73 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Picoca Review: Descubra e organize as suas séries favoritas, acompanhe as últimas notícias e encontre onde assistir."
-    />
-    <title>Picoca Review</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="assets/img/index/frog-popcorn.webp"
-    />
-
-    <!-- Fontes e CDNs -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Estilos Externos (CDNs) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-
-    <!-- Estilos Locais -->
-    <link rel="stylesheet" href="assets/styles/global.css" />
-    <link rel="stylesheet" href="assets/styles/nav.css" />
-    <link rel="stylesheet" href="assets/styles/index.css" />
-  </head>
-
-  <body class="index-body">
-    <header>
-      <%- include('./partials/header') %>
-    </header>
-
+<%- include('partials/header', { 
+    title: title, 
+    pageStyle: 'index.css', 
+    bodyClass: 'index-body',
+    metaDescription: 'Picoca Review: Descubra e organize as suas séries favoritas, acompanhe as últimas notícias e encontre onde assistir.'
+}) %>
     <main>
       <section class="hero">
-        <div class="hero-background" alt="Hero Image"></div>
-
-        <div class="hero-foreground">
+        <div class="hero-background" alt="Hero Image"></div> <div class="hero-foreground">
           <h1 class="hero-foreground-title" id="hero-title">
-            Bem vindo ao Picoca Review!
+            <%= heroTitle %>
           </h1>
           <p class="hero-foreground-text" id="hero-subtitle1">
-            Não se perca nas séries que você já assistiu.
+            <%= heroSubtitle1 %>
           </p>
           <p class="hero-foreground-text" id="hero-subtitle2">
-            Salve para lembrar as que você quer ver.
+            <%= heroSubtitle2 %>
           </p>
         </div>
       </section>
 
       <section class="section-trends">
         <h2 class="section-trends-title">Tendências</h2>
-        <div class="gallery" id="trends-gallery"></div>
+        <div class="gallery" id="trends-gallery">
+            <% if (trendingSeries && trendingSeries.length > 0) { %>
+                <% trendingSeries.forEach(serie => { %>
+                    <a href="/series/<%= serie.id %>" class="poster">
+                        <img src="<%= serie.posterImg || '/assets/img/placeholder_poster.webp' %>" alt="Poster de <%= serie.title %>">
+                    </a>
+                <% }); %>
+            <% } else { %>
+                <p class="text-light col-12 text-center">Nenhuma série em tendência no momento.</p>
+            <% } %>
+        </div>
         <p class="section-trends-text">As mais comentadas ultimamente!</p>
       </section>
 
@@ -77,14 +41,12 @@
         <h2 class="section-benefits-title">Aqui você pode...</h2>
         <div class="accordion benefits-container" id="benefitsAccordion">
           <div class="accordion-item card-custom">
-            <h2 class="accordion-header">
-              <button
+            <h2 class="accordion-header" id="headingOne"> <button
                 class="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
-                aria-expanded="false"
-                aria-controls="collapseOne"
+                aria-expanded="false" aria-controls="collapseOne"
                 role="button"
               >
                 <div class="icon">👀</div>
@@ -108,7 +70,7 @@
             </div>
           </div>
           <div class="accordion-item card-custom">
-            <h2 class="accordion-header">
+            <h2 class="accordion-header" id="headingTwo">
               <button
                 class="accordion-button collapsed"
                 type="button"
@@ -136,7 +98,7 @@
             </div>
           </div>
           <div class="accordion-item card-custom">
-            <h2 class="accordion-header">
+            <h2 class="accordion-header" id="headingThree">
               <button
                 class="accordion-button collapsed"
                 type="button"
@@ -175,7 +137,17 @@
 
       <section class="section-ranked">
         <h2 class="section-ranked-title">Mais bem avaliadas</h2>
-        <div class="gallery" id="ranked-gallery"></div>
+        <div class="gallery" id="ranked-gallery">
+            <% if (rankedSeries && rankedSeries.length > 0) { %>
+                <% rankedSeries.forEach(serie => { %>
+                     <a href="/series/<%= serie.id %>" class="poster">
+                        <img src="<%= serie.posterImg || '/assets/img/placeholder_poster.webp' %>" alt="Poster de <%= serie.title %>">
+                    </a>
+                <% }); %>
+            <% } else { %>
+                <p class="text-light col-12 text-center">Nenhuma série no ranking no momento.</p>
+            <% } %>
+        </div>
         <p class="section-ranked-text">
           As melhores séries selecionadas para você.
         </p>
@@ -185,46 +157,36 @@
 
       <section class="section-journal">
         <h2 class="section-journal-title">Notícias</h2>
-        <div class="container py-4">
-          <div class="row" id="index-news-row"></div>
+        <div class="container py-4"> <div class="row" id="index-news-row">
+            <% if (news && news.length > 0) { %>
+                <% news.forEach(newsItem => { %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-light h-100">
+                            <a href="/news/<%= newsItem.id %>">
+                                <img src="<%= newsItem.mainImageUrl || '/assets/img/placeholder_news.webp' %>" class="card-img-top" alt="Imagem da notícia <%= newsItem.title %>">
+                            </a>
+                            <div class="card-body d-flex flex-column">
+                                <a href="/news/<%= newsItem.id %>" class="text-decoration-none text-light">
+                                    <h5 class="card-title fw-bold"><%= newsItem.title %></h5>
+                                </a>
+                                <p class="card-text">
+                                    <% if (newsItem.summary) { %>
+                                        <%= newsItem.summary.length > 90 ? newsItem.summary.substring(0, 87) + "..." : newsItem.summary %>
+                                    <% } %>
+                                </p>
+                                <a href="/news/<%= newsItem.id %>" class="btn btn-outline-light mt-auto">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p class="text-light col-12 text-center">Nenhuma notícia disponível.</p>
+            <% } %>
+          </div>
         </div>
         <p class="section-journal-text">
-          Para acompanhar mais notícias clique
-          <a class="section-journal-link" href="/journal">aqui</a>
-        </p>
+          Para acompanhar essas e mais notícias clique
+          <a class="section-journal-link" href="/journal">aqui!</a> </p>
       </section>
     </main>
-
-    <footer id="footer" class="footer py-4">
-      <%- include('./partials/footer') %>
-    </footer>
-
-    <div
-      id="logout-toast"
-      class="logout-toast"
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
-      <div class="toast-body">Logout realizado com sucesso!</div>
-    </div>
-
-    <div
-      id="login-success-toast"
-      class="login-success-toast"
-      role="alert"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
-      <div class="toast-body">Login realizado com sucesso! Bem-vindo(a)!</div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/focus-visible.js"></script>
-    <script src="assets/js/news_data.js"></script>
-    <script src="assets/js/series_data.js"></script>
-    <script src="assets/js/index_loader.js"></script>
-    <script src="assets/js/navbar_search.js"></script>
-    <script src="assets/js/navbar_auth.js"></script>
-  </body>
-</html>
+<%- include('partials/footer', { pageScript: '' }) %>
