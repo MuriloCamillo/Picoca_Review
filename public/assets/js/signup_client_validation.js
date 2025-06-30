@@ -1,116 +1,110 @@
-// public/assets/js/signup_client_validation.js (Adaptado do seu signup.js original)
+/**
+ * @fileoverview Gerencia a validação do lado do cliente para o formulário de cadastro.
+ *
+ * Este script é responsável por validar os campos do formulário de registro em tempo real,
+ * incluindo a verificação de campos obrigatórios, o comprimento mínimo da senha e a
+ * confirmação de que os campos de e-mail e senha coincidem. Ele utiliza as classes
+ * de validação do Bootstrap para fornecer feedback visual imediato ao usuário.
+ *
+ */
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".formulario-cadastro form.needs-validation"); // Ajuste o seletor se necessário
+    // --- 1. Seleção dos Elementos do DOM ---
+    const form = document.querySelector(".formulario-cadastro form.needs-validation");
+    if (!form) return; // Interrompe o script se o formulário não for encontrado.
 
-    if (!form) return;
-
-    const firstNameInput = document.getElementById("firstName");
-    const lastNameInput = document.getElementById("lastName");
-    const usernameInput = document.getElementById("username");
     const emailInput = document.getElementById("validationEmail");
     const emailConfirmInput = document.getElementById("validationEmailConfirm");
     const passwordInput = document.getElementById("validationPassword");
     const passwordConfirmInput = document.getElementById("validationPasswordConfirm");
-    const termsCheckbox = document.getElementById("invalidCheck");
-    // const successToastElement = document.getElementById("signup-success-toast"); // Removido, toast é backend/navbar
+    // Seleciona outros campos para validação geral no submit.
+    const allInputs = [
+        document.getElementById("firstName"),
+        document.getElementById("lastName"),
+        document.getElementById("username"),
+        emailInput, emailConfirmInput, passwordInput, passwordConfirmInput,
+        document.getElementById("invalidCheck")
+    ].filter(Boolean); // .filter(Boolean) remove quaisquer elementos nulos caso um ID não seja encontrado.
 
+    /**
+     * Atualiza as classes de validação do Bootstrap (.is-valid, .is-invalid) em um campo.
+     * @param {HTMLElement} inputElement O campo do formulário a ser atualizado.
+     * @param {boolean} isValid O estado de validade do campo.
+     */
     function updateValidationClass(inputElement, isValid) {
         if (!inputElement) return;
-        if (isValid) {
-            inputElement.classList.remove("is-invalid");
-            inputElement.classList.add("is-valid");
-        } else {
-            inputElement.classList.add("is-invalid");
-            inputElement.classList.remove("is-valid");
-        }
+        inputElement.classList.toggle('is-valid', isValid);
+        inputElement.classList.toggle('is-invalid', !isValid);
     }
     
-    // Função para validar se as senhas coincidem
+    /**
+     * Valida se os campos de senha e confirmação de senha correspondem.
+     * Fornece feedback em tempo real para o usuário.
+     */
     function validatePasswordConfirmation() {
-        if (passwordInput && passwordConfirmInput) {
-            const passwordsMatch = passwordInput.value === passwordConfirmInput.value;
-            if (passwordInput.value && passwordConfirmInput.value) { // Só valida se ambos os campos têm algo
-                 if (passwordsMatch) {
-                    passwordConfirmInput.setCustomValidity("");
-                    updateValidationClass(passwordConfirmInput, true);
-                } else {
-                    passwordConfirmInput.setCustomValidity("As senhas não correspondem.");
-                    updateValidationClass(passwordConfirmInput, false);
-                }
-            } else if (form.classList.contains("was-validated")) { // Se o form já foi validado e um campo está vazio
-                 passwordConfirmInput.setCustomValidity(passwordConfirmInput.value ? "" : "Confirme sua senha.");
-                 updateValidationClass(passwordConfirmInput, !!passwordConfirmInput.value);
-            }
-             return passwordsMatch;
+        if (!passwordInput || !passwordConfirmInput) return true;
+        
+        const passwordsMatch = passwordInput.value === passwordConfirmInput.value;
+        // Apenas valida se ambos os campos estão preenchidos, para não mostrar erro cedo demais.
+        if (passwordInput.value && passwordConfirmInput.value) {
+            passwordConfirmInput.setCustomValidity(passwordsMatch ? "" : "As senhas não correspondem.");
+            updateValidationClass(passwordConfirmInput, passwordsMatch);
         }
-        return true; // Se os campos não existem, não há o que validar aqui
     }
 
-    // Função para validar se os emails coincidem
+    /**
+     * Valida se os campos de e-mail e confirmação de e-mail correspondem.
+     * Fornece feedback em tempo real para o usuário.
+     */
     function validateEmailConfirmation() {
-        if (emailInput && emailConfirmInput) {
-            const emailsMatch = emailInput.value === emailConfirmInput.value;
-             if (emailInput.value && emailConfirmInput.value) {
-                if (emailsMatch) {
-                    emailConfirmInput.setCustomValidity("");
-                    updateValidationClass(emailConfirmInput, true);
-                } else {
-                    emailConfirmInput.setCustomValidity("Os emails não correspondem.");
-                    updateValidationClass(emailConfirmInput, false);
-                }
-            } else if (form.classList.contains("was-validated")) {
-                 emailConfirmInput.setCustomValidity(emailConfirmInput.value ? "" : "Confirme seu email.");
-                 updateValidationClass(emailConfirmInput, !!emailConfirmInput.value);
-            }
-            return emailsMatch;
+        if (!emailInput || !emailConfirmInput) return true;
+
+        const emailsMatch = emailInput.value === emailConfirmInput.value;
+        if (emailInput.value && emailConfirmInput.value) {
+            emailConfirmInput.setCustomValidity(emailsMatch ? "" : "Os emails não correspondem.");
+            updateValidationClass(emailConfirmInput, emailsMatch);
         }
-        return true;
     }
 
-    if (passwordConfirmInput) {
-        passwordConfirmInput.addEventListener('input', validatePasswordConfirmation);
-    }
-    if (passwordInput) { // Revalida confirmação quando senha principal muda
+    // --- 2. Adição dos Listeners de Evento ---
+
+    // Valida a confirmação sempre que o campo de confirmação ou o campo principal for alterado.
+    if (passwordConfirmInput) passwordConfirmInput.addEventListener('input', validatePasswordConfirmation);
+    if (emailConfirmInput) emailConfirmInput.addEventListener('input', validateEmailConfirmation);
+    if (emailInput) emailInput.addEventListener('input', validateEmailConfirmation);
+
+    // Valida o comprimento da senha e a confirmação em tempo real.
+    if (passwordInput) {
         passwordInput.addEventListener('input', () => {
-            if (passwordInput.value.length >= 8) {
-                passwordInput.setCustomValidity("");
-                updateValidationClass(passwordInput, true);
-            } else if (form.classList.contains('was-validated')) {
-                passwordInput.setCustomValidity("A senha deve ter no mínimo 8 caracteres.");
-                updateValidationClass(passwordInput, false);
-            }
-            validatePasswordConfirmation(); // Revalida a confirmação
+            const meetsLength = passwordInput.value.length >= 8;
+            passwordInput.setCustomValidity(meetsLength ? "" : "A senha deve ter no mínimo 8 caracteres.");
+            updateValidationClass(passwordInput, meetsLength);
+            // Revalida o campo de confirmação, pois a senha principal mudou.
+            validatePasswordConfirmation();
         });
     }
-    if (emailConfirmInput) {
-        emailConfirmInput.addEventListener('input', validateEmailConfirmation);
-    }
-     if (emailInput) { // Revalida confirmação quando email principal muda
-        emailInput.addEventListener('input', validateEmailConfirmation);
-    }
 
-
+    // --- 3. Lógica de Submissão do Formulário ---
     form.addEventListener("submit", function (event) {
-        const isPasswordConfirmed = validatePasswordConfirmation();
-        const isEmailConfirmed = validateEmailConfirmation();
+        // Roda todas as validações customizadas uma última vez antes de decidir se o formulário pode ser enviado.
+        validatePasswordConfirmation();
+        validateEmailConfirmation();
+        if (passwordInput) {
+            updateValidationClass(passwordInput, passwordInput.value.length >= 8);
+        }
 
-        // A validação do Bootstrap (form.checkValidity()) cuida dos 'required', 'minlength', 'pattern', etc.
-        if (!form.checkValidity() || !isPasswordConfirmed || !isEmailConfirmed) {
-            event.preventDefault();
+        // `checkValidity()` verifica todas as regras de validação nativas (required, pattern, etc.)
+        // e as customizadas (setCustomValidity).
+        if (!form.checkValidity()) {
+            event.preventDefault(); // Impede o envio do formulário se for inválido.
             event.stopPropagation();
         }
         
-        // Atualiza classes visuais para todos os campos após tentativa de submit
-        // O Bootstrap faz isso automaticamente se 'novalidate' está no form e 'was-validated' é adicionado
-        [firstNameInput, lastNameInput, usernameInput, emailInput, passwordInput, termsCheckbox].forEach(input => {
-            if(input) updateValidationClass(input, input.checkValidity());
-        });
-        validateEmailConfirmation(); // Força atualização visual da confirmação de email
-        validatePasswordConfirmation(); // Força atualização visual da confirmação de senha
-
+        // Adiciona a classe 'was-validated' para que o Bootstrap exiba todos os feedbacks de erro/sucesso.
         form.classList.add("was-validated");
-        // NENHUMA lógica de localStorage, autenticação ou redirecionamento aqui.
-        // O formulário será enviado para o backend (action="/signup" method="POST").
-        // O toast de sucesso será exibido pela navbar/EJS com base em query param do backend.
+
+        // Atualiza o estado visual de todos os campos após a tentativa de submissão.
+        allInputs.forEach(input => {
+            if (input) updateValidationClass(input, input.checkValidity());
+        });
     });
 });

@@ -1,10 +1,17 @@
+/**
+ * @fileoverview Controlador responsável por renderizar as principais páginas da aplicação.
+ *
+ * Este arquivo contém a lógica para buscar dados (de fontes estáticas e do banco de dados)
+ * e renderizar as views EJS correspondentes para cada rota de página, como a página inicial,
+ * galeria de séries, detalhes de uma série, perfil do usuário, etc.
+ */
 import { Request, Response } from 'express';
 import seriesData from '../data/seriesData.js';
 import newsData from '../data/newsData.js';
 import * as SeriesListModel from '../models/seriesListModel.js';
 import * as SeriesRatingModel from '../models/seriesRatingModel.js';
 
-// Defina sua lista de países aqui ou importe de outro lugar
+// Lista de países para o formulário de perfil
 const countriesList = [
     { code: "", name: "Selecione um país..." }, // Opção padrão
     { code: "AF", name: "Afeganistão" },
@@ -42,6 +49,10 @@ const countriesList = [
     { code: "OTHER", name: "Outro" }
 ];
 
+/**
+ * Renderiza a página inicial (Home).
+ * Prepara os dados para as seções de notícias em destaque, séries em alta e séries ranqueadas.
+ */
 export const getHomePage = (req: Request, res: Response) => {
     const user = req.session.user;
     const newsIds = Object.keys(newsData);
@@ -63,6 +74,9 @@ export const getHomePage = (req: Request, res: Response) => {
     });
 };
 
+/**
+ * Renderiza a página de Contato.
+ */
 export const getContactPage = (req: Request, res: Response) => {
     res.render('contact', { 
         title: 'Contato - Picoca Review', 
@@ -71,6 +85,9 @@ export const getContactPage = (req: Request, res: Response) => {
     });
 };
 
+/**
+ * Renderiza a página de Notícias (Journal), exibindo todos os artigos.
+ */
 export const getJournalPage = (req: Request, res: Response) => {
     const allNews = Object.keys(newsData).map(id => ({ id, ...newsData[id] }));
     res.render('journal', {
@@ -81,11 +98,16 @@ export const getJournalPage = (req: Request, res: Response) => {
     });
 };
 
+/**
+ * Renderiza a página de detalhes de uma notícia específica.
+ * Também seleciona aleatoriamente outras notícias para a seção "Veja Também".
+ */
 export const getNewsDetailPage = (req: Request, res: Response) => {
     const newsId = req.params.newsId;
     const newsItem = newsData[newsId];
     const user = req.session.user;
 
+    // Se a notícia não for encontrada nos dados, renderiza uma página de erro 404.
     if (!newsItem) {
         return res.status(404).render('error', { title: 'Erro 404', message: 'Notícia não encontrada.', user, status: 404 });
     }
@@ -104,6 +126,9 @@ export const getNewsDetailPage = (req: Request, res: Response) => {
     });
 };
 
+/**
+ * Renderiza a galeria com todas as séries disponíveis.
+ */
 export const getSeriesGalleryPage = (req: Request, res: Response) => {
     const allSeries = Object.entries(seriesData).map(([id, data])=> ({ id, ...data }));
     res.render('series_gallery', {
@@ -114,6 +139,10 @@ export const getSeriesGalleryPage = (req: Request, res: Response) => {
     });
 };
 
+/**
+ * Renderiza a página de detalhes de uma série específica.
+ * Esta é uma função assíncrona, pois busca dados tanto estáticos quanto do banco de dados.
+ */
 export const getSeriesInfoPage = async (req: Request, res: Response) => {
     const seriesId = req.params.seriesId;
     const seriesItem = seriesData[seriesId];
@@ -127,12 +156,14 @@ export const getSeriesInfoPage = async (req: Request, res: Response) => {
         let userSeriesStatus = { onWatchlist: false, onLikelist: false };
         let userRating: number | null = null;
 
+        // Se o usuário estiver logado, busca suas informações personalizadas para esta série.
         if (user && user.id) {
             userSeriesStatus.onWatchlist = await SeriesListModel.isSeriesInUserList(user.id, seriesId, 'watchlist');
             userSeriesStatus.onLikelist = await SeriesListModel.isSeriesInUserList(user.id, seriesId, 'likelist');
             userRating = await SeriesRatingModel.getUserRatingForSeries(user.id, seriesId);
         }
 
+        // Busca todas as avaliações da comunidade para calcular a média e a contagem de votos.
         const allRatings = await SeriesRatingModel.getRatingsForSeries(seriesId);
         const voteCount = allRatings.length;
         const averageRating = voteCount > 0
@@ -157,6 +188,10 @@ export const getSeriesInfoPage = async (req: Request, res: Response) => {
     }
 };
 
+/**
+ * Renderiza a página de perfil do usuário.
+ * Requer que o usuário esteja autenticado (protegido pelo middleware `isAuthenticated` na rota).
+ */
 export const getProfilePage = (req: Request, res: Response) => {
     const user = req.session.user;
     if (!user) { 
@@ -170,6 +205,10 @@ export const getProfilePage = (req: Request, res: Response) => {
     });
 };
 
+/**
+ * Renderiza a página "Minha Watchlist".
+ * Busca os IDs das séries na watchlist do usuário no banco e depois "hidrata" esses dados com as informações completas da série.
+ */
 export const getWatchlistPage = async (req: Request, res: Response) => {
     const user = req.session.user;
     if (!user) {
@@ -196,6 +235,10 @@ export const getWatchlistPage = async (req: Request, res: Response) => {
     }
 };
 
+/**
+ * Renderiza a página "Séries Curtidas".
+ * Segue a mesma lógica da watchlist, mas filtrando por 'likelist'.
+ */
 export const getLikelistPage = async (req: Request, res: Response) => {
     const user = req.session.user;
     if (!user) {

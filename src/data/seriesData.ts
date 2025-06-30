@@ -1,4 +1,29 @@
-// src/data/seriesData.ts
+/**
+ * @fileoverview Armazena os dados estáticos para todas as séries listadas no site.
+ *
+ * Este arquivo atua como um banco de dados estático para as informações das séries.
+ * Cada chave principal do objeto `seriesData` (ex: 'demolidor-renascido') é um ID
+ * único para a série, que é utilizado para roteamento (URLs) e como chave de
+ * referência em outras partes da aplicação.
+ *
+ * A estrutura de cada objeto de série é definida pela interface `Series`
+ * em `src/data/seriesTypes.ts` e deve conter as seguintes propriedades:
+ *
+ * - title: Nome oficial da série. (Obrigatório)
+ * - year: Ano de lançamento. (Obrigatório)
+ * - creator: Nome(s) do(s) criador(es). (Obrigatório)
+ * - tagline: Slogan ou frase curta da série. (Opcional)
+ * - synopsis: Resumo da trama. (Obrigatório)
+ * - status: Texto descritivo do status atual (ex: "Finalizada", "Em produção"). (Obrigatório)
+ * - statusClass: Classe CSS para estilizar o status (ex: "status-inproduction"). (Obrigatório)
+ * - cast: Array com os nomes dos principais membros do elenco. (Obrigatório)
+ * - genres: Array com os gêneros associados à série. (Obrigatório)
+ * - seasons: Array com a lista de temporadas. (Obrigatório)
+ * - watchPlatforms: Array com as plataformas de streaming onde a série está disponível. (Obrigatório)
+ * - posterImg: Caminho para a imagem do pôster (formato vertical). (Obrigatório)
+ * - backdropImg: Caminho para a imagem de fundo (formato horizontal). (Obrigatório)
+ * - trailerUrl: URL 'embed' para o trailer do YouTube ou similar. (Obrigatório)
+ */
 import { SeriesData } from './seriesTypes.js';
 
 const seriesData: SeriesData = {

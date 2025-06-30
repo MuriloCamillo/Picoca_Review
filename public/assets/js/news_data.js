@@ -2,7 +2,7 @@
  * @fileoverview Armazena os dados das notícias do site.
  * Cada chave do objeto representa um ID único para a notícia.
  *
- * Estrutura esperada para cada objeto de notícia:
+ * Estrutura para cada objeto de notícia:
  * {
  * title: "Título da Notícia", // Obrigatório
  * author: "Nome do Autor",    // Obrigatório

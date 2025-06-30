@@ -1,9 +1,17 @@
-// src/data/newsData.ts
+/**
+ * @fileoverview Armazena os dados estáticos para todos os artigos de notícias do site.
+ *
+ * Este arquivo funciona como um banco de dados para o conteúdo do "Journal". Cada chave
+ * do objeto `newsData` (ex: 'otgw-10-years') serve como um ID único para o artigo,
+ * usado para roteamento e busca.
+ *
+ * A estrutura de cada objeto de notícia está definida pela interface `NewsArticle`
+ * em `src/data/seriesTypes.ts`. Para adicionar um novo artigo, basta criar uma
+ * nova entrada neste objeto seguindo o mesmo formato.
+ */
 import { NewsData } from './seriesTypes.js';
 
 const newsData: NewsData = {
-  // COLE AQUI O CONTEÚDO COMPLETO DO SEU OBJETO 'newsData'
-  // Exemplo de como deve ficar (USE O SEU CONTEÚDO REAL):
    'otgw-10-years': {
         title: "\"Over the Garden Wall\" celebra 10 anos de jornada pelo desconhecido.",
         author: "Maurício Leme",
