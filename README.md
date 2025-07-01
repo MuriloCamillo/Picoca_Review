@@ -100,6 +100,7 @@ npm install
 ```
 
 **3. Execute em Modo de Desenvolvimento:**
+
 O servidor irá iniciar com nodemon, reiniciando automaticamente a cada alteração nos arquivos .ts ou .ejs.
 ```bash
 npm run dev
