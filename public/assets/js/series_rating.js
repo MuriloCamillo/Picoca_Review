@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!ratingContainer) return; // Se o componente não existir na página, encerra o script.
 
     const starsContainer = ratingContainer.querySelector('.stars.user-rating');
-    const stars = starsContainer.querySelectorAll('i'); // Todos os 5 ícones de estrela.
+    const stars = starsContainer.querySelectorAll('i');
     const feedbackEl = document.getElementById('rating-feedback');
-    const seriesId = ratingContainer.dataset.seriesId; // ID da série, injetado pelo servidor (EJS).
-
+    const seriesId = ratingContainer.dataset.seriesId;
+    const isUserLoggedIn = ratingContainer.dataset.userLoggedIn === 'true';
+    
     // --- 2. Função Auxiliar de Interface (UI) ---
 
     /**
@@ -42,24 +43,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3. Listeners para Efeitos de Hover ---
 
-    // Efeito de "preview" ao passar o mouse sobre as estrelas.
-    starsContainer.addEventListener('mouseover', (e) => {
-        if (e.target.tagName === 'I') {
-            updateStars(e.target.dataset.value);
-        }
-    });
+    // Função para exibir mensagem de feedback
+    const showFeedback = (message, type = 'danger') => {
+        feedbackEl.textContent = message;
+        feedbackEl.className = `d-block text-center small mt-2 text-${type}`;
+        feedbackEl.style.display = 'block';
+    };
 
-    // Restaura o estado visual para a avaliação real (salva) quando o mouse sai do container.
-    starsContainer.addEventListener('mouseout', () => {
-        const currentRating = starsContainer.dataset.userRating || 0;
-        updateStars(currentRating);
-    });
+    // Atualiza o comportamento do hover apenas se o usuário estiver logado
+    if (isUserLoggedIn) {
+        starsContainer.addEventListener('mouseover', (e) => {
+            if (e.target.tagName === 'I') {
+                updateStars(e.target.dataset.value);
+            }
+        });
+
+        starsContainer.addEventListener('mouseout', () => {
+            const currentRating = starsContainer.dataset.userRating || 0;
+            updateStars(currentRating);
+        });
+    } else {
+        // Adiciona classe para cursor não-clicável se não estiver logado
+        starsContainer.classList.add('not-logged');
+        // Exibe mensagem de login necessário ao passar o mouse
+        starsContainer.addEventListener('mouseover', () => {
+            showFeedback('Faça login para avaliar!', 'info');
+        });
+        starsContainer.addEventListener('mouseout', () => {
+            feedbackEl.style.display = 'none';
+        });
+    }
 
     // --- 4. Listener Principal para Submissão da Avaliação ---
 
     starsContainer.addEventListener('click', async (e) => {
-        // Garante que o clique foi de fato em um ícone de estrela.
-        if (e.target.tagName !== 'I') return;
+        if (!isUserLoggedIn) {
+            window.location.href = `/login?redirect=${encodeURIComponent(window.location.pathname)}`;
+            return;
+        }
         
         const rating = parseInt(e.target.dataset.value, 10);
 
