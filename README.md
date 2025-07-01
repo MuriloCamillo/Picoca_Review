@@ -32,7 +32,7 @@ As últimas novidades do mundo do entretenimento!
 - ⭐ Sistema de Avaliações: Usuários podem avaliar suas séries favoritas com notas de 1 a 5 estrelas.   
 - 📌 Listas Pessoais:
   - * **Watchlist:** Salve séries que você pretende assistir no futuro.
-    * * **Likelist:** Marque as séries que você já assistiu e gostou.
+    * **Likelist:** Marque as séries que você já assistiu e gostou.
 
 ### ✉️ Formulário de Contato  
 Recebemos feedbacks, sugestões ou um simples "Oi!" com muito carinho 💌
@@ -91,8 +91,7 @@ Para executar o projeto localmente, siga os passos abaixo. Você precisa ter o [
 
 **1. Clone o repositório:**
 ```bash
-git clone [https://github.com/MuriloCamillo/Picoca_Review.git](https://github.com/MuriloCamillo/Picoca_Review.git)
-cd Picoca_Review
+git clone https://github.com/MuriloCamillo/Picoca_Review.git
 ```
 
 **2. Instale as Dependências:**
