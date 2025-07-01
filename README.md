@@ -42,7 +42,7 @@ Recebemos feedbacks, sugestões ou um simples "Oi!" com muito carinho 💌
 ## 🛠️ **Tecnologias Utilizadas**
 A aplicação foi construída com tecnologias modernas, seguindo o padrão MVC (Model-View-Controller).
 
-### Backend 🧱
+### 🧱 Backend 
 * **Motor:** Node.js
 * **Framework:** Express.js
 * **Linguagem:** TypeScript
@@ -50,7 +50,7 @@ A aplicação foi construída com tecnologias modernas, seguindo o padrão MVC (
 * **Template Engine:** EJS (Embedded JavaScript)
 * **Autenticação:** Gerenciamento de sessão com `express-session` e senhas com hash usando `bcrypt`.
 
-### Frontend 🎨
+### 🎨 Frontend 
 * **Estrutura:** HTML5 e EJS
 * **Estilização:** CSS3 e Bootstrap 5.3
 * **Interatividade:** JavaScript (Vanilla)
@@ -106,9 +106,11 @@ npm run dev
 ```
 
 **4. Acessando a Aplicação:**
+
 Abra seu navegador e acesse http://localhost:3000.
 
 **⚠️ Importante:**
+
 Não se preocupe em rodar o ```npm run db:init```, pois a aplicação já irá criar o arquivo de Banco de Dados para você, caso ainda não tenha.
 
 ---
